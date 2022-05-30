@@ -1,0 +1,36 @@
+{
+  "name": "kaimahi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisugiarto/kaimahi.git"
+  },
+  "author": "deni sugiarto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisugiarto/kaimahi/issues"
+  },
+  "homepage": "https://github.com/denisugiarto/kaimahi#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@popperjs/core": "^2.11.5",
+    "bootstrap": "^5.1.3",
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-webp": "^4.0.1",
+    "jquery": "^3.6.0",
+    "nunjucks": "^3.2.3",
+    "sass": "^1.52.1"
+  }
+}

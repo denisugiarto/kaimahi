@@ -1,0 +1,65 @@
+@import 'floating-labels';
+@import 'form-control';
+@import 'nav';
+@import 'variables';
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  margin: 0;
+  border: 0;
+}
+
+.btn.sign-in {
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 22px;
+}
+
+.forgot-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.form-label{
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.icon-wrapper {
+  height: 48px;
+  width: 48px;
+}
+
+.ilustration-wrapper {
+  max-height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 25px;
+
+}
+
+.logo-wrapper {
+  width: 345px;
+  height: 61px;
+}
+
+.sign-in-form {
+  background-color: var(--bs-white);
+  padding: 50px;
+  border-radius: 25px;
+}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% set pageTitle = 'Sign In' %} {% block content %}
+
+<div class="main d-flex">
+  <div class="col-6">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="sign-in-form">
+        <div class="logo-wrapper">
+          <img src="./assets/images/logo-light.webp" width="345" height="61" alt="kaimahi-logo" />
+        </div>
+        <div class="h3 mb-5"> Sign In </div>
+        <form action="#" class="d-flex flex-column">
+          <label for="floatingInput">
+            <div class="input-icon">
+              <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
+              <div class="form-floating">
+                <input
+                  class="form-control border-0"
+                  name="email"
+                  type="email"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label class="form-label" for="floatingInput">Email </label>
+              </div>
+            </div>
+          </label>
+          <label for="floatingPassword">
+            <div class="input-icon">
+              <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
+              <div class="form-floating">
+                <input
+                  class="form-control border-0"
+                  name="password"
+                  type="password"
+                  id="floatingPassword"
+                  placeholder="********"
+                />
+                <label class="form-label" for="floatingPassword">Password </label>
+              </div>
+            </div>
+          </label>
+          <button type="submit" class="btn btn-primary sign-in">Sign In</button>
+        </form>
+        <a href="#" role="button" class="forgot-link">Forgot Password?</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <img src="./assets/images/ilustration1.webp" class="ilustration-wrapper" alt="" />
+  </div>
+</div>
+{% endblock %}
