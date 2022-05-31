@@ -3,7 +3,7 @@ const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const prefix = require("gulp-autoprefixer");
 const minify = require("gulp-clean-css");
-const imagewebp = require("gulp-webp");
+const webp = require("gulp-webp");
 const nunjucksRender = require("gulp-nunjucks-render");
 
 //create function
@@ -25,7 +25,7 @@ function compilescss() {
 
 //web images
 function webpImage() {
-  return src("src/images/*.{jpg, png}").pipe(imagewebp()).pipe(dest("dist/assets/images"));
+  return src("src/images/*.{jpg,png}").pipe(webp()).pipe(dest("dist/assets/images"));
 }
 
 function images() {
@@ -41,7 +41,7 @@ function svgCopy() {
 function watchTask() {
   watch("src/templates/**/*", htmlTemplate);
   watch("src/scss/*.scss", compilescss);
-  watch("src/images/*.{jpg, png}", webpImage);
+  watch("src/images/*.{jpg,png}", webpImage);
   watch("src/images/*.webp", images);
   watch("src/icons/*.svg", svgCopy);
 }

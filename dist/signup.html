@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Sign In</title>
+  <title>Sign Up</title>
 
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +32,6 @@
 
   <body>
     
-
 <div class="main">
   <nav class="navbar navbar-expand-lg d-lg-none navbar-dark bg-primary">
   <div class="container-fluid py-3 px-5 justify-content-start">
@@ -65,12 +64,13 @@
 
   <div class="sign-in-form">
     <div class="logo-wrapper">
-      <img src="./assets/images/logo-light.webp" alt="kaimahi-logo" />
+      <img src="./assets/images/logo-light.webp" width="345" height="61" alt="kaimahi-logo" />
     </div>
+
     <ul class="nav nav-tabs mb-3 mb-lg-5" id="tabSignIn" role="tablist">
       <li class="nav-item" role="presentation">
         <a
-          class="nav-link active"
+          class="nav-link"
           role="button"
           id="signin-tab"
           aria-controls="signin"
@@ -78,31 +78,48 @@
           href="./signin.html"
         >
           <h4 class="title">Sign In</h4>
-          <hr class="hr-active" />
         </a>
       </li>
       <li class="divider"></li>
       <li class="nav-item" role="presentation">
         <a
-          class="nav-link"
+          class="nav-link active"
           role="button"
           id="signup-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#signup"
           aria-controls="signup"
           aria-selected="false"
           href="./signup.html"
         >
           <h4 class="title">Sign Up</h4>
+          <hr class="hr-active" />
         </a>
       </li>
     </ul>
     <div class="tab-content" id="tabSignInContent">
       <div
         class="tab-pane fade show active"
-        id="signin"
+        id="signup"
         role="tabpanel"
-        aria-labelledby="signin-tab"
+        aria-labelledby="signup-tab"
       >
         <form action="#" class="d-flex flex-column">
+          <label for="name">
+            <div class="input-icon">
+              <img src="./assets/icons/icon-profile.svg" class="icon-wrapper" alt="" />
+              <div class="form-floating">
+                <input
+                  class="form-control border-0"
+                  name="name"
+                  type="text"
+                  id="name"
+                  placeholder="name@example.com"
+                />
+                <label class="form-label" for="name">Name</label>
+              </div>
+            </div>
+          </label>
           <label for="floatingInput">
             <div class="input-icon">
               <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
@@ -114,7 +131,7 @@
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label class="form-label" for="floatingInput">Email </label>
+                <label class="form-label" for="floatingInput">Email</label>
               </div>
             </div>
           </label>
@@ -129,13 +146,33 @@
                   id="floatingPassword"
                   placeholder="********"
                 />
-                <label class="form-label" for="floatingPassword">Password </label>
+                <label class="form-label" for="floatingPassword">Password</label>
               </div>
             </div>
           </label>
-          <button type="submit" class="btn btn-dark sign-in">Sign In</button>
+          <label for="floatingPassword">
+            <div class="input-icon">
+              <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
+              <div class="form-floating">
+                <input
+                  class="form-control border-0"
+                  name="password"
+                  type="password"
+                  id="floatingPassword"
+                  placeholder="********"
+                />
+                <label class="form-label" for="floatingPassword">Confirm Password</label>
+              </div>
+            </div>
+          </label>
+          <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" id="agree" />
+            <label class="form-check-label" for="agree"
+              >I accept the terms and conditions of Pae Hono</label
+            >
+          </div>
+          <button type="submit" class="btn btn-dark sign-in">Sign Up</button>
         </form>
-        <a href="./forgot.html" role="button" class="forgot-link">Forgot Password?</a>
       </div>
     </div>
   </div>
