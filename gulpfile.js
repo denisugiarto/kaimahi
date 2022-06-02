@@ -1,16 +1,21 @@
 //list dependences
-const { src, dest, watch, series } = require("gulp");
+const { src, dest, watch, series, task } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const prefix = require("gulp-autoprefixer");
 const minify = require("gulp-clean-css");
 const webp = require("gulp-webp");
 const nunjucksRender = require("gulp-nunjucks-render");
+const ghPages = require("gulp-gh-pages");
 
 //create function
+
+task("deploy", function () {
+  return src("./dist/**/*").pipe(ghPages());
+});
 //html
 
 function htmlTemplate() {
-  return src("src/templates/pages/*.html")
+  return src("src/templates/pages/**/*.html")
     .pipe(nunjucksRender({ path: ["src/templates/components"] }))
     .pipe(dest("dist"));
 }
@@ -39,7 +44,7 @@ function svgCopy() {
 
 //create watch task
 function watchTask() {
-  watch("src/templates/**/*", htmlTemplate);
+  watch("src/templates/**/**/*.html", htmlTemplate);
   watch("src/scss/*.scss", compilescss);
   watch("src/images/*.{jpg,png}", webpImage);
   watch("src/images/*.webp", images);

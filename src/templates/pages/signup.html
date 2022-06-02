@@ -1,12 +1,12 @@
 {% extends "layout.html" %} {% set pageTitle = 'Sign Up' %} {% block content %}
 <div class="main">
-  {% include '../components/navbar.html' %}
+  {% include '../components/navbar-public.html' %}
   <div class="sign-in-form">
     <div class="logo-wrapper">
       <img src="./assets/images/logo-light.webp" width="345" height="61" alt="kaimahi-logo" />
     </div>
 
-    <ul class="nav nav-tabs mb-3 mb-lg-5" id="tabSignIn" role="tablist">
+    <ul class="nav nav-tabs mb-3 mb-lg-4" id="tabSignIn" role="tablist">
       <li class="nav-item" role="presentation">
         <a
           class="nav-link"
@@ -32,7 +32,6 @@
           href="./signup.html"
         >
           <h4 class="title">Sign Up</h4>
-          <hr class="hr-active" />
         </a>
       </li>
     </ul>
@@ -59,7 +58,7 @@
               </div>
             </div>
           </label>
-          <label for="floatingInput">
+          <label for="email">
             <div class="input-icon">
               <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
               <div class="form-floating">
@@ -67,14 +66,14 @@
                   class="form-control border-0"
                   name="email"
                   type="email"
-                  id="floatingInput"
+                  id="email"
                   placeholder="name@example.com"
                 />
-                <label class="form-label" for="floatingInput">Email</label>
+                <label class="form-label" for="email">Email</label>
               </div>
             </div>
           </label>
-          <label for="floatingPassword">
+          <label for="password">
             <div class="input-icon">
               <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
               <div class="form-floating">
@@ -82,33 +81,33 @@
                   class="form-control border-0"
                   name="password"
                   type="password"
-                  id="floatingPassword"
+                  id="password"
                   placeholder="********"
                 />
-                <label class="form-label" for="floatingPassword">Password</label>
+                <label class="form-label" for="password">Password</label>
               </div>
             </div>
           </label>
-          <label for="floatingPassword">
+          <label for="repassword">
             <div class="input-icon">
               <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
               <div class="form-floating">
                 <input
                   class="form-control border-0"
-                  name="password"
+                  name="repassword"
                   type="password"
-                  id="floatingPassword"
+                  id="repassword"
                   placeholder="********"
                 />
-                <label class="form-label" for="floatingPassword">Confirm Password</label>
+                <label class="form-label" for="repassword">Confirm Password</label>
               </div>
             </div>
           </label>
           <div class="form-check mb-2">
-            <input type="checkbox" class="form-check-input" id="agree" />
-            <label class="form-check-label" for="agree"
-              >I accept the terms and conditions of Pae Hono</label
-            >
+            <input type="checkbox" class="form-check-input" id="agree" role="button" />
+            <label class="form-check-label" for="agree" role="button">
+              I accept the terms and conditions of Pae Hono
+            </label>
           </div>
           <button type="submit" class="btn btn-dark sign-in">Sign Up</button>
         </form>
@@ -116,4 +115,9 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function () {
+    $("a.nav-link:contains('Sign Up')").addClass("active");
+  });
+</script>
 {% endblock %}

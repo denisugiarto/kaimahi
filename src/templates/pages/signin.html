@@ -1,12 +1,12 @@
 {% extends "layout.html" %} {% set pageTitle = 'Sign In' %} {% block content %}
 
 <div class="main">
-  {% include '../components/navbar.html' %}
+  {% include '../components/navbar-public.html' %}
   <div class="sign-in-form">
     <div class="logo-wrapper">
       <img src="./assets/images/logo-light.webp" alt="kaimahi-logo" />
     </div>
-    <ul class="nav nav-tabs mb-3 mb-lg-5" id="tabSignIn" role="tablist">
+    <ul class="nav nav-tabs mb-3 mb-lg-4" id="tabSignIn" role="tablist">
       <li class="nav-item" role="presentation">
         <a
           class="nav-link active"
@@ -17,7 +17,6 @@
           href="./signin.html"
         >
           <h4 class="title">Sign In</h4>
-          <hr class="hr-active" />
         </a>
       </li>
       <li class="divider"></li>
@@ -79,4 +78,9 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function () {
+    $("a.nav-link:contains('Sign In')").addClass("active");
+  });
+</script>
 {% endblock %}

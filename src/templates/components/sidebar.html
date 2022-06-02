@@ -1,120 +1,58 @@
-<!-- Navbar Section-->
-<div class="sidebar">
-  <div class="navbar-small">
+<nav class="navbar navbar-expand-lg d-lg-none navbar-dark bg-primary">
+  <div class="container-fluid py-3 px-5 justify-content-start">
     <button
-      class="btn-menu"
+      class="navbar-toggler me-3"
       type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasSidebar"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-      <svg
-        width="20"
-        height="21"
-        viewBox="0 0 20 21"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <line y1="0.5" x2="20" y2="0.5" stroke="#3E332B" />
-        <line y1="10.5" x2="13.3333" y2="10.5" stroke="#3E332B" />
-        <line y1="20.5" x2="20" y2="20.5" stroke="#3E332B" />
-      </svg>
-      <p>MENU</p>
+      <img src="../assets/icons/icon-menu.svg" alt="icon-menu" class="icon-menu" />
     </button>
-    <div class="brand">
-      <picture>
-        <source media="(min-width:992px)" srcset="../assets/images/logo3.svg" />
-        <img src="../assets/images/logo4.svg" alt="brand images" />
-      </picture>
-    </div>
-    <a class="notification" href="#">
-      <i class="demo-icon icon-bell"></i>
-      <span>99+</span>
+    <a class="navbar-brand" href="#" role="button">
+      <img src="../assets/images/logo-2.webp" alt="kaimahi-logo" />
     </a>
-    <div class="img-profile d-none d-lg-flex">
-      <img src="../assets/images/profile.webp" alt="image profile" />
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav sidebar me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">
+            <img src="../assets/icons/icon-home.svg" alt="icon whanau" class="sidebar-icon" />
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img
+              src="../assets/icons/icon-sidebar-kaimahi.svg"
+              alt="icon whanau"
+              class="sidebar-icon"
+            />
+            Kaimahi
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img
+              src="../assets/icons/icon-sidebar-whanau.svg"
+              alt="icon whanau"
+              class="sidebar-icon"
+            />
+            Whānau
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img
+              src="../assets/icons/icon-sidebar-deliveries.svg"
+              alt="icon deliveries"
+              class="sidebar-icon"
+            />
+            Deliveries
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div
-    class="offcanvas offcanvas-start bd-sidebar"
-    id="offcanvasSidebar"
-    tabindex="-1"
-  >
-    <div class="bd-links offcanvas-body">
-      <div class="img-profile d-lg-none">
-        <img src="../assets/images/profile.webp" alt="image profile" />
-      </div>
-      <p class="profile-name">Olivia Emily</p>
-      <nav class="nav flex-column nav-style">
-        <a href="#" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-home"></i>
-          </div>
-          <div class="nav-text">Home</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="/pumahara-design/kaiako/classes.html" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-classes"></i>
-          </div>
-          <div class="nav-text">My Classes</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="/pumahara-design/roopu.html" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-ropu"></i>
-          </div>
-          <div class="nav-text">My Roopu</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="/pumahara-design/ngapumanawa.html" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-pumanawa"></i>
-          </div>
-          <div class="nav-text">Ngā Pūmanawa</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="#" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-maramataka"></i>
-          </div>
-          <div class="nav-text">Maramataka</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="#" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-journal"></i>
-          </div>
-          <div class="nav-text">Journal</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="#" class="nav-link">
-          <div class="nav-icon">
-            <i class="demo-icon icon-setting"></i>
-          </div>
-          <div class="nav-text">Account Setting</div>
-          <div class="nav-arrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </a>
-        <a href="#" class="nav-link text-danger">
-          <div class="nav-icon">
-            <i class="demo-icon icon-logout"></i>
-          </div>
-          <div class="nav-text">Logout</div>
-        </a>
-      </nav>
-    </div>
-  </div>
-</div>
+</nav>
