@@ -4,7 +4,11 @@
 body {
   margin: 0;
   border: 0;
-  min-width: 425px;
+  min-width: 375px;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 //Mobile
@@ -13,6 +17,7 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   border: 1px solid var(--bs-gray-200);
+  font-size: 14px;
 }
 
 .btn-primary {
@@ -40,12 +45,8 @@ body {
     margin-left: 10px;
 
     p:first-child {
-      font-size: 12px;
-      color: var(--bs-gray-500);
-    }
-
-    p {
-      margin-bottom: 0;
+      @extend .text-secondary;
+      font-size: 12px;    
     }
   }
   
@@ -53,6 +54,11 @@ body {
     width: 22px;
     height: 22px;
   }
+}
+
+.courier-profile {
+  width: 26px;
+  height: 26px;
 }
 
 .describe {
@@ -119,6 +125,17 @@ body {
   width: 38px;
 }
 
+.icon-small {
+  width: 13px;
+  height: 13px;
+}
+
+.img-maps-wrapper {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
 .input-icon {
   display: flex;
   align-items: center;
@@ -142,6 +159,7 @@ body {
   border-radius: 20px;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 
   .profile {
     display: flex;
@@ -162,14 +180,19 @@ body {
 
   .delivery {
     display: flex;
+    align-items: center;
     padding: 12px 8px 12px 18px;
     background-color: var(--bs-gray-200);
     border-radius: 10px;
     width: fit-content;
     
     p {
+      font-size: 14px;
       margin-left: 8px;
       margin-bottom: 0;
+      span {
+        @extend .text-secondary;
+      }
     }
   }
 
@@ -200,7 +223,7 @@ display: none;
   margin-bottom: 20px;
   
   .nav-item:not(:first-child) {
-    margin-left: 30px;
+    margin-left: 20px;
   }
   
   .nav-link {
@@ -274,6 +297,7 @@ display: none;
     margin-left: 12px;
 
     .name {
+      font-size: 18px;
       margin-bottom: 5px;
     }
    
@@ -288,10 +312,14 @@ display: none;
       }
       
       .phone-text {
-        margin-bottom: 0;
-        color: var(--bs-gray-500);
+        @extend .text-secondary;
+        margin-bottom: 0;        
       }
     }
+  }
+
+  .delivery-info {
+    font-size: 14px;
   }
     
   .profile {

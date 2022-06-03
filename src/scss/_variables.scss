@@ -7,17 +7,38 @@ $gray-500: #8895A0;
 // $gray-600: #707F8D;
 // $gray-700: #707070;
 $gray-800: #415568;
+
 $white: #fff;
 
 // //theme-color-variables
+$green:   #198754;
+$cyan:    #0dcaf0;
+$yellow:  #ffc107;
+$red:     #dc3545;
+
 $primary: #25C967;
 $secondary: $gray-500;
-$dark: $gray-800;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
 $light: $white;
-$text: $gray-800;
+$dark: $gray-800;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "gray": $gray-200
+);
 
 // body
-$body-color: $text;
+$body-color: $gray-800;
 $body-bg: $gray-100;
 
 //button
@@ -37,9 +58,9 @@ $spacers: (
 );
 
 //border
-$border-radius: .25rem;
-$border-radius-sm:  0.125rem;
-$border-radius-lg: 0.375rem;
+$border-radius-sm:  0.3125rem; //5px
+$border-radius: 0.625rem;   //10px
+$border-radius-lg: 1.25rem;  //20px
     
 //card
 $card-border-width: 0;
@@ -58,7 +79,7 @@ $form-floating-label-opacity: 1;
 $form-floating-label-transform: scale(1) translateY(-.9rem) translateX(0);
 
 //input
-$input-color: var(--bs-gray-600);
+$input-color: var(--bs-gray-500);
 
 //nav-tab
 $nav-tabs-border-width: 0;
