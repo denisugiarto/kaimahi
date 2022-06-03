@@ -198,23 +198,35 @@ display: none;
 
 .nav.nav-tabs {
   margin-bottom: 20px;
+  
+  .nav-item:not(:first-child) {
+    margin-left: 30px;
+  }
+  
+  .nav-link {
+    font-size: 20px;
+    padding: 0px;
+
+    .title {
+      font-size: 21px;
+      line-height: 26px;
+      font-weight: 500;
+      padding-bottom: 6px;
+      margin-bottom: 0;
+    }
+  }
+  
+  .nav-link.active {
+    font-size: 22px;
+    border-bottom: 3px solid var(--bs-primary);
+  }
+  
 }
 
-.nav-item:not(:first-child) {
-  margin-left: 30px;
-}
-
-.nav-link {
-  font-size: 20px;
-}
-
-.nav-link.active {
-  font-size: 22px;
-  border-bottom: 3px solid;
-}
 
 
-.sidebar {
+.navbar-nav.sidebar {
+  padding-left: 10px;
 
   .nav-link {
     color: var(--bs-white) !important;
@@ -246,15 +258,6 @@ display: none;
   > .nav.nav-tab {
     margin-bottom: 30px;
   }
-}
-
-.title {
-  font-size: 21px;
-  line-height: 26px;
-  font-weight: 500;
-  padding-bottom: 6px;
-  margin-bottom: 0;
-  color: var(--bs-gray-800);
 }
 
 .whanau-item {
