@@ -1,16 +1,12 @@
-{% extends "layout.html" %} {% set pageTitle = 'Home' %} {% block content %}
+{% extends "layout.html" %} {% set pageTitle = 'Home' %} {% set cssFiles = '../assets/css/custom.css' %} {% block
+content %}
 
 <div class="main bg-body">
   {% include '../components/sidebar.html' %}
   <div class="px-5 py-4">
     <h3 class="mb-4">Welcome back, <span class="text-primary">AHMED</span></h3>
     <form class="form-search mb-2" action="">
-      <input
-        class="input-search"
-        type="text"
-        name="search"
-        placeholder="Search For Anything Here"
-      />
+      <input class="input-search" type="text" name="search" placeholder="Search For Anything Here" />
       <img src="../assets/icons/icon-search.svg" alt="icon search" class="icon-search" />
     </form>
     <div class="row g-2 mb-2">
@@ -93,22 +89,11 @@
       </ul>
 
       <div class="tab-content" id="nav-tabContent">
-        <div
-          class="tab-pane fade"
-          id="nav-kaimahi"
-          role="tabpanel"
-          aria-labelledby="nav-kaimahi-tab"
-        >
-          {% include '../components/kaimahi-item.html' %} {% include
-          '../components/kaimahi-item.html' %} {% include '../components/kaimahi-item.html' %} {%
-          include '../components/kaimahi-item.html' %}
+        <div class="tab-pane fade" id="nav-kaimahi" role="tabpanel" aria-labelledby="nav-kaimahi-tab">
+          {% include '../components/kaimahi-item.html' %} {% include '../components/kaimahi-item.html' %} {% include
+          '../components/kaimahi-item.html' %} {% include '../components/kaimahi-item.html' %}
         </div>
-        <div
-          class="tab-pane fade show active"
-          id="nav-whanau"
-          role="tabpanel"
-          aria-labelledby="nav-whanau-tab"
-        >
+        <div class="tab-pane fade show active" id="nav-whanau" role="tabpanel" aria-labelledby="nav-whanau-tab">
           {% include '../components/whanau-item.html' %}
         </div>
       </div>

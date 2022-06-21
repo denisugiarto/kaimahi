@@ -1,0 +1,40 @@
+@import "../../node_modules/bootstrap/scss/bootstrap-utilities";
+
+.card-info {
+    background-color: var(--bs-white);
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: 10px;
+    .card-text {
+      margin-left: 10px;
+  
+      p:first-child {
+        
+        @extend .text-secondary;
+        font-size: 12px;
+
+        @include media-breakpoint-up(md) {
+          font-size: 16px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+
+        @include media-breakpoint-up(md) {
+          font-size: 20px;
+        }
+      }
+    }
+    
+    .card-icon {
+      width: 16px;
+      height: 16px; 
+
+      @include media-breakpoint-up(md) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+}

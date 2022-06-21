@@ -1,0 +1,171 @@
+{% extends "layout.html" %} {% set pageTitle = 'Home' %} {% block content %}
+<div class="grid-container">
+  <!-- HEADER -->
+  <header class="bd-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <img src="../assets/images/logo-2.webp" alt="logo" />
+      </div>
+      <!-- FORM-SEARCH -->
+      <label for="" class="d-flex align-items-center bg-light rounded-1 px-3 py-2 border">
+        <img src="../assets/icons/icon-search.svg" alt="icon search" class="icon-sm me-2" />
+        <input type="text" placeholder="Search anything" class="border-0 bg-light fs-6" />
+      </label>
+    </nav>
+  </header>
+  <!-- SIDEBAR -->
+  <nav class="bd-sidebar d-md-block bg-primary sidebar collapse">
+    <div class="position-sticky">
+      <img src="../assets/images/logo-2.webp" alt="logo" class="d-none d-md-block mb-5" />
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active bg-white rounded-2" role="button" href="#">
+            <img src="../assets/icons/icon-home.svg" alt="home" class="icon-sidebar" />
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" href="#">
+            <img src="../assets/icons/icon-sidebar-kaimahi.svg" alt="KaiMahi" class="icon-sidebar" />
+            KaiMahi
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" href="#">
+            <img src="../assets/icons/icon-sidebar-whanau.svg" alt="Whānau" class="icon-sidebar" />
+            Whānau
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" href="#">
+            <img src="../assets/icons/icon-sidebar-deliveries.svg" alt="Deliveries" class="icon-sidebar" />
+            Deliveries
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" href="#">
+            <img src="../assets/icons/icon-sidebar-message.svg" alt="Whānau Comms" class="icon-sidebar" />
+            Whānau Comms
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- MAIN -->
+  <main class="bd-main">
+    <div class="d-flex flex-column">
+      <div class="order-2 order-md-1 m-3">
+        <div class="row align-items-center">
+          <div class="col"></div>
+          <!-- NOTIFICATION -->
+          <div class="col-auto d-none d-md-block"></div>
+          <!-- PROFILE -->
+          <div class="col-auto d-none d-md-block">
+            <div class="d-flex align-items-center">
+              <!-- PICTURE PROFILE -->
+              <img src="../assets/images/profile-1.webp" alt="profile picture" class="img-md border-1 rounded-1 me-2" />
+              <h5 class="fs-6 me-4">Calib Jackson</h5>
+              <a>
+                <img src="../assets/icons/icon-down-arrow.svg" alt="icon down" class="rounded-circle icon-md" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- WELCOME -->
+      <div class="order-1 order-md-2">
+        <div class="row align-items-center">
+          <div class="col-12 col-md">
+            <h1 class="fs-4 fw-normal p-3">Welcome back, <span class="fs-4 text-primary">AHMED</span></h1>
+          </div>
+          <!-- BUTTON CREATE MESSAGE -->
+          <div class="d-none d-md-flex col-md-auto">
+            <button class="btn btn-gray text-dark">Create Message</button>
+          </div>
+          <!-- BUTTON CREATE NEW NOTIFICATION -->
+          <div class="d-none d-md-flex col-md-auto">
+            <button class="btn btn-primary text-white">
+              Create <span class="d-none d-md-inline-block">New</span> Notification
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- INFO -->
+    <div class="m-3">
+      <div class="row gx-3">
+        <!-- BUTTON CREATE MESSAGE -->
+        <div class="col">
+          <button class="btn btn-gray text-dark w-100">Create Message</button>
+        </div>
+        <!-- BUTTON CREATE NEW NOTIFICATION -->
+        <div class="col">
+          <button class="btn btn-primary text-white w-100">
+            Create <span class="d-none d-md-inline-block">New</span> Notification
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="m-3">
+      <div class="row g-3">
+        <div class="col-lg-3">
+          <div class="card-info border border-primary">
+            <div class="card-icon">
+              <img src="../assets/icons/icon-user.svg" alt="icon kaimahi" class="icon-md" />
+            </div>
+            <div class="card-text">
+              <p>All KaiMahi</p>
+              <p>26539</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card-info border">
+            <div class="card-icon">
+              <img src="../assets/icons/icon-whanau.svg" alt="icon kaimahi" class="icon-md" />
+            </div>
+            <div class="card-text">
+              <p>All Whānau</p>
+              <p>26539</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card-info border">
+            <div class="card-icon">
+              <img src="../assets/icons/icon-deliveries.svg" alt="icon kaimahi" class="icon-md" />
+            </div>
+            <div class="card-text">
+              <p>Current Deliveries</p>
+              <p>26539</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card-info border">
+            <div class="card-icon">
+              <img src="../assets/icons/icon-complete-deliveries.svg" alt="icon kaimahi" class="icon-md" />
+            </div>
+            <div class="card-text">
+              <p>Completed Deliveries</p>
+              <p>26539</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %} I have expperience something impertant to say. it is a miracle :).

@@ -1,86 +1,51 @@
-{% extends "layout.html" %} {% set pageTitle = 'Sign In' %} {% block content %}
+{% extends "layout.html" %} {% set pageTitle = 'Sign In' %} {% set cssFiles = './assets/css/style.css' %} {% block
+content %}
 
-<div class="main">
-  {% include '../components/navbar-public.html' %}
-  <div class="sign-in-form">
-    <div class="logo-wrapper">
-      <img src="./assets/images/logo-light.webp" alt="kaimahi-logo" />
-    </div>
-    <ul class="nav nav-tabs mb-3 mb-lg-4" id="tabSignIn" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link active"
-          role="button"
-          id="signin-tab"
-          aria-controls="signin"
-          aria-selected="true"
-          href="./signin.html"
-        >
-          <h4 class="title">Sign In</h4>
-        </a>
-      </li>
-      <li class="divider"></li>
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          role="button"
-          id="signup-tab"
-          aria-controls="signup"
-          aria-selected="false"
-          href="./signup.html"
-        >
-          <h4 class="title">Sign Up</h4>
-        </a>
-      </li>
-    </ul>
-    <div class="tab-content" id="tabSignInContent">
-      <div
-        class="tab-pane fade show active"
-        id="signin"
-        role="tabpanel"
-        aria-labelledby="signin-tab"
-      >
-        <form action="#" class="d-flex flex-column">
-          <label for="floatingInput">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="email"
-                  type="email"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label class="form-label" for="floatingInput">Email </label>
-              </div>
-            </div>
-          </label>
-          <label for="floatingPassword">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="password"
-                  type="password"
-                  id="floatingPassword"
-                  placeholder="********"
-                />
-                <label class="form-label" for="floatingPassword">Password </label>
-              </div>
-            </div>
-          </label>
-          <button type="submit" class="btn btn-dark sign-in">Sign In</button>
+<main>
+  <div class="container-fluid">
+    <div class="d-flex my-5 mx-3 mx-md-4 mx-lg-5">
+      <div class="d-none d-md-block col col-md-6 bg-success order-2">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <img src="./assets/images/logo.webp" alt="logo" class="img-fluid p-3" />
+        </div>
+      </div>
+      <div class="form-login col-12 col-md-6 bg-white order-1">
+        <h1 class="title mb-2">Sign In</h1>
+        <p class="subtitle mb-4 mb-lg-5 text-secondary fw-light">
+          Log In with your data that you entered during <br class="d-none d-md-block" />
+          your registration
+        </p>
+
+        <form action="">
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="email" type="email" class="form-control" id="email" placeholder="Email" />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+            <label for="password">Password</label>
+          </div>
         </form>
-        <a href="./forgot.html" role="button" class="forgot-link">Forgot Password?</a>
+        <div class="row align-items-center">
+          <div class="col-6">
+            <div class="form-check pe-auto">
+              <input type="checkbox" name="rememberMe" class="form-check-input" id="rememberMe" />
+              <label class="form-check-label fs-14 fs-md-16" for="rememberMe">Remember me</label>
+            </div>
+          </div>
+          <div class="col-6 text-end">
+            <a href="/forgot-password.html" class="fs-14 fs-md-16">Forgot password?</a>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary mt-4 text-white py-3 w-100">Sign in</button>
+        <div class="mt-4 text-center">
+          <p class="fw-light fs-14 fs-md-16">
+            Not Registered? <a href="/signup.html" class="fw-normal"><u>Create account</u></a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script>
-  $(document).ready(function () {
-    $("a.nav-link:contains('Sign In')").addClass("active");
-  });
-</script>
+</main>
+
 {% endblock %}

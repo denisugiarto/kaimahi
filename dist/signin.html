@@ -9,145 +9,81 @@
   <title>Sign In</title>
 
   <!-- <link rel="stylesheet" type="text/css" href="/kaimahi/assets/css/style.css" /> -->
-  <link rel="stylesheet" type="text/css" href="/dist/assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
-    integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
   <body>
     
 
-<div class="main">
-  <nav class="navbar navbar-expand-lg d-lg-none navbar-dark bg-primary">
-  <div class="container-fluid py-3 px-5 justify-content-start">
-    <button
-      class="navbar-toggler me-3"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <img src="./assets/icons/icon-menu.svg" alt="icon-menu" class="icon-menu" />
-    </button>
-    <a class="navbar-brand" href="#" role="button">
-      <img src="./assets/images/logo-2.webp" alt="kaimahi-logo" />
-    </a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="./signin.html">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./signup.html">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./forgot.html">Forgot Password</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<main>
+  <div class="container-fluid">
+    <div class="d-flex my-5 mx-3 mx-md-4 mx-lg-5">
+      <div class="d-none d-md-block col col-md-6 bg-success order-2">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <img src="./assets/images/logo.webp" alt="logo" class="img-fluid p-3" />
+        </div>
+      </div>
+      <div class="form-login col-12 col-md-6 bg-white order-1">
+        <h1 class="title mb-2">Sign In</h1>
+        <p class="subtitle mb-4 mb-lg-5 text-secondary fw-light">
+          Log In with your data that you entered during <br class="d-none d-md-block" />
+          your registration
+        </p>
 
-  <div class="sign-in-form">
-    <div class="logo-wrapper">
-      <img src="./assets/images/logo-light.webp" alt="kaimahi-logo" />
-    </div>
-    <ul class="nav nav-tabs mb-3 mb-lg-4" id="tabSignIn" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link active"
-          role="button"
-          id="signin-tab"
-          aria-controls="signin"
-          aria-selected="true"
-          href="./signin.html"
-        >
-          <h4 class="title">Sign In</h4>
-        </a>
-      </li>
-      <li class="divider"></li>
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          role="button"
-          id="signup-tab"
-          aria-controls="signup"
-          aria-selected="false"
-          href="./signup.html"
-        >
-          <h4 class="title">Sign Up</h4>
-        </a>
-      </li>
-    </ul>
-    <div class="tab-content" id="tabSignInContent">
-      <div
-        class="tab-pane fade show active"
-        id="signin"
-        role="tabpanel"
-        aria-labelledby="signin-tab"
-      >
-        <form action="#" class="d-flex flex-column">
-          <label for="floatingInput">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="email"
-                  type="email"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label class="form-label" for="floatingInput">Email </label>
-              </div>
-            </div>
-          </label>
-          <label for="floatingPassword">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="password"
-                  type="password"
-                  id="floatingPassword"
-                  placeholder="********"
-                />
-                <label class="form-label" for="floatingPassword">Password </label>
-              </div>
-            </div>
-          </label>
-          <button type="submit" class="btn btn-dark sign-in">Sign In</button>
+        <form action="">
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="email" type="email" class="form-control" id="email" placeholder="Email" />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+            <label for="password">Password</label>
+          </div>
         </form>
-        <a href="./forgot.html" role="button" class="forgot-link">Forgot Password?</a>
+        <div class="row align-items-center">
+          <div class="col-6">
+            <div class="form-check pe-auto">
+              <input type="checkbox" name="rememberMe" class="form-check-input" id="rememberMe" />
+              <label class="form-check-label fs-14 fs-md-16" for="rememberMe">Remember me</label>
+            </div>
+          </div>
+          <div class="col-6 text-end">
+            <a href="/forgot-password.html" class="fs-14 fs-md-16">Forgot password?</a>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary mt-4 text-white py-3 w-100">Sign in</button>
+        <div class="mt-4 text-center">
+          <p class="fw-light fs-14 fs-md-16">
+            Not Registered? <a href="/signup.html" class="fw-normal"><u>Create account</u></a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script>
-  $(document).ready(function () {
-    $("a.nav-link:contains('Sign In')").addClass("active");
-  });
-</script>
+</main>
+
+ <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+  integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 
   </body>
 </html>
