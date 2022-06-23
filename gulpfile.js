@@ -9,11 +9,12 @@ const ghPages = require("gulp-gh-pages");
 
 //create function
 
+//deploy
 task("deploy", function () {
   return src("./dist/**/*").pipe(ghPages());
 });
-//html
 
+//html
 function htmlTemplate() {
   return src("src/templates/pages/**/*.html")
     .pipe(nunjucksRender({ path: ["src/templates/components"] }))
