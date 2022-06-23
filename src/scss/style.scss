@@ -28,6 +28,10 @@
   grid-area: bdmain;
 }
 
+.form-check-label, .form-check-input {
+  cursor: pointer;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas: 'bdheader'
@@ -86,8 +90,8 @@
   }
 }
 
-.form-login {
-  padding: 30px 15px 30px 15px;
+.form-container {
+  padding: 30px 15px 70px 15px;
 
   @include media-breakpoint-up(lg) {
     padding: 70px 40px 70px 40px;

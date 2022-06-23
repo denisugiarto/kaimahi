@@ -1,123 +1,60 @@
-{% extends "layout.html" %} {% set pageTitle = 'Sign Up' %} {% block content %}
-<div class="main">
-  {% include '../components/navbar-public.html' %}
-  <div class="sign-in-form">
-    <div class="logo-wrapper">
-      <img src="./assets/images/logo-light.webp" width="345" height="61" alt="kaimahi-logo" />
-    </div>
+{% extends "layout.html" %} {% set pageTitle = 'Sign Up' %} {% set cssFiles = './assets/css/style.css' %} {% block
+content %}
 
-    <ul class="nav nav-tabs mb-3 mb-lg-4" id="tabSignIn" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          role="button"
-          id="signin-tab"
-          aria-controls="signin"
-          aria-selected="true"
-          href="./signin.html"
-        >
-          <h4 class="title">Sign In</h4>
-        </a>
-      </li>
-      <li class="divider"></li>
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link active"
-          role="button"
-          id="signup-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#signup"
-          aria-controls="signup"
-          aria-selected="false"
-          href="./signup.html"
-        >
-          <h4 class="title">Sign Up</h4>
-        </a>
-      </li>
-    </ul>
-    <div class="tab-content" id="tabSignInContent">
-      <div
-        class="tab-pane fade show active"
-        id="signup"
-        role="tabpanel"
-        aria-labelledby="signup-tab"
-      >
-        <form action="#" class="d-flex flex-column">
-          <label for="name">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-profile.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="name"
-                  type="text"
-                  id="name"
-                  placeholder="name@example.com"
-                />
-                <label class="form-label" for="name">Name</label>
-              </div>
-            </div>
-          </label>
-          <label for="email">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="email"
-                  type="email"
-                  id="email"
-                  placeholder="name@example.com"
-                />
-                <label class="form-label" for="email">Email</label>
-              </div>
-            </div>
-          </label>
-          <label for="password">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="password"
-                  type="password"
-                  id="password"
-                  placeholder="********"
-                />
-                <label class="form-label" for="password">Password</label>
-              </div>
-            </div>
-          </label>
-          <label for="repassword">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-password.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="repassword"
-                  type="password"
-                  id="repassword"
-                  placeholder="********"
-                />
-                <label class="form-label" for="repassword">Confirm Password</label>
-              </div>
-            </div>
-          </label>
-          <div class="form-check mb-2">
-            <input type="checkbox" class="form-check-input" id="agree" role="button" />
-            <label class="form-check-label" for="agree" role="button">
-              I accept the terms and conditions of Pae Hono
-            </label>
+<main>
+  <div class="container-fluid">
+    <div class="d-flex my-6 mx-3 mx-md-4 mx-lg-5">
+      <div class="d-none d-md-block col col-md-6 bg-success order-2">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <img src="./assets/images/logo.webp" alt="logo" class="img-fluid p-3" />
+        </div>
+      </div>
+      <div class="form-container col-12 col-md-6 bg-white order-1">
+        <h1 class="title mb-2">Sign Up</h1>
+        <p class="subtitle mb-4 mb-lg-5 text-secondary fw-light">
+          Complete the form below with using valid <br class="d-none d-md-block" />
+          data
+        </p>
+
+        <form action="">
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="name" type="text" class="form-control" id="name" placeholder="name" />
+            <label for="name">Name</label>
           </div>
-          <button type="submit" class="btn btn-dark sign-in">Sign Up</button>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="email" type="email" class="form-control" id="email" placeholder="Email" />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+            <label for="password">Password</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input
+              name="confirm-password"
+              type="password"
+              class="form-control"
+              id="confirm-password"
+              placeholder="Confirm Password"
+            />
+            <label for="confirm-password">Confirm Password</label>
+          </div>
         </form>
+        <div class="form-check d-flex align-items-center">
+          <input type="checkbox" name="accept" class="form-check-input col-auto me-3" id="accept" />
+          <label class="form-check-label fs-14 fs-md-16 fw-bold" for="accept">
+            I accept the terms and conditions of Kaimahi
+          </label>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary mt-4 text-white py-3 w-100">Sign Up</button>
+        <div class="mt-4 text-center">
+          <p class="fw-light fs-14 fs-md-16">
+            Already have an account? <a href="/kaimahi/signin.html" class="fw-bold"><u>Sign In</u></a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script>
-  $(document).ready(function () {
-    $("a.nav-link:contains('Sign Up')").addClass("active");
-  });
-</script>
+</main>
+
 {% endblock %}

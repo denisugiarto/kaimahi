@@ -9,7 +9,7 @@
   <title>Forgot Password</title>
 
   <!-- <link rel="stylesheet" type="text/css" href="/kaimahi/assets/css/style.css" /> -->
-  <link rel="stylesheet" type="text/css" href="" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,103 +21,64 @@
   <body>
     
 
-<div class="main">
-  <nav class="navbar navbar-expand-lg d-lg-none navbar-dark bg-primary">
-  <div class="container-fluid py-3 px-5 justify-content-start">
-    <button
-      class="navbar-toggler me-3"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <img src="./assets/icons/icon-menu.svg" alt="icon-menu" class="icon-menu" />
-    </button>
-    <a class="navbar-brand" href="#" role="button">
-      <img src="./assets/images/logo-2.webp" alt="kaimahi-logo" />
-    </a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="./signin.html">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./signup.html">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./forgot.html">Forgot Password</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<main>
+  <div class="container-fluid">
+    <div class="d-flex my-5 mx-3 mx-md-4 mx-lg-5">
+      <div class="d-none d-md-block col col-md-6 bg-success order-2">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <img src="./assets/images/logo.webp" alt="logo" class="img-fluid p-3" />
+        </div>
+      </div>
+      <div class="form-login col-12 col-md-6 bg-white order-1">
+        <h1 class="title mb-2">Forgot Password</h1>
+        <p class="subtitle mb-4 mb-lg-5 text-secondary fw-light">
+          Complete the form below with using valid <br class="d-none d-md-block" />
+          data
+        </p>
 
-  <div class="sign-in-form">
-    <div class="logo-wrapper">
-      <img src="./assets/images/logo-light.webp" width="345" height="61" alt="kaimahi-logo" />
-    </div>
-    <div class="d-flex align-items-center mb-4">
-      <a href="./signin.html">
-        <img src="./assets/icons/icon-back.svg" alt="back icon" class="d-none d-lg-block" />
-      </a>
-      <ul class="nav nav-tabs ms-0 ms-lg-3 mb-0">
-        <li class="nav-item">
-          <a href="" class="nav-link active">
-            <h4 class="title">Forgot Password?</h4>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <p class="describe">Please enter your registered email to reset your password</p>
-    <div class="tab-content" id="tabSignInContent">
-      <div
-        class="tab-pane fade show active"
-        id="signin"
-        role="tabpanel"
-        aria-labelledby="signin-tab"
-      >
-        <form action="#" class="d-flex flex-column">
-          <label for="floatingInput">
-            <div class="input-icon">
-              <img src="./assets/icons/icon-email.svg" class="icon-wrapper" alt="" />
-              <div class="form-floating">
-                <input
-                  class="form-control border-0"
-                  name="email"
-                  type="email"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                  required
-                />
-                <label class="form-label" for="floatingInput">Email </label>
-              </div>
-            </div>
-          </label>
-
-          <button
-            class="btn btn-dark sign-in"
-            data-bs-toggle="modal"
-            data-bs-target="#noticeModal"
-            type="button"
-          >
-            Send New Password
-          </button>
+        <form action="">
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="name" type="text" class="form-control" id="name" placeholder="name" />
+            <label for="name">Name</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="email" type="email" class="form-control" id="email" placeholder="Email" />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+            <label for="password">Password</label>
+          </div>
+          <div class="form-floating mb-4 mb-lg-5">
+            <input
+              name="confirm-password"
+              type="password"
+              class="form-control"
+              id="confirm-password"
+              placeholder="Confirm Password"
+            />
+            <label for="confirm-password">Confirm Password</label>
+          </div>
         </form>
+        <div class="form-check d-flex align-items-center">
+          <input type="checkbox" name="accept" class="form-check-input col-auto" id="accept" />
+          <label class="form-check-label fs-14 fs-md-16 ms-3 fw-bold" for="accept">
+            I accept the terms and conditions of Kaimahi
+          </label>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary mt-4 text-white py-3 w-100">Sign Up</button>
+        <div class="mt-4 text-center">
+          <p class="fw-light fs-14 fs-md-16">
+            Already have an account? <a href="/kaimahi/signin.html" class="fw-bold"><u>Sign In</u></a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <!-- Notice Modal -->
-<div
-  class="modal fade"
-  id="noticeModal"
-  tabindex="-1"
-  aria-labelledby="Notice Modal"
-  aria-hidden="true"
->
+<div class="modal fade" id="noticeModal" tabindex="-1" aria-labelledby="Notice Modal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body d-flex flex-column align-items-center">

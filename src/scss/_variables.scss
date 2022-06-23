@@ -19,7 +19,7 @@ $red:     #dc3545;
 $yellow:  #ffc107;
 $green:   #07604E;
 $cyan:    #0dcaf0;
-
+$white: #fff;
 $text:    $gray-900;
 
 $custom-colors: (
@@ -66,9 +66,20 @@ $btn-border-radius-lg: .5rem;
 // FONT FAMILY
 $font-family-base: 'Inter', sans-serif;
 
+//FONT WEIGHT 
+$font-weight-bold: 500;
+$font-weight-bolder: 700;
+
+//FORM CHECK INPUT
+$form-check-input-width: 1.25em;
+
+//FORM FLOATING
+$form-floating-label-transform: scale(.75) translateY(-.4rem) translateX(.55rem);
+
 //INPUT
 $input-btn-padding-y: 1rem;
 $input-btn-padding-x: 1.5rem;
+$input-bg: $white;
 
 
 // LINK
@@ -79,3 +90,14 @@ $link-decoration: none;
 $headings-margin-bottom: 0;
 $paragraph-margin-bottom: 0;
 
+//SPACERS
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 4.375,
+);
