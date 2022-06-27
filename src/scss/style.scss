@@ -7,7 +7,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // 3. Components
-@import 'navbar', 'cards';
+@import 'navbar', 'cards', 'dropdown';
+
 // GRID AREA
 .bd-header{
  grid-area: bdheader;
@@ -15,12 +16,32 @@
 
 .bd-sidebar{
   grid-area: bdsidebar;
-  max-height: 100vh;
   overflow-y: auto;
-  
-  @include media-breakpoint-up(lg) {
-    min-width: 262px;
-    padding: 37px 25px 30px 30px;
+  z-index: 1;
+
+  @include media-breakpoint-up(lg){
+    height: calc(100vh - 86px);
+    position: sticky;
+    top: 86px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .nav-link {
+    font-size: 20px;
+    padding: 10px 30px;
+    font-weight: 300;
+
+    @include media-breakpoint-up(lg) {
+      padding: 24px 30px;
+    }
+
+    i {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -34,12 +55,16 @@
 
 .grid-container {
   display: grid;
-  grid-template-areas: 'bdheader'
-  'bdmain';
+  grid-template-areas:  'bdheader'
+                        'bdsidebar'                
+                        'bdmain';
+  // grid-template-columns: auto;
+  grid-gap: 0;
 
   @include media-breakpoint-up(lg) {
-    grid-template-areas: 'bdsidebar bdheader'
-  'bdsidebar bdmain';
+    grid-template-columns: 262px auto;
+    grid-template-areas:  'bdheader bdheader'
+                          'bdsidebar bdmain';
   }
 }
 
@@ -73,6 +98,12 @@
   height: 24px;
 }
 
+.badge.notification {
+  padding: 2px 4px;
+  left: 5px;
+  top: 2px;
+}
+
 .btn-lg {
   font-size: 16px;
   @include media-breakpoint-up(lg) {
@@ -98,8 +129,82 @@
   }
 }
 
+.header-profile-image{
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 .height-100vh {
   height: 100vh;
+}
+
+.icon-notification {
+  font-size: 23px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 29px;
+  }
+}
+
+.icon-search {
+  position: static;
+  font-size: 20px;
+  color: $secondary;
+
+  &.show {
+    position: absolute;
+    left: 20px;
+    top: 4px;
+    font-size: 18px;
+    color: $text;
+
+    @include media-breakpoint-up(md) {
+      top: 16px;
+    }
+  }
+}
+
+input[type=search] {
+  background-color: $gray-100;
+  border-radius: 10px;
+  border: none;
+  padding: 4px 20px 4px 48px;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    padding: 15px 20px 15px 48px;
+    width: fit-content;
+  }
+}
+
+input[type=search]:focus-visible {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgb(37 201 103 / 25%);
+  box-shadow: 0 0 0 .25rem rgba(37,201,103,.25);
+}
+
+
+
+.logo-header {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  
+  @include media-breakpoint-up(md) {
+    max-width: 232px;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    max-width: 187px;
+  }
 }
 
 .title {
@@ -118,9 +223,16 @@
   }
 }
 
+.fs-9 {
+  font-size: 9px;
+}
 
 .fs-14 {
   font-size: 14px;
+}
+
+.fs-18 {
+  font-size: 18px;
 }
 
 .fs-md-16 {

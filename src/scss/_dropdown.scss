@@ -1,0 +1,11 @@
+.dropdown-toggle::after {
+    content: "\f107";
+    border: none;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: inline-block;
+    }
+}   

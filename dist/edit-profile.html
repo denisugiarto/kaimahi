@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Edit Profile</title>
+
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
+</head>
+
+  <body>
+    
+
+<div class="grid-container">
+  <!-- HEADER -->
+  <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm border sticky-top">
+  <nav class="container-fluid d-block">
+    <div class="row gx-3 align-items-center">
+      <div class="col-auto px-lg-0">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </a>
+      </div>
+      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
+        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
+      </div>
+      <div id="search-header" class="col-auto col-md">
+        <!-- SEARCH -->
+        <a id="button-search" role="button" class="d-block d-md-none">
+          <i class="fa-solid fa-magnifying-glass icon-search"></i>
+        </a>
+        <div id="input-search" class="position-relative d-none d-md-block">
+          <label for="search" class="icon-search show">
+            <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+          </label>
+          <input id="search" type="search" placeholder="Search anything" />
+        </div>
+      </div>
+      <div class="col-auto">
+        <!-- NOTIFICATION -->
+        <div class="dropdown">
+          <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bell text-secondary icon-notification"></i>
+            <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fs-9 fw-light">
+              3
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-auto">
+        <!-- PROFILE -->
+        <div id="profile" class="d-flex align-items-center">
+          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- SIBEDAR -->
+  <aside class="bd-sidebar bg-white">
+  <nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
+      <div class="py-3 py-lg-5" id="sidebar-item"></div>
+      <!-- Logout -->
+      <a
+        class="nav-link mt-auto bg-light text-dark w-100 border py-lg-3 px-lg-4 fs-18 fw-bold d-flex align-items-center"
+        role="button"
+        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
+      ></a>
+    </div>
+  </nav>
+</aside>
+
+
+  <main class="bd-main">
+    <div class="container-fluid">
+      <div class="d-flex my-6 mx-3 mx-md-4 mx-lg-5">
+        <div class="d-none d-md-block col col-md-6 bg-success order-2">
+          <div class="d-flex align-items-center justify-content-center h-100">
+            <img src="./assets/images/logo.webp" alt="logo" class="img-fluid p-3" />
+          </div>
+        </div>
+        <div class="form-container col-12 col-md-6 bg-white order-1">
+          <h1 class="title mb-2">Reset password</h1>
+          <p class="subtitle mb-4 mb-lg-5 text-secondary fw-light">
+            Please enter your registered email to reset <br class="d-none d-md-block" />
+            your password
+          </p>
+
+          <form action="">
+            <div class="form-floating mb-5">
+              <input name="email" type="email" class="form-control" id="email" placeholder="Email" />
+              <label for="email">Email</label>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary text-white py-3 w-100 mb-5">Send New Password</button>
+          </form>
+          <div class="text-center">
+            <div class="mb-3">
+              <a href="/kaimahi/signup.html" class="fw-bold"><u> Create account</u></a>
+            </div>
+            <p class="fw-light fs-14 fs-md-16">
+              Already have an account? <a href="/kaimahi/signin.html" class="fw-bold"><u>Login</u></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+ <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+  integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script>
+  $(document).ready(function () {
+    //SIDEBAR
+    let sidebar = [
+      {
+        id: 0,
+        link: "#",
+        icon: "fa-house-chimney",
+        title: "Home",
+      },
+      {
+        id: 1,
+        link: "#",
+        icon: "fa-user",
+        title: "Kaimahi",
+      },
+      {
+        id: 2,
+        link: "#",
+        icon: "fa-user-group",
+        title: "Whānau",
+      },
+      {
+        id: 3,
+        link: "#",
+        icon: "fa-truck",
+        title: "Deliveries",
+      },
+      {
+        id: 4,
+        link: "#",
+        icon: "fa-user",
+        title: "Kaimahi",
+      },
+      {
+        id: 5,
+        link: "#",
+        icon: "fa-calendar-days",
+        title: "Events",
+      },
+      {
+        id: 6,
+        link: "#",
+        icon: "fa-comment-dots",
+        title: "Whānau Comms",
+      },
+      {
+        id: 7,
+        link: "#",
+        icon: "fa-comments",
+        title: "Group Chat",
+      },
+    ];
+    $(document).ready(function () {
+      $("#sidebar-item").prepend(
+        jQuery.map(sidebar, function (item) {
+          return (
+            "<a class='nav-link' href='" +
+            item.link +
+            "'><i class='fa-solid " +
+            item.icon +
+            "'></i>" +
+            item.title +
+            "</a>"
+          );
+        })
+      );
+    });
+
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $("#button-search").click(function () {
+      //replace class in id search header from col-auto to col
+      $("#search-header").removeClass("col-auto").addClass("col");
+
+      //add class d-none to id logo header
+      $("#logo-header").addClass("d-none");
+
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass("d-block").addClass("d-none");
+
+      //replace class in id button search from d-none to d-block
+      $("#input-search").removeClass("d-none").addClass("d-block");
+    });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $("#search");
+    let iconSearch = $("#icon-search");
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      //replace class search header from col-auto to col
+      $("#search-header").removeClass("col").addClass("col-auto");
+
+      $("#logo-header").removeClass("d-none");
+      $("#button-search").removeClass("d-none").addClass("d-block");
+      $("#input-search").removeClass("d-block").addClass("d-none");
+    }
+  });
+</script>
+ 
+<script>
+  $(document).ready(function () {});
+</script>
+
+  </body>
+</html>

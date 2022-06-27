@@ -15,6 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
+  <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
 
   <body>
@@ -92,6 +93,108 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
+<script>
+  $(document).ready(function () {
+    //SIDEBAR
+    let sidebar = [
+      {
+        id: 0,
+        link: "#",
+        icon: "fa-house-chimney",
+        title: "Home",
+      },
+      {
+        id: 1,
+        link: "#",
+        icon: "fa-user",
+        title: "Kaimahi",
+      },
+      {
+        id: 2,
+        link: "#",
+        icon: "fa-user-group",
+        title: "Whānau",
+      },
+      {
+        id: 3,
+        link: "#",
+        icon: "fa-truck",
+        title: "Deliveries",
+      },
+      {
+        id: 4,
+        link: "#",
+        icon: "fa-user",
+        title: "Kaimahi",
+      },
+      {
+        id: 5,
+        link: "#",
+        icon: "fa-calendar-days",
+        title: "Events",
+      },
+      {
+        id: 6,
+        link: "#",
+        icon: "fa-comment-dots",
+        title: "Whānau Comms",
+      },
+      {
+        id: 7,
+        link: "#",
+        icon: "fa-comments",
+        title: "Group Chat",
+      },
+    ];
+    $(document).ready(function () {
+      $("#sidebar-item").prepend(
+        jQuery.map(sidebar, function (item) {
+          return (
+            "<a class='nav-link' href='" +
+            item.link +
+            "'><i class='fa-solid " +
+            item.icon +
+            "'></i>" +
+            item.title +
+            "</a>"
+          );
+        })
+      );
+    });
 
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $("#button-search").click(function () {
+      //replace class in id search header from col-auto to col
+      $("#search-header").removeClass("col-auto").addClass("col");
+
+      //add class d-none to id logo header
+      $("#logo-header").addClass("d-none");
+
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass("d-block").addClass("d-none");
+
+      //replace class in id button search from d-none to d-block
+      $("#input-search").removeClass("d-none").addClass("d-block");
+    });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $("#search");
+    let iconSearch = $("#icon-search");
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      //replace class search header from col-auto to col
+      $("#search-header").removeClass("col").addClass("col-auto");
+
+      $("#logo-header").removeClass("d-none");
+      $("#button-search").removeClass("d-none").addClass("d-block");
+      $("#input-search").removeClass("d-block").addClass("d-none");
+    }
+  });
+</script>
+  
   </body>
 </html>
