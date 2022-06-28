@@ -1,6 +1,8 @@
 //NEGATIVE MARGIN
 $enable-negative-margins: true;
 
+$min-contrast-ratio: 2;
+
 //gray-color-variables
 $gray-100: #f6f6f6;
 $gray-200: #E9E9E9;
@@ -10,7 +12,7 @@ $gray-800: #626262;
 $gray-900: #2C3131;
 
 
-$red:     #dc3545;
+$red:     #B51820;
 $yellow:  #ffc107;
 $green:   #07604E;
 $cyan:    #0dcaf0;
@@ -50,16 +52,39 @@ $body-color: $text;
 $body-bg: $gray-100;
 
 // BORDER RADIUS
-$border-radius-sm: .625rem; //10px
-$border-radius: .5rem; //15px
+$border-radius-sm: .25rem; //4px
+$border-radius: .5rem; //8px
 $border-radius-lg: 1.25rem; //20px
 
 //BUTTON
+$btn-padding-y: .5rem;
+$btn-padding-x: .625rem;
 $btn-font-weight: 500;
+//BUTTON LG
 $btn-border-radius-lg: .5rem;
+//BUTTON SM
+$btn-padding-y-sm: .5rem;
+$btn-padding-x-sm: .625rem;
+$btn-font-size-sm: .75rem;
+$btn-border-radius-sm: 8px;
+
+//CARD
+$card-border-width: 0;
+$card-spacer-y: 20px;
+$card-spacer-x: 10px;
 
 // FONT FAMILY
 $font-family-base: 'Inter', sans-serif;
+
+//FONT SIZE
+$font-sizes: (
+  1: 1.75rem, //28px
+  2: 1.25rem, //20px
+  3: 1rem,  //16px
+  4: .875rem, //14px
+  5: .75rem,  //12px
+  6: .625rem  //10px
+);
 
 //FONT WEIGHT 
 $font-weight-bold: 500;
@@ -89,6 +114,14 @@ $navbar-padding-x: 0rem;
 $navbar-light-toggler-icon-bg: url('../icons/icon-menu.svg');
 $navbar-toggler-padding-y: 0;
 $navbar-toggler-padding-x: 0;
+
+
+//NAVLINK
+$nav-tabs-link-active-color: $primary;
+$nav-link-font-weight: 300;
+$nav-tabs-border-width: 0;
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-active-border-color: $primary;
 
 //REBOOT
 $headings-margin-bottom: 0;

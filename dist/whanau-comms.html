@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Edit Profile</title>
+  <title>Whānau Comms</title>
 
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -113,7 +113,7 @@
   <main class="bd-main">
     <div class="m-5">
       <!-- PAGE TITLE -->
-      <h1 class="page-title">Edit Profile</h1>
+      <h1 class="page-title">Whānau Comms</h1>
       <div class="card outside-button">
         <div class="card-body">
           <!-- TABS -->
@@ -128,7 +128,7 @@
               aria-controls="nav-profile"
               aria-selected="true"
             >
-              <i class="fa-solid fa-user-cog me-1"></i>Profile</a
+              <i class="fa-solid fa-pen me-1"></i>Create Message</a
             >
             <a
               class="nav-link"
@@ -140,7 +140,7 @@
               aria-controls="nav-password"
               aria-selected="true"
             >
-              <i class="fa-solid fa-unlock-alt me-1"></i>Password</a
+              <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History</a
             >
           </div>
 
@@ -185,8 +185,8 @@
               <div id="updatePicture" class="d-flex align-items-center mb-3 mb-md-4">
                 <img class="avatar rounded-circle me-2 me-md-4" src="./assets/images/profile-1.webp" alt="avatar" />
                 <div>
-                  <div class="mb-1 mb-md-3">
-                    <label for="formFile" class="btn btn-outline-primary btn-sm">Upload New Picture</label>
+                  <div class="mb-3">
+                    <label for="formFile" class="btn btn-outline-primary">Upload New Picture</label>
                     <input class="d-none" type="file" id="formFile" />
                   </div>
                   <p class="text-secondary fw-light fs-5 fs-md-4">JPG or PNG Max size of 800kb</p>
@@ -451,7 +451,9 @@
 </script>
  
 <script>
-  $(document).ready(function () {});
+  $(document).ready(function () {
+    $(".nav-link:contains('Whānau Comms')").addClass("active");
+  });
 </script>
 
   </body>

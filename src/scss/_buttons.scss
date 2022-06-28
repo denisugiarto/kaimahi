@@ -1,0 +1,13 @@
+.btn {
+
+    &-sm {
+        @extend .fs-md-4;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding: .875rem 1.5rem;
+
+        
+    }
+
+}

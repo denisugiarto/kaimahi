@@ -22,14 +22,12 @@
     
 
 <div class="main bg-body">
-  <aside class="bd-sidebar bg-white">
+  <aside class="bd-sidebar bg-white shadow-sm">
   <nav class="navbar navbar-expand-lg navbar-dark p-0">
     <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
-      <div class="py-3 py-lg-5" id="sidebar-item"></div>
+      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
       <!-- Logout -->
-      <a
-        class="nav-link mt-auto bg-light text-dark w-100 border py-lg-3 px-lg-4 fs-18 fw-bold d-flex align-items-center"
-        role="button"
+      <a class="nav-link logout" role="button"
         >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
       ></a>
     </div>
@@ -253,7 +251,7 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-<script>
+ <script>
   $(document).ready(function () {
     //SIDEBAR
     let sidebar = [
@@ -306,21 +304,19 @@
         title: "Group Chat",
       },
     ];
-    $(document).ready(function () {
-      $("#sidebar-item").prepend(
-        jQuery.map(sidebar, function (item) {
-          return (
-            "<a class='nav-link' href='" +
-            item.link +
-            "'><i class='fa-solid " +
-            item.icon +
-            "'></i>" +
-            item.title +
-            "</a>"
-          );
-        })
-      );
-    });
+    $("#sidebar-item").prepend(
+      jQuery.map(sidebar, function (item) {
+        return (
+          "<a class='nav-link' href='" +
+          item.link +
+          "'><i class='fa-solid " +
+          item.icon +
+          "'></i>" +
+          item.title +
+          "</a>"
+        );
+      })
+    );
 
     // SEARCH BUTTON
     //Show Input Button when click Button search

@@ -1,4 +1,17 @@
-@import "../../node_modules/bootstrap/scss/bootstrap-utilities";
+.card {
+
+  &.outside-button {
+    margin-bottom: 120px;
+  }
+
+}
+
+.card-body {
+
+  @include media-breakpoint-up(md) {
+    padding: 20px;
+  }
+}
 
 .card-info {
     background-color: var(--bs-white);

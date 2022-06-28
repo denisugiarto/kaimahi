@@ -50,16 +50,16 @@
           <div class="col-6">
             <div class="form-check d-flex align-items-center">
               <input type="checkbox" name="rememberMe" class="form-check-input col-auto me-3" id="rememberMe" />
-              <label class="form-check-label fs-14 fs-md-16" for="rememberMe">Remember me</label>
+              <label class="form-check-label fs-4 fs-md-3" for="rememberMe">Remember me</label>
             </div>
           </div>
           <div class="col-6 text-end">
-            <a href="/kaimahi/forgot-password.html" class="fs-14 fs-md-16">Forgot password?</a>
+            <a href="/kaimahi/forgot-password.html" class="fs-4 fs-md-3">Forgot password?</a>
           </div>
         </div>
         <button type="submit" class="btn btn-lg btn-primary mt-4 text-white py-3 w-100">Sign in</button>
         <div class="mt-4 text-center">
-          <p class="fw-light fs-14 fs-md-16">
+          <p class="fw-light fs-4 fs-md-3">
             Not Registered? <a href="/kaimahi/signup.html" class="fw-normal"><u>Create account</u></a>
           </p>
         </div>
@@ -84,7 +84,7 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-<script>
+ <script>
   $(document).ready(function () {
     //SIDEBAR
     let sidebar = [
@@ -137,21 +137,19 @@
         title: "Group Chat",
       },
     ];
-    $(document).ready(function () {
-      $("#sidebar-item").prepend(
-        jQuery.map(sidebar, function (item) {
-          return (
-            "<a class='nav-link' href='" +
-            item.link +
-            "'><i class='fa-solid " +
-            item.icon +
-            "'></i>" +
-            item.title +
-            "</a>"
-          );
-        })
-      );
-    });
+    $("#sidebar-item").prepend(
+      jQuery.map(sidebar, function (item) {
+        return (
+          "<a class='nav-link' href='" +
+          item.link +
+          "'><i class='fa-solid " +
+          item.icon +
+          "'></i>" +
+          item.title +
+          "</a>"
+        );
+      })
+    );
 
     // SEARCH BUTTON
     //Show Input Button when click Button search
