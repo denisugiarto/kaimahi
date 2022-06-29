@@ -1,0 +1,41 @@
+//GRID AREA
+.bd-header{
+    grid-area: bdheader;
+}
+   
+.bd-sidebar{
+    grid-area: bdsidebar;
+    overflow-y: auto;
+    z-index: 1;
+
+    @include media-breakpoint-up(lg){
+    height: calc(100vh - 88px);
+    position: sticky;
+    top: 88px;
+    }
+}
+
+.bd-main {
+    @extend .mx-2;
+    @extend .my-4;
+    @extend .mx-md-4;
+    @extend .my-md-5; 
+    @extend .mx-lg-5;
+    grid-area: bdmain;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:  'bdheader'
+                          'bdsidebar'                
+                          'bdmain';
+    grid-gap: 0;
+  
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 262px auto;
+        grid-template-areas:  'bdheader bdheader'
+                            'bdsidebar bdmain';
+    }
+}
+
+//END GRID AREA

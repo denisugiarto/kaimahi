@@ -1,0 +1,50 @@
+.bd-sidebar {
+
+    .navbar {
+        flex-direction: column;
+        height: 100%;
+      }
+    
+      .nav-link {
+        @extend .fs-3;
+        padding: 10px;
+        font-weight: 300;
+        border: 1px solid transparent;
+        border-radius: 10px;
+    
+        @include media-breakpoint-up(lg) {
+          padding: 16px;
+        }
+    
+        i {
+          margin-right: 10px;
+        }
+    
+        &:hover {
+          background-color: $gray-100;
+        }
+    
+        &.active {      
+          border-color: $primary;
+        }
+        &.logout {
+          @extend .mt-auto;
+          @extend .w-100;
+          @extend .py-3;
+          @extend .px-4; 
+          @extend .fs-3; 
+          @extend .fw-bold; 
+          @extend .d-flex; 
+          @extend .align-items-center;
+          @extend .rounded-0;
+          background-color: $gray-100;
+          border-color: $gray-100;
+
+          &:hover {
+            background-color: $red-400;
+            color: $white;
+            border-color: $red-400;
+          }
+        }
+      }
+}

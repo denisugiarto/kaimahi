@@ -1,0 +1,17 @@
+{% macro header(placeholder) %}
+<div id="input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="search" class="form-control" type="search" placeholder="{{ placeholder }}" />
+</div>
+
+{% endmacro %} {% macro input(placeholder) %}
+<div class="position-relative">
+  <label for="search" class="icon-search show">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input class="form-control" type="search" placeholder="{{ placeholder }}" />
+</div>
+
+{% endmacro %}

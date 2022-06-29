@@ -3,14 +3,27 @@
 
     .nav-link {
         color: $secondary;
-        font-size: 20px;
-        line-height: 28px;
-        padding: 0 0 10px;
+        @extend .fs-4;
+        @extend .fs-md-3;
+        padding: 5px;
+        
+        @include media-breakpoint-up(md) {
+            padding: 10px 15px;
+        }
+
+        &:hover {
+            background-color: $gray-100;
+        }
+
+        i {
+            @extend .me-1;
+            @extend .me-md-2;
+        }
     }
 
     .nav-link:not(:last-child) {
         @extend .me-md-4;
-        @extend .me-3;
+        @extend .me-1;
     }
 
     .nav-link.active {

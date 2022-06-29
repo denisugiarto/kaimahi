@@ -1,7 +1,11 @@
 .btn {
 
+    &-lg {
+        @extend .fs-lg-3;
+    }
+
     &-sm {
-        @extend .fs-md-4;
+        @extend .fs-md-5;
     }
 
     @include media-breakpoint-up(md) {

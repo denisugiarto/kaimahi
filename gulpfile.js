@@ -22,7 +22,7 @@ function htmlTemplate() {
 }
 //scss
 function compilescss() {
-  return src("src/scss/*.scss")
+  return src("src/scss/**/*.scss")
     .pipe(sass())
     .pipe(prefix("last 2 versions"))
     .pipe(minify())
@@ -46,7 +46,7 @@ function svgCopy() {
 //create watch task
 function watchTask() {
   watch("src/templates/**/**/*.html", htmlTemplate);
-  watch("src/scss/*.scss", compilescss);
+  watch("src/scss/**/*.scss", compilescss);
   watch("src/images/*.{jpg,png}", webpImage);
   watch("src/images/*.webp", images);
   watch("src/icons/*.svg", svgCopy);

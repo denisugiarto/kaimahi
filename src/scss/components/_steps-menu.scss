@@ -1,0 +1,56 @@
+.steps-menu {
+    @extend .flex-center;
+    
+    .step-item {
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .text-secondary;
+        @extend .fs-md-3;
+        @extend .fs-6;
+        
+        .step-number {
+            @extend .flex-center;
+            @extend .rounded-circle;
+            @extend .text-white;
+            @extend .bg-secondary;
+            @extend .me-1;
+            @extend .me-md-2;
+            width: 20px;
+            height: 20px;
+            
+            @include media-breakpoint-up(md){
+                width: 40px;
+                height: 40px;
+            }
+            
+        }
+        
+        .step-title {
+            @extend .fw-light;            
+        }
+        
+        &.active {
+            @extend .text-primary;
+
+            .step-number {
+                @extend .bg-primary;
+            }
+            
+            .step-title {
+                @extend .fw-bold;
+            }
+        }
+
+
+    }
+
+    .step-item:not(:last-child)::after {
+        @extend .mx-3;
+        @extend .mx-md-4;
+        @extend .mx-lg-5;
+        content: '';
+        width: 100px;
+        height: 1px;
+        background-color: $secondary;
+    }
+}

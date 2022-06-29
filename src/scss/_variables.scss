@@ -12,7 +12,7 @@ $gray-800: #626262;
 $gray-900: #2C3131;
 
 
-$red:     #B51820;
+$red:     #D32721;
 $yellow:  #ffc107;
 $green:   #07604E;
 $cyan:    #0dcaf0;
@@ -52,16 +52,19 @@ $body-color: $text;
 $body-bg: $gray-100;
 
 // BORDER RADIUS
-$border-radius-sm: .25rem; //4px
-$border-radius: .5rem; //8px
+$border-radius-sm: .3125rem; //5px
+$border-radius: .625rem; //10px
 $border-radius-lg: 1.25rem; //20px
 
 //BUTTON
 $btn-padding-y: .5rem;
 $btn-padding-x: .625rem;
 $btn-font-weight: 500;
+
 //BUTTON LG
 $btn-border-radius-lg: .5rem;
+$input-btn-font-size-lg: 1rem;
+
 //BUTTON SM
 $btn-padding-y-sm: .5rem;
 $btn-padding-x-sm: .625rem;
@@ -79,11 +82,12 @@ $font-family-base: 'Inter', sans-serif;
 //FONT SIZE
 $font-sizes: (
   1: 1.75rem, //28px
-  2: 1.25rem, //20px
-  3: 1rem,  //16px
-  4: .875rem, //14px
-  5: .75rem,  //12px
-  6: .625rem  //10px
+  2: 1.5rem,  //24px
+  3: 1.25rem, //20px
+  4: 1rem,  //16px
+  5: .875rem, //14px
+  6: .75rem,  //12px
+  7: .625rem  //10px
 );
 
 //FONT WEIGHT 
@@ -92,6 +96,10 @@ $font-weight-bolder: 700;
 
 //FORM CHECK INPUT
 $form-check-input-width: 1.25em;
+
+// FORM CONTROL
+$input-padding-y: 0.625rem;
+$input-padding-x: 1rem;
 
 //FORM FLOATING
 $form-floating-label-transform: scale(.75) translateY(-.4rem) translateX(.55rem);

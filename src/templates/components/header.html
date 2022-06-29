@@ -1,3 +1,5 @@
+{% import './input-search.html' as inputSearch %}
+
 <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm border sticky-top">
   <nav class="container-fluid d-block">
     <div class="row gx-3 align-items-center">
@@ -22,21 +24,15 @@
         <a id="button-search" role="button" class="d-block d-md-none">
           <i class="fa-solid fa-magnifying-glass icon-search"></i>
         </a>
-        <div id="input-search" class="position-relative d-none d-md-block">
-          <label for="search" class="icon-search show">
-            <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
-          </label>
-          <input id="search" type="search" placeholder="Search anything" />
-        </div>
+        {{ inputSearch.header('Search anything') }}
       </div>
-      <div class="col-auto">
+      <div class="col-auto notification-header">
         <!-- NOTIFICATION -->
         <div class="dropdown">
           <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-bell text-secondary icon-notification"></i>
-            <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fs-9 fw-light">
-              3
-              <span class="visually-hidden">unread messages</span>
+            <i class="fas fa-bell icon-notification"></i>
+            <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+              >3<span class="visually-hidden">unread messages</span>
             </span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">

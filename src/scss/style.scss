@@ -7,72 +7,13 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // 3. Components
-@import 'navbar', 'cards', 'dropdown', 'nav', 'buttons';
-
-//GRID AREA
-.bd-header{
- grid-area: bdheader;
-}
-
-.bd-sidebar{
-  grid-area: bdsidebar;
-  overflow-y: auto;
-  z-index: 1;
-
-  @include media-breakpoint-up(lg){
-    height: calc(100vh - 88px);
-    position: sticky;
-    top: 88px;
-  }
-
-  .navbar {
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .nav-link {
-    @extend .fs-2;
-    padding: 10px;
-    font-weight: 300;
-
-    @include media-breakpoint-up(lg) {
-      padding: 16px;
-    }
-
-    i {
-      margin-right: 10px;
-    }
-
-    &.active {
-      border-radius: 10px;
-      border: 1px solid $primary;
-    }
-    &.logout {
-      @extend .mt-auto;
-      @extend .bg-light;
-      @extend .text-dark;
-      @extend .w-100;
-      @extend .border;
-      @extend .py-3;
-      @extend .px-4; 
-      @extend .fs-2; 
-      @extend .fw-bold; 
-      @extend .d-flex; 
-      @extend .align-items-center;
-    }
-  }
-}
-
-.bd-main {
-  grid-area: bdmain;
-}
-//END GRID AREA
+@import 'navbar', 'cards', 'dropdown', 'nav', 'buttons', 'layout', './components/sidebar', './components/steps-menu';
 
 
 .avatar {
+  @extend .img-wrapper;
   width: 64px;
   height: 64px;
-  object-fit: cover;
 
   @include media-breakpoint-up(md) {
     width: 131px;
@@ -84,60 +25,43 @@
   cursor: pointer;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-areas:  'bdheader'
-                        'bdsidebar'                
-                        'bdmain';
-  // grid-template-columns: auto;
-  grid-gap: 0;
+.flex-center {
+  @extend .d-flex;
+  @extend .align-items-center;
+  @extend .justify-content-center;
+}
 
-  @include media-breakpoint-up(lg) {
-    grid-template-columns: 262px auto;
-    grid-template-areas:  'bdheader bdheader'
-                          'bdsidebar bdmain';
+.icon {
+  @extend .flex-center;
+  @extend .text-white;
+  @extend .rounded-1;
+
+  &-sm {
+    width: 20px;
+    height: 20px;
+  }
+
+  &-md {
+    width: 24px;
+    height: 24px;
+  }
+  
+  &-lg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  &-xl {
+    @extend .fs-2;
+    width: 50px;
+    height: 50px;
   }
 }
 
-.icon-md {
-  width: 24px;
-  height: 24px;
-}
 
-.icon-lg {
-  width: 32px;
-  height: 32px;
-}
-
-.icon-sm {
-  width: 16px;
-  height: 16px;
-}
-
-.img-lg {
-  width: 50px;
-  height: 50px;
-}
-
-.img-md {
-  width: 32px;
-  height: 32px;
-}
-
-.img-sm {
-  width: 24px;
-  height: 24px;
-}
-
-.badge.notification {
-  padding: 2px 4px;
-  left: 5px;
-  top: 2px;
-}
-
-.btn-lg {
-  @extend .fs-3;
-  @extend .fs-lg-2;
+.img-wrapper {
+  object-fit: cover;
+  object-position: top;
 }
 
 .brand-wrapper {
@@ -159,10 +83,9 @@
 }
 
 .header-profile-image{
+  @extend .img-wrapper;
   width: 32px;
-  height: 32px;
-  object-fit: cover;
-  object-position: top;
+  height: 32px;  
   border-radius: 100%;
 
   @include media-breakpoint-up(md) {
@@ -175,26 +98,42 @@
   height: 100vh;
 }
 
-.icon-notification {
-  font-size: 23px;
-  @extend .fs-md-1;
+.icon-back {
+  @extend .flex-center;
+  @extend .icon-lg;
+  @extend .rounded-1;
+  background-color: $gray-200;
+}
+
+//NOTIFICATION
+.notification-header {
+
+  .icon-notification {
+    @extend .fs-3;
+    @extend .fs-md-1;
+    @extend .text-secondary;
+  }
+
+  .badge.notification {
+    @extend .fs-7;
+    @extend .fs-md-6;
+    padding: 2px 4px;
+    left: 5px;
+    top: 2px;
+  }
 }
 
 .icon-search {
   position: static;
-  @extend .fs-2;
+  @extend .fs-3;
   color: $secondary;
 
   &.show {
     position: absolute;
     left: 20px;
-    top: 4px;
+    top: 8px;
     font-size: 18px;
     color: $text;
-
-    @include media-breakpoint-up(md) {
-      top: 16px;
-    }
   }
 }
 
@@ -202,11 +141,9 @@ input[type=search] {
   background-color: $gray-100;
   border-radius: 10px;
   border: none;
-  padding: 4px 20px 4px 48px;
-  width: 100%;
+  padding-left: 48px;
 
   @include media-breakpoint-up(md) {
-    padding: 15px 20px 15px 48px;
     width: fit-content;
   }
 }
@@ -220,7 +157,7 @@ input[type=search]:focus-visible {
 
 .page-title {
   @extend .fs-md-1;
-  font-size: 24px;
+  @extend .fs-2;
   margin-bottom: 24px;
 
   @include media-breakpoint-up(md) {
@@ -243,8 +180,8 @@ input[type=search]:focus-visible {
 }
 
 .subtitle {
-  @extend .fs-5;
-  @extend .fs-lg-3;
+  @extend .fs-6;
+  @extend .fs-lg-4;
 
 }
 
@@ -254,9 +191,4 @@ input[type=search]:focus-visible {
   @include media-breakpoint-up(lg) {
     font-size: 44px;
   }
-}
-
-//FONT SIZE
-.fs-9 {
-  font-size: 9px;
 }
