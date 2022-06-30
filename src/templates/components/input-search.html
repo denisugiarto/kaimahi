@@ -1,3 +1,4 @@
+<!-- SEARCH INPUT IN HEADER -->
 {% macro header(placeholder) %}
 <div id="input-search" class="position-relative d-none d-md-block">
   <label for="search" class="icon-search show">
@@ -5,13 +6,14 @@
   </label>
   <input id="search" class="form-control" type="search" placeholder="{{ placeholder }}" />
 </div>
+{% endmacro %}
 
-{% endmacro %} {% macro input(placeholder) %}
+<!-- NORMAL SEARCH INPUT -->
+{% macro input(placeholder, class) %}
 <div class="position-relative">
   <label for="search" class="icon-search show">
     <i class="fa-solid fa-magnifying-glass"></i>
   </label>
-  <input class="form-control" type="search" placeholder="{{ placeholder }}" />
+  <input class="form-control {{ class }}" type="search" placeholder="{{ placeholder }}" />
 </div>
-
 {% endmacro %}

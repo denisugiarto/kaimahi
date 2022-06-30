@@ -56,20 +56,22 @@ $border-radius-sm: .3125rem; //5px
 $border-radius: .625rem; //10px
 $border-radius-lg: 1.25rem; //20px
 
-//BUTTON
-$btn-padding-y: .5rem;
-$btn-padding-x: .625rem;
-$btn-font-weight: 500;
-
-//BUTTON LG
-$btn-border-radius-lg: .5rem;
-$input-btn-font-size-lg: 1rem;
-
 //BUTTON SM
 $btn-padding-y-sm: .5rem;
 $btn-padding-x-sm: .625rem;
 $btn-font-size-sm: .75rem;
-$btn-border-radius-sm: 8px;
+$btn-border-radius-sm: .5rem;
+
+//BUTTON
+$btn-padding-y: .875rem;
+$btn-padding-x: 1.75rem;
+$btn-font-weight: 500;
+
+//BUTTON LG
+$btn-padding-y-lg: .875rem;
+$btn-padding-x-lg: 1.5rem;
+$btn-border-radius-lg: .5rem;
+$input-btn-font-size-lg: 1rem;
 
 //CARD
 $card-border-width: 0;
@@ -108,6 +110,7 @@ $form-floating-label-transform: scale(.75) translateY(-.4rem) translateX(.55rem)
 $input-btn-padding-y: 1rem;
 $input-btn-padding-x: 1.5rem;
 $input-bg: $white;
+$input-placeholder-color: $gray-400;
 
 
 // LINK

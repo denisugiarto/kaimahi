@@ -1,0 +1,11 @@
+<!-- BUTTON SUBMIT -->
+{% macro submit(id) %}
+<button id="{{ id }}" class="btn btn-primary mt-4" type="submit">Save Change</button>
+{% endmacro %}
+
+<!-- BUTTON ONLY ICON -->
+{% macro icon(icon, color, id) %}
+<button id="{{ id }}" class="btn {{ color }} p-0 flex-center icon-lg">
+  <i class="fa-solid {{ icon }} text-white fs-5"></i>
+</button>
+{% endmacro %}

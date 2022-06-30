@@ -1,0 +1,35 @@
+<!-- RESEND MODAL -->
+{% macro resend(name, email) %}
+<div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resend Email Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary fw-light mb-4 mb-md-5">
+          Hi, {{ name }}, this will resend email confirmation
+          <span class="text-black fw-bold">{{ email }}</span>
+        </p>
+        <button type="button" class="btn btn-primary me-3">Resend</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %} {% macro success(text, link) %}
+<div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="./assets/images/icon-check.svg" alt="icon success" />
+        <h5 class="h5">Congratulations</h5>
+        <p class="text-secondary fw-light mb-4 mb-md-5">{{ text }}</p>
+        <a role="button" href="{{ link }}" class="btn btn-primary fs-5">Back To Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}

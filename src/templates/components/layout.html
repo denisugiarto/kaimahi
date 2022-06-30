@@ -2,7 +2,23 @@
 <html lang="en">
   {% include "./head.html" %}
   <body>
-    {% block content %} {% endblock %} {% include "./footer.html" %} {% include "./sidebar-item.html" %} {% block script
-    %} {% endblock %}
+    <div class="grid-container">
+      <!-- HEADER -->
+      {% include '../components/header.html' %}
+
+      <!-- SIBEDAR -->
+      {% include '../components/sidebar.html' %}
+
+      <!-- CONTENT -->
+      {% block content %} {% endblock %}
+    </div>
+    <!-- FOOTER -->
+    {% include "./footer.html" %}
+
+    <!-- SIDEBAR ITEM -->
+    {% include "./sidebar-header-script.html" %}
+
+    <!-- SCRIPT -->
+    {% block script %} {% endblock %}
   </body>
 </html>

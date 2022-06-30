@@ -21,7 +21,8 @@
   }
 }
 
-.form-check-label, .form-check-input {
+
+.form-check-label, .form-check-input, .pointer {
   cursor: pointer;
 }
 
@@ -94,8 +95,18 @@
   }
 }
 
-.height-100vh {
-  height: 100vh;
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+  cursor: pointer;
 }
 
 .icon-back {

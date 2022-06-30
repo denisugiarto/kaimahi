@@ -1,0 +1,57 @@
+<!-- WITH ICON -->
+{% macro withIcon(icon, label, name, value, type='time') %}
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="fa-solid {{ icon }}"></i></a>
+      <div class="col ms-2">
+        <label for="{{ name }}" class="h5 mb-1" type="button">{{ label }}</label>
+        <input
+          id="{{ name }}"
+          name="{{ name }}"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="{{ value }}"
+          type="{{ type }}"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- WITH ICON TYPE TEXTAREA -->
+{% macro withIconTextArea(icon, label, name, value, type='text') %}
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="fa-solid {{ icon }}"></i></a>
+
+      <div class="col ms-2">
+        <label for="{{ name }}" class="h5 pointer">{{ label }}</label>
+        <textarea
+          id="{{ name }}"
+          name="{{ name }}"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0 mt-1 pointer"
+        >
+          {{ value }}
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- FLOATING INPUT -->
+{% macro floating(label, name, value, type='text') %}
+<div class="form-floating">
+  <input
+    name="{{ name }}"
+    type="{{ type }}"
+    class="form-control"
+    id="{{ name }}"
+    placeholder="{{ label }}"
+    value="{{ value | escape }}"
+  />
+  <label for="{{ name }}">{{ label }}</label>
+</div>
+{% endmacro %}
