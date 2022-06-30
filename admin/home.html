@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#ffffff" />
   <title>Home</title>
 
-  <link rel="stylesheet" type="text/css" href="" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -19,177 +19,434 @@
 </head>
 
   <body>
-    
-<div class="grid-container">
-  <!-- HEADER -->
-  <header class="bd-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler me-2"
+    <div class="grid-container">
+      <!-- HEADER -->
+      
+<header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm border sticky-top">
+  <nav class="container-fluid d-block">
+    <div class="row gx-3 align-items-center">
+      <div class="col-auto px-lg-0">
+        <a
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#sidebarMenu"
-          aria-controls="sidebarMenu"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <img src="../assets/images/logo-2.webp" alt="logo" />
+        </a>
       </div>
-      <!-- FORM-SEARCH -->
-      <label for="" class="d-flex align-items-center bg-light rounded-1 px-3 py-2 border">
-        <img src="../assets/icons/icon-search.svg" alt="icon search" class="icon-sm me-2" />
-        <input type="text" placeholder="Search anything" class="border-0 bg-light fs-6" />
-      </label>
-    </nav>
-  </header>
-  <!-- SIDEBAR -->
-  <nav class="bd-sidebar d-md-block bg-primary sidebar collapse">
-    <div class="position-sticky">
-      <img src="../assets/images/logo-2.webp" alt="logo" class="d-none d-md-block mb-5" />
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active bg-white rounded-2" role="button" href="#">
-            <img src="../assets/icons/icon-home.svg" alt="home" class="icon-sidebar" />
-            Home
+      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
+        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
+      </div>
+      <div id="search-header" class="col-auto col-md">
+        <!-- SEARCH -->
+        <a id="button-search" role="button" class="d-block d-md-none">
+          <i class="fa-solid fa-magnifying-glass icon-search"></i>
+        </a>
+        
+<div id="input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="search" class="form-control" type="search" placeholder="Search anything" />
+</div>
+
+      </div>
+      <div class="col-auto notification-header">
+        <!-- NOTIFICATION -->
+        <div class="dropdown">
+          <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bell icon-notification"></i>
+            <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+              >3<span class="visually-hidden">unread messages</span>
+            </span>
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" role="button" href="#">
-            <img src="../assets/icons/icon-sidebar-kaimahi.svg" alt="KaiMahi" class="icon-sidebar" />
-            KaiMahi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" role="button" href="#">
-            <img src="../assets/icons/icon-sidebar-whanau.svg" alt="Whānau" class="icon-sidebar" />
-            Whānau
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" role="button" href="#">
-            <img src="../assets/icons/icon-sidebar-deliveries.svg" alt="Deliveries" class="icon-sidebar" />
-            Deliveries
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" role="button" href="#">
-            <img src="../assets/icons/icon-sidebar-message.svg" alt="Whānau Comms" class="icon-sidebar" />
-            Whānau Comms
-          </a>
-        </li>
-      </ul>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-auto">
+        <!-- PROFILE -->
+        <div id="profile" class="d-flex align-items-center">
+          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
-  <!-- MAIN -->
+</header>
+
+
+      <!-- SIBEDAR -->
+      <aside class="bd-sidebar bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
+      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
+      <!-- Logout -->
+      <a class="nav-link logout" role="button"
+        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
+      ></a>
+    </div>
+  </nav>
+</aside>
+
+
+      <!-- CONTENT -->
+       
+
+<div class="grid-container">
+  <!-- HEADER -->
+  
+<header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm border sticky-top">
+  <nav class="container-fluid d-block">
+    <div class="row gx-3 align-items-center">
+      <div class="col-auto px-lg-0">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </a>
+      </div>
+      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
+        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
+      </div>
+      <div id="search-header" class="col-auto col-md">
+        <!-- SEARCH -->
+        <a id="button-search" role="button" class="d-block d-md-none">
+          <i class="fa-solid fa-magnifying-glass icon-search"></i>
+        </a>
+        
+<div id="input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="search" class="form-control" type="search" placeholder="Search anything" />
+</div>
+
+      </div>
+      <div class="col-auto notification-header">
+        <!-- NOTIFICATION -->
+        <div class="dropdown">
+          <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bell icon-notification"></i>
+            <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+              >3<span class="visually-hidden">unread messages</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-auto">
+        <!-- PROFILE -->
+        <div id="profile" class="d-flex align-items-center">
+          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- SIBEDAR -->
+  <aside class="bd-sidebar bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
+      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
+      <!-- Logout -->
+      <a class="nav-link logout" role="button"
+        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
+      ></a>
+    </div>
+  </nav>
+</aside>
+
+
   <main class="bd-main">
-    <div class="d-flex flex-column">
-      <div class="order-2 order-md-1 m-3">
-        <div class="row align-items-center">
-          <div class="col"></div>
-          <!-- NOTIFICATION -->
-          <div class="col-auto d-none d-md-block"></div>
-          <!-- PROFILE -->
-          <div class="col-auto d-none d-md-block">
-            <div class="d-flex align-items-center">
-              <!-- PICTURE PROFILE -->
-              <img src="../assets/images/profile-1.webp" alt="profile picture" class="img-md border-1 rounded-1 me-2" />
-              <h5 class="fs-6 me-4">Calib Jackson</h5>
-              <a>
-                <img src="../assets/icons/icon-down-arrow.svg" alt="icon down" class="rounded-circle icon-md" />
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Whānau Comms</h1>
+    <div class="card">
+      <div class="card-body">
+        <!-- TABS -->
+        <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
+          <a
+            class="nav-link active"
+            id="nav-create-message-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-create-message"
+            type="button"
+            role="tab"
+            aria-controls="nav-create-message"
+            aria-selected="true"
+          >
+            <i class="fa-solid fa-pen me-1"></i>Create Message</a
+          >
+          <a
+            class="nav-link"
+            id="nav-history-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-history"
+            type="button"
+            role="tab"
+            aria-controls="nav-history"
+            aria-selected="true"
+          >
+            <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History</a
+          >
+        </div>
+
+        <div class="tab-content" id="nav-tabContent">
+          <!-- TAB create-message -->
+          <div
+            class="tab-pane fade show active"
+            id="nav-create-message"
+            role="tabpanel"
+            aria-labelledby="nav-create-message-tab"
+          >
+            <!-- STEPS MENU -->
+            <div class="steps-menu mb-5">
+              <div id="step1" class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-title">Message Detail</div>
+              </div>
+              <div id="step2" class="step-item active">
+                <div class="step-number">2</div>
+                <div class="step-title">Select Whānau</div>
+              </div>
+            </div>
+
+            <div id="messageDetail" class="collapse">
+              <h6 class="h6 fw-bolder ms-2">Message Detail</h6>
+              <hr class="my-2" />
+
+              <div class="card align-items-center">
+                <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+                  <div class="card bg-light mb-4 mb-md-3">
+                    <div class="card-body">
+                      <d class="d-flex">
+                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-clock"></i></div>
+                        <div class="col ms-2 mt-1">
+                          <h5 class="h5">Time</h5>
+                          <p class="fs-6 fw-light text-dark">04:00pm</p>
+                        </div>
+                      </d>
+                    </div>
+                  </div>
+                  <div class="card bg-light mb-4 mb-md-3">
+                    <div class="card-body">
+                      <d class="d-flex">
+                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="col ms-2 mt-1">
+                          <h5 class="h5">Date</h5>
+                          <p class="fs-6 fw-light text-dark">17-08-2022</p>
+                        </div>
+                      </d>
+                    </div>
+                  </div>
+                  <div class="card bg-light mb-5 mb-md-4">
+                    <div class="card-body">
+                      <d class="d-flex">
+                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-comment-dots"></i></div>
+                        <div class="col ms-2 mt-1">
+                          <h5 class="h5">Message</h5>
+                          <p class="fs-6 fw-light text-dark">
+                            Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document
+                            Or A
+                          </p>
+                        </div>
+                      </d>
+                    </div>
+                  </div>
+                  <a
+                    class="btn btn-primary btn-lg w-100 py-3"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    href="#selectWhanau"
+                    >Add Message</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div id="selectWhanau" class="collapse show">
+              <a id="backMessageDetail" role="button" class="d-flex align-items-center fw-bolder">
+                <i class="icon-back fa-solid fa-angle-left me-2"></i>
+                Select Whānau
               </a>
+              <hr class="my-2" />
+
+              <div class="card align-items-center">
+                <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+                  <div class="card bg-light mb-4 mb-md-3">
+                    <div class="card-body">
+                      <d class="d-flex">
+                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-clock"></i></div>
+                        <div class="col ms-2 mt-1">
+                          <h5 class="h5">Time</h5>
+                          <p class="fs-6 fw-light text-dark">04:00pm</p>
+                        </div>
+                      </d>
+                    </div>
+                  </div>
+                  <div class="card bg-light mb-4 mb-md-3">
+                    <div class="card-body">
+                      <d class="d-flex">
+                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="col ms-2 mt-1">
+                          <h5 class="h5">Date</h5>
+                          <p class="fs-6 fw-light text-dark">17-08-2022</p>
+                        </div>
+                      </d>
+                    </div>
+                  </div>
+                  <div class="card bg-light mb-5 mb-md-4">
+                    <div class="card-body">
+                      <d class="d-flex">
+                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-comment-dots"></i></div>
+                        <div class="col ms-2 mt-1">
+                          <h5 class="h5">Message</h5>
+                          <p class="fs-6 fw-light text-dark">
+                            Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document
+                            Or A
+                          </p>
+                        </div>
+                      </d>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary btn-lg w-100 py-3">Add Message</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- WELCOME -->
-      <div class="order-1 order-md-2">
-        <div class="row align-items-center">
-          <div class="col-12 col-md">
-            <h1 class="fs-4 fw-normal p-3">Welcome back, <span class="fs-4 text-primary">AHMED</span></h1>
-          </div>
-          <!-- BUTTON CREATE MESSAGE -->
-          <div class="d-none d-md-flex col-md-auto">
-            <button class="btn btn-gray text-dark">Create Message</button>
-          </div>
-          <!-- BUTTON CREATE NEW NOTIFICATION -->
-          <div class="d-none d-md-flex col-md-auto">
-            <button class="btn btn-primary text-white">
-              Create <span class="d-none d-md-inline-block">New</span> Notification
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- INFO -->
-    <div class="m-3">
-      <div class="row gx-3">
-        <!-- BUTTON CREATE MESSAGE -->
-        <div class="col">
-          <button class="btn btn-gray text-dark w-100">Create Message</button>
-        </div>
-        <!-- BUTTON CREATE NEW NOTIFICATION -->
-        <div class="col">
-          <button class="btn btn-primary text-white w-100">
-            Create <span class="d-none d-md-inline-block">New</span> Notification
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="m-3">
-      <div class="row g-3">
-        <div class="col-lg-3">
-          <div class="card-info border border-primary">
-            <div class="card-icon">
-              <img src="../assets/icons/icon-user.svg" alt="icon kaimahi" class="icon-md" />
+          <!-- TAB HISTORY MESSAGE -->
+          <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+            <a role="button" class="d-flex align-items-center fw-bolder">
+              <h6 class="h6 fw-bolder">Message History</h6>
+            </a>
+            <hr class="my-2" />
+            <div class="d-flex justify-content-end">
+              <div class="col-10 col-sm-auto">
+<div class="position-relative">
+  <label for="search" class="icon-search show">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input class="form-control " type="search" placeholder="Look message history" />
+</div>
+</div>
             </div>
-            <div class="card-text">
-              <p>All KaiMahi</p>
-              <p>26539</p>
+            <div class="table-responsive-lg mt-4">
+              <table class="table table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Message</th>
+                    <th scope="col">Recepients</th>
+                    <th scope="col">Message Time</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A
+                    </td>
+                    <td>2</td>
+                    <td>17-08-2022, 04:00pm</td>
+                    <td>
+                      <a href="" class="text-primary">See Details</a>
+                      <a href="" class="text-danger">Delete</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card-info border">
-            <div class="card-icon">
-              <img src="../assets/icons/icon-whanau.svg" alt="icon kaimahi" class="icon-md" />
-            </div>
-            <div class="card-text">
-              <p>All Whānau</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card-info border">
-            <div class="card-icon">
-              <img src="../assets/icons/icon-deliveries.svg" alt="icon kaimahi" class="icon-md" />
-            </div>
-            <div class="card-text">
-              <p>Current Deliveries</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card-info border">
-            <div class="card-icon">
-              <img src="../assets/icons/icon-complete-deliveries.svg" alt="icon kaimahi" class="icon-md" />
-            </div>
-            <div class="card-text">
-              <p>Completed Deliveries</p>
-              <p>26539</p>
+            <div class="row align-items-center">
+              <div class="col">
+                <p class="text-secondary fs-6 fw-light">Showing 1 to 1 of 1 entries</p>
+              </div>
+              <div class="col-auto">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </main>
+
+  <!-- MODAL -->
+  <!-- RESEND MODAL -->
+  <div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Resend Email Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary fw-light mb-4 mb-md-5">
+            Hi, Clib Jackson, this will resend email confirmation
+            <span class="text-black fw-bold"> clibjackson@gmail.com </span>
+          </p>
+          <button type="button" class="btn btn-primary me-3">Resend</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
- <script
+
+    </div>
+    <!-- FOOTER -->
+    <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
   integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
   crossorigin="anonymous"
@@ -205,7 +462,10 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
- <script>
+
+
+    <!-- SIDEBAR ITEM -->
+    <script>
   $(document).ready(function () {
     //SIDEBAR
     let sidebar = [
@@ -247,7 +507,7 @@
       },
       {
         id: 6,
-        link: "#",
+        link: "whanau-comms.html",
         icon: "fa-comment-dots",
         title: "Whānau Comms",
       },
@@ -305,6 +565,28 @@
     }
   });
 </script>
-  
+
+
+    <!-- SCRIPT -->
+    
+<script>
+  $(document).ready(function () {
+    $(".nav-link:contains('Whānau Comms')").addClass("active");
+
+    $("a:contains(Add Message)").click(function () {
+      $("#messageDetail").removeClass("show");
+      $("#step1").removeClass("active");
+      $("#step2").addClass("active");
+    });
+
+    $("#backMessageDetail").click(function () {
+      $("#messageDetail").addClass("show");
+      $("#selectWhanau").removeClass("show");
+      $("#step2").removeClass("active");
+      $("#step1").addClass("active");
+    });
+  });
+</script>
+
   </body>
 </html>
