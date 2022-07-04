@@ -119,17 +119,18 @@
     <div class="card-body">
       <!-- TABS -->
       <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
-        <a class="nav-link" id="nav-create-message-tab" data-bs-toggle="tab" data-bs-target="#nav-create-message"
+        <a class="nav-link active" id="nav-create-message-tab" data-bs-toggle="tab" data-bs-target="#nav-create-message"
           type="button" role="tab" aria-controls="nav-create-message" aria-selected="true">
           <i class="fa-solid fa-pen me-1"></i>Create Message</a>
-        <a class="nav-link active" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history" type="button"
+        <a class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history" type="button"
           role="tab" aria-controls="nav-history" aria-selected="true">
           <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History</a>
       </div>
 
       <div class="tab-content" id="nav-tabContent">
         <!-- TAB create-message -->
-        <div class="tab-pane fade " id="nav-create-message" role="tabpanel" aria-labelledby="nav-create-message-tab">
+        <div class="tab-pane fade show active" id="nav-create-message" role="tabpanel"
+          aria-labelledby="nav-create-message-tab">
           <!-- STEPS MENU -->
           <div class="steps-menu mb-5">
             <div id="step1" class="step-item active">
@@ -259,8 +260,8 @@
           </div>
         </div>
         <!-- TAB HISTORY MESSAGE -->
-        <div class="tab-pane fade show active" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
-          <div id="messageHistory" class="collapse">
+        <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+          <div id="messageHistory" class="collapse show">
             <h6 class="h6 fw-bolder">Message History</h6>
             <hr class="my-2" />
             <div class="d-flex justify-content-end">
@@ -284,7 +285,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr id="tableRow">
                     <td>
                       Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A
                     </td>
@@ -292,7 +293,7 @@
                     <td>17-08-2022, 04:00pm</td>
                     <td>
                       <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
-                      <a data-bs-toggle="modal" data-bs-target="#deleteModal" role="button"
+                      <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button"
                         class="text-danger">Delete</a>
                     </td>
                   </tr>
@@ -315,7 +316,7 @@
               </div>
             </div>
           </div>
-          <div id="messageHistoryDetail" class="collapse show">
+          <div id="messageHistoryDetail" class="collapse">
             <a id="backMessageHistoryDetail" role="button" class="d-flex align-items-center fw-bolder">
               <i class="icon-back fa-solid fa-angle-left me-2"></i>
               Message History Details
@@ -373,13 +374,12 @@
 
 
 <!-- Delete Comment Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteMessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="ModalLabel">Delete Confirmation</h6>
+        <h6 class="modal-title" id="MessageModalLabel">Delete Confirmation</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="open"></div>
       </div>
       <div class="modal-body text-start">
         <p class="mb-3">
@@ -387,7 +387,7 @@
         </p>
         <div class="row gx-3">
           <div class="col-6 col-md-auto">
-            <button id="Button" type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
+            <button id="deleteMessageButton" type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
               Yes, Delete
             </button>
           </div>
@@ -648,10 +648,11 @@
   listAllWhanau();
   listSelectedWhanau();
 
-  // FUNCTION ADD SELECTED WHANAU
+  //FUNCTION ADD SELECTED WHANAU
   function addWhanau(id) {
     selectedWhanau.push(whanau[id]);
   }
+
   //FUNCTION REMOVE SELECTED WHANAU
   function removeWhanau(id) {
     selectedWhanau = selectedWhanau.filter((item) => {
@@ -659,11 +660,13 @@
     });
   }
 
+  //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
   function removeCheck(id) {
     let item = "whanau-" + id;
     return $("#" + item).prop("checked", false);
   }
 
+  //BUTTON SEND UPDATE TRIGGER
   function buttonSendUpdate() {
     if (selectedWhanau.length > 0) {
       console.log('button change to primary')
@@ -686,7 +689,7 @@
     buttonSendUpdate();
   });
 
-  //List Recipients
+  //LIST RECIPIENTS MAP
   function listRecipients(index) {
     $("#listRecipients").children().remove();
     $("#listRecipients").prepend(
@@ -711,9 +714,12 @@
       })
     )
   }
+
+  //GENERATE RECIPIENTS LIST 
   listRecipients(4);
   $("#qtyRecipients").text(whanau.length - 4);
 
+  //FUNCTION BUTTON SHOW MORE 
   $("#showAllRecipients").click(function () {
     if ($(this).text() == "Less") {
       listRecipients(4);
@@ -724,15 +730,22 @@
     }
   });
 
+  //BUTTON BACK MESSAGE HISTORY DETAIL
   $("#backMessageHistoryDetail").click(function () {
     $("#messageHistoryDetail").removeClass("show");
     $("#messageHistory").addClass("show");
   });
 
+  //BUTTON SEE DETAIL IN MESSAGE HISTORY
   $("#seeDetailButton").click(function () {
     $("#messageHistory").removeClass("show");
     $("#messageHistoryDetail").addClass("show");
   });
+
+  //BUTTON DELETE IN MESSAGE HISTORY
+  $("#deleteMessageButton").click(function () {
+    $("#tableRow").children($("td")).text("No data").addClass("text-secondary");
+  })
 </script>
 
   </body>
