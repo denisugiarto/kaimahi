@@ -203,3 +203,13 @@ input[type=search]:focus-visible {
     font-size: 44px;
   }
 }
+
+#addWhanau {
+  @extend .overflow-auto;
+  max-height: 120px;
+}
+
+#whanau {
+  @extend .overflow-auto;
+  max-height: 300px;
+}

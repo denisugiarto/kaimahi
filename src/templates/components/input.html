@@ -6,13 +6,9 @@
       <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="fa-solid {{ icon }}"></i></a>
       <div class="col ms-2">
         <label for="{{ name }}" class="h5 mb-1" type="button">{{ label }}</label>
-        <input
-          id="{{ name }}"
-          name="{{ name }}"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
-          value="{{ value }}"
-          type="{{ type }}"
-        />
+        <input id="{{ name }}" name="{{ name }}"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0" value="{{ value }}"
+          type="{{ type }}" />
       </div>
     </div>
   </div>
@@ -28,11 +24,8 @@
 
       <div class="col ms-2">
         <label for="{{ name }}" class="h5 pointer">{{ label }}</label>
-        <textarea
-          id="{{ name }}"
-          name="{{ name }}"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0 mt-1 pointer"
-        >
+        <textarea id="{{ name }}" name="{{ name }}"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0 mt-1 pointer" rows="3">
           {{ value }}
         </textarea>
       </div>
@@ -44,14 +37,8 @@
 <!-- FLOATING INPUT -->
 {% macro floating(label, name, value, type='text') %}
 <div class="form-floating">
-  <input
-    name="{{ name }}"
-    type="{{ type }}"
-    class="form-control"
-    id="{{ name }}"
-    placeholder="{{ label }}"
-    value="{{ value | escape }}"
-  />
+  <input name="{{ name }}" type="{{ type }}" class="form-control" id="{{ name }}" placeholder="{{ label }}"
+    value="{{ value | escape }}" />
   <label for="{{ name }}">{{ label }}</label>
 </div>
 {% endmacro %}
