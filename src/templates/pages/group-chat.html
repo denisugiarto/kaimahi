@@ -1,0 +1,90 @@
+{% extends "layout.html" %} {% set pageTitle = 'Group Chat' %} {% set cssFiles = './assets/css/style.css' %} {% block
+content %} {% import '../components/buttons.html' as button %}
+
+<main class="bd-main">
+    <div class="card">
+        <div class="card-header bg-white border-bottom p-4">
+            <div class="d-flex align-items-center">
+                {{ button.backIcon('', 'home.html')}}
+                <div class="d-block">
+                    <h5 class="h5 mb-1">Group Chat</h5>
+                    <p class="desc">5 members</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
+            <div class="not-my-chat mb-5">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+            </div>
+            <div class="not-my-chat mb-5">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+            </div>
+            <div class="my-chat mb-5 d-flex flex-column align-items-end">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 px-2 py-3 rounded-top rounded-start ms-5 mb-2 bg-success text-white">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <div class="d-flex flex-row-reverse align-items-center">
+                    <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                    <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+                </div>
+            </div>
+            <div class="not-my-chat">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+            </div>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+                </div>
+                <div class="col">
+                    <input type="text" name="messages" class="form-control w-100">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary text-white fs-2 py-0 px-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %} {% block script %}
+<script>
+    $(document).ready(function () {
+        // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
+        $(".nav-link:contains(Group Chat)").addClass("active");
+    });
+
+</script>
+{% endblock %}

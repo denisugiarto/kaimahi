@@ -21,6 +21,12 @@
   }
 }
 
+.desc {
+  @extend .text-secondary;
+  @extend .fs-6;
+  @extend .fw-light;
+
+}
 
 .form-check-label, .form-check-input, .pointer {
   cursor: pointer;
@@ -59,6 +65,9 @@
   }
 }
 
+input[type='text']:hover {
+  @extend .bg-light;
+}
 
 .img-wrapper {
   object-fit: cover;

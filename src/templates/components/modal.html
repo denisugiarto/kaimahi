@@ -46,7 +46,6 @@
       <div class="modal-header">
         <h6 class="modal-title" id="{{ id }}ModalLabel">Delete Confirmation</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="open"></div>
       </div>
       <div class="modal-body text-start">
         <p class="mb-3">
@@ -54,7 +53,7 @@
         </p>
         <div class="row gx-3">
           <div class="col-6 col-md-auto">
-            <button id="{{ id }}Button" type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
+            <button id="delete{{ id }}Button" type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
               Yes, Delete
             </button>
           </div>

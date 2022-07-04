@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Home</title>
+  <title>Group Chat</title>
 
-  <link rel="stylesheet" type="text/css" href="../assets/css/custom.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="" <link
@@ -97,188 +97,90 @@
 
 
       <!-- CONTENT -->
-      
+       
 
-<div class="main bg-body">
-  <aside class="bd-sidebar bg-white shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-dark p-0">
-    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
-      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
-      <!-- Logout -->
-      <a class="nav-link logout" role="button"
-        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
-      ></a>
-    </div>
-  </nav>
-</aside>
+<main class="bd-main">
+    <div class="card">
+        <div class="card-header bg-white border-bottom p-4">
+            <div class="d-flex align-items-center">
+                
+<a id="" href="home.html" role="button" class="d-flex align-items-center fw-bolder">
+  <i class="icon-back fa-solid fa-angle-left me-2"></i>
+</a>
 
-  <div class="px-5 py-4">
-    <h3 class="mb-4">Welcome back, <span class="text-primary">AHMED</span></h3>
-    <form class="form-search mb-2" action="">
-      <input class="input-search" type="text" name="search" placeholder="Search For Anything Here" />
-      <img src="../assets/icons/icon-search.svg" alt="icon search" class="icon-search" />
-    </form>
-    <div class="row g-2 mb-2">
-      <div class="col-6 col-lg-3">
-        <a href="#" role="button" class="btn btn-light w-100">Create Message</a>
-      </div>
-      <div class="col-6 col-lg-3">
-        <a href="#" role="button" class="btn btn-primary w-100">Create Notification</a>
-      </div>
-    </div>
-    <section id="info">
-      <div class="row g-2 mb-5">
-        <div class="col-6 col-lg-3">
-          <div class="card-info border border-primary">
-            <img src="../assets/icons/icon-user.svg" alt="icon user" class="card-icon" />
-            <div class="card-text">
-              <p class="text-secondary">All KaiMahi</p>
-              <p>26539</p>
+                <div class="d-block">
+                    <h5 class="h5 mb-1">Group Chat</h5>
+                    <p class="desc">5 members</p>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-whanau.svg" alt="icon whanau" class="card-icon" />
-            <div class="card-text">
-              <p>All Whānau</p>
-              <p>26539</p>
+        <div class="card-body">
+            <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
+            <div class="not-my-chat mb-5">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
             </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-deliveries.svg" alt="" class="card-icon" />
-            <div class="card-text">
-              <p>Current Deliveries</p>
-              <p>26539</p>
+            <div class="not-my-chat mb-5">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
             </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-complete-deliveries.svg" alt="" class="card-icon" />
-            <div class="card-text">
-              <p>Complete Deliveries</p>
-              <p>26539</p>
+            <div class="my-chat mb-5 d-flex flex-column align-items-end">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 px-2 py-3 rounded-top rounded-start ms-5 mb-2 bg-success text-white">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <div class="d-flex flex-row-reverse align-items-center">
+                    <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                    <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+                </div>
             </div>
-          </div>
+            <div class="not-my-chat">
+                <div
+                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
+                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been
+                        the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
+                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <section id="content">
-      <ul class="nav nav-tabs" id="nav-tabs" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="nav-kaimahi-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-kaimahi"
-            role="button"
-            aria-controls="nav-kaimahi"
-            aria-selected="true"
-          >
-            Latest KaiMahi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            id="nav-whanau-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-whanau"
-            role="button"
-            aria-controls="nav-whanau"
-            aria-selected="false"
-          >
-            Latest Whānau</a
-          >
-        </li>
-      </ul>
-
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade" id="nav-kaimahi" role="tabpanel" aria-labelledby="nav-kaimahi-tab">
-          <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
- <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
- <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
- <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
-
+        <div class="card-footer bg-white">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+                </div>
+                <div class="col">
+                    <input type="text" name="messages" class="form-control w-100">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary text-white fs-2 py-0 px-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="tab-pane fade show active" id="nav-whanau" role="tabpanel" aria-labelledby="nav-whanau-tab"></div>
-      </div>
-    </section>
-  </div>
-</div>
-<script>
-  $(document).ready(function () {
-    $("a.nav-link:contains('Home')").addClass("active");
-  });
-</script>
+    </div>
+</main>
+
 
     </div>
     <!-- FOOTER -->
@@ -403,6 +305,14 @@
 </script>
 
     <!-- SCRIPT -->
-     
+    
+<script>
+    $(document).ready(function () {
+        // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
+        $(".nav-link:contains(Group Chat)").addClass("active");
+    });
+
+</script>
+
   </body>
 </html>

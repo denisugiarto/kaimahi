@@ -9,3 +9,16 @@
   <i class='fa-solid {{ icon }} text-white fs-5'></i>
 </button>
 {% endmacro %}
+
+{% macro back(id, text) %}
+<a id="{{ id }}" role="button" class="d-flex align-items-center fw-bolder">
+  <i class="icon-back fa-solid fa-angle-left me-2"></i>
+  {{ text }}
+</a>
+{% endmacro %}
+
+{% macro backIcon(id, href) %}
+<a id="{{ id }}" href="{{ href }}" role="button" class="d-flex align-items-center fw-bolder">
+  <i class="icon-back fa-solid fa-angle-left me-2"></i>
+</a>
+{% endmacro %}
