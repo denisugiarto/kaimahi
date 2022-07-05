@@ -11,8 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="" <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
@@ -20,6 +19,7 @@
     <div class="grid-container">
       <!-- HEADER -->
       
+
 <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
   <nav class="container-fluid d-block">
     <div class="row gx-3 align-items-center">
@@ -47,21 +47,31 @@
 
       </div>
       <div class="col-auto notification-header">
-        <!-- NOTIFICATION -->
-        <div class="dropdown">
-          <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-bell icon-notification"></i>
-            <span
-              class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light">3<span
+        
+<div class="dropdown">
+    <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-bell icon-notification"></i>
+        <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light">3<span
                 class="visually-hidden">unread messages</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        </span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
+        <div class="card">
+            <div class="card-header bg-white shadow-sm">
+                <h6 class="fs-6 text-secondary">New Notification Received</h6>
+            </div>
+            <div class="card-body bg-light">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </div>
+            <div class="card-footer bg-white shadow-sm">
+                <h6 class="fs-6 text-primary text-center">See All Notification</h6>
+            </div>
         </div>
+    </ul>
+</div>
+
       </div>
       <div class="col-auto">
         <!-- PROFILE -->
@@ -106,13 +116,16 @@
   <div class="card">
     <div class="card-body">
       <!-- TABS -->
-      <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
-        <a class="nav-link active" id="nav-create-message-tab" data-bs-toggle="tab" data-bs-target="#nav-create-message"
-          type="button" role="tab" aria-controls="nav-create-message" aria-selected="true">
-          <i class="fa-solid fa-pen me-1"></i>Create Message</a>
-        <a class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history" type="button"
-          role="tab" aria-controls="nav-history" aria-selected="true">
-          <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History</a>
+      <div class="nav nav-tabs mb-4 mb-md-5 flex-nowrap overflow-auto" id="nav-tab" role="tablist">
+        <a class="col-auto nav-link active" id="nav-create-message-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-create-message" type="button" role="tab" aria-controls="nav-create-message"
+          aria-selected="true">
+          <i class="fa-solid fa-pen me-1"></i>Create Message
+        </a>
+        <a class="col-auto nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history"
+          type="button" role="tab" aria-controls="nav-history" aria-selected="true">
+          <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History
+        </a>
       </div>
 
       <div class="tab-content" id="nav-tabContent">
@@ -255,7 +268,7 @@
             <h6 class="h6 fw-bolder">Message History</h6>
             <hr class="my-2" />
             <div class="d-flex justify-content-end">
-              <div class="col-10 col-sm-auto">
+              <div class="col-11 col-sm-auto">
 <div class="position-relative">
   <label for="search" class="icon-search show">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -266,12 +279,12 @@
             </div>
             <div class="table-responsive mt-4">
               <table class="table table-bordered">
-                <thead class="table-light">
+                <thead>
                   <tr>
-                    <th scope="col">Message</th>
-                    <th scope="col">Recepients</th>
-                    <th scope="col">Message Time</th>
-                    <th scope="col"></th>
+                    <th class="col-5 col-lg-6" scope="col">Message</th>
+                    <th class="col-1" scope="col">Recepients</th>
+                    <th class="col-3 col-lg-2" scope="col">Message Time</th>
+                    <th class="col-3 col-lg-2" scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -281,7 +294,7 @@
                     </td>
                     <td>2</td>
                     <td>17-08-2022, 04:00pm</td>
-                    <td>
+                    <td class="fw-bold">
                       <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
                       <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button"
                         class="text-danger">Delete</a>
