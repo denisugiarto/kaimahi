@@ -1,0 +1,130 @@
+<!-- NOTIFICATION -->
+{% macro header(qty) %}
+<div class="dropdown">
+  <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+    <i class="fas fa-bell icon-notification"></i>
+    <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+      >3<span class="visually-hidden">unread messages</span>
+    </span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
+    <div class="card card--notification">
+      <div class="card-header">New Notification Received</div>
+      <div class="card-body">
+        <div class="nav nav-tabs nav-tabs--notification mb-2" id="nav-tab" role="tablist">
+          <a
+            class="col-auto nav-link active"
+            id="all-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#all-notif"
+            type="button"
+            role="tab"
+            aria-controls="all-notif"
+            aria-selected="true"
+          >
+            All
+          </a>
+          <a
+            class="col-auto nav-link"
+            id="unread-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#unread-notif"
+            type="button"
+            role="tab"
+            aria-controls="unread-notif"
+            aria-selected="false"
+          >
+            Unread
+          </a>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+            <div class="notification-message">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto d-none">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notif-tab"></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="d-block fs-6 fw-bold text-primary text-center">See All Notification</a>
+      </div>
+    </div>
+  </ul>
+</div>
+{% endmacro %}

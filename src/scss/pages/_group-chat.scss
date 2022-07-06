@@ -1,0 +1,72 @@
+.card.group-chat {
+  $headerHeight: 60px;
+  $marginCard: 24px;
+  height: calc(100vh - $headerHeight - calc($marginCard * 2));
+  overflow-y: auto;
+
+  @include media-breakpoint-up(md) {
+    $headerHeight: 76px;
+    $marginCard: 32px;
+    height: calc(100vh - $headerHeight - calc($marginCard * 2));
+  }
+}
+
+.table {
+  thead {
+    @extend .text-white;
+    @extend .border;
+    background-color: $brand-800;
+  }
+
+  tbody {
+    @extend .fw-light;
+  }
+}
+
+.my-chat,
+.not-my-chat {
+  @extend .d-flex;
+  @extend .flex-column;
+  .chat-content {
+    @extend .col-10;
+    @extend .col-sm-7;
+    @extend .col-md-6;
+    @extend .col-lg-7;
+    @extend .col-xl-6;
+    @extend .px-2;
+    @extend .py-3;
+    @extend .rounded-top;
+    @extend .ms-5;
+    @extend .mb-2;
+    @extend .fs-6;
+    @extend .fw-light;
+  }
+  .chat-profile {
+    @extend .d-flex;
+    @extend .align-items-center;
+  }
+  &:not(:last-child) {
+    @extend .mb-5;
+  }
+}
+
+.my-chat {
+  @extend .align-items-end;
+  .chat-content {
+    background-color: $brand-900;
+    @extend .rounded-start;
+    @extend .text-white;
+  }
+
+  .chat-profile {
+    @extend .flex-row-reverse;
+  }
+}
+
+.not-my-chat {
+  @extend .align-items-start;
+  .chat-content {
+    @extend .bg-light;
+    @extend .rounded-end;
+  }
+}

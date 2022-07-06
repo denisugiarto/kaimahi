@@ -1,11 +1,30 @@
 .dropdown-toggle::after {
-    content: "\f107";
-    border: none;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    display: none;
+  content: '\f107';
+  border: none;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: none;
 
-    @include media-breakpoint-up(md) {
-        display: inline-block;
-    }
-}   
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+  }
+}
+
+.dropdown-toggle.no-icon {
+  @extend .icon-md;
+}
+
+.dropdown-toggle.no-icon::after {
+  content: '';
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.dropdown-menu {
+  .dropdown-menu {
+    top: auto;
+    right: 10px;
+  }
+}

@@ -1,0 +1,59 @@
+.card {
+  &--notification {
+    width: 270px;
+    .card-header {
+      @extend .fs-6;
+      @extend .text-secondary;
+      @extend .fw-bold;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .card-body {
+      @extend .fs-6;
+      padding: 15px 10px;
+    }
+    .card-footer {
+      @extend .fs-6;
+      box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.notification-message {
+  .title {
+    @extend .d-inline-block;
+    @extend .fw-bold;
+    @extend .fs-6;
+    @extend .me-1;
+  }
+
+  .status {
+    @extend .d-inline-block;
+    @extend .rounded-pill;
+    @extend .px-1;
+    @extend .fs-7;
+    background-color: $brand-100;
+  }
+
+  .message {
+    @extend .fs-7;
+  }
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  &:not(:last-child) {
+    @extend .mb-2;
+  }
+
+  .title,
+  .message {
+    color: $secondary;
+  }
+}
+
+.notification-message.unread {
+  .title,
+  .message {
+    color: $text;
+  }
+}

@@ -5,94 +5,110 @@ $min-contrast-ratio: 2;
 
 //gray-color-variables
 $gray-100: #f6f6f6;
-$gray-200: #E9E9E9;
-$gray-400: #CACACA;
-$gray-600: #A9A9A9;
+$gray-200: #e9e9e9;
+$gray-400: #cacaca;
+$gray-600: #a9a9a9;
 $gray-800: #626262;
-$gray-900: #2C3131;
+$gray-900: #2c3131;
 
-
-$red:     #D32721;
-$yellow:  #ffc107;
-$green:   #07604E;
-$cyan:    #0dcaf0;
+$red: #d32721;
+$yellow: #ffc107;
+$green: #2fd661;
+$cyan: #0dcaf0;
 $white: #fff;
-$text:    $gray-900;
+$text: $gray-900;
+
+$brand-100: #d3fcd3;
+$brand-200: #a8f9b0;
+$brand-300: #79ee91;
+$brand-400: #56de7f;
+$brand-500: #25c967;
+$brand-600: #1bac64;
+$brand-700: #12905e;
+$brand-800: #0b7455;
+$brand-900: #07604e;
 
 $custom-colors: (
-  "light-gray": $gray-400
+  'light-gray': $gray-400,
 );
 
 //theme-color-variables
-$primary:     #25C967;
-$secondary:     $gray-600;
-$success:       $green;
-$info:          $cyan;
-$warning:       $yellow;
-$danger:        $red;
-$light:         $gray-100;
-$dark:          $gray-800;
+$primary: $brand-500;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
 
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
 );
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-//BODY 
+//BODY
 $body-color: $text;
 $body-bg: $gray-100;
 
 // BORDER RADIUS
-$border-radius-sm: .3125rem; //5px
-$border-radius: .625rem; //10px
+$border-radius-sm: 0.3125rem; //5px
+$border-radius: 0.625rem; //10px
 $border-radius-lg: 1.25rem; //20px
 
 //BUTTON SM
-$btn-padding-y-sm: .5rem;
-$btn-padding-x-sm: .625rem;
-$btn-font-size-sm: .75rem;
-$btn-border-radius-sm: .5rem;
+$btn-padding-y-sm: 0.5rem;
+$btn-padding-x-sm: 0.625rem;
+$btn-font-size-sm: 0.75rem;
+$btn-border-radius-sm: 0.5rem;
 
 //BUTTON
-$btn-padding-y: .875rem;
+$btn-padding-y: 0.875rem;
 $btn-padding-x: 1.75rem;
 $btn-font-weight: 500;
 
 //BUTTON LG
-$btn-padding-y-lg: .875rem;
+$btn-padding-y-lg: 0.875rem;
 $btn-padding-x-lg: 1.5rem;
-$btn-border-radius-lg: .5rem;
+$btn-border-radius-lg: 0.5rem;
 $input-btn-font-size-lg: 1rem;
 
 //CARD
 $card-border-width: 0;
 $card-spacer-y: 20px;
 $card-spacer-x: 10px;
+$card-cap-bg: $white;
 
 // FONT FAMILY
 $font-family-base: 'Inter', sans-serif;
 
 //FONT SIZE
 $font-sizes: (
-  1: 1.75rem, //28px
-  2: 1.5rem,  //24px
-  3: 1.25rem, //20px
-  4: 1rem,  //16px
-  5: .875rem, //14px
-  6: .75rem,  //12px
-  7: .625rem  //10px
+  1: 1.75rem,
+  //28px
+  2: 1.5rem,
+  //24px
+  3: 1.25rem,
+  //20px
+  4: 1rem,
+  //16px
+  5: 0.875rem,
+  //14px
+  6: 0.75rem,
+  //12px
+  7: 0.625rem //10px,,,
 );
 
-//FONT WEIGHT 
+//FONT WEIGHT
 $font-weight-bold: 500;
 $font-weight-bolder: 700;
 
@@ -104,7 +120,7 @@ $input-padding-y: 0.625rem;
 $input-padding-x: 1rem;
 
 //FORM FLOATING
-$form-floating-label-transform: scale(.75) translateY(-.4rem) translateX(.55rem);
+$form-floating-label-transform: scale(0.75) translateY(-0.4rem) translateX(0.55rem);
 
 //INPUT
 $input-btn-padding-y: 1rem;
@@ -112,7 +128,6 @@ $input-btn-padding-x: 1.5rem;
 $input-bg: $white;
 $input-placeholder-color: $gray-400;
 $input-border-width: 0;
-
 
 // LINK
 $link-color: black;
@@ -127,7 +142,6 @@ $navbar-light-toggler-icon-bg: url('../icons/icon-menu.svg');
 $navbar-toggler-padding-y: 0;
 $navbar-toggler-padding-x: 0;
 
-
 //NAVLINK
 $nav-tabs-link-active-color: $primary;
 $nav-link-font-weight: 300;
@@ -136,8 +150,8 @@ $nav-tabs-link-active-bg: $white;
 $nav-tabs-link-active-border-color: $primary;
 
 //PAGINATION
-$pagination-padding-y: .125rem;
-$pagination-padding-x: .625rem;
+$pagination-padding-y: 0.125rem;
+$pagination-padding-x: 0.625rem;
 
 //REBOOT
 $headings-margin-bottom: 0;
@@ -147,8 +161,8 @@ $paragraph-margin-bottom: 0;
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * .3125,
-  2: $spacer * .625,
+  1: $spacer * 0.3125,
+  2: $spacer * 0.625,
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 2,

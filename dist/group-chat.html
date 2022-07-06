@@ -11,8 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="" <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
@@ -20,6 +19,7 @@
     <div class="grid-container">
       <!-- HEADER -->
       
+
 <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
   <nav class="container-fluid d-block">
     <div class="row gx-3 align-items-center">
@@ -47,21 +47,135 @@
 
       </div>
       <div class="col-auto notification-header">
-        <!-- NOTIFICATION -->
-        <div class="dropdown">
-          <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-bell icon-notification"></i>
-            <span
-              class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light">3<span
-                class="visually-hidden">unread messages</span>
-            </span>
+        
+<div class="dropdown">
+  <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+    <i class="fas fa-bell icon-notification"></i>
+    <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+      >3<span class="visually-hidden">unread messages</span>
+    </span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
+    <div class="card card--notification">
+      <div class="card-header">New Notification Received</div>
+      <div class="card-body">
+        <div class="nav nav-tabs nav-tabs--notification mb-2" id="nav-tab" role="tablist">
+          <a
+            class="col-auto nav-link active"
+            id="all-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#all-notif"
+            type="button"
+            role="tab"
+            aria-controls="all-notif"
+            aria-selected="true"
+          >
+            All
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <a
+            class="col-auto nav-link"
+            id="unread-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#unread-notif"
+            type="button"
+            role="tab"
+            aria-controls="unread-notif"
+            aria-selected="false"
+          >
+            Unread
+          </a>
         </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+            <div class="notification-message">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto d-none">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notif-tab"></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="d-block fs-6 fw-bold text-primary text-center">See All Notification</a>
+      </div>
+    </div>
+  </ul>
+</div>
+
       </div>
       <div class="col-auto">
         <!-- PROFILE -->
@@ -100,85 +214,81 @@
        
 
 <main class="bd-main">
-    <div class="card">
-        <div class="card-header bg-white border-bottom p-4">
-            <div class="d-flex align-items-center">
-                
+  <div class="card group-chat">
+    <div class="card-header bg-white p-4 sticky-top border-bottom">
+      <div class="d-flex align-items-center">
+        
 <a id="" href="home.html" role="button" class="d-flex align-items-center fw-bolder">
   <i class="icon-back fa-solid fa-angle-left me-2"></i>
 </a>
 
-                <div class="d-block">
-                    <h5 class="h5 mb-1">Group Chat</h5>
-                    <p class="desc">5 members</p>
-                </div>
-            </div>
+        <div class="d-block">
+          <h5 class="h5 mb-1">Group Chat</h5>
+          <p class="desc">5 members</p>
         </div>
-        <div class="card-body">
-            <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
-            <div class="not-my-chat mb-5">
-                <div
-                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
-                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been
-                        the industry's standard dummy text ever since the 1500s,
-                    </p>
-                </div>
-                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
-                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-            </div>
-            <div class="not-my-chat mb-5">
-                <div
-                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
-                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been
-                        the industry's standard dummy text ever since the 1500s,
-                    </p>
-                </div>
-                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
-                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-            </div>
-            <div class="my-chat mb-5 d-flex flex-column align-items-end">
-                <div
-                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 px-2 py-3 rounded-top rounded-start ms-5 mb-2 bg-success text-white">
-                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been
-                        the industry's standard dummy text ever since the 1500s,
-                    </p>
-                </div>
-                <div class="d-flex flex-row-reverse align-items-center">
-                    <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
-                    <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
-                </div>
-            </div>
-            <div class="not-my-chat">
-                <div
-                    class="col-10 col-sm-7 col-md-6 col-lg-7 col-xl-6 bg-light px-2 py-3 rounded-top rounded-end ms-5 mb-2">
-                    <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been
-                        the industry's standard dummy text ever since the 1500s,
-                    </p>
-                </div>
-                <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle">
-                <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-            </div>
-        </div>
-        <div class="card-footer bg-white">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
-                </div>
-                <div class="col">
-                    <input type="text" name="messages" class="form-control w-100">
-                </div>
-                <div class="col-auto">
-                    <button class="btn btn-primary text-white fs-2 py-0 px-2">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="card-body">
+      <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
+      <div class="not-my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+      <div class="not-my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+      <div class="my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+      <div class="not-my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer sticky-bottom bg-white border-top">
+      <div class="px-2">
+        <div class="row gx-3 align-items-center">
+          <div class="col-auto">
+            <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+          </div>
+          <div class="col">
+            <input type="text" name="messages" class="form-control w-100" />
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary text-white fs-2 py-0 px-2">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 
@@ -307,11 +417,10 @@
     <!-- SCRIPT -->
     
 <script>
-    $(document).ready(function () {
-        // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
-        $(".nav-link:contains(Group Chat)").addClass("active");
-    });
-
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
+    $('.nav-link:contains(Group Chat)').addClass('active');
+  });
 </script>
 
   </body>

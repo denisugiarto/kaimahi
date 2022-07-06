@@ -1,33 +1,51 @@
 .nav-tabs {
-    border-bottom: 1px solid $gray-400;
+  @extend .flex-nowrap;
+  @extend .overflow-auto;
+  border-bottom: 1px solid $gray-400;
+  .nav-link {
+    color: $secondary;
+    @extend .fs-4;
+    @extend .fs-md-3;
+    padding: 5px;
 
+    @include media-breakpoint-up(md) {
+      padding: 10px 15px;
+    }
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    i {
+      @extend .me-1;
+      @extend .me-md-2;
+    }
+  }
+
+  .nav-link:not(:last-child) {
+    @extend .me-md-4;
+    @extend .me-1;
+  }
+
+  .nav-link.active {
+    font-weight: 500;
+    border-bottom: 2px solid;
+  }
+
+  &.nav-tabs--notification {
+    @extend .mx-n2;
     .nav-link {
-        color: $secondary;
-        @extend .fs-4;
-        @extend .fs-md-3;
-        padding: 5px;
-        
-        @include media-breakpoint-up(md) {
-            padding: 10px 15px;
-        }
-
-        &:hover {
-            background-color: $gray-100;
-        }
-
-        i {
-            @extend .me-1;
-            @extend .me-md-2;
-        }
+      @extend .fs-6;
+      @extend .fs-md-6;
+      padding: 0 5px;
+      @include media-breakpoint-up(md) {
+        padding: 0px 15px;
+      }
     }
 
     .nav-link:not(:last-child) {
-        @extend .me-md-4;
-        @extend .me-1;
+      @extend .me-md-0;
+      @extend .me-0;
     }
-
-    .nav-link.active {
-        font-weight: 500;
-        border-bottom: 2px solid;
-    }
+  }
 }
