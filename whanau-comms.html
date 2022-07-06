@@ -49,27 +49,131 @@
       <div class="col-auto notification-header">
         
 <div class="dropdown">
-    <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-bell icon-notification"></i>
-        <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light">3<span
-                class="visually-hidden">unread messages</span>
-        </span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
-        <div class="card">
-            <div class="card-header bg-white shadow-sm">
-                <h6 class="fs-6 text-secondary">New Notification Received</h6>
-            </div>
-            <div class="card-body bg-light">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </div>
-            <div class="card-footer bg-white shadow-sm">
-                <h6 class="fs-6 text-primary text-center">See All Notification</h6>
-            </div>
+  <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+    <i class="fas fa-bell icon-notification"></i>
+    <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+      >3<span class="visually-hidden">unread messages</span>
+    </span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
+    <div class="card card--notification">
+      <div class="card-header">New Notification Received</div>
+      <div class="card-body">
+        <div class="nav nav-tabs nav-tabs--notification mb-2" id="nav-tab" role="tablist">
+          <a
+            class="col-auto nav-link active"
+            id="all-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#all-notif"
+            type="button"
+            role="tab"
+            aria-controls="all-notif"
+            aria-selected="true"
+          >
+            All
+          </a>
+          <a
+            class="col-auto nav-link"
+            id="unread-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#unread-notif"
+            type="button"
+            role="tab"
+            aria-controls="unread-notif"
+            aria-selected="false"
+          >
+            Unread
+          </a>
         </div>
-    </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+            <div class="notification-message">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto d-none">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notif-tab"></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="d-block fs-6 fw-bold text-primary text-center">See All Notification</a>
+      </div>
+    </div>
+  </ul>
 </div>
 
       </div>
@@ -107,8 +211,7 @@
 
 
       <!-- CONTENT -->
-         
-
+          
 
 <main class="bd-main">
   <!-- PAGE TITLE -->
@@ -116,29 +219,48 @@
   <div class="card">
     <div class="card-body">
       <!-- TABS -->
-      <div class="nav nav-tabs mb-4 mb-md-5 flex-nowrap overflow-auto" id="nav-tab" role="tablist">
-        <a class="col-auto nav-link active" id="nav-create-message-tab" data-bs-toggle="tab"
-          data-bs-target="#nav-create-message" type="button" role="tab" aria-controls="nav-create-message"
-          aria-selected="true">
+      <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
+        <a
+          class="col-auto nav-link active"
+          id="nav-create-message-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-create-message"
+          type="button"
+          role="tab"
+          aria-controls="nav-create-message"
+          aria-selected="true"
+        >
           <i class="fa-solid fa-pen me-1"></i>Create Message
         </a>
-        <a class="col-auto nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history"
-          type="button" role="tab" aria-controls="nav-history" aria-selected="true">
+        <a
+          class="col-auto nav-link"
+          id="nav-history-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-history"
+          type="button"
+          role="tab"
+          aria-controls="nav-history"
+          aria-selected="true"
+        >
           <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History
         </a>
       </div>
 
       <div class="tab-content" id="nav-tabContent">
         <!-- TAB create-message -->
-        <div class="tab-pane fade show active" id="nav-create-message" role="tabpanel"
-          aria-labelledby="nav-create-message-tab">
+        <div
+          class="tab-pane fade show active"
+          id="nav-create-message"
+          role="tabpanel"
+          aria-labelledby="nav-create-message-tab"
+        >
           <!-- STEPS MENU -->
           <div class="steps-menu mb-5">
             <div id="step1" class="step-item active">
               <div class="step-number">1</div>
               <div class="step-title">Message Detail</div>
             </div>
-            <div id="step2" class="step-item ">
+            <div id="step2" class="step-item">
               <div class="step-number">2</div>
               <div class="step-title">Select Whānau</div>
             </div>
@@ -254,8 +376,15 @@
 </div>
 
                     <div id="whanau" class="mb-4"></div>
-                    <button id="sendMessage" class="btn btn-secondary w-100" data-bs-toggle="modal"
-                      data-bs-target="#successModal" disabled>Send Message</button>
+                    <button
+                      id="sendMessage"
+                      class="btn btn-secondary w-100"
+                      data-bs-toggle="modal"
+                      data-bs-target="#successModal"
+                      disabled
+                    >
+                      Send Message
+                    </button>
                   </div>
                 </div>
               </div>
@@ -296,8 +425,9 @@
                     <td>17-08-2022, 04:00pm</td>
                     <td class="fw-bold">
                       <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
-                      <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button"
-                        class="text-danger">Delete</a>
+                      <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button" class="text-danger"
+                        >Delete</a
+                      >
                     </td>
                   </tr>
                 </tbody>
@@ -331,19 +461,19 @@
             <h6 class="h6 mb-2">Message</h6>
             <div class="d-flex mb-4">
               <div class="col-8">
-                <textarea class="form-control bg-light text-dark fw-light fs-6"
-                  rows="5">Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea>
+                <textarea class="form-control bg-light text-dark fw-light fs-6" rows="5">
+Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
+                >
               </div>
             </div>
             <!-- RECIPIENTS -->
             <h6 class="h6 mb-2">Recipients</h6>
-            <div id="listRecipients" class="row g-3 g-md-2 g-xl-4">
-            </div>
+            <div id="listRecipients" class="row g-3 g-md-2 g-xl-4"></div>
             <div class="row mt-4">
               <div class="col">
-                <a id="showAllRecipients" role="button" class="text-primary fw-light">Show <span
-                    id="qtyRecipients">1</span>
-                  more</a>
+                <a id="showAllRecipients" role="button" class="text-primary fw-light"
+                  >Show <span id="qtyRecipients">1</span> more</a
+                >
               </div>
               <div class="col-auto">
                 <nav aria-label="Page navigation example">
@@ -376,8 +506,7 @@
   </div>
 </div>
 
-
-
+ 
 <!-- Delete Comment Modal -->
 <div class="modal fade" id="deleteMessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -404,9 +533,7 @@
     </div>
   </div>
 </div>
-
-
-
+ 
     </div>
     <!-- FOOTER -->
     <script
@@ -534,29 +661,29 @@
 <script>
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
-    $(".nav-link:contains('Whānau Comms')").addClass("active");
+    $(".nav-link:contains('Whānau Comms')").addClass('active');
 
     //CREATE MESSAGE TO STEP 2
-    $("button:contains(Add Message)").click(function () {
-      $("#messageDetail").removeClass("show");
-      $("#selectWhanau").addClass("show");
-      $("#step1").removeClass("active");
-      $("#step2").addClass("active");
+    $('button:contains(Add Message)').click(function () {
+      $('#messageDetail').removeClass('show');
+      $('#selectWhanau').addClass('show');
+      $('#step1').removeClass('active');
+      $('#step2').addClass('active');
     });
 
     //CREATE MESSAGE BACK TO STEP 1
-    $("#backMessageDetail").click(function () {
-      $("#messageDetail").addClass("show");
-      $("#selectWhanau").removeClass("show");
-      $("#step2").removeClass("active");
-      $("#step1").addClass("active");
+    $('#backMessageDetail').click(function () {
+      $('#messageDetail').addClass('show');
+      $('#selectWhanau').removeClass('show');
+      $('#step2').removeClass('active');
+      $('#step1').addClass('active');
     });
 
     // TIME AND DATE
     var now = new Date();
     function addZero(value) {
       if (value < 10) {
-        return "0" + value;
+        return '0' + value;
       }
 
       return value;
@@ -564,30 +691,30 @@
     let day = addZero(now.getDate());
     let month = addZero(now.getMonth());
     let year = now.getFullYear();
-    let date = year + "-" + month + "-" + day;
-    $("#time").val(now.toLocaleString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false }));
-    $("#date").val(date);
+    let date = year + '-' + month + '-' + day;
+    $('#time').val(now.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
+    $('#date').val(date);
 
-    let message = "Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A";
-    $("#message").val(message);
+    let message = 'Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A';
+    $('#message').val(message);
 
     // WHANAU
     let whanau = [
-      { id: 0, avatar: "profile-1.webp", name: "Deni", lastDelivery: "17-01-2022" },
-      { id: 1, avatar: "profile-2.webp", name: "Deni Sugiarto", lastDelivery: "17-01-2022" },
-      { id: 2, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 3, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 4, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 5, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 6, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 7, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 8, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
-      { id: 9, avatar: "profile-1.webp", name: "Ahmed Al Aklouk", lastDelivery: "17-01-2022" },
+      { id: 0, avatar: 'profile-1.webp', name: 'Deni', lastDelivery: '17-01-2022' },
+      { id: 1, avatar: 'profile-2.webp', name: 'Deni Sugiarto', lastDelivery: '17-01-2022' },
+      { id: 2, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 3, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 4, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 5, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 6, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 7, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 8, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 9, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
     ];
 
     // WHANAU MAP
     function listAllWhanau() {
-      $("#whanau").prepend(
+      $('#whanau').prepend(
         jQuery.map(whanau, function (item) {
           return (
             "<div class='d-flex border-bottom p-3 align-items-center'>" +
@@ -597,15 +724,15 @@
             "<img src='./assets/images/" +
             item.avatar +
             "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
-            "<div>" +
+            '<div>' +
             "<h6 class='fs-5 mb-1'>" +
             item.name +
-            "</h6>" +
+            '</h6>' +
             "<h6 class='fs-6'><span class='fw-light text-dark'>Last Delivery </span>" +
             item.lastDelivery +
-            "</h6>" +
-            "</div>" +
-            "</div>"
+            '</h6>' +
+            '</div>' +
+            '</div>'
           );
         })
       );
@@ -615,33 +742,40 @@
     let selectedWhanau = [];
 
     function listSelectedWhanau() {
-      $("#addWhanau").children().remove();
-      $("#addWhanau").prepend(
+      $('#addWhanau').children().remove();
+      $('#addWhanau').prepend(
         jQuery.map(selectedWhanau, function (index) {
           return (
             "<div class='col-12 col-md-6'>" +
             "<div class='card small bg-light'>" +
             "<div class='card-body'>" +
             "<div class='d-flex align-items-center'>" +
-            "<img src='./assets/images/" + index.avatar + "' alt='avatar' class='icon-lg rounded-circle'/>" +
+            "<img src='./assets/images/" +
+            index.avatar +
+            "' alt='avatar' class='icon-lg rounded-circle'/>" +
             "<div class='d-block ms-2'>" +
-            "<h6 class='fs-5 mb-1'>" + index.name + "</h6>" +
+            "<h6 class='fs-5 mb-1'>" +
+            index.name +
+            '</h6>' +
             "<h6 class='fs-6'> <span class='fw-light text-dark'>Last Delivery </span>" +
-            index.lastDelivery + "</h6> </div>" +
+            index.lastDelivery +
+            '</h6> </div>' +
             "<div class='ms-auto'>" +
-            "<button id='" + index.id + "' class='btn btn-delete bg-danger p-0 flex-center icon-lg'>" +
+            "<button id='" +
+            index.id +
+            "' class='btn btn-delete bg-danger p-0 flex-center icon-lg'>" +
             "<i class='fa-solid fa-trash text-white fs-5'></i>" +
-            "</button>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>"
+            '</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
           );
         })
       );
-      $(".btn-delete").click(function () {
-        let id = $(this).prop("id");
+      $('.btn-delete').click(function () {
+        let id = $(this).prop('id');
         removeWhanau(id);
         listSelectedWhanau();
         removeCheck(id);
@@ -667,27 +801,27 @@
 
     //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
     function removeCheck(id) {
-      let item = "whanau-" + id;
-      return $("#" + item).prop("checked", false);
+      let item = 'whanau-' + id;
+      return $('#' + item).prop('checked', false);
     }
 
     //BUTTON SEND UPDATE TRIGGER
     function buttonSendUpdate() {
       if (selectedWhanau.length > 0) {
-        console.log('button change to primary')
-        $("#sendMessage").removeClass("btn-secondary").addClass("btn-primary").attr('disabled', false);
+        console.log('button change to primary');
+        $('#sendMessage').removeClass('btn-secondary').addClass('btn-primary').attr('disabled', false);
       } else {
-        $("#sendMessage").removeClass("btn-primary").addClass("btn-secondary").attr('disabled', true);
+        $('#sendMessage').removeClass('btn-primary').addClass('btn-secondary').attr('disabled', true);
       }
     }
 
     //INPUT CHECKBOX WILL ADD SELECTED WHANAU WHEN CHECK AND REMOVE WHEN UNCHECK
-    $(".form-check-input").click(function () {
-      let id = $(this).prop("id").split("-")[1];
-      if ($(this).prop("checked") == true) {
+    $('.form-check-input').click(function () {
+      let id = $(this).prop('id').split('-')[1];
+      if ($(this).prop('checked') == true) {
         addWhanau(id);
         listSelectedWhanau();
-      } else if ($(this).prop("checked") == false) {
+      } else if ($(this).prop('checked') == false) {
         removeWhanau(id);
         listSelectedWhanau();
       }
@@ -696,8 +830,8 @@
 
     //LIST RECIPIENTS MAP
     function listRecipients(index) {
-      $("#listRecipients").children().remove();
-      $("#listRecipients").prepend(
+      $('#listRecipients').children().remove();
+      $('#listRecipients').prepend(
         jQuery.map(whanau.slice(0, index), function (item) {
           return (
             "<div class='col-12 col-md-4 col-lg-3'>" +
@@ -705,52 +839,52 @@
             "<img src='./assets/images/" +
             item.avatar +
             "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
-            "<div>" +
+            '<div>' +
             "<h6 class='fs-5 mb-1'>" +
             item.name +
-            "</h6>" +
+            '</h6>' +
             "<h6 class='fs-6'><span class='fw-light text-dark'>Last Delivery </span>" +
             item.lastDelivery +
-            "</h6>" +
-            "</div>" +
-            "</div>" +
-            "</div>"
+            '</h6>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
           );
         })
-      )
+      );
     }
 
-    //GENERATE RECIPIENTS LIST 
+    //GENERATE RECIPIENTS LIST
     listRecipients(4);
-    $("#qtyRecipients").text(whanau.length - 4);
+    $('#qtyRecipients').text(whanau.length - 4);
 
-    //FUNCTION BUTTON SHOW MORE 
-    $("#showAllRecipients").click(function () {
-      if ($(this).text() == "Less") {
+    //FUNCTION BUTTON SHOW MORE
+    $('#showAllRecipients').click(function () {
+      if ($(this).text() == 'Less') {
         listRecipients(4);
-        $("#showAllRecipients").text("Show " + (whanau.length - 4) + " More");
+        $('#showAllRecipients').text('Show ' + (whanau.length - 4) + ' More');
       } else {
         listRecipients(whanau.length);
-        $(this).text("Less");
+        $(this).text('Less');
       }
     });
 
     //BUTTON BACK MESSAGE HISTORY DETAIL
-    $("#backMessageHistoryDetail").click(function () {
-      $("#messageHistoryDetail").removeClass("show");
-      $("#messageHistory").addClass("show");
+    $('#backMessageHistoryDetail').click(function () {
+      $('#messageHistoryDetail').removeClass('show');
+      $('#messageHistory').addClass('show');
     });
 
     //BUTTON SEE DETAIL IN MESSAGE HISTORY
-    $("#seeDetailButton").click(function () {
-      $("#messageHistory").removeClass("show");
-      $("#messageHistoryDetail").addClass("show");
+    $('#seeDetailButton').click(function () {
+      $('#messageHistory').removeClass('show');
+      $('#messageHistoryDetail').addClass('show');
     });
 
     //BUTTON DELETE IN MESSAGE HISTORY
-    $("#deleteMessageButton").click(function () {
-      $("#tableRow").children($("td")).text("No data").addClass("text-secondary");
-    })
+    $('#deleteMessageButton').click(function () {
+      $('#tableRow').children($('td')).text('No data').addClass('text-secondary');
+    });
   });
 </script>
 
