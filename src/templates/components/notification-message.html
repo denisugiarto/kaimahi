@@ -1,0 +1,82 @@
+<!-- UNREAD -->
+{% macro unread(title, message, time) %}
+<div class="notification-message unread">
+  <div class="d-flex align-items-center">
+    <div class="col-auto">
+      <div class="title">{{ title }}</div>
+    </div>
+    <div class="col-auto">
+      <div class="status">Unread</div>
+    </div>
+    <div class="col-auto ms-auto">
+      <a
+        role="button"
+        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-ellipsis-h"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <a class="dropdown-item" href="#">
+            <i
+              class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+            ></i>
+            <span class="fw-light fs-6">Mark Read</span>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">
+            <i
+              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+            ></i>
+            <span class="fw-light fs-6">Remove This Notification </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
+      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
+    </a>
+  </div>
+  <div class="message">{{ message }}</div>
+  <div class="time">{{ time }}</div>
+</div>
+{% endmacro%}
+
+<!-- READED -->
+{% macro readed(title, message, time) %}
+<div class="notification-message">
+  <div class="d-flex align-items-center">
+    <div class="col-auto">
+      <div class="title">{{ title }}</div>
+    </div>
+    <div class="col-auto ms-auto">
+      <a
+        role="button"
+        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-ellipsis-h"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <a class="dropdown-item" href="#">
+            <i
+              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+            ></i>
+            <span class="fw-light fs-6">Remove This Notification </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
+      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
+    </a>
+  </div>
+  <div class="message">{{ message }}</div>
+  <div class="time">{{ time }}</div>
+</div>
+{% endmacro%}

@@ -1,21 +1,19 @@
 .card {
-
   &.outside-button {
     margin-bottom: 120px;
   }
 
   &.small {
-
     .card-body {
       @extend .p-1;
     }
   }
-
 }
 
-.card-body {
-
+.card-body,
+.card-header,
+.card-footer {
   @include media-breakpoint-up(md) {
-    padding: 20px;
+    padding: 24px;
   }
 }

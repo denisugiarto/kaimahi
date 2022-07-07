@@ -1,0 +1,91 @@
+{% extends "layout.html" %} {% set pageTitle = 'Notifications' %} {% set cssFiles = './assets/css/style.css' %} {% block
+content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as input
+%} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
+'../components/notification-message.html' as message %} {% import '../components/pagination.html' as pagination %} {%
+import '../components/nav-tabs.html' as navTabs %}
+
+<main class="bd-main">
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">Notifications</h1>
+  <div class="card">
+    <div class="card-header border-bottom">
+      <div class="row gy-3 align-items-center">
+        <div class="col-12 col-sm">{{ button.back('', 'Back') }}</div>
+        <div class="col-12 col-sm-auto">
+          <p class="fs-4 fw-light">Notifications only show for the last 15 days</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      {{ navTabs.menu([{ title: 'All', id: 'all-notification', status: 'active'}, { title: 'Unread', id:
+      'unread-notification'}]) }}
+      <div class="tab-content mt-3">
+        <div
+          class="tab-pane fade show active"
+          id="all-notification"
+          role="tabpanel"
+          aria-labelledby="all-notification-tab"
+        >
+          {{ message.unread('Lorem', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          '16-06-2022 11.51' )}} {{ message.readed('Lorem', 'Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry.', '16-06-2022 11.51' )}} {{ message.readed('Lorem', 'Lorem Ipsum is simply dummy text of
+          the printing and typesetting industry.', '16-06-2022 11.51' )}} {{ message.readed('Lorem', 'Lorem Ipsum is
+          simply dummy text of the printing and typesetting industry.', '16-06-2022 11.51' )}}
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="col-auto">
+              <a role="button" class="text-primary fw-light">Mark as read</a>
+            </div>
+            <div class="col-auto">{{ pagination.default() }}</div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="unread-notification" role="tabpanel" aria-labelledby="unread-notification-tab">
+          <div class="notification-message unread">
+            <div class="d-flex align-items-center">
+              <div class="col-auto">
+                <div class="title">Lorem</div>
+              </div>
+              <div class="col-auto">
+                <div class="status">Unread</div>
+              </div>
+              <div class="col-auto ms-auto">
+                <a
+                  role="button"
+                  class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-ellipsis-h"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i
+                        class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                      ></i>
+                      <span class="fw-light fs-6">Mark Read</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i
+                        class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                      ></i>
+                      <span class="fw-light fs-6">Remove This Notification </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {});
+</script>
+{% endblock %}

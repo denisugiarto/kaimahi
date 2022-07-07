@@ -1,6 +1,6 @@
 .card {
-  &--notification {
-    width: 270px;
+  &--header-notification {
+    width: 250px;
     .card-header {
       @extend .fs-6;
       @extend .text-secondary;
@@ -10,6 +10,46 @@
     .card-body {
       @extend .fs-6;
       padding: 15px 10px;
+
+      .notification-message {
+        .title {
+          @extend .d-inline-block;
+          @extend .fw-bold;
+          @extend .fs-6;
+          @extend .me-1;
+        }
+
+        .status {
+          @extend .d-inline-block;
+          @extend .rounded-pill;
+          @extend .px-1;
+          @extend .fs-7;
+          background-color: $brand-100;
+        }
+
+        .message {
+          @extend .fs-7;
+        }
+        &:hover {
+          background-color: $gray-100;
+        }
+
+        &:not(:last-child) {
+          @extend .mb-2;
+        }
+
+        .title,
+        .message {
+          color: $secondary;
+        }
+      }
+
+      .notification-message.unread {
+        .title,
+        .message {
+          color: $text;
+        }
+      }
     }
     .card-footer {
       @extend .fs-6;
@@ -22,32 +62,45 @@
   .title {
     @extend .d-inline-block;
     @extend .fw-bold;
-    @extend .fs-6;
-    @extend .me-1;
+    @extend .fs-2;
+    @extend .me-2;
   }
 
   .status {
     @extend .d-inline-block;
     @extend .rounded-pill;
     @extend .px-1;
-    @extend .fs-7;
+    @extend .fs-6;
     background-color: $brand-100;
   }
 
   .message {
-    @extend .fs-7;
+    @extend .fs-4;
+    @extend .mb-1;
   }
+
+  .time {
+    @extend .fs-5;
+    @extend .text-secondary;
+  }
+
   &:hover {
     background-color: $gray-100;
   }
 
   &:not(:last-child) {
-    @extend .mb-2;
+    @extend .mb-4;
   }
 
   .title,
   .message {
     color: $secondary;
+  }
+
+  .title,
+  .message,
+  .time {
+    @extend .fw-light;
   }
 }
 
