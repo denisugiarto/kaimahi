@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,35 +20,40 @@
     <div class="grid-container">
       <!-- HEADER -->
       
-
 <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
   <nav class="container-fluid d-block">
     <div class="row gx-3 align-items-center">
       <div class="col-auto px-lg-0">
-        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </a>
       </div>
       <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
-        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
+        <img src="../assets/images/logo-light.webp" alt="logo" class="logo-header" />
       </div>
       <div id="search-header" class="col-auto col-md">
         <!-- SEARCH -->
-        <a id="button-search" role="button" class="d-block d-md-none">
-          <i class="fa-solid fa-magnifying-glass icon-search"></i>
-        </a>
         
-<div id="input-search" class="position-relative d-none d-md-block">
+<a id="header-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="header-input-search" class="position-relative d-none d-md-block">
   <label for="search" class="icon-search show">
-    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+    <i id="header-icon-search" class="fa-solid fa-magnifying-glass"></i>
   </label>
-  <input id="search" class="form-control" type="search" placeholder="Search anything" />
+  <input id="header-search" class="form-control" type="search" placeholder="Search anything" />
 </div>
 
       </div>
       <div class="col-auto notification-header">
-        
 <div class="dropdown">
   <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
     <i class="fas fa-bell icon-notification"></i>
@@ -207,19 +213,23 @@
     </div>
   </div>
 </div>
-
-      </div>
+</div>
       <div class="col-auto">
         <!-- PROFILE -->
         <div id="profile" class="d-flex align-items-center">
           <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
           <div class="dropdown">
-            <a class="dropdown-toggle d-flex align-items-center" role="button" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
             </ul>
           </div>
         </div>
@@ -227,6 +237,7 @@
     </div>
   </nav>
 </header>
+
 
       <!-- SIBEDAR -->
       <aside class="bd-sidebar bg-white shadow-sm">
@@ -243,468 +254,170 @@
 
 
       <!-- CONTENT -->
-       
+           
 
-<div class="grid-container">
-  <!-- HEADER -->
+<main class="bd-main">
+  <!-- PAGE TITLE -->
+  <h1 class="page-title text-primary"><span class="text-black fw-light">Welcome back, </span>Ahmed</h1>
+  <!-- CARDS -->
   
-
-<header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
-  <nav class="container-fluid d-block">
-    <div class="row gx-3 align-items-center">
-      <div class="col-auto px-lg-0">
-        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </a>
-      </div>
-      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
-        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
-      </div>
-      <div id="search-header" class="col-auto col-md">
-        <!-- SEARCH -->
-        <a id="button-search" role="button" class="d-block d-md-none">
-          <i class="fa-solid fa-magnifying-glass icon-search"></i>
-        </a>
+<section class="cards-info">
+    <div class="row g-3">
         
-<div id="input-search" class="position-relative d-none d-md-block">
-  <label for="search" class="icon-search show">
-    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
-  </label>
-  <input id="search" class="form-control" type="search" placeholder="Search anything" />
-</div>
-
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-user"></i>
       </div>
-      <div class="col-auto notification-header">
-        
-<div class="dropdown">
-  <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-    <i class="fas fa-bell icon-notification"></i>
-    <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
-      >3<span class="visually-hidden">unread messages</span>
-    </span>
-  </a>
-  <div class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
-    <div class="card card--header-notification">
-      <div class="card-header">New Notification Received</div>
-      <div class="card-body">
-        <div class="nav nav-tabs nav-tabs--notification mb-2" id="nav-tab" role="tablist">
-          <a
-            class="col-auto nav-link active"
-            id="all-notif-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#all-notif"
-            type="button"
-            role="tab"
-            aria-controls="all-notif"
-            aria-selected="true"
-          >
-            All
-          </a>
-          <a
-            class="col-auto nav-link"
-            id="unread-notif-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#unread-notif"
-            type="button"
-            role="tab"
-            aria-controls="unread-notif"
-            aria-selected="false"
-          >
-            Unread
-          </a>
-        </div>
-        <div class="tab-content">
-          <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notif-tab">
-            <div class="notification-message unread">
-              <div class="d-flex align-items-center">
-                <div class="col-auto">
-                  <div class="title">Lorem</div>
-                </div>
-                <div class="col-auto">
-                  <div class="status">Unread</div>
-                </div>
-                <div class="col-auto ms-auto">
-                  <a
-                    role="button"
-                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="fa-solid fa-ellipsis-h"></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i
-                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                        ></i>
-                        <span class="fw-light fs-6">Mark Read</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i
-                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                        ></i>
-                        <span class="fw-light fs-6">Remove This Notification </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <div class="notification-message">
-              <div class="d-flex align-items-center">
-                <div class="col-auto">
-                  <div class="title">Lorem</div>
-                </div>
-                <div class="col-auto d-none">
-                  <div class="status">Unread</div>
-                </div>
-                <div class="col-auto ms-auto">
-                  <a
-                    role="button"
-                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="fa-solid fa-ellipsis-h"></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i
-                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                        ></i>
-                        <span class="fw-light fs-6">Remove This Notification </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notif-tab">
-            <div class="notification-message unread">
-              <div class="d-flex align-items-center">
-                <div class="col-auto">
-                  <div class="title">Lorem</div>
-                </div>
-                <div class="col-auto">
-                  <div class="status">Unread</div>
-                </div>
-                <div class="col-auto ms-auto">
-                  <a
-                    role="button"
-                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="fa-solid fa-ellipsis-h"></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i
-                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                        ></i>
-                        <span class="fw-light fs-6">Mark Read</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i
-                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                        ></i>
-                        <span class="fw-light fs-6">Remove This Notification </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer">
-        <a href="notifications.html" class="d-block fs-6 fw-bold text-primary text-center">See All Notification</a>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">All Kaimahi</p>
       </div>
     </div>
   </div>
 </div>
 
+</div>
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-user-group"></i>
       </div>
-      <div class="col-auto">
-        <!-- PROFILE -->
-        <div id="profile" class="d-flex align-items-center">
-          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
-          <div class="dropdown">
-            <a class="dropdown-toggle d-flex align-items-center" role="button" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-            </ul>
-          </div>
-        </div>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">All
+  Whānau</p>
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+</div>
 
-  <!-- SIBEDAR -->
-  <aside class="bd-sidebar bg-white shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-dark p-0">
-    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
-      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
-      <!-- Logout -->
-      <a class="nav-link logout" role="button"
-        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
-      ></a>
+</div>
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">Current Deliveries</p>
+      </div>
     </div>
-  </nav>
-</aside>
+  </div>
+</div>
+
+</div>
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-truck"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">Completed Deliveries</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</section>
 
 
-  <main class="bd-main">
-    <!-- PAGE TITLE -->
-    <h1 class="page-title">Whānau Comms</h1>
-    <div class="card">
+
+  <!-- LATEST KAIMAHi -->
+  <section class="latest-kaimahi">
+    <div class="card mt-5">
       <div class="card-body">
-        <!-- TABS -->
-        <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
-          <a
-            class="nav-link active"
-            id="nav-create-message-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-create-message"
-            type="button"
-            role="tab"
-            aria-controls="nav-create-message"
-            aria-selected="true"
-          >
-            <i class="fa-solid fa-pen me-1"></i>Create Message</a
-          >
-          <a
-            class="nav-link"
-            id="nav-history-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-history"
-            type="button"
-            role="tab"
-            aria-controls="nav-history"
-            aria-selected="true"
-          >
-            <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History</a
-          >
-        </div>
-
-        <div class="tab-content" id="nav-tabContent">
-          <!-- TAB create-message -->
-          <div
-            class="tab-pane fade show active"
-            id="nav-create-message"
-            role="tabpanel"
-            aria-labelledby="nav-create-message-tab"
-          >
-            <!-- STEPS MENU -->
-            <div class="steps-menu mb-5">
-              <div id="step1" class="step-item">
-                <div class="step-number">1</div>
-                <div class="step-title">Message Detail</div>
-              </div>
-              <div id="step2" class="step-item active">
-                <div class="step-number">2</div>
-                <div class="step-title">Select Whānau</div>
-              </div>
-            </div>
-
-            <div id="messageDetail" class="collapse">
-              <h6 class="h6 fw-bolder ms-2">Message Detail</h6>
-              <hr class="my-2" />
-
-              <div class="card align-items-center">
-                <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-                  <div class="card bg-light mb-4 mb-md-3">
-                    <div class="card-body">
-                      <d class="d-flex">
-                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-clock"></i></div>
-                        <div class="col ms-2 mt-1">
-                          <h5 class="h5">Time</h5>
-                          <p class="fs-6 fw-light text-dark">04:00pm</p>
-                        </div>
-                      </d>
-                    </div>
-                  </div>
-                  <div class="card bg-light mb-4 mb-md-3">
-                    <div class="card-body">
-                      <d class="d-flex">
-                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-calendar-days"></i></div>
-                        <div class="col ms-2 mt-1">
-                          <h5 class="h5">Date</h5>
-                          <p class="fs-6 fw-light text-dark">17-08-2022</p>
-                        </div>
-                      </d>
-                    </div>
-                  </div>
-                  <div class="card bg-light mb-5 mb-md-4">
-                    <div class="card-body">
-                      <d class="d-flex">
-                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-comment-dots"></i></div>
-                        <div class="col ms-2 mt-1">
-                          <h5 class="h5">Message</h5>
-                          <p class="fs-6 fw-light text-dark">
-                            Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document
-                            Or A
-                          </p>
-                        </div>
-                      </d>
-                    </div>
-                  </div>
-                  <a
-                    class="btn btn-primary btn-lg w-100 py-3"
-                    role="button"
-                    data-bs-toggle="collapse"
-                    href="#selectWhanau"
-                    >Add Message</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div id="selectWhanau" class="collapse show">
-              <a id="backMessageDetail" role="button" class="d-flex align-items-center fw-bolder">
-                <i class="icon-back fa-solid fa-angle-left me-2"></i>
-                Select Whānau
-              </a>
-              <hr class="my-2" />
-
-              <div class="card align-items-center">
-                <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-                  <div class="card bg-light mb-4 mb-md-3">
-                    <div class="card-body">
-                      <d class="d-flex">
-                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-clock"></i></div>
-                        <div class="col ms-2 mt-1">
-                          <h5 class="h5">Time</h5>
-                          <p class="fs-6 fw-light text-dark">04:00pm</p>
-                        </div>
-                      </d>
-                    </div>
-                  </div>
-                  <div class="card bg-light mb-4 mb-md-3">
-                    <div class="card-body">
-                      <d class="d-flex">
-                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-calendar-days"></i></div>
-                        <div class="col ms-2 mt-1">
-                          <h5 class="h5">Date</h5>
-                          <p class="fs-6 fw-light text-dark">17-08-2022</p>
-                        </div>
-                      </d>
-                    </div>
-                  </div>
-                  <div class="card bg-light mb-5 mb-md-4">
-                    <div class="card-body">
-                      <d class="d-flex">
-                        <div class="col-auto icon icon-xl bg-primary"><i class="fa-solid fa-comment-dots"></i></div>
-                        <div class="col ms-2 mt-1">
-                          <h5 class="h5">Message</h5>
-                          <p class="fs-6 fw-light text-dark">
-                            Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document
-                            Or A
-                          </p>
-                        </div>
-                      </d>
-                    </div>
-                  </div>
-                  <a class="btn btn-primary btn-lg w-100 py-3">Add Message</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- TAB HISTORY MESSAGE -->
-          <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
-            <a role="button" class="d-flex align-items-center fw-bolder">
-              <h6 class="h6 fw-bolder">Message History</h6>
-            </a>
-            <hr class="my-2" />
-            <div class="d-flex justify-content-end">
-              <div class="col-10 col-sm-auto">
-<div class="position-relative">
+        <div class="d-flex align-items-center">
+          <h4 class="col fs-2 me-auto">Latest KaiMahi</h4>
+          <div class="col-auto">
+<a id="kaimahi-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="kaimahi-input-search" class="position-relative d-none d-md-block">
   <label for="search" class="icon-search show">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i id="kaimahi-icon-search" class="fa-solid fa-magnifying-glass"></i>
   </label>
-  <input class="form-control " type="search" placeholder="Look message history" />
+  <input id="kaimahi-search" class="form-control" type="search" placeholder="Look For Kai Mahi" />
 </div>
 </div>
-            </div>
-            <div class="table-responsive-lg mt-4">
-              <table class="table table-bordered">
-                <thead class="table-light">
-                  <tr>
-                    <th scope="col">Message</th>
-                    <th scope="col">Recepients</th>
-                    <th scope="col">Message Time</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A
-                    </td>
-                    <td>2</td>
-                    <td>17-08-2022, 04:00pm</td>
-                    <td>
-                      <a href="" class="text-primary">See Details</a>
-                      <a href="" class="text-danger">Delete</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="row align-items-center">
+        </div>
+        <hr />
+        <!-- items -->
+        <div class="card bg-light mt-3">
+          <div class="card-body px-3 py-2">
+            <div class="row gx-2 align-items-center">
+              <div class="col-auto">
+                <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+              </div>
               <div class="col">
-                <p class="text-secondary fs-6 fw-light">Showing 1 to 1 of 1 entries</p>
+                <p class="name">Ahmed Al Aklouk</p>
+                <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
               </div>
               <div class="col-auto">
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination">
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  </ul>
-                </nav>
-              </div>
+<a
+  data-bs-target="#delete"
+  data-bs-toggle="modal"
+  href=""
+  role="button"
+  class="bg-danger rounded-1 text-white icon-lg flex-center"
+>
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+              <div class="col-auto"></div>
             </div>
           </div>
         </div>
+        <div class="d-flex mt-5">
+          <div class="col">
+            <a role="button" href="" class="text-primary fw-light">View all</a>
+          </div>
+          <div class="col-auto">
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+  </ul>
+</nav>
+</div>
+        </div>
       </div>
     </div>
-  </main>
+  </section>
+  <!-- LATEST WHANAU -->
+</main>
 
-  <!-- MODAL -->
-  <!-- RESEND MODAL -->
-  <div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Resend Email Confirmation</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-secondary fw-light mb-4 mb-md-5">
-            Hi, Clib Jackson, this will resend email confirmation
-            <span class="text-black fw-bold"> clibjackson@gmail.com </span>
-          </p>
-          <button type="button" class="btn btn-primary me-3">Resend</button>
-          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-        </div>
+<!-- MODAL -->
+<!-- RESEND MODAL -->
+<div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resend Email Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary fw-light mb-4 mb-md-5">
+          Hi, Clib Jackson, this will resend email confirmation
+          <span class="text-black fw-bold"> clibjackson@gmail.com </span>
+        </p>
+        <button type="button" class="btn btn-primary me-3">Resend</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
@@ -738,54 +451,54 @@
     let sidebar = [
       {
         id: 0,
-        link: "#",
-        icon: "fa-house-chimney",
-        title: "Home",
+        link: 'admin/index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
       },
       {
         id: 1,
-        link: "#",
-        icon: "fa-user",
-        title: "Kaimahi",
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
       },
       {
         id: 2,
-        link: "#",
-        icon: "fa-user-group",
-        title: "Whānau",
+        link: '#',
+        icon: 'fa-user-group',
+        title: 'Whānau',
       },
       {
         id: 3,
-        link: "#",
-        icon: "fa-truck",
-        title: "Deliveries",
+        link: '#',
+        icon: 'fa-truck',
+        title: 'Deliveries',
       },
       {
         id: 4,
-        link: "#",
-        icon: "fa-user",
-        title: "Kaimahi",
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
       },
       {
         id: 5,
-        link: "#",
-        icon: "fa-calendar-days",
-        title: "Events",
+        link: '#',
+        icon: 'fa-calendar-days',
+        title: 'Events',
       },
       {
         id: 6,
-        link: "whanau-comms.html",
-        icon: "fa-comment-dots",
-        title: "Whānau Comms",
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
       },
       {
         id: 7,
-        link: "group-chat.html",
-        icon: "fa-comments",
-        title: "Group Chat",
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
       },
     ];
-    $("#sidebar-item").prepend(
+    $('#sidebar-item').prepend(
       jQuery.map(sidebar, function (item) {
         return (
           "<a class='nav-link' href='" +
@@ -794,63 +507,73 @@
           item.icon +
           "'></i>" +
           item.title +
-          "</a>"
+          '</a>'
         );
       })
     );
 
     // SEARCH BUTTON
     //Show Input Button when click Button search
-    $("#button-search").click(function () {
+    $('#header-button-search').click(function () {
       //replace class in id search header from col-auto to col
-      $("#search-header").removeClass("col-auto").addClass("col");
+      $('#search-header').removeClass('col-auto').addClass('col');
 
       //add class d-none to id logo header
-      $("#logo-header").addClass("d-none");
+      $('#logo-header').addClass('d-none');
 
       //replace class in id button search from d-block to d-none
-      $(this).removeClass("d-block").addClass("d-none");
+      $(this).removeClass('d-block').addClass('d-none');
 
       //replace class in id button search from d-none to d-block
-      $("#input-search").removeClass("d-none").addClass("d-block");
+      $('#header-input-search').removeClass('d-none').addClass('d-block');
     });
   });
 
   //Hide Input Search when click
   $(document).mouseup(function (e) {
-    let inputSearch = $("#search");
-    let iconSearch = $("#icon-search");
+    let inputSearch = $('#header-search');
+    let iconSearch = $('#header-icon-search');
 
     // click outside input search
     if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
       //replace class search header from col-auto to col
-      $("#search-header").removeClass("col").addClass("col-auto");
+      $('#search-header').removeClass('col').addClass('col-auto');
 
-      $("#logo-header").removeClass("d-none");
-      $("#button-search").removeClass("d-none").addClass("d-block");
-      $("#input-search").removeClass("d-block").addClass("d-none");
+      $('#logo-header').removeClass('d-none');
+      $('#header-button-search').removeClass('d-none').addClass('d-block');
+      $('#header-input-search').removeClass('d-block').addClass('d-none');
     }
   });
 </script>
+
 
     <!-- SCRIPT -->
     
 <script>
   $(document).ready(function () {
-    $(".nav-link:contains('Whānau Comms')").addClass("active");
+    $(".nav-link:contains('Home')").addClass('active');
 
-    $("a:contains(Add Message)").click(function () {
-      $("#messageDetail").removeClass("show");
-      $("#step1").removeClass("active");
-      $("#step2").addClass("active");
-    });
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $('#kaimahi-button-search').click(function () {
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass('d-block').addClass('d-none');
 
-    $("#backMessageDetail").click(function () {
-      $("#messageDetail").addClass("show");
-      $("#selectWhanau").removeClass("show");
-      $("#step2").removeClass("active");
-      $("#step1").addClass("active");
+      //replace class in id button search from d-none to d-block
+      $('#kaimahi-input-search').removeClass('d-none').addClass('d-block');
     });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $('#kaimahi-search');
+    let iconSearch = $('#kaimahi-icon-search');
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      $('#kaimahi-button-search').removeClass('d-none').addClass('d-block');
+      $('#kaimahi-input-search').removeClass('d-block').addClass('d-none');
+    }
   });
 </script>
 
