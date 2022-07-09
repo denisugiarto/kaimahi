@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Whānau Comms</title>
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <div class="grid-container">
+      <!-- HEADER -->
+      
+<header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
+  <nav class="container-fluid d-block">
+    <div class="row gx-3 align-items-center">
+      <div class="col-auto px-lg-0">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </a>
+      </div>
+      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
+        <img src="assets/images/logo-light.webp" alt="logo" class="logo-header" />
+      </div>
+      <div id="search-header" class="col-auto col-md">
+        <!-- SEARCH -->
+        
+<a id="header-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="header-input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="header-icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="header-search" class="form-control" type="search" placeholder="Search anything" />
+</div>
+
+      </div>
+      <div class="col-auto notification-header">
+<div class="dropdown">
+  <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+    <i class="fas fa-bell icon-notification"></i>
+    <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+      >3<span class="visually-hidden">unread messages</span>
+    </span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
+    <div class="card card--header-notification">
+      <div class="card-header">New Notification Received</div>
+      <div class="card-body">
+        <div class="nav nav-tabs nav-tabs--notification mb-2" id="nav-tab" role="tablist">
+          <a
+            class="col-auto nav-link active"
+            id="all-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#all-notif"
+            type="button"
+            role="tab"
+            aria-controls="all-notif"
+            aria-selected="true"
+          >
+            All
+          </a>
+          <a
+            class="col-auto nav-link"
+            id="unread-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#unread-notif"
+            type="button"
+            role="tab"
+            aria-controls="unread-notif"
+            aria-selected="false"
+          >
+            Unread
+          </a>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+            <div class="notification-message">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto d-none">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="notifications.html" class="d-block fs-6 fw-bold text-primary text-center">See All Notification</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      <div class="col-auto">
+        <!-- PROFILE -->
+        <div id="profile" class="d-flex align-items-center">
+          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+      <!-- SIBEDAR -->
+      <aside class="bd-sidebar bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
+      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
+      <!-- Logout -->
+      <a class="nav-link logout" role="button"
+        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
+      ></a>
+    </div>
+  </nav>
+</aside>
+
+
+      <!-- CONTENT -->
+           
+<main class="bd-main">
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">Whānau Comms</h1>
+  <div class="card">
+    <div class="card-body">
+      <!-- TABS -->
+      <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
+        <a
+          class="col-auto nav-link active"
+          id="nav-create-message-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-create-message"
+          type="button"
+          role="tab"
+          aria-controls="nav-create-message"
+          aria-selected="true"
+        >
+          <i class="fa-solid fa-pen me-1"></i>Create Message
+        </a>
+        <a
+          class="col-auto nav-link"
+          id="nav-history-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-history"
+          type="button"
+          role="tab"
+          aria-controls="nav-history"
+          aria-selected="true"
+        >
+          <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History
+        </a>
+      </div>
+
+      <div class="tab-content" id="nav-tabContent">
+        <!-- TAB create-message -->
+        <div
+          class="tab-pane fade show active"
+          id="nav-create-message"
+          role="tabpanel"
+          aria-labelledby="nav-create-message-tab"
+        >
+          <!-- STEPS MENU -->
+          <div class="steps-menu mb-5">
+            <div id="step1" class="step-item active">
+              <div class="step-number">1</div>
+              <div class="step-title">Message Detail</div>
+            </div>
+            <div id="step2" class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-title">Select Whānau</div>
+            </div>
+          </div>
+
+          <div id="messageDetail" class="collapse show">
+            <h6 class="h6 fw-bolder ms-2">Message Detail</h6>
+            <hr class="my-2" />
+
+            <div class="card align-items-center">
+              <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+                
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#time"><i class="fa-solid fa-clock"></i></a>
+      <div class="col ms-2">
+        <label for="time" class="h5 mb-1" type="button">Time</label>
+        <input
+          id="time"
+          name="time"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value=""
+          type="time"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid fa-calendar-days"></i></a>
+      <div class="col ms-2">
+        <label for="date" class="h5 mb-1" type="button">Date</label>
+        <input
+          id="date"
+          name="date"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value=""
+          type="date"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#message"><i class="fa-solid fa-comment-dots"></i></a>
+
+      <div class="col ms-2">
+        <label for="message" class="h5 pointer">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          rows="3"
+        >
+          
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add Message</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="selectWhanau" class="collapse">
+            <div class="d-flex">
+              
+<a id="backMessageDetail" role="button" class="flex-center fw-bolder">
+  <i class="icon-back fa-solid fa-angle-left me-2"></i>
+  Select Whānau
+</a>
+
+              <button class="btn btn-sm btn-outline-primary ms-auto">Bulk Upload</button>
+            </div>
+            <hr class="my-2" />
+
+            <div class="card align-items-center">
+              <div class="card-body col-12 col-xl-8">
+                <!-- LIST ADD WHANAU -->
+                <div class="card border mb-4">
+                  <div class="card-header border-bottom bg-white">
+                    <h6 class="h6">Add Whānau</h6>
+                  </div>
+                  <div class="card-body">
+                    <div id="addWhanau" class="row g-2"></div>
+                  </div>
+                </div>
+                <!-- SELECT WHANAU -->
+                <div class="card border">
+                  <div class="card-body">
+                    
+<div class="position-relative">
+  <label for="search" class="icon-search show">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input class="form-control w-100" type="search" placeholder="Look For Whānau" />
+</div>
+
+                    <div id="whanau" class="mb-4"></div>
+                    <button
+                      id="sendMessage"
+                      class="btn btn-secondary w-100"
+                      data-bs-toggle="modal"
+                      data-bs-target="#successModal"
+                      disabled
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- TAB HISTORY MESSAGE -->
+        <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+          <div id="messageHistory" class="collapse show">
+            <h6 class="h6 fw-bolder">Message History</h6>
+            <hr class="my-2" />
+            <div class="d-flex justify-content-end">
+              <div class="col-11 col-sm-auto">
+<div class="position-relative">
+  <label for="search" class="icon-search show">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input class="form-control " type="search" placeholder="Look message history" />
+</div>
+</div>
+            </div>
+            <div class="table-responsive mt-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="col-5 col-lg-6" scope="col">Message</th>
+                    <th class="col-1" scope="col">Recepients</th>
+                    <th class="col-3 col-lg-2" scope="col">Message Time</th>
+                    <th class="col-3 col-lg-2" scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="tableRow">
+                    <td>
+                      Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A
+                    </td>
+                    <td>2</td>
+                    <td>17-08-2022, 04:00pm</td>
+                    <td class="fw-bold">
+                      <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
+                      <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button" class="text-danger"
+                        >Delete</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- LABEL ENTRIES AND PAGINATION -->
+            <div class="row align-items-center">
+              <div class="col">
+                <p class="text-secondary fs-6 fw-light">Showing 1 to 1 of 1 entries</p>
+              </div>
+              <div class="col-auto">
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+  </ul>
+</nav>
+</div>
+            </div>
+          </div>
+          <div id="messageHistoryDetail" class="collapse">
+            
+<a id="backMessageHistoryDetail" role="button" class="flex-center fw-bolder">
+  <i class="icon-back fa-solid fa-angle-left me-2"></i>
+  Message History Details
+</a>
+
+            <hr class="mb-5 mt-3" />
+            <h6 class="h6 mb-5">Message Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
+            <h6 class="h6 mb-2">Message</h6>
+            <div class="d-flex mb-4">
+              <div class="col-8">
+                <textarea class="form-control bg-light text-dark fw-light fs-6" rows="5">
+Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
+                >
+              </div>
+            </div>
+            <!-- RECIPIENTS -->
+            <h6 class="h6 mb-2">Recipients</h6>
+            <div id="listRecipients" class="row g-3 g-md-2 g-xl-4"></div>
+            <div class="row mt-4">
+              <div class="col">
+                <a id="showAllRecipients" role="button" class="text-primary fw-light"
+                  >Show <span id="qtyRecipients">1</span> more</a
+                >
+              </div>
+              <div class="col-auto">
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+  </ul>
+</nav>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<div class="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="./assets/icons/icon-check.svg" alt="icon success" class="my-5" />
+        <h5 class="h4 mb-3">Congratulations</h5>
+        <p class="text-secondary fw-light mb-4 mb-md-5">The message has been sent to admin for review</p>
+        <a role="button" href="#" class="btn btn-primary fs-5" data-bs-dismiss="modal">Back To Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+<!-- Delete Comment Modal -->
+<div class="modal fade" id="deleteMessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MessageModalLabel">Delete Confirmation</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-start">
+        <p class="mb-3">
+          Are you sure you want to delete this Message?
+        </p>
+        <div class="row gx-3">
+          <div class="col-6 col-md-auto">
+            <button id="deleteMessageButton" type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
+              Yes, Delete
+            </button>
+          </div>
+          <div class="col-6 col-md-auto">
+            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+    </div>
+    <!-- FOOTER -->
+    <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+  integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+
+    <!-- SIDEBAR ITEM -->
+    <script>
+  $(document).ready(function () {
+    //SIDEBAR
+    let sidebar = [
+      {
+        id: 0,
+        link: 'index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
+      },
+      {
+        id: 1,
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
+      },
+      {
+        id: 2,
+        link: '#',
+        icon: 'fa-user-group',
+        title: 'Whānau',
+      },
+      {
+        id: 3,
+        link: '#',
+        icon: 'fa-truck',
+        title: 'Deliveries',
+      },
+      {
+        id: 4,
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
+      },
+      {
+        id: 5,
+        link: '#',
+        icon: 'fa-calendar-days',
+        title: 'Events',
+      },
+      {
+        id: 6,
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
+      },
+      {
+        id: 7,
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
+      },
+    ];
+    $('#sidebar-item').prepend(
+      jQuery.map(sidebar, function (item) {
+        return (
+          "<a class='nav-link' href='" +
+          item.link +
+          "'><i class='fa-solid " +
+          item.icon +
+          "'></i>" +
+          item.title +
+          '</a>'
+        );
+      })
+    );
+
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $('#header-button-search').click(function () {
+      //replace class in id search header from col-auto to col
+      $('#search-header').removeClass('col-auto').addClass('col');
+
+      //add class d-none to id logo header
+      $('#logo-header').addClass('d-none');
+
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass('d-block').addClass('d-none');
+
+      //replace class in id button search from d-none to d-block
+      $('#header-input-search').removeClass('d-none').addClass('d-block');
+    });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $('#header-search');
+    let iconSearch = $('#header-icon-search');
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      //replace class search header from col-auto to col
+      $('#search-header').removeClass('col').addClass('col-auto');
+
+      $('#logo-header').removeClass('d-none');
+      $('#header-button-search').removeClass('d-none').addClass('d-block');
+      $('#header-input-search').removeClass('d-block').addClass('d-none');
+    }
+  });
+</script>
+
+
+    <!-- SCRIPT -->
+    
+<script>
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
+    $(".nav-link:contains('Whānau Comms')").addClass('active');
+
+    //CREATE MESSAGE TO STEP 2
+    $('button:contains(Add Message)').click(function () {
+      $('#messageDetail').removeClass('show');
+      $('#selectWhanau').addClass('show');
+      $('#step1').removeClass('active');
+      $('#step2').addClass('active');
+    });
+
+    //CREATE MESSAGE BACK TO STEP 1
+    $('#backMessageDetail').click(function () {
+      $('#messageDetail').addClass('show');
+      $('#selectWhanau').removeClass('show');
+      $('#step2').removeClass('active');
+      $('#step1').addClass('active');
+    });
+
+    // TIME AND DATE
+    var now = new Date();
+    function addZero(value) {
+      if (value < 10) {
+        return '0' + value;
+      }
+
+      return value;
+    }
+    let day = addZero(now.getDate());
+    let month = addZero(now.getMonth());
+    let year = now.getFullYear();
+    let date = year + '-' + month + '-' + day;
+    $('#time').val(now.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
+    $('#date').val(date);
+
+    let message = 'Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A';
+    $('#message').val(message);
+
+    // WHANAU
+    let whanau = [
+      { id: 0, avatar: 'profile-1.webp', name: 'Deni', lastDelivery: '17-01-2022' },
+      { id: 1, avatar: 'profile-2.webp', name: 'Deni Sugiarto', lastDelivery: '17-01-2022' },
+      { id: 2, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 3, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 4, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 5, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 6, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 7, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 8, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      { id: 9, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+    ];
+
+    // WHANAU MAP
+    function listAllWhanau() {
+      $('#whanau').prepend(
+        jQuery.map(whanau, function (item) {
+          return (
+            "<div class='d-flex border-bottom p-3 align-items-center'>" +
+            "<input id='whanau-" +
+            item.id +
+            "' type='checkbox' class='form-check-input me-2' />" +
+            "<img src='./assets/images/" +
+            item.avatar +
+            "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
+            '<div>' +
+            "<h6 class='fs-5 mb-1'>" +
+            item.name +
+            '</h6>' +
+            "<h6 class='fs-6'><span class='fw-light text-dark'>Last Delivery </span>" +
+            item.lastDelivery +
+            '</h6>' +
+            '</div>' +
+            '</div>'
+          );
+        })
+      );
+    }
+
+    // SELECTED WHANAU
+    let selectedWhanau = [];
+
+    function listSelectedWhanau() {
+      $('#addWhanau').children().remove();
+      $('#addWhanau').prepend(
+        jQuery.map(selectedWhanau, function (index) {
+          return (
+            "<div class='col-12 col-md-6'>" +
+            "<div class='card small bg-light'>" +
+            "<div class='card-body'>" +
+            "<div class='d-flex align-items-center'>" +
+            "<img src='./assets/images/" +
+            index.avatar +
+            "' alt='avatar' class='icon-lg rounded-circle'/>" +
+            "<div class='d-block ms-2'>" +
+            "<h6 class='fs-5 mb-1'>" +
+            index.name +
+            '</h6>' +
+            "<h6 class='fs-6'> <span class='fw-light text-dark'>Last Delivery </span>" +
+            index.lastDelivery +
+            '</h6> </div>' +
+            "<div class='ms-auto'>" +
+            "<button id='" +
+            index.id +
+            "' class='btn btn-delete btn-danger p-0 flex-center icon-lg'>" +
+            "<i class='fa-solid fa-trash text-white fs-5'></i>" +
+            '</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+          );
+        })
+      );
+      $('.btn-delete').click(function () {
+        let id = $(this).prop('id');
+        removeWhanau(id);
+        listSelectedWhanau();
+        removeCheck(id);
+        buttonSendUpdate();
+      });
+    }
+
+    // LOAD ALL ARRAY
+    listAllWhanau();
+    listSelectedWhanau();
+
+    //FUNCTION ADD SELECTED WHANAU
+    function addWhanau(id) {
+      selectedWhanau.push(whanau[id]);
+    }
+
+    //FUNCTION REMOVE SELECTED WHANAU
+    function removeWhanau(id) {
+      selectedWhanau = selectedWhanau.filter((item) => {
+        return item.id != id;
+      });
+    }
+
+    //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
+    function removeCheck(id) {
+      let item = 'whanau-' + id;
+      return $('#' + item).prop('checked', false);
+    }
+
+    //BUTTON SEND UPDATE TRIGGER
+    function buttonSendUpdate() {
+      if (selectedWhanau.length > 0) {
+        console.log('button change to primary');
+        $('#sendMessage').removeClass('btn-secondary').addClass('btn-primary').attr('disabled', false);
+      } else {
+        $('#sendMessage').removeClass('btn-primary').addClass('btn-secondary').attr('disabled', true);
+      }
+    }
+
+    //INPUT CHECKBOX WILL ADD SELECTED WHANAU WHEN CHECK AND REMOVE WHEN UNCHECK
+    $('.form-check-input').click(function () {
+      let id = $(this).prop('id').split('-')[1];
+      if ($(this).prop('checked') == true) {
+        addWhanau(id);
+        listSelectedWhanau();
+      } else if ($(this).prop('checked') == false) {
+        removeWhanau(id);
+        listSelectedWhanau();
+      }
+      buttonSendUpdate();
+    });
+
+    //LIST RECIPIENTS MAP
+    function listRecipients(index) {
+      $('#listRecipients').children().remove();
+      $('#listRecipients').prepend(
+        jQuery.map(whanau.slice(0, index), function (item) {
+          return (
+            "<div class='col-12 col-md-4 col-lg-3'>" +
+            "<div class='d-flex p-2 border rounded'>" +
+            "<img src='./assets/images/" +
+            item.avatar +
+            "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
+            '<div>' +
+            "<h6 class='fs-5 mb-1'>" +
+            item.name +
+            '</h6>' +
+            "<h6 class='fs-6'><span class='fw-light text-dark'>Last Delivery </span>" +
+            item.lastDelivery +
+            '</h6>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+          );
+        })
+      );
+    }
+
+    //GENERATE RECIPIENTS LIST
+    listRecipients(4);
+    $('#qtyRecipients').text(whanau.length - 4);
+
+    //FUNCTION BUTTON SHOW MORE
+    $('#showAllRecipients').click(function () {
+      if ($(this).text() == 'Less') {
+        listRecipients(4);
+        $('#showAllRecipients').text('Show ' + (whanau.length - 4) + ' More');
+      } else {
+        listRecipients(whanau.length);
+        $(this).text('Less');
+      }
+    });
+
+    //BUTTON BACK MESSAGE HISTORY DETAIL
+    $('#backMessageHistoryDetail').click(function () {
+      $('#messageHistoryDetail').removeClass('show');
+      $('#messageHistory').addClass('show');
+    });
+
+    //BUTTON SEE DETAIL IN MESSAGE HISTORY
+    $('#seeDetailButton').click(function () {
+      $('#messageHistory').removeClass('show');
+      $('#messageHistoryDetail').addClass('show');
+    });
+
+    //BUTTON DELETE IN MESSAGE HISTORY
+    $('#deleteMessageButton').click(function () {
+      $('#tableRow').children($('td')).text('No data').addClass('text-secondary');
+    });
+  });
+</script>
+
+  </body>
+</html>
