@@ -1,0 +1,14 @@
+{% import '../components/cards.html' as card %}
+
+{% macro info(items) %}
+<section class="cards-info">
+    <div class="row g-3">
+        {% for item in items %}
+        <div class="col-sm-6 col-xl-3">{{ card.big(item.icon, item.value, item.name) }}</div>
+        {% endfor %}
+</section>
+
+{% endmacro %}
+
+
+

@@ -1,38 +1,47 @@
-{% import './input-search.html' as inputSearch %}
-{% import './notification.html' as notif %}
+{% import './input-search.html' as inputSearch %} {% import './notification.html' as notif %}
+
+<!-- HEADER PUBLIC -->
+{% macro public() %}
 <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
   <nav class="container-fluid d-block">
     <div class="row gx-3 align-items-center">
       <div class="col-auto px-lg-0">
-        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </a>
       </div>
       <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
-        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
+        <img src="assets/images/logo-light.webp" alt="logo" class="logo-header" />
       </div>
       <div id="search-header" class="col-auto col-md">
         <!-- SEARCH -->
-        <a id="button-search" role="button" class="d-block d-md-none">
-          <i class="fa-solid fa-magnifying-glass icon-search"></i>
-        </a>
-        {{ inputSearch.header('Search anything') }}
+        {{ inputSearch.collapse('Search anything', 'header') }}
       </div>
-      <div class="col-auto notification-header">
-        {{ notif.header(3) }}
-      </div>
+      <div class="col-auto notification-header">{{ notif.header(3) }}</div>
       <div class="col-auto">
         <!-- PROFILE -->
         <div id="profile" class="d-flex align-items-center">
           <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
           <div class="dropdown">
-            <a class="dropdown-toggle d-flex align-items-center" role="button" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
             </ul>
           </div>
         </div>
@@ -40,3 +49,55 @@
     </div>
   </nav>
 </header>
+{% endmacro %}
+
+<!-- ADMIN -->
+{% macro pages() %}
+<header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
+  <nav class="container-fluid d-block">
+    <div class="row gx-3 align-items-center">
+      <div class="col-auto px-lg-0">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </a>
+      </div>
+      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
+        <img src="../assets/images/logo-light.webp" alt="logo" class="logo-header" />
+      </div>
+      <div id="search-header" class="col-auto col-md">
+        <!-- SEARCH -->
+        {{ inputSearch.collapse('Search anything', 'header') }}
+      </div>
+      <div class="col-auto notification-header">{{ notif.header(3) }}</div>
+      <div class="col-auto">
+        <!-- PROFILE -->
+        <div id="profile" class="d-flex align-items-center">
+          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+{% endmacro %}

@@ -137,13 +137,6 @@ input[type='time']::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-.icon-back {
-  @extend .flex-center;
-  @extend .icon-lg;
-  @extend .rounded-1;
-  background-color: $gray-200;
-}
-
 //NOTIFICATION
 .notification-header {
   .icon-notification {
@@ -230,11 +223,11 @@ input[type='search']:focus-visible {
   width: calc(100vw - 40px);
 
   @include media-breakpoint-up(md) {
-    width: calc(100vw - 88px);
+    width: calc(100vw - 96px);
   }
 
   @include media-breakpoint-up(lg) {
-    width: calc(100vw - 104px - 262px);
+    width: calc(100vw - 112px - 262px);
   }
 }
 
@@ -255,3 +248,24 @@ input[type='search']:focus-visible {
   @extend .overflow-auto;
   max-height: 300px;
 }
+
+// // SCROLLBAR
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }

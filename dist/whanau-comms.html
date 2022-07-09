@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,35 +20,40 @@
     <div class="grid-container">
       <!-- HEADER -->
       
-
 <header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
   <nav class="container-fluid d-block">
     <div class="row gx-3 align-items-center">
       <div class="col-auto px-lg-0">
-        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </a>
       </div>
       <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
-        <img src="./assets/images/logo-light.webp" alt="logo" class="logo-header" />
+        <img src="assets/images/logo-light.webp" alt="logo" class="logo-header" />
       </div>
       <div id="search-header" class="col-auto col-md">
         <!-- SEARCH -->
-        <a id="button-search" role="button" class="d-block d-md-none">
-          <i class="fa-solid fa-magnifying-glass icon-search"></i>
-        </a>
         
-<div id="input-search" class="position-relative d-none d-md-block">
+<a id="header-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="header-input-search" class="position-relative d-none d-md-block">
   <label for="search" class="icon-search show">
-    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+    <i id="header-icon-search" class="fa-solid fa-magnifying-glass"></i>
   </label>
-  <input id="search" class="form-control" type="search" placeholder="Search anything" />
+  <input id="header-search" class="form-control" type="search" placeholder="Search anything" />
 </div>
 
       </div>
       <div class="col-auto notification-header">
-        
 <div class="dropdown">
   <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
     <i class="fas fa-bell icon-notification"></i>
@@ -207,19 +213,23 @@
     </div>
   </div>
 </div>
-
-      </div>
+</div>
       <div class="col-auto">
         <!-- PROFILE -->
         <div id="profile" class="d-flex align-items-center">
           <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
           <div class="dropdown">
-            <a class="dropdown-toggle d-flex align-items-center" role="button" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="./assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
             </ul>
           </div>
         </div>
@@ -227,6 +237,7 @@
     </div>
   </nav>
 </header>
+
 
       <!-- SIBEDAR -->
       <aside class="bd-sidebar bg-white shadow-sm">
@@ -310,9 +321,13 @@
       <a class="col-auto icon icon-xl bg-primary" href="#time"><i class="fa-solid fa-clock"></i></a>
       <div class="col ms-2">
         <label for="time" class="h5 mb-1" type="button">Time</label>
-        <input id="time" name="time"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0" value=""
-          type="time" />
+        <input
+          id="time"
+          name="time"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value=""
+          type="time"
+        />
       </div>
     </div>
   </div>
@@ -324,9 +339,13 @@
       <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid fa-calendar-days"></i></a>
       <div class="col ms-2">
         <label for="date" class="h5 mb-1" type="button">Date</label>
-        <input id="date" name="date"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0" value=""
-          type="date" />
+        <input
+          id="date"
+          name="date"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value=""
+          type="date"
+        />
       </div>
     </div>
   </div>
@@ -339,8 +358,12 @@
 
       <div class="col ms-2">
         <label for="message" class="h5 pointer">Message</label>
-        <textarea id="message" name="message"
-          class="form-control fs-6 fw-light text-dark p-0 bg-light rounded-0 mt-1 pointer" rows="3">
+        <textarea
+          id="message"
+          name="message"
+          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          rows="3"
+        >
           
         </textarea>
       </div>
@@ -356,7 +379,7 @@
           <div id="selectWhanau" class="collapse">
             <div class="d-flex">
               
-<a id="backMessageDetail" role="button" class="d-flex align-items-center fw-bolder">
+<a id="backMessageDetail" role="button" class="flex-center fw-bolder">
   <i class="icon-back fa-solid fa-angle-left me-2"></i>
   Select Whānau
 </a>
@@ -373,26 +396,7 @@
                     <h6 class="h6">Add Whānau</h6>
                   </div>
                   <div class="card-body">
-                    <div id="addWhanau" class="row g-2">
-                      <div class="col-12 col-md-6">
-                        <div class="card small bg-light">
-                          <div class="card-body">
-                            <div class="d-flex align-items-center">
-                              <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-                              <div class="d-block ms-2">
-                                <h6 class="fs-5 mb-1">Ahmed Al Aklouk</h6>
-                                <h6 class="fs-6"><span class="fw-light text-dark">Last Delivery</span> 17-01-2022</h6>
-                              </div>
-                              <div class="ms-auto">
-<button id='' class='btn bg-danger p-0 flex-center icon-lg'>
-  <i class='fa-solid fa-trash text-white fs-5'></i>
-</button>
-</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <div id="addWhanau" class="row g-2"></div>
                   </div>
                 </div>
                 <!-- SELECT WHANAU -->
@@ -482,7 +486,7 @@
           </div>
           <div id="messageHistoryDetail" class="collapse">
             
-<a id="backMessageHistoryDetail" role="button" class="d-flex align-items-center fw-bolder">
+<a id="backMessageHistoryDetail" role="button" class="flex-center fw-bolder">
   <i class="icon-back fa-solid fa-angle-left me-2"></i>
   Message History Details
 </a>
@@ -592,54 +596,54 @@ Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form 
     let sidebar = [
       {
         id: 0,
-        link: "#",
-        icon: "fa-house-chimney",
-        title: "Home",
+        link: 'admin/index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
       },
       {
         id: 1,
-        link: "#",
-        icon: "fa-user",
-        title: "Kaimahi",
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
       },
       {
         id: 2,
-        link: "#",
-        icon: "fa-user-group",
-        title: "Whānau",
+        link: '#',
+        icon: 'fa-user-group',
+        title: 'Whānau',
       },
       {
         id: 3,
-        link: "#",
-        icon: "fa-truck",
-        title: "Deliveries",
+        link: '#',
+        icon: 'fa-truck',
+        title: 'Deliveries',
       },
       {
         id: 4,
-        link: "#",
-        icon: "fa-user",
-        title: "Kaimahi",
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
       },
       {
         id: 5,
-        link: "#",
-        icon: "fa-calendar-days",
-        title: "Events",
+        link: '#',
+        icon: 'fa-calendar-days',
+        title: 'Events',
       },
       {
         id: 6,
-        link: "whanau-comms.html",
-        icon: "fa-comment-dots",
-        title: "Whānau Comms",
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
       },
       {
         id: 7,
-        link: "group-chat.html",
-        icon: "fa-comments",
-        title: "Group Chat",
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
       },
     ];
-    $("#sidebar-item").prepend(
+    $('#sidebar-item').prepend(
       jQuery.map(sidebar, function (item) {
         return (
           "<a class='nav-link' href='" +
@@ -648,44 +652,45 @@ Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form 
           item.icon +
           "'></i>" +
           item.title +
-          "</a>"
+          '</a>'
         );
       })
     );
 
     // SEARCH BUTTON
     //Show Input Button when click Button search
-    $("#button-search").click(function () {
+    $('#header-button-search').click(function () {
       //replace class in id search header from col-auto to col
-      $("#search-header").removeClass("col-auto").addClass("col");
+      $('#search-header').removeClass('col-auto').addClass('col');
 
       //add class d-none to id logo header
-      $("#logo-header").addClass("d-none");
+      $('#logo-header').addClass('d-none');
 
       //replace class in id button search from d-block to d-none
-      $(this).removeClass("d-block").addClass("d-none");
+      $(this).removeClass('d-block').addClass('d-none');
 
       //replace class in id button search from d-none to d-block
-      $("#input-search").removeClass("d-none").addClass("d-block");
+      $('#header-input-search').removeClass('d-none').addClass('d-block');
     });
   });
 
   //Hide Input Search when click
   $(document).mouseup(function (e) {
-    let inputSearch = $("#search");
-    let iconSearch = $("#icon-search");
+    let inputSearch = $('#header-search');
+    let iconSearch = $('#header-icon-search');
 
     // click outside input search
     if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
       //replace class search header from col-auto to col
-      $("#search-header").removeClass("col").addClass("col-auto");
+      $('#search-header').removeClass('col').addClass('col-auto');
 
-      $("#logo-header").removeClass("d-none");
-      $("#button-search").removeClass("d-none").addClass("d-block");
-      $("#input-search").removeClass("d-block").addClass("d-none");
+      $('#logo-header').removeClass('d-none');
+      $('#header-button-search').removeClass('d-none').addClass('d-block');
+      $('#header-input-search').removeClass('d-block').addClass('d-none');
     }
   });
 </script>
+
 
     <!-- SCRIPT -->
     
@@ -794,7 +799,7 @@ Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form 
             "<div class='ms-auto'>" +
             "<button id='" +
             index.id +
-            "' class='btn btn-delete bg-danger p-0 flex-center icon-lg'>" +
+            "' class='btn btn-delete btn-danger p-0 flex-center icon-lg'>" +
             "<i class='fa-solid fa-trash text-white fs-5'></i>" +
             '</button>' +
             '</div>' +

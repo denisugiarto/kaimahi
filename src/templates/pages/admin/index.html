@@ -1,106 +1,82 @@
-{% extends "layout.html" %} {% set pageTitle = 'Home' %} {% set cssFiles = '../assets/css/custom.css' %} {% block
+{% extends "layout-pages.html" %} {% set pageTitle = 'Home' %} {% set cssFiles = '../assets/css/style.css' %} {% import
+'../components/input-search.html' as inputSearch %} {% import '../components/buttons.html' as button %} {% import
+'../components/pagination.html' as pagination %} {% import '../components/box-item.html' as boxItem %} {% import
+'../components/kaimahi-item.html' as kaimahiItem %} {% import '../components/whanau-item.html' as whanauItem %} {% block
 content %}
 
-<div class="main bg-body">
-  {% include '../components/sidebar.html' %}
-  <div class="px-5 py-4">
-    <h3 class="mb-4">Welcome back, <span class="text-primary">AHMED</span></h3>
-    <form class="form-search mb-2" action="">
-      <input class="input-search" type="text" name="search" placeholder="Search For Anything Here" />
-      <img src="../assets/icons/icon-search.svg" alt="icon search" class="icon-search" />
-    </form>
-    <div class="row g-2 mb-2">
-      <div class="col-6 col-lg-3">
-        <a href="#" role="button" class="btn btn-light w-100">Create Message</a>
+<main class="bd-main">
+  <!-- PAGE TITLE -->
+  <h1 class="page-title text-primary"><span class="text-black fw-light">Welcome back, </span>Ahmed</h1>
+  <!-- CARDS -->
+  {{ boxItem.info([ { icon: 'user', value: 26539, name: 'All Kaimahi'}, { icon: 'user-group', value: 26539, name: 'All
+  Whānau'}, { icon: 'truck-fast', value: 26539, name: 'Current Deliveries'}, { icon: 'truck', value: 26539, name:
+  'Completed Deliveries'} ]) }}
+  <div class="row gx-5">
+    <div class="col-12 col-lg-6">
+      {{ kaimahiItem.value([ { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
+      '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, {
+      avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
+      '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
+      '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
+      '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
+      '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'} ]) }}
+    </div>
+    <div class="col-12 col-lg-6">
+      {{ whanauItem.value([ { map_url: '../assets/images/maps.webp', dest_name: 'Jackson', courier_avatar:
+      '../assets/images/profile-1.webp', courier_name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { map_url:
+      '../assets/images/maps.webp', dest_name: 'Jackson', courier_avatar: '../assets/images/profile-1.webp',
+      courier_name: 'Ahmed Al Aklouk', delivery: '17-01-2022'} ]) }}
+    </div>
+  </div>
+</main>
+
+<!-- MODAL -->
+<!-- RESEND MODAL -->
+<div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resend Email Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="col-6 col-lg-3">
-        <a href="#" role="button" class="btn btn-primary w-100">Create Notification</a>
+      <div class="modal-body">
+        <p class="text-secondary fw-light mb-4 mb-md-5">
+          Hi, Clib Jackson, this will resend email confirmation
+          <span class="text-black fw-bold"> clibjackson@gmail.com </span>
+        </p>
+        <button type="button" class="btn btn-primary me-3">Resend</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>
-    <section id="info">
-      <div class="row g-2 mb-5">
-        <div class="col-6 col-lg-3">
-          <div class="card-info border border-primary">
-            <img src="../assets/icons/icon-user.svg" alt="icon user" class="card-icon" />
-            <div class="card-text">
-              <p class="text-secondary">All KaiMahi</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-whanau.svg" alt="icon whanau" class="card-icon" />
-            <div class="card-text">
-              <p>All Whānau</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-deliveries.svg" alt="" class="card-icon" />
-            <div class="card-text">
-              <p>Current Deliveries</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-complete-deliveries.svg" alt="" class="card-icon" />
-            <div class="card-text">
-              <p>Complete Deliveries</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="content">
-      <ul class="nav nav-tabs" id="nav-tabs" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="nav-kaimahi-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-kaimahi"
-            role="button"
-            aria-controls="nav-kaimahi"
-            aria-selected="true"
-          >
-            Latest KaiMahi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            id="nav-whanau-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-whanau"
-            role="button"
-            aria-controls="nav-whanau"
-            aria-selected="false"
-          >
-            Latest Whānau</a
-          >
-        </li>
-      </ul>
-
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade" id="nav-kaimahi" role="tabpanel" aria-labelledby="nav-kaimahi-tab">
-          {% include '../components/kaimahi-item.html' %} {% include '../components/kaimahi-item.html' %} {% include
-          '../components/kaimahi-item.html' %} {% include '../components/kaimahi-item.html' %}
-        </div>
-        <div class="tab-pane fade show active" id="nav-whanau" role="tabpanel" aria-labelledby="nav-whanau-tab"></div>
-      </div>
-    </section>
   </div>
 </div>
+
+{% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
-    $("a.nav-link:contains('Home')").addClass("active");
+    $(".nav-link:contains('Home')").addClass('active');
+
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $('#kaimahi-button-search').click(function () {
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass('d-block').addClass('d-none');
+
+      //replace class in id button search from d-none to d-block
+      $('#kaimahi-input-search').removeClass('d-none').addClass('d-block');
+    });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $('#kaimahi-search');
+    let iconSearch = $('#kaimahi-icon-search');
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      $('#kaimahi-button-search').removeClass('d-none').addClass('d-block');
+      $('#kaimahi-input-search').removeClass('d-block').addClass('d-none');
+    }
   });
 </script>
 {% endblock %}

@@ -4,54 +4,54 @@
     let sidebar = [
       {
         id: 0,
-        link: "#",
-        icon: "fa-house-chimney",
-        title: "Home",
+        link: 'admin/index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
       },
       {
         id: 1,
-        link: "#",
-        icon: "fa-user",
-        title: "Kaimahi",
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
       },
       {
         id: 2,
-        link: "#",
-        icon: "fa-user-group",
-        title: "Whānau",
+        link: '#',
+        icon: 'fa-user-group',
+        title: 'Whānau',
       },
       {
         id: 3,
-        link: "#",
-        icon: "fa-truck",
-        title: "Deliveries",
+        link: '#',
+        icon: 'fa-truck',
+        title: 'Deliveries',
       },
       {
         id: 4,
-        link: "#",
-        icon: "fa-user",
-        title: "Kaimahi",
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
       },
       {
         id: 5,
-        link: "#",
-        icon: "fa-calendar-days",
-        title: "Events",
+        link: '#',
+        icon: 'fa-calendar-days',
+        title: 'Events',
       },
       {
         id: 6,
-        link: "whanau-comms.html",
-        icon: "fa-comment-dots",
-        title: "Whānau Comms",
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
       },
       {
         id: 7,
-        link: "group-chat.html",
-        icon: "fa-comments",
-        title: "Group Chat",
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
       },
     ];
-    $("#sidebar-item").prepend(
+    $('#sidebar-item').prepend(
       jQuery.map(sidebar, function (item) {
         return (
           "<a class='nav-link' href='" +
@@ -60,41 +60,41 @@
           item.icon +
           "'></i>" +
           item.title +
-          "</a>"
+          '</a>'
         );
       })
     );
 
     // SEARCH BUTTON
     //Show Input Button when click Button search
-    $("#button-search").click(function () {
+    $('#header-button-search').click(function () {
       //replace class in id search header from col-auto to col
-      $("#search-header").removeClass("col-auto").addClass("col");
+      $('#search-header').removeClass('col-auto').addClass('col');
 
       //add class d-none to id logo header
-      $("#logo-header").addClass("d-none");
+      $('#logo-header').addClass('d-none');
 
       //replace class in id button search from d-block to d-none
-      $(this).removeClass("d-block").addClass("d-none");
+      $(this).removeClass('d-block').addClass('d-none');
 
       //replace class in id button search from d-none to d-block
-      $("#input-search").removeClass("d-none").addClass("d-block");
+      $('#header-input-search').removeClass('d-none').addClass('d-block');
     });
   });
 
   //Hide Input Search when click
   $(document).mouseup(function (e) {
-    let inputSearch = $("#search");
-    let iconSearch = $("#icon-search");
+    let inputSearch = $('#header-search');
+    let iconSearch = $('#header-icon-search');
 
     // click outside input search
     if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
       //replace class search header from col-auto to col
-      $("#search-header").removeClass("col").addClass("col-auto");
+      $('#search-header').removeClass('col').addClass('col-auto');
 
-      $("#logo-header").removeClass("d-none");
-      $("#button-search").removeClass("d-none").addClass("d-block");
-      $("#input-search").removeClass("d-block").addClass("d-none");
+      $('#logo-header').removeClass('d-none');
+      $('#header-button-search').removeClass('d-none').addClass('d-block');
+      $('#header-input-search').removeClass('d-block').addClass('d-none');
     }
   });
 </script>

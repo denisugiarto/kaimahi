@@ -1,8 +1,8 @@
 {% macro menu(items) %}
-<div class="nav nav-tabs mx-n2 mx-md-n4" role="tablist">
+<div class="nav nav-tabs" role="tablist">
   {% for item in items %}
   <a
-    class="col col-sm-4 nav-link {{ item.status }}"
+    class="col-auto nav-link {{ item.status }}"
     id="{{item.id }}-tab"
     data-bs-toggle="tab"
     data-bs-target="#{{item.id }}"

@@ -5,6 +5,7 @@
       @extend .fs-6;
       @extend .text-secondary;
       @extend .fw-bold;
+      padding: 10px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     }
     .card-body {
@@ -53,6 +54,7 @@
     }
     .card-footer {
       @extend .fs-6;
+      padding: 10px;
       box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.05);
     }
   }

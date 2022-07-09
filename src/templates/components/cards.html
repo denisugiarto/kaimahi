@@ -1,0 +1,66 @@
+{% import '../components/buttons.html' as button %} {% macro big(icon, value, name) %}
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-{{ icon }}"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">{{ value }}</h4>
+        <p class="fs-6 fw-light">{{ name }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}
+
+<!-- KAIMAHI CARD -->
+{% macro kaimahi(avatar, name, delivery) %}
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="{{ avatar }}" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">{{ name }}</p>
+        <p class="fs-6"><span>Last Delivery </span>{{ delivery }}</p>
+      </div>
+      <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
+      <div class="col-auto">{{ button.icon('angle-right', 'bg-gray-200') }}</div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- WHANAU CARD -->
+{% macro whanau(map_url, dest_name, courier_avatar, courier_name, delivery) %}
+<div class="position-relative mt-3">
+  <img src="{{ map_url }}" alt="maps" class="img-wrapper rounded w-100 mh-300" />
+  <div
+    class="position-absolute bottom-0 start-50 translate-middle-x w-100 px-1 px-md-4 px-lg-1 px-xl-4 mb-1 mb-md-4 mb-lg-1 mb-lg-4"
+  >
+    <div class="card bg-white shadow">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <h6 class="fs-4 fw-bolder me-auto">{{ dest_name }}</h6>
+          {{ button.icon('angle-right', 'bg-gray-200') }}
+        </div>
+        <div class="fs-6 fw-light mb-1">By</div>
+        <div class="d-flex align-items-center">
+          <div class="col-auto me-1 me-sm-2">
+            <img src="{{ courier_avatar }}" alt="img kaimahi" class="rounded-circle icon-lg" />
+          </div>
+          <div class="col">
+            <h6 class="fs-6">{{ courier_name }}</h6>
+            <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>{{ delivery }}</p>
+          </div>
+          <div class="col-auto me-1 me-sm-3">{{ button.iconWithText('phone', 'bg-primary text-white', 'Call') }}</div>
+          <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

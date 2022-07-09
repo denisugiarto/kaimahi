@@ -1,8 +1,16 @@
 $utilities: (
-  "font-size": (
-      responsive: true,
-      property: font-size,
-      class: fs,
-      values: $font-sizes
+  'font-size': (
+    responsive: true,
+    property: font-size,
+    class: fs,
+    values: $font-sizes,
+  ),
+  'max-height': (
+    property: max-height,
+    class: mh,
+    values: (
+      100: 100%,
+      300: 300px,
     ),
+  ),
 );
