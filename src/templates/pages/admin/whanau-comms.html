@@ -1,6 +1,6 @@
-{% extends "layout.html" %} {% set pageTitle = 'Whānau Comms' %} {% set cssFiles = './assets/css/style.css' %} {% block
-content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as input
-%} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
+{% extends "layout-pages.html" %} {% set pageTitle = 'Whānau Comms' %} {% set cssFiles = '../assets/css/style.css' %} {%
+block content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as
+input %} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
 '../components/pagination.html' as pagination %}
 <main class="bd-main">
   <!-- PAGE TITLE -->
@@ -71,7 +71,7 @@ content %} {% import '../components/input-search.html' as inputSearch %} {% impo
 
           <div id="selectWhanau" class="collapse">
             <div class="d-flex">
-              {{ button.back('backMessageDetail', 'Select Whānau') }}
+              {{ button.iconWithTextOutside('angle-left', 'bg-light', 'Select Whānau', '#', 'backMessageDetail') }}
               <button class="btn btn-sm btn-outline-primary ms-auto">Bulk Upload</button>
             </div>
             <hr class="my-2" />
@@ -151,13 +151,14 @@ content %} {% import '../components/input-search.html' as inputSearch %} {% impo
             </div>
           </div>
           <div id="messageHistoryDetail" class="collapse">
-            {{ button.back('backMessageHistoryDetail', 'Message History Details') }}
+            {{ button.iconWithTextOutside('angle-left', 'bg-light', 'Message History Details', '#',
+            'backMessageHistoryDetail') }}
             <hr class="mb-5 mt-3" />
             <h6 class="h6 mb-5">Message Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
             <h6 class="h6 mb-2">Message</h6>
             <div class="d-flex mb-4">
               <div class="col-8">
-                <textarea class="form-control bg-light text-dark fw-light fs-6" rows="5">
+                <textarea class="form-control bg-light text-dark fw-light fs-6 border-0" rows="5">
 Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
                 >
               </div>
@@ -245,7 +246,7 @@ Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form 
             "<input id='whanau-" +
             item.id +
             "' type='checkbox' class='form-check-input me-2' />" +
-            "<img src='./assets/images/" +
+            "<img src='../assets/images/" +
             item.avatar +
             "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
             '<div>' +
@@ -274,7 +275,7 @@ Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form 
             "<div class='card small bg-light'>" +
             "<div class='card-body'>" +
             "<div class='d-flex align-items-center'>" +
-            "<img src='./assets/images/" +
+            "<img src='../assets/images/" +
             index.avatar +
             "' alt='avatar' class='icon-lg rounded-circle'/>" +
             "<div class='d-block ms-2'>" +
@@ -360,7 +361,7 @@ Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form 
           return (
             "<div class='col-12 col-md-4 col-lg-3'>" +
             "<div class='d-flex p-2 border rounded'>" +
-            "<img src='./assets/images/" +
+            "<img src='../assets/images/" +
             item.avatar +
             "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
             '<div>' +

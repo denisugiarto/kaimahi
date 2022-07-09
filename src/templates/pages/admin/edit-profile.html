@@ -1,6 +1,6 @@
-{% extends "layout.html" %} {% set pageTitle = 'Edit Profile' %} {% set cssFiles = './assets/css/style.css' %} {% block
-content %} {% import '../components/modal.html' as modal %} {% import '../components/alert.html' as alert %} {% import
-'../components/input.html' as input %} {% import '../components/buttons.html' as buttons %}
+{% extends "layout-pages.html" %} {% set pageTitle = 'Edit Profile' %} {% set cssFiles = '../assets/css/style.css' %} {%
+block content %} {% import '../components/modal.html' as modal %} {% import '../components/alert.html' as alert %} {%
+import '../components/input.html' as input %} {% import '../components/buttons.html' as buttons %}
 
 <main class="bd-main">
   <!-- PAGE TITLE -->
@@ -57,7 +57,7 @@ content %} {% import '../components/modal.html' as modal %} {% import '../compon
 
           <!-- UPDATE PICTURE -->
           <div id="updatePicture" class="d-flex align-items-center mb-3 mb-md-4">
-            <img class="avatar rounded-circle me-2 me-md-4" src="./assets/images/profile-1.webp" alt="avatar" />
+            <img class="avatar rounded-circle me-2 me-md-4" src="../assets/images/profile-1.webp" alt="avatar" />
             <div>
               <div class="mb-1 mb-md-3">
                 <label for="formFile" class="btn btn-outline-primary btn-sm">Upload New Picture</label>

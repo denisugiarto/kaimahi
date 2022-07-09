@@ -1,8 +1,8 @@
-{% extends "layout.html" %} {% set pageTitle = 'Notifications' %} {% set cssFiles = './assets/css/style.css' %} {% block
-content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as input
-%} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
-'../components/notification-message.html' as message %} {% import '../components/pagination.html' as pagination %} {%
-import '../components/nav-tabs.html' as navTabs %}
+{% extends "layout-pages.html" %} {% set pageTitle = 'Notifications' %} {% set cssFiles = '../assets/css/style.css' %}
+{% block content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html'
+as input %} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {%
+import '../components/notification-message.html' as message %} {% import '../components/pagination.html' as pagination
+%} {% import '../components/nav-tabs.html' as navTabs %}
 
 <main class="bd-main">
   <!-- PAGE TITLE -->
@@ -10,7 +10,9 @@ import '../components/nav-tabs.html' as navTabs %}
   <div class="card">
     <div class="card-header border-bottom">
       <div class="row gy-3 align-items-center">
-        <div class="col-12 col-sm">{{ button.back('', 'Back') }}</div>
+        <div class="col-12 col-sm">
+          {{ button.iconWithTextOutside('angle-left', 'bg-light', 'Back', 'index.html') }}
+        </div>
         <div class="col-12 col-sm-auto">
           <p class="fs-4 fw-light">Notifications only show for the last 15 days</p>
         </div>

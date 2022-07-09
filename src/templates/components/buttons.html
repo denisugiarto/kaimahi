@@ -4,32 +4,25 @@
 {% endmacro %}
 
 <!-- BUTTON ONLY ICON -->
-{% macro icon(icon, color, href, id) %}
+{% macro icon(icon, color, href = '#', id) %}
 <a id="{{ id }}" href="{{ href }}" role="button" class="btn {{ color }} flex-center p-0 rounded-1 icon-lg">
   <i class="fa-solid fa-{{ icon }} fs-5"></i>
 </a>
 {% endmacro %}
 
 <!-- BUTTON ICON WITH TEXT -->
-{% macro iconWithText(icon, color, text, href, id) %}
+{% macro iconWithText(icon, color, text, href = '#', id) %}
 <a id="{{ id }}" href="{{ href }}" role="button" class="btn px-2 px-md-3 py-1 {{ color }} flex-center h-100">
   <i class="fa-solid fa-{{ icon }} fs-5 me-2"></i>
   {{ text }}
 </a>
-{% endmacro %}
 
-<!-- BUTTON BACK WITH TEXT -->
-{% macro back(id, text) %}
-<a id="{{ id }}" role="button" class="flex-center fw-bolder">
-  <i class="icon-back fa-solid fa-angle-left me-2"></i>
-  {{ text }}
-</a>
 {% endmacro %}
-
-<!-- BUTTON BACK ONLY ICON -->
-{% macro backIcon(id, href) %}
-<a id="{{ id }}" href="{{ href }}" role="button" class="flex-center">
-  <i class="icon-back fa-solid fa-angle-left me-2"></i>
+<!-- BUTTON ICON WITH TEXT OUTSIDE -->
+{% macro iconWithTextOutside(icon, color, text, href = '#', id) %}
+<a id="{{ id }}" href="{{ href }}" role="button" class="d-flex align-items-center">
+  <i class="fa-solid fa-{{ icon }} fs-5 me-2 {{ color }} btn flex-center p-0 rounded-1 icon-lg px-2 px-md-3 py-1"></i>
+  <h6 class="h6">{{ text }}</h6>
 </a>
 {% endmacro %}
 
@@ -37,18 +30,5 @@
 {% macro next(id, href) %}
 <a id="{{ id }}" href="{{ href }}" role="button" class="flex-center">
   <i class="fa-solid fa-angle-right me-2"></i>
-</a>
-{% endmacro %}
-
-<!-- BUTTON DELETE -->
-{% macro delete(link) %}
-<a
-  data-bs-target="#delete{{ link }}"
-  data-bs-toggle="modal"
-  href="{{ link }}"
-  role="button"
-  class="bg-danger rounded-1 text-white icon-lg flex-center"
->
-  <i class="fa-solid fa-trash-can fs-5"></i>
 </a>
 {% endmacro %}

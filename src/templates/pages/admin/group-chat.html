@@ -1,12 +1,12 @@
-{% extends "layout.html" %} {% set pageTitle = 'Group Chat' %} {% set cssFiles = './assets/css/style.css' %} {% block
-content %} {% import '../components/buttons.html' as button %}
+{% extends "layout-pages.html" %} {% set pageTitle = 'Group Chat' %} {% set cssFiles = '../assets/css/style.css' %} {%
+block content %} {% import '../components/buttons.html' as button %}
 
 <main class="bd-main">
   <div class="card group-chat">
     <div class="card-header bg-white p-4 sticky-top border-bottom">
       <div class="d-flex align-items-center">
-        {{ button.backIcon('', 'home.html')}}
-        <div class="d-block">
+        {{ button.icon('angle-left', 'bg-light', 'index.html')}}
+        <div class="d-block ms-2">
           <h5 class="h5 mb-1">Group Chat</h5>
           <p class="desc">5 members</p>
         </div>
@@ -20,7 +20,7 @@ content %} {% import '../components/buttons.html' as button %}
           standard dummy text ever since the 1500s,
         </div>
         <div class="chat-profile">
-          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
           <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
         </div>
       </div>
@@ -30,7 +30,7 @@ content %} {% import '../components/buttons.html' as button %}
           standard dummy text ever since the 1500s,
         </div>
         <div class="chat-profile">
-          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
           <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
         </div>
       </div>
@@ -40,7 +40,7 @@ content %} {% import '../components/buttons.html' as button %}
           standard dummy text ever since the 1500s,
         </div>
         <div class="chat-profile">
-          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
           <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
         </div>
       </div>
@@ -50,7 +50,7 @@ content %} {% import '../components/buttons.html' as button %}
           standard dummy text ever since the 1500s,
         </div>
         <div class="chat-profile">
-          <img src="./assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
           <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
         </div>
       </div>

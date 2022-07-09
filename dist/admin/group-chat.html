@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Group Chat</title>
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <div class="grid-container">
+      <!-- HEADER -->
+      
+<header class="navbar navbar-expand-lg navbar-light bg-white bd-header shadow-sm sticky-top">
+  <nav class="container-fluid d-block">
+    <div class="row gx-3 align-items-center">
+      <div class="col-auto px-lg-0">
+        <a
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </a>
+      </div>
+      <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
+        <img src="../assets/images/logo-light.webp" alt="logo" class="logo-header" />
+      </div>
+      <div id="search-header" class="col-auto col-md">
+        <!-- SEARCH -->
+        
+<a id="header-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="header-input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="header-icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="header-search" class="form-control" type="search" placeholder="Search anything" />
+</div>
+
+      </div>
+      <div class="col-auto notification-header">
+<div class="dropdown">
+  <a role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+    <i class="fas fa-bell icon-notification"></i>
+    <span class="position-absolute translate-middle badge notification rounded-circle bg-primary fw-light"
+      >3<span class="visually-hidden">unread messages</span>
+    </span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-end py-0 shadow border-0" aria-labelledby="dropdownMenuLink">
+    <div class="card card--header-notification">
+      <div class="card-header">New Notification Received</div>
+      <div class="card-body">
+        <div class="nav nav-tabs nav-tabs--notification mb-2" id="nav-tab" role="tablist">
+          <a
+            class="col-auto nav-link active"
+            id="all-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#all-notif"
+            type="button"
+            role="tab"
+            aria-controls="all-notif"
+            aria-selected="true"
+          >
+            All
+          </a>
+          <a
+            class="col-auto nav-link"
+            id="unread-notif-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#unread-notif"
+            type="button"
+            role="tab"
+            aria-controls="unread-notif"
+            aria-selected="false"
+          >
+            Unread
+          </a>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+            <div class="notification-message">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto d-none">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notif-tab">
+            <div class="notification-message unread">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <div class="title">Lorem</div>
+                </div>
+                <div class="col-auto">
+                  <div class="status">Unread</div>
+                </div>
+                <div class="col-auto ms-auto">
+                  <a
+                    role="button"
+                    class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Mark Read</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i
+                          class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
+                        ></i>
+                        <span class="fw-light fs-6">Remove This Notification </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="notifications.html" class="d-block fs-6 fw-bold text-primary text-center">See All Notification</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      <div class="col-auto">
+        <!-- PROFILE -->
+        <div id="profile" class="d-flex align-items-center">
+          <div id="name" class="fw-light d-none d-lg-block me-0 me-0 me-md-2">Calib Jackson</div>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+      <!-- SIBEDAR -->
+      <aside class="bd-sidebar bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark p-0">
+    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
+      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
+      <!-- Logout -->
+      <a class="nav-link logout" role="button"
+        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
+      ></a>
+    </div>
+  </nav>
+</aside>
+
+
+      <!-- CONTENT -->
+       
+
+<main class="bd-main">
+  <div class="card group-chat">
+    <div class="card-header bg-white p-4 sticky-top border-bottom">
+      <div class="d-flex align-items-center">
+        
+<a id="index.html" href="#" role="button" class="btn bg-light flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-left fs-5"></i>
+</a>
+
+        <div class="d-block ms-2">
+          <h5 class="h5 mb-1">Group Chat</h5>
+          <p class="desc">5 members</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
+      <div class="not-my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+      <div class="not-my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+      <div class="my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+      <div class="not-my-chat">
+        <div class="chat-content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s,
+        </div>
+        <div class="chat-profile">
+          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer sticky-bottom bg-white border-top">
+      <div class="px-2">
+        <div class="row gx-3 align-items-center">
+          <div class="col-auto">
+            <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+          </div>
+          <div class="col">
+            <input type="text" name="messages" class="form-control w-100" />
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary text-white fs-2 py-0 px-2">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    </div>
+    <!-- FOOTER -->
+    <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+  integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+
+    <!-- SIDEBAR ITEM -->
+    <script>
+  $(document).ready(function () {
+    //SIDEBAR
+    let sidebar = [
+      {
+        id: 0,
+        link: 'index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
+      },
+      {
+        id: 1,
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
+      },
+      {
+        id: 2,
+        link: '#',
+        icon: 'fa-user-group',
+        title: 'Whānau',
+      },
+      {
+        id: 3,
+        link: '#',
+        icon: 'fa-truck',
+        title: 'Deliveries',
+      },
+      {
+        id: 4,
+        link: '#',
+        icon: 'fa-user',
+        title: 'Kaimahi',
+      },
+      {
+        id: 5,
+        link: '#',
+        icon: 'fa-calendar-days',
+        title: 'Events',
+      },
+      {
+        id: 6,
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
+      },
+      {
+        id: 7,
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
+      },
+    ];
+    $('#sidebar-item').prepend(
+      jQuery.map(sidebar, function (item) {
+        return (
+          "<a class='nav-link' href='" +
+          item.link +
+          "'><i class='fa-solid " +
+          item.icon +
+          "'></i>" +
+          item.title +
+          '</a>'
+        );
+      })
+    );
+
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $('#header-button-search').click(function () {
+      //replace class in id search header from col-auto to col
+      $('#search-header').removeClass('col-auto').addClass('col');
+
+      //add class d-none to id logo header
+      $('#logo-header').addClass('d-none');
+
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass('d-block').addClass('d-none');
+
+      //replace class in id button search from d-none to d-block
+      $('#header-input-search').removeClass('d-none').addClass('d-block');
+    });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $('#header-search');
+    let iconSearch = $('#header-icon-search');
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      //replace class search header from col-auto to col
+      $('#search-header').removeClass('col').addClass('col-auto');
+
+      $('#logo-header').removeClass('d-none');
+      $('#header-button-search').removeClass('d-none').addClass('d-block');
+      $('#header-input-search').removeClass('d-block').addClass('d-none');
+    }
+  });
+</script>
+
+
+    <!-- SCRIPT -->
+    
+<script>
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
+    $('.nav-link:contains(Group Chat)').addClass('active');
+  });
+</script>
+
+  </body>
+</html>
