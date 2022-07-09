@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff" />
   <title>Home</title>
 
-  <link rel="stylesheet" type="text/css" href="../assets/css/custom.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -37,7 +37,7 @@
         </a>
       </div>
       <div id="logo-header" class="col col-lg-auto pe-0 pe-lg-6">
-        <img src="assets/images/logo-light.webp" alt="logo" class="logo-header" />
+        <img src="../assets/images/logo-light.webp" alt="logo" class="logo-header" />
       </div>
       <div id="search-header" class="col-auto col-md">
         <!-- SEARCH -->
@@ -226,7 +226,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img src="assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+              <img src="../assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
               <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
@@ -256,186 +256,446 @@
       <!-- CONTENT -->
       
 
-<div class="main bg-body">
-  <aside class="bd-sidebar bg-white shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-dark p-0">
-    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
-      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
-      <!-- Logout -->
-      <a class="nav-link logout" role="button"
-        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
-      ></a>
-    </div>
-  </nav>
-</aside>
-
-  <div class="px-5 py-4">
-    <h3 class="mb-4">Welcome back,<span class="text-primary">AHMED</span></h3>
-    <form class="form-search mb-2" action="">
-      <input class="input-search" type="text" name="search" placeholder="Search For Anything Here" />
-      <img src="../assets/icons/icon-search.svg" alt="icon search" class="icon-search" />
-    </form>
-    <div class="row g-2 mb-2">
-      <div class="col-6 col-lg-3">
-        <a href="#" role="button" class="btn btn-light w-100">Create Message</a>
+<main class="bd-main">
+  <!-- PAGE TITLE -->
+  <h1 class="page-title text-primary"><span class="text-black fw-light">Welcome back, </span>Ahmed</h1>
+  <!-- CARDS -->
+  
+<section class="cards-info">
+    <div class="row g-3">
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-user"></i>
       </div>
-      <div class="col-6 col-lg-3">
-        <a href="#" role="button" class="btn btn-primary w-100">Create Notification</a>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">All Kaimahi</p>
       </div>
     </div>
-    <section id="info">
-      <div class="row g-2 mb-5">
-        <div class="col-6 col-lg-3">
-          <div class="card-info border border-primary">
-            <img src="../assets/icons/icon-user.svg" alt="icon user" class="card-icon" />
-            <div class="card-text">
-              <p class="text-secondary">All KaiMahi</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-whanau.svg" alt="icon whanau" class="card-icon" />
-            <div class="card-text">
-              <p>All Whānau</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-deliveries.svg" alt="" class="card-icon" />
-            <div class="card-text">
-              <p>Current Deliveries</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="card-info">
-            <img src="../assets/icons/icon-complete-deliveries.svg" alt="" class="card-icon" />
-            <div class="card-text">
-              <p>Complete Deliveries</p>
-              <p>26539</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="content">
-      <ul class="nav nav-tabs" id="nav-tabs" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="nav-kaimahi-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-kaimahi"
-            role="button"
-            aria-controls="nav-kaimahi"
-            aria-selected="true"
-          >
-            Latest KaiMahi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            id="nav-whanau-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-whanau"
-            role="button"
-            aria-controls="nav-whanau"
-            aria-selected="false"
-          >
-            Latest Whānau</a
-          >
-        </li>
-      </ul>
-
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade" id="nav-kaimahi" role="tabpanel" aria-labelledby="nav-kaimahi-tab">
-          <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
- <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
- <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
-  </div>
-</div>
- <div class="kaimahi-item">
-  <div class="col me-2">
-    <div class="profile">
-      <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="img-wrapper" />
-      <p class="name">Ahmed Al Aklouk</p>
-    </div>
-    <div class="delivery">
-      <img src="../assets/icons/icon-check-small.svg" alt="icon check" class="icon-small" />
-      <p><span>Last Delivery </span>17-01-2022</p>
-    </div>
-  </div>
-  <div class="col-auto">
-    <a href="#">
-      <img src="../assets/icons/icon-trash.svg" alt="delete icon" class="icon" />
-    </a>
   </div>
 </div>
 
-        </div>
-        <div class="tab-pane fade show active" id="nav-whanau" role="tabpanel" aria-labelledby="nav-whanau-tab"></div>
+</div>
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-user-group"></i>
       </div>
-    </section>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">All
+  Whānau</p>
+      </div>
+    </div>
   </div>
 </div>
-<script>
-  $(document).ready(function () {
-    $("a.nav-link:contains('Home')").addClass('active');
-  });
-</script>
+
+</div>
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">Current Deliveries</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+        
+        <div class="col-sm-6 col-xl-3">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-truck"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26539</h4>
+        <p class="fs-6 fw-light">Completed Deliveries</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</section>
+
+
+  <div class="row gx-5">
+    <div class="col-12 col-lg-6">
+      
+<!-- LATEST KAIMAHi -->
+<section class="latest-kaimahi">
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <h4 class="col fs-2 me-auto">Latest KaiMahi</h4>
+        <div class="col-auto">
+<a id="kaimahi-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="kaimahi-input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="kaimahi-icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="kaimahi-search" class="form-control" type="search" placeholder="Look For Kai Mahi" />
+</div>
+</div>
+      </div>
+      <hr />
+      <!-- CONTENT -->
+       
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+  
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+  
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+  
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+  
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+  
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+  
+<div class="card bg-light mt-3">
+  <div class="card-body px-3 py-2">
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <p class="name">Ahmed Al Aklouk</p>
+        <p class="fs-6"><span>Last Delivery </span>17-01-2022</p>
+      </div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+      <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+ 
+      <div class="d-flex mt-5">
+        <div class="col">
+          <a role="button" href="" class="text-primary fw-light">View all</a>
+        </div>
+        <div class="col-auto">
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+  </ul>
+</nav>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="col-12 col-lg-6">
+      
+<!-- LATEST WHANAU -->
+<section class="latest-whanau">
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <h4 class="col fs-2 me-auto">Latest Whānau</h4>
+        <div class="col-auto">
+<a id="whanau-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="whanau-input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="whanau-icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="whanau-search" class="form-control" type="search" placeholder="Look For Whānau" />
+</div>
+</div>
+      </div>
+      <hr />
+      <!-- CONTENT -->
+       
+<div class="position-relative mt-3">
+  <img src="../assets/images/maps.webp" alt="maps" class="img-wrapper rounded w-100 mh-300" />
+  <div
+    class="position-absolute bottom-0 start-50 translate-middle-x w-100 px-1 px-md-4 px-lg-1 px-xl-4 mb-1 mb-md-4 mb-lg-1 mb-lg-4"
+  >
+    <div class="card bg-white shadow">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <h6 class="fs-4 fw-bolder me-auto">Jackson</h6>
+          
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+
+        </div>
+        <div class="fs-6 fw-light mb-1">By</div>
+        <div class="d-flex align-items-center">
+          <div class="col-auto me-1 me-sm-2">
+            <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+          </div>
+          <div class="col">
+            <h6 class="fs-6">Ahmed Al Aklouk</h6>
+            <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
+          </div>
+          <div class="col-auto me-1 me-sm-3">
+<a id="" href="" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
+  <i class="fa-solid fa-phone fs-5 me-2"></i>
+  Call
+</a>
+</div>
+          <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="position-relative mt-3">
+  <img src="../assets/images/maps.webp" alt="maps" class="img-wrapper rounded w-100 mh-300" />
+  <div
+    class="position-absolute bottom-0 start-50 translate-middle-x w-100 px-1 px-md-4 px-lg-1 px-xl-4 mb-1 mb-md-4 mb-lg-1 mb-lg-4"
+  >
+    <div class="card bg-white shadow">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <h6 class="fs-4 fw-bolder me-auto">Jackson</h6>
+          
+<a id="" href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+
+        </div>
+        <div class="fs-6 fw-light mb-1">By</div>
+        <div class="d-flex align-items-center">
+          <div class="col-auto me-1 me-sm-2">
+            <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+          </div>
+          <div class="col">
+            <h6 class="fs-6">Ahmed Al Aklouk</h6>
+            <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
+          </div>
+          <div class="col-auto me-1 me-sm-3">
+<a id="" href="" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
+  <i class="fa-solid fa-phone fs-5 me-2"></i>
+  Call
+</a>
+</div>
+          <div class="col-auto">
+<a id="" href="" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+      <!-- VIEW ALL AND PAGINATION -->
+      <div class="d-flex mt-5">
+        <div class="col">
+          <a role="button" href="" class="text-primary fw-light">View all</a>
+        </div>
+        <div class="col-auto">
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+  </ul>
+</nav>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </div>
+  </div>
+</main>
+
+<!-- MODAL -->
+<!-- RESEND MODAL -->
+<div class="modal" id="resendModal" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resend Email Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary fw-light mb-4 mb-md-5">
+          Hi, Clib Jackson, this will resend email confirmation
+          <span class="text-black fw-bold"> clibjackson@gmail.com </span>
+        </p>
+        <button type="button" class="btn btn-primary me-3">Resend</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     </div>
     <!-- FOOTER -->
@@ -561,6 +821,34 @@
 
 
     <!-- SCRIPT -->
-     
+    
+<script>
+  $(document).ready(function () {
+    $(".nav-link:contains('Home')").addClass('active');
+
+    // SEARCH BUTTON
+    //Show Input Button when click Button search
+    $('#kaimahi-button-search').click(function () {
+      //replace class in id button search from d-block to d-none
+      $(this).removeClass('d-block').addClass('d-none');
+
+      //replace class in id button search from d-none to d-block
+      $('#kaimahi-input-search').removeClass('d-none').addClass('d-block');
+    });
+  });
+
+  //Hide Input Search when click
+  $(document).mouseup(function (e) {
+    let inputSearch = $('#kaimahi-search');
+    let iconSearch = $('#kaimahi-icon-search');
+
+    // click outside input search
+    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
+      $('#kaimahi-button-search').removeClass('d-none').addClass('d-block');
+      $('#kaimahi-input-search').removeClass('d-block').addClass('d-none');
+    }
+  });
+</script>
+
   </body>
 </html>
