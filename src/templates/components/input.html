@@ -1,11 +1,13 @@
+{% import './buttons.html' as button %}
+
 <!-- WITH ICON -->
 {% macro withIcon(icon, label, name, value, type='time') %}
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
-      <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="fa-solid {{ icon }}"></i></a>
+      <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="{{ icon }}"></i></a>
       <div class="col ms-2">
-        <label for="{{ name }}" class="h5 mb-1" type="button">{{ label }}</label>
+        <label for="{{ name }}" class="h5 mb-1">{{ label }}</label>
         <input
           id="{{ name }}"
           name="{{ name }}"
@@ -34,8 +36,8 @@
           class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
           rows="3"
         >
-          {{ value }}
-        </textarea>
+{{ value }}</textarea
+        >
       </div>
     </div>
   </div>
@@ -54,5 +56,42 @@
     value="{{ value | escape }}"
   />
   <label for="{{ name }}">{{ label }}</label>
+</div>
+{% endmacro %}
+
+<!-- SEARCH INPUT -->
+{% macro search(placeholder, class) %}
+<div class="position-relative">
+  <label for="search" class="icon-search show">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input class="form-control {{ class }}" type="search" placeholder="{{ placeholder }}" />
+</div>
+{% endmacro %}
+
+<!-- SEARCH INPUT COLLAPSE -->
+{% macro searchCollapse(placeholder, name) %}
+<a id="{{ name }}-button-search" role="button" class="d-block d-md-none">
+  <i class="fa-solid fa-magnifying-glass icon-search"></i>
+</a>
+<div id="{{ name }}-input-search" class="position-relative d-none d-md-block">
+  <label for="search" class="icon-search show">
+    <i id="{{ name }}-icon-search" class="fa-solid fa-magnifying-glass"></i>
+  </label>
+  <input id="{{ name }}-search" class="form-control" type="search" placeholder="{{ placeholder }}" />
+</div>
+{% endmacro %}
+
+<!-- SEARCH AND FILTER -->
+{% macro searchWithFilter(placeholder) %}
+<div class="d-flex flex-row align-items-center mb-5" role="group" aria-label="Search and filter">
+  <div class="position-relative flex-fill">
+    <label for="search" class="icon-search show">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </label>
+    <input class="form-control rounded-0 rounded-start w-100" type="search" placeholder="{{ placeholder }}" />
+  </div>
+  <div class="col-auto">{{ button.text('Filter', 'btn-light rounded-0 py-2') }}</div>
+  <div class="col-auto">{{ button.text('Search', 'btn-primary rounded-0 rounded-end fw-light py-2') }}</div>
 </div>
 {% endmacro %}

@@ -73,7 +73,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             <div class="col-lg-6">{{ input.floating('Email', 'email', 'clibjackson@gmail.com', 'email') }}</div>
             <div class="col-lg-6">{{ input.floating('Phone Number', 'phone', '+64 1234 5678', 'tel') }}</div>
             <div class="position-relative p-0 m-0">
-              <div class="position-absolute mt-5 ms-1 ms-md-n1">{{ buttons.submit() }}</div>
+              <div class="position-absolute mt-5 ms-1 ms-md-n1">{{ buttons.submit('','Save Change') }}</div>
             </div>
           </form>
         </div>
@@ -91,7 +91,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             </div>
             <div class="col-12">{{ input.floating('Confirm password', 'confirmPass', 'password', 'password') }}</div>
             <div class="position-relative p-0 m-0">
-              <div class="position-absolute mt-5 ms-1 ms-md-n1">{{ buttons.submit() }}</div>
+              <div class="position-absolute mt-5 ms-1 ms-md-n1">{{ buttons.submit('','Save Change') }}</div>
             </div>
           </form>
         </div>

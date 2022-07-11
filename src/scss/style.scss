@@ -39,6 +39,10 @@ a {
   }
 }
 
+.border-dashed {
+  border: 1px dashed $gray-200;
+}
+
 .desc {
   @extend .text-secondary;
   @extend .fs-6;

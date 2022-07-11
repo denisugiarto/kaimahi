@@ -18,4 +18,25 @@
   {% endfor %}
 </div>
 
+{% endmacro %} {% macro withIcon(items) %}
+<div class="nav nav-tabs" role="tablist">
+  {% for item in items %}
+  <a
+    class="col-auto nav-link {{ item.status }}"
+    id="{{ item.id }}-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#{{ item.id }}"
+    type="button"
+    role="tab"
+    aria-controls="{{ item.id }}"
+    aria-selected="true"
+  >
+    <i class="{{ item.icon }}"></i>
+    {{ item.title }}
+  </a>
+  {% else %}
+  <a class="nav-link">No Menu</a>
+  {% endfor %}
+</div>
+
 {% endmacro %}

@@ -1,0 +1,37 @@
+{% extends "layout-pages.html" %} {% set pageTitle = 'Whānau' %} {% set cssFiles = '../assets/css/style.css' %} {%
+import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
+'../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
+'../components/whanau-item.html' as whanauItem %} {% import '../components/cards.html' as card %} {% block content %}
+<main class="bd-main">
+  <div class="d-flex justify-content-between">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Whānau<sup class="h6 text-primary">12265</sup></h1>
+    {{ button.iconWithTextLeft('circle-arrow-down', 'btn-primary pe-3', 'Export All') }}
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <!-- SEARCH AND FILTER -->
+      {{ input.searchWithFilter('Look For Whānau') }}
+      <!-- TAB MENU -->
+      {{ navTabs.withIcon([{ title: 'View List Of All Whānau', icon: 'fa-solid fa-bullseye', id: '', status: 'active'},
+      { title: 'Add Single Whānau', icon: 'fa-solid fa-user', id: '', status: ''}, {title: 'Add Bulk Whānau', icon:
+      'fa-brands fa-buffer'} ]) }}
+      <div class="my-4">
+        <img src="../assets/images/maps-all.webp" alt="" class="rounded shadow img-fluid" />
+      </div>
+      {{ card.cardWhanau('../assets/images/profile-1.webp', 'Ahmed Al Aklouk', '17-01-2022') }}
+    </div>
+  </div>
+</main>
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Whānau';
+      })
+      .addClass('active');
+  });
+</script>
+{% endblock %}

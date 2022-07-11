@@ -61,17 +61,18 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
 
             <div class="card align-items-center">
               <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-                {{ input.withIcon('fa-clock', 'Time', 'time', '', 'time') }} {{ input.withIcon('fa-calendar-days',
-                'Date', 'date', '', 'date') }} {{ input.withIconTextArea('fa-comment-dots', 'Message', 'message', '',
-                'text') }}
+                {{ input.withIcon('fa-solid fa-clock', 'Time', 'time', '', 'time') }} {{ input.withIcon('fa-solid
+                fa-calendar-days', 'Date', 'date', '', 'date') }} {{ input.withIconTextArea('fa-comment-dots',
+                'Message', 'message', '', 'text') }}
                 <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add Message</button>
               </div>
             </div>
           </div>
 
           <div id="selectWhanau" class="collapse">
-            <div class="d-flex">
-              {{ button.iconWithTextOutside('angle-left', 'bg-light', 'Select Whānau', '#', 'backMessageDetail') }}
+            <div class="d-flex align-items-center">
+              {{ button.icon('angle-left', 'bg-light', '#', 'backMessageDetail') }}
+              <h6 class="h6 ms-2">Select Whānau</h6>
               <button class="btn btn-sm btn-outline-primary ms-auto">Bulk Upload</button>
             </div>
             <hr class="my-2" />
@@ -151,8 +152,10 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
             </div>
           </div>
           <div id="messageHistoryDetail" class="collapse">
-            {{ button.iconWithTextOutside('angle-left', 'bg-light', 'Message History Details', '#',
-            'backMessageHistoryDetail') }}
+            <div class="d-flex align-items-center">
+              {{ button.icon('angle-left', 'bg-light', '', 'backMessageHistoryDetail') }}
+              <h6 class="h6 ms-2">Message History Details</h6>
+            </div>
             <hr class="mb-5 mt-3" />
             <h6 class="h6 mb-5">Message Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
             <h6 class="h6 mb-2">Message</h6>

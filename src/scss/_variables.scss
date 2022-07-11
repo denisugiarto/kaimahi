@@ -14,7 +14,7 @@ $gray-900: #2c3131;
 $red: #d32721;
 $yellow: #ffc107;
 $green: #2fd661;
-$cyan: #0dcaf0;
+$blue: #2345ed;
 $white: #fff;
 $text: $gray-900;
 $brand: #25c967;
@@ -51,7 +51,7 @@ $colors: (
   'red': $red,
   'yellow': $yellow,
   'green': $green,
-  'cyan': $cyan,
+  'blue': $blue,
   'white': $white,
   'gray': $gray-600,
   'gray-dark': $gray-800,
@@ -62,7 +62,7 @@ $colors: (
 $primary: $brand;
 $secondary: $gray-600;
 $success: $green;
-$info: $cyan;
+$info: $blue;
 $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
@@ -131,7 +131,7 @@ $font-sizes: (
   //14px
   6: 0.75rem,
   //12px
-  7: 0.625rem //10px,,,,,,,,,,,,,,,
+  7: 0.625rem //10px,,,,,,,,,,,,,,,,,,,,
 );
 
 //FONT WEIGHT
@@ -177,6 +177,10 @@ $nav-tabs-link-active-border-color: $primary;
 //PAGINATION
 $pagination-padding-y: 0.125rem;
 $pagination-padding-x: 0.625rem;
+
+//PROGRESS BAR
+$progress-height: 10px;
+$progress-bg: $gray-400;
 
 //REBOOT
 $headings-margin-bottom: 0;
