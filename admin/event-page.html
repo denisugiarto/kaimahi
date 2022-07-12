@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Group Chat</title>
+  <title>Whānau</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -254,86 +254,388 @@
 
 
       <!-- CONTENT -->
-       
-
+      
 <main class="bd-main">
-  <div class="card group-chat">
-    <div class="card-header bg-white p-4 sticky-top border-bottom">
-      <div class="d-flex align-items-center">
-        
-<a href="index.html" role="button" class="btn bg-light flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-angle-left fs-5"></i>
+  <div class="d-flex justify-content-between align-items-center">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Whānau<sup class="h6 text-primary">12265</sup></h1>
+    
+<a id="" href="#" role="button" class="btn btn-primary pe-3 mb-5 flex-center fs-5 h-100">
+  Export All
+  <i class="fa-solid fa-circle-arrow-down fs-2 ms-2"></i>
 </a>
 
-        <div class="d-block ms-2">
-          <h5 class="h5 mb-1">Group Chat</h5>
-          <p class="desc">5 members</p>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="card">
     <div class="card-body">
-      <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+      <!-- SEARCH AND FILTER -->
+      
+<div class="d-flex flex-row align-items-center mb-5" role="group" aria-label="Search and filter">
+  <div class="position-relative flex-fill">
+    <label for="search" class="icon-search show">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </label>
+    <input
+      class="form-control rounded-0 rounded-start w-100 border border-light"
+      type="search"
+      placeholder="Look For Whānau"
+    />
+  </div>
+  <div class="col-auto">
+<a id="" href="#" role="button" class="btn btn-light rounded-0 p-2"> Filter </a>
+</div>
+  <div class="col-auto">
+<a id="" href="#" role="button" class="btn btn-primary rounded-0 rounded-end fw-light py-2 px-3"> Search </a>
+</div>
+</div>
+
+      <!-- TAB MENU -->
+      
+<div class="nav nav-tabs" role="tablist">
+  
+  <a
+    class="col-auto nav-link active"
+    id="all-whanau-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#all-whanau"
+    type="button"
+    role="tab"
+    aria-controls="all-whanau"
+    aria-selected="true"
+  >
+    <i class="fa-solid fa-bullseye"></i>
+    View List Of All Whānau
+  </a>
+  
+  <a
+    class="col-auto nav-link "
+    id="single-whanau-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#single-whanau"
+    type="button"
+    role="tab"
+    aria-controls="single-whanau"
+    aria-selected="true"
+  >
+    <i class="fa-solid fa-user"></i>
+    Add Single Whānau
+  </a>
+  
+  <a
+    class="col-auto nav-link "
+    id="bulk-whanau-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#bulk-whanau"
+    type="button"
+    role="tab"
+    aria-controls="bulk-whanau"
+    aria-selected="true"
+  >
+    <i class="fa-brands fa-buffer"></i>
+    Add Bulk
+      Whānau
+  </a>
+  
+</div>
+
+
+      <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="all-whanau" role="tabpanel" aria-labelledby="all-whanau-tab">
+          <!-- WHANAU CARDS -->
+          
+<div class="row g-3 gx-lg-5 gy-md-4">
+  <!-- CONTENT -->
+  
+  <div class="col-12 col-lg-6">
+    
+<div class="card bg-white shadow">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div class="fs-6 fw-light mb-1">By</div>
+      <a href="whanau-view-all.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+        <i class="fa-solid fa-angle-right fs-5"></i>
+      </a>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="col-auto me-1 me-sm-2">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
       </div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+      <div class="col">
+        <h6 class="fs-6">Ahmed Al Aklouk</h6>
+        <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
       </div>
-      <div class="my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+      <div class="col-auto me-1 me-sm-3">
+<a id="" href="#" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
+  <i class="fa-solid fa-phone fs-5 me-2"></i>
+  Call
+</a>
+</div>
+      <div class="col-auto">
+<a href="#" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+  <div class="col-12 col-lg-6">
+    
+<div class="card bg-white shadow">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div class="fs-6 fw-light mb-1">By</div>
+      <a href="whanau-view-all.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+        <i class="fa-solid fa-angle-right fs-5"></i>
+      </a>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="col-auto me-1 me-sm-2">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
       </div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
+      <div class="col">
+        <h6 class="fs-6">Ahmed Al Aklouk</h6>
+        <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
+      </div>
+      <div class="col-auto me-1 me-sm-3">
+<a id="" href="#" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
+  <i class="fa-solid fa-phone fs-5 me-2"></i>
+  Call
+</a>
+</div>
+      <div class="col-auto">
+<a href="#" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+  <!-- VIEW ALL AND PAGINATION -->
+  
+<div class="d-flex mt-5">
+  <div class="col">
+    <a role="button" href="#" class="text-primary fw-light">View all</a>
+  </div>
+  <div class="col-auto">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+</div>
+
         </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+        <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
+          <div class="card align-items-center">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+              
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#text"><i class="fa-solid fa-user"></i></a>
+      <div class="col ms-2">
+        <label for="text" class="h5 mb-1">Name</label>
+        <input
+          id="text"
+          name="text"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="Ahmed Aklouk"
+          type="text"
+        />
       </div>
     </div>
-    <div class="card-footer sticky-bottom bg-white border-top">
-      <div class="px-2">
-        <div class="row gx-3 align-items-center">
-          <div class="col-auto">
-            <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#email"><i class="fa-solid fa-envelopes-bulk"></i></a>
+      <div class="col ms-2">
+        <label for="email" class="h5 mb-1">Email</label>
+        <input
+          id="email"
+          name="email"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="ahmedaklouk@gmail.com"
+          type="email"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#fbmessage"><i class="fa-brands fa-facebook-messenger"></i></a>
+      <div class="col ms-2">
+        <label for="fbmessage" class="h5 mb-1">Facebook Messengger</label>
+        <input
+          id="fbmessage"
+          name="fbmessage"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="@ahmedaklouk"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#phone"><i class="fa-solid fa-comment-dots"></i></a>
+      <div class="col ms-2">
+        <label for="phone" class="h5 mb-1">Phone Number</label>
+        <input
+          id="phone"
+          name="phone"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="233665665616"
+          type="number"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+              <!-- ADDRESS -->
+              
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#address"><i class="fa-solid fa-solid fa-comment-dots"></i></a>
+
+      <div class="col ms-2">
+        <label for="address" class="h5 pointer">Address</label>
+        <textarea
+          id="address"
+          name="address"
+          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          rows="3"
+        >
+</textarea
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+              <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+            </div>
           </div>
-          <div class="col">
-            <input type="text" name="messages" class="form-control w-100" />
-          </div>
-          <div class="col-auto">
-            <button class="btn btn-primary text-white fs-2 py-0 px-2">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
+        </div>
+        <div class="tab-pane fade" id="bulk-whanau" role="tabpanel" aria-labelledby="bulk-whanau-tab">
+          <div class="card align-items-center">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+              <div class="card bg-light border-dashed">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <label for="file" class="h5 mb-1" type="button">Upload CSV</label>
+                      <input id="file" name="file" class="d-none" value="" type="file" />
+                      <label for="file" class="fw-light mb-1 d-block" type="button">name of file showing here</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+<button class="w-100 mb-3 btn btn-primary mt-4" type="submit">Add</button>
+
+              <hr class="my-5" />
+              <h5 class="h5 mb-3">Latest Uploaded File</h5>
+              <!-- LIST UPLOADED FILES -->
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <div class="progress">
+                        <div
+                          class="progress-bar w-75 rounded-pill"
+                          role="progressbar"
+                          aria-valuenow="75"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-auto ms-5">
+<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <p class="fw-light">Kai mahi#01.xls</p>
+                    </div>
+                    <div class="col-auto ms-5">
+<a href="#" role="button" class="btn btn-primary flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-gear fs-5"></i>
+</a>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <p class="fw-light">Kai mahi#01.xls</p>
+                    </div>
+                    <div class="col-auto ms-5">
+                      <div class="row gx-2">
+                        <div class="col-auto">
+<a href="#" role="button" class="btn btn-info flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-pen-to-square fs-5"></i>
+</a>
+</div>
+                        <div class="col-auto">
+<a href="#" role="button" class="btn btn-primary flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-circle-arrow-down fs-5"></i>
+</a>
+</div>
+                        <div class="col-auto">
+<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-gear fs-5"></i>
+</a>
+</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </main>
-
 
     </div>
     <!-- FOOTER -->
@@ -456,8 +758,13 @@
     
 <script>
   $(document).ready(function () {
-    // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
-    $('.nav-link:contains(Group Chat)').addClass('active');
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Events';
+      })
+      .addClass('active');
+    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
   });
 </script>
 
