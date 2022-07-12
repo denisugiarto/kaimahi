@@ -1,0 +1,90 @@
+{% extends "layout-pages.html" %} {% set pageTitle = 'KaiMahi' %} {% set cssFiles = '../assets/css/style.css' %} {%
+import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
+'../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
+'../components/kaimahi-item.html' as kaimahiItem %} {% block content %}
+<main class="bd-main">
+  <div class="d-flex justify-content-between align-items-center">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title d-flex align-items-center mb-0">
+      <span class="me-2">{{ button.icon('angle-left', 'bg-gray-200', 'kaimahi.html') }}</span> KaiMahi Profile
+    </h1>
+  </div>
+  <hr class="my-2 text-gray-200" />
+  <div class="card bg-white mb-5">
+    <div class="card-body px-3 py-2">
+      <div class="row gx-2 align-items-center">
+        <div class="col-auto">
+          <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+        </div>
+        <div class="col">
+          <h6 class="mb-1">Ahmed Al Aklouk</h6>
+          <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
+        </div>
+        <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
+        <div class="col-auto">{{ button.icon('pen-to-square', 'bg-info text-white') }}</div>
+        <div class="col-auto">
+          <a href="kaimahi-profile.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+            <i class="fa-solid fa-angle-right fs-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="h4"><i class="fa-solid fa-truck me-2"></i>Current Deliveries</h4>
+      <hr class="bg-secondary" />
+      <div class="row gx-2 mb-2">
+        <div class="col">
+          <h5 class="h5">My Deliveries</h5>
+          <h6 class="fw-light fs-6">Total Whānau <span class="text-primary fw-bold">5</span></h6>
+        </div>
+        <div class="col-auto">
+          <div class="bg-brand-100 py-1 px-3 fw-light rounded">Completed</div>
+        </div>
+        <div class="col-auto">{{ button.icon('trash-can', 'btn-danger') }}</div>
+        <div class="col-auto">{{ button.icon('angle-right', 'btn-gray-200') }}</div>
+      </div>
+      <div class="card bg-light mb-5">
+        <div class="card-body px-3 py-2">
+          <div class="row gx-2 align-items-center">
+            <div class="col-auto">
+              <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+            </div>
+            <div class="col">
+              <h6 class="mb-1">Ahmed Al Aklouk</h6>
+              <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
+        <a href="" class="text-primary fs-5 fw-light" role="button">View List</a>
+      </div>
+      <!-- TAB MENU -->
+      {{ navTabs.menu([{ title: 'Family_1', id: 'familiy1', status: 'active'}, { title: 'Family_2', id: 'familiy2'},
+      {title: 'Family_3', id: 'familiy3'} ]) }}
+      <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
+          <!-- MAP CARDS -->
+          <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" />
+          <!-- PAGINATION -->
+          {{ pagination.ViewAllBtn() }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Kaimahi';
+      })
+      .addClass('active');
+  });
+</script>
+{% endblock %}

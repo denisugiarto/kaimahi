@@ -1,0 +1,134 @@
+{% extends "layout-pages.html" %} {% set pageTitle = 'KaiMahi' %} {% set cssFiles = '../assets/css/style.css' %} {%
+import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
+'../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
+'../components/kaimahi-item.html' as kaimahiItem %} {% block content %}
+<main class="bd-main">
+  <div class="d-flex justify-content-between align-items-center">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">KaiMahi<sup class="h6 text-primary">12265</sup></h1>
+    {{ button.iconWithTextLeft('circle-arrow-down', 'btn-primary pe-3 mb-5', 'Export All') }}
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <!-- SEARCH AND FILTER -->
+      {{ input.searchWithFilter('Look For KaiMahi') }}
+      <!-- TAB MENU -->
+      {{ navTabs.withIcon([{ title: 'View List Of All Kaimahi', icon: 'fa-solid fa-bullseye', id: 'all-kaimahi', status:
+      'active'}, { title: 'Add Single Kaimahi', icon: 'fa-solid fa-user', id: 'single-kaimahi'}, {title: 'Add Bulk
+      Kaimahi', icon: 'fa-brands fa-buffer', id: 'bulk-kaimahi'} ]) }}
+      <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
+          <!-- KAIMAHI CARDS -->
+          {{ kaimahiItem.cards([ { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
+          '17-01-2022', link: 'kaimahi-profile.html' }, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al
+          Aklouk', delivery: '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk',
+          delivery: '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
+          '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'},
+          { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
+          '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'} ]) }}
+          <!-- PAGINATION -->
+          {{ pagination.ViewAllBtn() }}
+        </div>
+        <div class="tab-pane fade" id="single-kaimahi" role="tabpanel" aria-labelledby="single-kaimahi-tab">
+          <div class="card align-items-center">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+              {{ input.withIcon('fa-solid fa-user', 'Name', 'text', 'Ahmed Aklouk', 'text') }} {{
+              input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', 'ahmedaklouk@gmail.com', 'email') }} {{
+              input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger', 'fbmessage', '@ahmedaklouk',
+              'text') }} {{ input.withIcon('fa-solid fa-comment-dots', 'Phone Number', 'phone', '233665665616',
+              'number') }}
+              <!-- ADDRESS -->
+              {{ input.withIconTextArea('fa-solid fa-comment-dots', 'Address', 'address', '') }}
+              <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="bulk-kaimahi" role="tabpanel" aria-labelledby="bulk-kaimahi-tab">
+          <div class="card align-items-center">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+              <div class="card bg-light border-dashed">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <label for="file" class="h5 mb-1" type="button">Upload CSV</label>
+                      <input id="file" name="file" class="d-none" value="{{ value }}" type="file" />
+                      <label for="file" class="fw-light mb-1 d-block" type="button">name of file showing here</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{ button.submit('w-100 mb-3', 'Add') }}
+              <hr class="my-5" />
+              <h5 class="h5 mb-3">Latest Uploaded File</h5>
+              <!-- LIST UPLOADED FILES -->
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <div class="progress">
+                        <div
+                          class="progress-bar w-75 rounded-pill"
+                          role="progressbar"
+                          aria-valuenow="75"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-auto ms-5">{{ button.icon('trash-can', 'btn-danger')}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <p class="fw-light">Kai mahi#01.xls</p>
+                    </div>
+                    <div class="col-auto ms-5">{{ button.icon('gear', 'btn-primary') }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <p class="fw-light">Kai mahi#01.xls</p>
+                    </div>
+                    <div class="col-auto ms-5">
+                      <div class="row gx-2">
+                        <div class="col-auto">{{ button.icon('pen-to-square', 'btn-info') }}</div>
+                        <div class="col-auto">{{ button.icon('circle-arrow-down', 'btn-primary') }}</div>
+                        <div class="col-auto">{{ button.icon('gear', 'btn-danger') }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Kaimahi';
+      })
+      .addClass('active');
+    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
+  });
+</script>
+{% endblock %}

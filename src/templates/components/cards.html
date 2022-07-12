@@ -16,7 +16,7 @@
 {% endmacro %}
 
 <!-- KAIMAHI CARD -->
-{% macro kaimahi(avatar, name, delivery) %}
+{% macro kaimahi(avatar, name, delivery, link='#') %}
 <div class="card bg-light mt-3">
   <div class="card-body px-3 py-2">
     <div class="row gx-2 align-items-center">
@@ -28,7 +28,11 @@
         <p class="fs-6"><span>Last Delivery </span>{{ delivery }}</p>
       </div>
       <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
-      <div class="col-auto">{{ button.icon('angle-right', 'bg-gray-200') }}</div>
+      <div class="col-auto">
+        <a href="kaimahi-profile.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+          <i class="fa-solid fa-angle-right fs-5"></i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -64,6 +68,7 @@
   </div>
 </div>
 {% endmacro %}
+
 <!-- WHANAU CARD  -->
 {% macro cardWhanau(courier_avatar, courier_name, delivery, href) %}
 <div class="card bg-white shadow">
@@ -87,5 +92,4 @@
     </div>
   </div>
 </div>
-
 {% endmacro %}

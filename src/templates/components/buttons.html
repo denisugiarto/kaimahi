@@ -9,8 +9,8 @@
 {% endmacro %}
 
 <!-- BUTTON ONLY ICON -->
-{% macro icon(icon, color, href='#', id) %}
-<a id="{{ id }}" href="{{ href }}" role="button" class="btn {{ color }} flex-center p-0 rounded-1 icon-lg">
+{% macro icon(icon, color, href='#') %}
+<a href="{{ href }}" role="button" class="btn {{ color }} flex-center p-0 rounded-1 icon-lg">
   <i class="fa-solid fa-{{ icon }} fs-5"></i>
 </a>
 {% endmacro %}
