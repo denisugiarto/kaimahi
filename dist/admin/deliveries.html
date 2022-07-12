@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Group Chat</title>
+  <title>Deliveries</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -254,86 +254,198 @@
 
 
       <!-- CONTENT -->
-       
-
+      
 <main class="bd-main">
-  <div class="card group-chat">
-    <div class="card-header bg-white p-4 sticky-top border-bottom">
-      <div class="d-flex align-items-center">
-        
-<a href="index.html" role="button" class="btn bg-light flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-angle-left fs-5"></i>
-</a>
+  <div class="row align-items-center">
+    <div class="col-12 col-xl">
+      <!-- PAGE TITLE -->
+      <h1 class="page-title">All Deliveries<sup class="h6 text-primary">12265</sup></h1>
+    </div>
+    <!-- SEARCH AND FILTER -->
+    <div class="col-12 col-md-6 col-xl-auto">
+<div class="d-flex flex-row align-items-center mb-5" role="group" aria-label="Search and filter">
+  <div class="position-relative flex-fill">
+    <label for="search" class="icon-search show">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </label>
+    <input
+      class="form-control rounded-0 rounded-start w-100 border border-light"
+      type="search"
+      placeholder="Look For Whānau"
+    />
+  </div>
+  <div class="col-auto">
+<a id="" href="#" role="button" class="btn btn-light rounded-0 p-2"> Filter </a>
+</div>
+  <div class="col-auto">
+<a id="" href="#" role="button" class="btn btn-primary rounded-0 rounded-end fw-light py-2 px-3"> Search </a>
+</div>
+</div>
+</div>
+    <div class="col-12 col-md-6 col-xl-auto">
+      
+<a id="" href="#" role="button" class="btn btn-outline-primary mb-5 w-100 py-2"> Create Delivery List </a>
 
-        <div class="d-block ms-2">
-          <h5 class="h5 mb-1">Group Chat</h5>
-          <p class="desc">5 members</p>
-        </div>
+    </div>
+  </div>
+  <div class="row gx-2 gy-3 mb-5">
+    <div class="col-xl-4">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-newspaper"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26359</h4>
+        <p class="fs-6 fw-light">All Deliveries</p>
       </div>
     </div>
+  </div>
+</div>
+</div>
+    <div class="col-xl-4">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26359</h4>
+        <p class="fs-6 fw-light">Current Deliveries</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-xl-4">
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex">
+      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
+        <i class="fa-solid fa-truck"></i>
+      </div>
+      <div class="card-text">
+        <h4 class="fs-2">26359</h4>
+        <p class="fs-6 fw-light">Completed Deliveries</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+  <div class="card">
     <div class="card-body">
-      <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
+      <!-- MY DELIVERIES -->
+      <div class="row gx-2 mb-2">
+        <div class="col">
+          <h5 class="h5 mb-1">My Deliveries</h5>
+          <h6 class="fw-light fs-6">Total Whānau <span class="text-primary fw-bold">5</span></h6>
         </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+        <div class="col-auto">
+          <div class="bg-brand-100 py-1 px-3 fw-light rounded">Completed</div>
         </div>
+        <div class="col-auto">
+<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+        <div class="col-auto">
+<a href="#" role="button" class="btn btn-gray-200 flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-angle-right fs-5"></i>
+</a>
+</div>
       </div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
-      </div>
-      <div class="my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
-      </div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer sticky-bottom bg-white border-top">
-      <div class="px-2">
-        <div class="row gx-3 align-items-center">
-          <div class="col-auto">
-            <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+      <div class="card bg-light mb-5">
+        <div class="card-body px-3 py-2">
+          <div class="row gx-2 align-items-center">
+            <div class="col-auto">
+              <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+            </div>
+            <div class="col">
+              <h6 class="mb-1">Ahmed Al Aklouk</h6>
+              <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
+            </div>
           </div>
-          <div class="col">
-            <input type="text" name="messages" class="form-control w-100" />
-          </div>
-          <div class="col-auto">
-            <button class="btn btn-primary text-white fs-2 py-0 px-2">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
+        <a href="" class="text-primary fs-5 fw-light" role="button">View List</a>
+      </div>
+      <!-- TAB MENU -->
+      
+<div class="nav nav-tabs" role="tablist">
+  
+  <a
+    class="col-auto nav-link active"
+    id="familiy1-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#familiy1"
+    type="button"
+    role="tab"
+    aria-controls="familiy1"
+    aria-selected="true"
+  >
+    Family_1
+  </a>
+  
+  <a
+    class="col-auto nav-link "
+    id="familiy2-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#familiy2"
+    type="button"
+    role="tab"
+    aria-controls="familiy2"
+    aria-selected="true"
+  >
+    Family_2
+  </a>
+  
+  <a
+    class="col-auto nav-link "
+    id="familiy3-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#familiy3"
+    type="button"
+    role="tab"
+    aria-controls="familiy3"
+    aria-selected="true"
+  >
+    Family_3
+  </a>
+  
+</div>
+
+
+      <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
+          <!-- MAP CARDS -->
+          <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" />
+          <!-- PAGINATION -->
+          
+<div class="d-flex mt-5">
+  <div class="col">
+    <a role="button" href="#" class="text-primary fw-light">View all</a>
+  </div>
+  <div class="col-auto">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
   </div>
 </main>
-
 
     </div>
     <!-- FOOTER -->
@@ -456,8 +568,13 @@
     
 <script>
   $(document).ready(function () {
-    // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
-    $('.nav-link:contains(Group Chat)').addClass('active');
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Deliveries';
+      })
+      .addClass('active');
+    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
   });
 </script>
 

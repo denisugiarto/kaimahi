@@ -1,39 +1,28 @@
-{% extends "layout-pages.html" %} {% set pageTitle = 'KaiMahi' %} {% set cssFiles = '../assets/css/style.css' %} {%
+{% extends "layout-pages.html" %} {% set pageTitle = 'Deliveries' %} {% set cssFiles = '../assets/css/style.css' %} {%
 import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
-'../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
-'../components/kaimahi-item.html' as kaimahiItem %} {% block content %}
+'../components/cards.html' as cards %} {% import '../components/pagination.html' as pagination %} {% import
+'../components/nav-tabs.html' as navTabs %} {% import '../components/kaimahi-item.html' as kaimahiItem %} {% block
+content %}
 <main class="bd-main">
-  <div class="d-flex justify-content-between align-items-center">
-    <!-- PAGE TITLE -->
-    <h1 class="page-title d-flex align-items-center mb-0">
-      <span class="me-2">{{ button.icon('angle-left', 'bg-gray-200', 'kaimahi.html') }}</span> KaiMahi Profile
-    </h1>
-  </div>
-  <hr class="my-2 text-gray-200" />
-  <div class="card bg-white mb-5">
-    <div class="card-body px-3 py-2">
-      <div class="row gx-2 align-items-center">
-        <div class="col-auto">
-          <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
-        </div>
-        <div class="col">
-          <h6 class="mb-1">Ahmed Al Aklouk</h6>
-          <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
-        </div>
-        <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
-        <div class="col-auto">{{ button.icon('pen-to-square', 'bg-info text-white') }}</div>
-        <div class="col-auto">
-          <a href="kaimahi-profile.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
-            <i class="fa-solid fa-angle-right fs-5"></i>
-          </a>
-        </div>
-      </div>
+  <div class="row align-items-center">
+    <div class="col-12 col-xl">
+      <!-- PAGE TITLE -->
+      <h1 class="page-title">All Deliveries<sup class="h6 text-primary">12265</sup></h1>
     </div>
+    <!-- SEARCH AND FILTER -->
+    <div class="col-12 col-md-6 col-xl-auto">{{ input.searchWithFilter('Look For Whānau') }}</div>
+    <div class="col-12 col-md-6 col-xl-auto">
+      {{ button.text('Create Delivery List', 'btn-outline-primary mb-5 w-100 py-2') }}
+    </div>
+  </div>
+  <div class="row gx-2 gy-3 mb-5">
+    <div class="col-xl-4">{{ cards.big('newspaper', '26359', 'All Deliveries') }}</div>
+    <div class="col-xl-4">{{ cards.big('truck-fast', '26359', 'Current Deliveries') }}</div>
+    <div class="col-xl-4">{{ cards.big('truck', '26359', 'Completed Deliveries') }}</div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h4 class="h4"><i class="fa-solid fa-truck me-2"></i>Current Deliveries</h4>
-      <hr class="bg-secondary" />
+      <!-- MY DELIVERIES -->
       <div class="row gx-2 mb-2">
         <div class="col">
           <h5 class="h5 mb-1">My Deliveries</h5>
@@ -82,9 +71,10 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
       .filter(function () {
-        return $(this).text() === 'Kaimahi';
+        return $(this).text() === 'Deliveries';
       })
       .addClass('active');
+    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
   });
 </script>
 {% endblock %}
