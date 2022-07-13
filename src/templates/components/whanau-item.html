@@ -1,5 +1,4 @@
-{% import './cards.html' as card %} {% import './input-search.html' as inputSearch %} {% import './pagination.html' as
-pagination %}
+{% import './cards.html' as card %} {% import './input.html' as input %} {% import './pagination.html' as pagination %}
 <!-- WHANAU ITEMS -->
 {% macro section(items) %}
 <!-- LATEST WHANAU -->
@@ -8,7 +7,7 @@ pagination %}
     <div class="card-body">
       <div class="d-flex align-items-center">
         <h4 class="col fs-2 me-auto">Latest Whānau</h4>
-        <div class="col-auto">{{ inputSearch.collapse('Look For Whānau', 'whanau') }}</div>
+        <div class="col-auto">{{ input.searchCollapse('Look For Whānau', 'whanau') }}</div>
       </div>
       <hr />
       <!-- CONTENT -->
@@ -19,7 +18,7 @@ pagination %}
 </section>
 {% endmacro %}
 
-<!-- KAIMAHI ITEM CARD -->
+<!-- WHANAU ITEM CARD -->
 {% macro cards(values) %}
 <div class="row g-3 gx-lg-5 gy-md-4">
   <!-- CONTENT -->
@@ -31,4 +30,13 @@ pagination %}
   <!-- VIEW ALL AND PAGINATION -->
   {{ pagination.ViewAllBtn() }}
 </div>
+{% endmacro %}
+
+<!-- WHANAU ITEM SELECT LIST -->
+{% macro select(items) %} {{ input.search('Look For Whānau', 'w-100') }}
+<div class="mb-4">
+  <!-- CONTENT -->
+  {% for item in items %} {{ card.selectWhanau( item.avatar, item.name, item.delivery ) }} {% endfor %}
+</div>
+
 {% endmacro %}

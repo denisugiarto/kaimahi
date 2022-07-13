@@ -1,6 +1,6 @@
-{% extends "layout-pages.html" %} {% set pageTitle = 'Whānau Comms' %} {% set cssFiles = '../assets/css/style.css' %} {%
-block content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as
-input %} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
+{% extends "layout.html" %} {% set pageTitle = 'Whānau Comms' %} {% set cssFiles = './assets/css/style.css' %} {% block
+content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as input
+%} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
 '../components/pagination.html' as pagination %}
 <main class="bd-main">
   <!-- PAGE TITLE -->
@@ -176,7 +176,7 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
             <div class="d-flex mb-4">
               <div class="col-8">
                 <textarea class="form-control bg-light text-dark fw-light fs-6 border-0" rows="5">
-  Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
+Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
                 >
               </div>
             </div>
@@ -199,7 +199,7 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
 </main>
 
 {{ modal.success('successModal' ,'The message has been sent to admin for review', 'index.html',
-'../assets/icons/icon-check.svg') }} {{ modal.delete('Message', 'Message') }} {% endblock %} {% block script %}
+'./assets/icons/icon-check.svg') }} {{ modal.delete('Message', 'Message') }} {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
@@ -256,7 +256,7 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
             "<input id='whanau-" +
             item.id +
             "' type='checkbox' class='form-check-input me-2' />" +
-            "<img src='../assets/images/" +
+            "<img src='./assets/images/" +
             item.avatar +
             "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
             '<div>' +
@@ -285,7 +285,7 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
             "<div class='card small bg-light'>" +
             "<div class='card-body'>" +
             "<div class='d-flex align-items-center'>" +
-            "<img src='../assets/images/" +
+            "<img src='./assets/images/" +
             index.avatar +
             "' alt='avatar' class='icon-lg rounded-circle'/>" +
             "<div class='d-block ms-2'>" +
@@ -370,7 +370,7 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
           return (
             "<div class='col-12 col-md-4 col-lg-3'>" +
             "<div class='d-flex p-2 border rounded'>" +
-            "<img src='../assets/images/" +
+            "<img src='./assets/images/" +
             item.avatar +
             "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
             '<div>' +
