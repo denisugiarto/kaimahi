@@ -1,35 +1,29 @@
-{% extends "layout-admin.html" %} {% set pageTitle = 'KaiMahi' %} {% set cssFiles = '../assets/css/style.css' %} {%
+{% extends "layout-kaimahi.html" %} {% set pageTitle = 'Whānau' %} {% set cssFiles = '../assets/css/style.css' %} {%
 import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
 '../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
-'../components/kaimahi-item.html' as kaimahiItem %} {% block content %}
+'../components/whanau-item.html' as whanauItem %} {% block content %}
 <main class="bd-main">
   <div class="d-flex justify-content-between align-items-center">
     <!-- PAGE TITLE -->
-    <h1 class="page-title">KaiMahi<sup class="h6 text-primary">12265</sup></h1>
+    <h1 class="page-title">Whānau<sup class="h6 text-primary">12265</sup></h1>
     {{ button.iconWithTextLeft('circle-arrow-down', 'btn-primary pe-3 mb-5', 'Export All') }}
   </div>
   <div class="card">
     <div class="card-body">
       <!-- SEARCH AND FILTER -->
-      {{ input.searchWithFilter('Look For KaiMahi') }}
+      {{ input.searchWithFilter('Look For Whānau') }}
       <!-- TAB MENU -->
-      {{ navTabs.withIcon([{ title: 'View List Of All Kaimahi', icon: 'fa-solid fa-bullseye', id: 'all-kaimahi', status:
-      'active'}, { title: 'Add Single Kaimahi', icon: 'fa-solid fa-user', id: 'single-kaimahi'}, {title: 'Add Bulk
-      Kaimahi', icon: 'fa-brands fa-buffer', id: 'bulk-kaimahi'} ]) }}
+      {{ navTabs.withIcon([{ title: 'View List Of All Whānau', icon: 'fa-solid fa-bullseye', id: 'all-whanau', status:
+      'active'}, { title: 'Add Single Whānau', icon: 'fa-solid fa-user', id: 'single-whanau'}, {title: 'Add Bulk
+      Whānau', icon: 'fa-brands fa-buffer', id: 'bulk-whanau'} ]) }}
       <div class="tab-content mt-4">
-        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
-          <!-- KAIMAHI CARDS -->
-          {{ kaimahiItem.cards([ { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
-          '17-01-2022', link: 'kaimahi-profile.html' }, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al
-          Aklouk', delivery: '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk',
-          delivery: '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
-          '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'},
-          { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
-          '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'} ]) }}
-          <!-- PAGINATION -->
-          {{ pagination.ViewAllBtn() }}
+        <div class="tab-pane fade show active" id="all-whanau" role="tabpanel" aria-labelledby="all-whanau-tab">
+          <!-- WHANAU CARDS -->
+          {{ whanauItem.cards([ { courier_avatar: '../assets/images/profile-1.webp', courier_name: 'Ahmed Al Aklouk',
+          delivery: '17-01-2022', href: 'whanau-view-all.html'}, { courier_avatar: '../assets/images/profile-1.webp',
+          courier_name: 'Ahmed Al Aklouk', delivery: '17-01-2022', href: 'whanau-view-all.html'} ]) }}
         </div>
-        <div class="tab-pane fade" id="single-kaimahi" role="tabpanel" aria-labelledby="single-kaimahi-tab">
+        <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
               {{ input.withIcon('fa-solid fa-user', 'Name', 'text', 'Ahmed Aklouk', 'text') }} {{
@@ -43,7 +37,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="bulk-kaimahi" role="tabpanel" aria-labelledby="bulk-kaimahi-tab">
+        <div class="tab-pane fade" id="bulk-whanau" role="tabpanel" aria-labelledby="bulk-whanau-tab">
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
               <div class="card bg-light border-dashed">
@@ -125,7 +119,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
       .filter(function () {
-        return $(this).text() === 'Kaimahi';
+        return $(this).text() === 'Whānau';
       })
       .addClass('active');
     $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');

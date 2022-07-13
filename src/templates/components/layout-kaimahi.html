@@ -1,4 +1,4 @@
-{% import '../components/header.html' as header %}
+{% import '../components/header.html' as header %} {% import '../components/sidebar-script.html' as sidebarScript %}
 <!DOCTYPE html>
 <html lang="en">
   {% include "./head.html" %}
@@ -17,7 +17,7 @@
     {% include "./footer.html" %}
 
     <!-- SIDEBAR ITEM -->
-    {% include "./sidebar-header-script.html" %}
+    {{ sidebarScript.kaimahi() }}
 
     <!-- SCRIPT -->
     {% block script %} {% endblock %}

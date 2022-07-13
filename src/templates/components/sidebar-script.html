@@ -1,0 +1,125 @@
+<!-- SIDEBAR ADMIN -->
+{% macro admin() %}
+<script>
+  $(document).ready(function () {
+    //SIDEBAR
+    let sidebar = [
+      {
+        id: 0,
+        link: 'index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
+      },
+      {
+        id: 1,
+        link: 'kaimahi.html',
+        icon: 'fa-user',
+        title: 'Kaimahi',
+      },
+      {
+        id: 2,
+        link: 'whanau.html',
+        icon: 'fa-user-group',
+        title: 'Whānau',
+      },
+      {
+        id: 3,
+        link: 'deliveries.html',
+        icon: 'fa-truck',
+        title: 'Deliveries',
+      },
+      {
+        id: 4,
+        link: 'event-page.html',
+        icon: 'fa-calendar-days',
+        title: 'Events',
+      },
+      {
+        id: 5,
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
+      },
+      {
+        id: 6,
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
+      },
+    ];
+    $('#sidebar-item').prepend(
+      jQuery.map(sidebar, function (item) {
+        return (
+          "<a class='nav-link' href='" +
+          item.link +
+          "'><i class='fa-solid " +
+          item.icon +
+          "'></i>" +
+          item.title +
+          '</a>'
+        );
+      })
+    );
+  });
+</script>
+{% endmacro %}
+
+<!-- SIDEBAR KAIMAHI -->
+{% macro kaimahi() %}
+<script>
+  $(document).ready(function () {
+    //SIDEBAR
+    let sidebar = [
+      {
+        id: 0,
+        link: 'index.html',
+        icon: 'fa-house-chimney',
+        title: 'Home',
+      },
+      {
+        id: 1,
+        link: 'deliveries.html',
+        icon: 'fa-truck',
+        title: 'Deliveries',
+      },
+      {
+        id: 2,
+        link: 'whanau-comms.html',
+        icon: 'fa-comment-dots',
+        title: 'Whānau Comms',
+      },
+      {
+        id: 3,
+        link: 'group-chat.html',
+        icon: 'fa-comments',
+        title: 'Group Chat',
+      },
+      {
+        id: 4,
+        link: 'whanau.html',
+        icon: 'fa-user-group',
+        title: 'Whānau',
+      },
+      {
+        id: 5,
+        link: 'my-account.html',
+        icon: 'fa-user',
+        title: 'My Account',
+      },
+    ];
+    $('#sidebar-item').prepend(
+      jQuery.map(sidebar, function (item) {
+        return (
+          "<a class='nav-link' href='" +
+          item.link +
+          "'><i class='fa-solid " +
+          item.icon +
+          "'></i>" +
+          item.title +
+          '</a>'
+        );
+      })
+    );
+  });
+</script>
+{% endmacro %}

@@ -1,4 +1,4 @@
-
+ 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -658,7 +658,8 @@
 
 
     <!-- SIDEBAR ITEM -->
-    <script>
+    
+<script>
   $(document).ready(function () {
     //SIDEBAR
     let sidebar = [
@@ -718,38 +719,6 @@
         );
       })
     );
-
-    // SEARCH BUTTON
-    //Show Input Button when click Button search
-    $('#header-button-search').click(function () {
-      //replace class in id search header from col-auto to col
-      $('#search-header').removeClass('col-auto').addClass('col');
-
-      //add class d-none to id logo header
-      $('#logo-header').addClass('d-none');
-
-      //replace class in id button search from d-block to d-none
-      $(this).removeClass('d-block').addClass('d-none');
-
-      //replace class in id button search from d-none to d-block
-      $('#header-input-search').removeClass('d-none').addClass('d-block');
-    });
-  });
-
-  //Hide Input Search when click
-  $(document).mouseup(function (e) {
-    let inputSearch = $('#header-search');
-    let iconSearch = $('#header-icon-search');
-
-    // click outside input search
-    if (!inputSearch.is(e.target) && !iconSearch.is(e.target)) {
-      //replace class search header from col-auto to col
-      $('#search-header').removeClass('col').addClass('col-auto');
-
-      $('#logo-header').removeClass('d-none');
-      $('#header-button-search').removeClass('d-none').addClass('d-block');
-      $('#header-input-search').removeClass('d-block').addClass('d-none');
-    }
   });
 </script>
 
