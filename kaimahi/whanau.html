@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Notifications</title>
+  <title>Whānau</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -254,275 +254,388 @@
 
 
       <!-- CONTENT -->
-             
-
+      
 <main class="bd-main">
-  <!-- PAGE TITLE -->
-  <h1 class="page-title">Notifications</h1>
-  <div class="card">
-    <div class="card-header border-bottom">
-      <div class="row gy-3 align-items-center">
-        <div class="col-12 col-sm">
-          
-<a href="index.html" role="button" class="d-flex align-items-center">
-  <i class="fa-solid fa-angle-left fs-5 me-2 bg-light btn flex-center p-0 rounded-1 icon-lg px-2 px-md-3 py-1"></i>
-  <h6 class="h6">Back</h6>
+  <div class="d-flex justify-content-between align-items-center">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Whānau<sup class="h6 text-primary">12265</sup></h1>
+    
+<a id="" href="#" role="button" class="btn btn-primary pe-3 mb-5 flex-center fs-5 h-100">
+  Export All
+  <i class="fa-solid fa-circle-arrow-down fs-2 ms-2"></i>
 </a>
 
-        </div>
-        <div class="col-12 col-sm-auto">
-          <p class="fs-4 fw-light">Notifications only show for the last 15 days</p>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="card">
     <div class="card-body">
+      <!-- SEARCH AND FILTER -->
+      
+<div class="d-flex flex-row align-items-center mb-5" role="group" aria-label="Search and filter">
+  <div class="position-relative flex-fill">
+    <label for="search" class="icon-search show">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </label>
+    <input
+      class="form-control rounded-0 rounded-start w-100 border border-light"
+      type="search"
+      placeholder="Look For Whānau"
+    />
+  </div>
+  <div class="col-auto">
+<a id="" href="#" role="button" class="btn btn-light rounded-0 p-2"> Filter </a>
+</div>
+  <div class="col-auto">
+<a id="" href="#" role="button" class="btn btn-primary rounded-0 rounded-end fw-light py-2 px-3"> Search </a>
+</div>
+</div>
+
+      <!-- TAB MENU -->
       
 <div class="nav nav-tabs" role="tablist">
   
   <a
     class="col-auto nav-link active"
-    id="all-notification-tab"
+    id="all-whanau-tab"
     data-bs-toggle="tab"
-    data-bs-target="#all-notification"
+    data-bs-target="#all-whanau"
     type="button"
     role="tab"
-    aria-controls="all-notification"
+    aria-controls="all-whanau"
     aria-selected="true"
   >
-    All
+    <i class="fa-solid fa-bullseye"></i>
+    View List Of All Whānau
   </a>
   
   <a
     class="col-auto nav-link "
-    id="unread-notification-tab"
+    id="single-whanau-tab"
     data-bs-toggle="tab"
-    data-bs-target="#unread-notification"
+    data-bs-target="#single-whanau"
     type="button"
     role="tab"
-    aria-controls="unread-notification"
+    aria-controls="single-whanau"
     aria-selected="true"
   >
-    Unread
+    <i class="fa-solid fa-user"></i>
+    Add Single Whānau
+  </a>
+  
+  <a
+    class="col-auto nav-link "
+    id="bulk-whanau-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#bulk-whanau"
+    type="button"
+    role="tab"
+    aria-controls="bulk-whanau"
+    aria-selected="true"
+  >
+    <i class="fa-brands fa-buffer"></i>
+    Add Bulk
+      Whānau
   </a>
   
 </div>
 
 
-      <div class="tab-content mt-3">
-        <div
-          class="tab-pane fade show active"
-          id="all-notification"
-          role="tabpanel"
-          aria-labelledby="all-notification-tab"
-        >
+      <div class="tab-content mt-4">
+        <div class="tab-pane fade show active" id="all-whanau" role="tabpanel" aria-labelledby="all-whanau-tab">
+          <!-- WHANAU CARDS -->
           
-<div class="notification-message unread">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto">
-      <div class="status">Unread</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
+<div class="row g-3 gx-lg-5 gy-md-4">
+  <!-- CONTENT -->
+  
+  <div class="col-12 col-lg-6">
+    
+<div class="card bg-white shadow">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div class="fs-6 fw-light mb-1">By</div>
+      <a href="whanau-view-all.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+        <i class="fa-solid fa-angle-right fs-5"></i>
       </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Mark Read</span>
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
     </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
+    <div class="d-flex align-items-center">
+      <div class="col-auto me-1 me-sm-2">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <h6 class="fs-6">Ahmed Al Aklouk</h6>
+        <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
+      </div>
+      <div class="col-auto me-1 me-sm-3">
+<a id="" href="#" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
+  <i class="fa-solid fa-phone fs-5 me-2"></i>
+  Call
+</a>
 </div>
- 
-<div class="notification-message">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
+      <div class="col-auto">
+<a href="#" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
 </div>
- 
-<div class="notification-message">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
     </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
   </div>
-  <div class="message">Lorem Ipsum is simply dummy text of
-          the printing and typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
-</div>
- 
-<div class="notification-message">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
 </div>
 
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="col-auto">
-              <a role="button" class="text-primary fw-light">Mark as read</a>
-            </div>
-            <div class="col-auto">
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-  </ul>
-</nav>
+  </div>
+  
+  <div class="col-12 col-lg-6">
+    
+<div class="card bg-white shadow">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div class="fs-6 fw-light mb-1">By</div>
+      <a href="whanau-view-all.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+        <i class="fa-solid fa-angle-right fs-5"></i>
+      </a>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="col-auto me-1 me-sm-2">
+        <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
+      </div>
+      <div class="col">
+        <h6 class="fs-6">Ahmed Al Aklouk</h6>
+        <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
+      </div>
+      <div class="col-auto me-1 me-sm-3">
+<a id="" href="#" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
+  <i class="fa-solid fa-phone fs-5 me-2"></i>
+  Call
+</a>
 </div>
+      <div class="col-auto">
+<a href="#" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+  <!-- VIEW ALL AND PAGINATION -->
+  
+<div class="d-flex mt-5">
+  <div class="col">
+    <a role="button" href="#" class="text-primary fw-light">View all</a>
+  </div>
+  <div class="col-auto">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+</div>
+
+        </div>
+        <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
+          <div class="card align-items-center">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+              
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#text"><i class="fa-solid fa-user"></i></a>
+      <div class="col ms-2">
+        <label for="text" class="h5 mb-1">Name</label>
+        <input
+          id="text"
+          name="text"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="Ahmed Aklouk"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#email"><i class="fa-solid fa-envelopes-bulk"></i></a>
+      <div class="col ms-2">
+        <label for="email" class="h5 mb-1">Email</label>
+        <input
+          id="email"
+          name="email"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="ahmedaklouk@gmail.com"
+          type="email"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#fbmessage"><i class="fa-brands fa-facebook-messenger"></i></a>
+      <div class="col ms-2">
+        <label for="fbmessage" class="h5 mb-1">Facebook Messengger</label>
+        <input
+          id="fbmessage"
+          name="fbmessage"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="@ahmedaklouk"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#phone"><i class="fa-solid fa-comment-dots"></i></a>
+      <div class="col ms-2">
+        <label for="phone" class="h5 mb-1">Phone Number</label>
+        <input
+          id="phone"
+          name="phone"
+          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          value="233665665616"
+          type="number"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+              <!-- ADDRESS -->
+              
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#address"><i class="fa-solid fa-solid fa-comment-dots"></i></a>
+
+      <div class="col ms-2">
+        <label for="address" class="h5 pointer">Address</label>
+        <textarea
+          id="address"
+          name="address"
+          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          rows="3"
+        >
+</textarea
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+              <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+            </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="unread-notification" role="tabpanel" aria-labelledby="unread-notification-tab">
-          <div class="notification-message unread">
-            <div class="d-flex align-items-center">
-              <div class="col-auto">
-                <div class="title">Lorem</div>
+        <div class="tab-pane fade" id="bulk-whanau" role="tabpanel" aria-labelledby="bulk-whanau-tab">
+          <div class="card align-items-center">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+              <div class="card bg-light border-dashed">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <label for="file" class="h5 mb-1" type="button">Upload CSV</label>
+                      <input id="file" name="file" class="d-none" value="" type="file" />
+                      <label for="file" class="fw-light mb-1 d-block" type="button">name of file showing here</label>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-auto">
-                <div class="status">Unread</div>
+              
+<button class="w-100 mb-3 btn btn-primary mt-4" type="submit">Add</button>
+
+              <hr class="my-5" />
+              <h5 class="h5 mb-3">Latest Uploaded File</h5>
+              <!-- LIST UPLOADED FILES -->
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <div class="progress">
+                        <div
+                          class="progress-bar w-75 rounded-pill"
+                          role="progressbar"
+                          aria-valuenow="75"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-auto ms-5">
+<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-trash-can fs-5"></i>
+</a>
+</div>
+                  </div>
+                </div>
               </div>
-              <div class="col-auto ms-auto">
-                <a
-                  role="button"
-                  class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fa-solid fa-ellipsis-h"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i
-                        class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                      ></i>
-                      <span class="fw-light fs-6">Mark Read</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i
-                        class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                      ></i>
-                      <span class="fw-light fs-6">Remove This Notification </span>
-                    </a>
-                  </li>
-                </ul>
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <p class="fw-light">Kai mahi#01.xls</p>
+                    </div>
+                    <div class="col-auto ms-5">
+<a href="#" role="button" class="btn btn-primary flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-gear fs-5"></i>
+</a>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-light mb-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <a class="col-auto icon icon-xl bg-primary" href="#file"><i class="fa-solid fa-clock"></i></a>
+                    <div class="col ms-2">
+                      <h5 class="h5 mb-1">File Name</h5>
+                      <p class="fw-light">Kai mahi#01.xls</p>
+                    </div>
+                    <div class="col-auto ms-5">
+                      <div class="row gx-2">
+                        <div class="col-auto">
+<a href="#" role="button" class="btn btn-info flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-pen-to-square fs-5"></i>
+</a>
+</div>
+                        <div class="col-auto">
+<a href="#" role="button" class="btn btn-primary flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-circle-arrow-down fs-5"></i>
+</a>
+</div>
+                        <div class="col-auto">
+<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
+  <i class="fa-solid fa-gear fs-5"></i>
+</a>
+</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </main>
-
 
     </div>
     <!-- FOOTER -->
@@ -558,39 +671,33 @@
       },
       {
         id: 1,
-        link: 'kaimahi.html',
-        icon: 'fa-user',
-        title: 'Kaimahi',
-      },
-      {
-        id: 2,
-        link: 'whanau.html',
-        icon: 'fa-user-group',
-        title: 'Whānau',
-      },
-      {
-        id: 3,
         link: 'deliveries.html',
         icon: 'fa-truck',
         title: 'Deliveries',
       },
       {
-        id: 4,
-        link: 'event-page.html',
-        icon: 'fa-calendar-days',
-        title: 'Events',
-      },
-      {
-        id: 5,
+        id: 2,
         link: 'whanau-comms.html',
         icon: 'fa-comment-dots',
         title: 'Whānau Comms',
       },
       {
-        id: 6,
+        id: 3,
         link: 'group-chat.html',
         icon: 'fa-comments',
         title: 'Group Chat',
+      },
+      {
+        id: 4,
+        link: 'whanau.html',
+        icon: 'fa-user-group',
+        title: 'Whānau',
+      },
+      {
+        id: 5,
+        link: 'my-account.html',
+        icon: 'fa-user',
+        title: 'My Account',
       },
     ];
     $('#sidebar-item').prepend(
@@ -613,7 +720,15 @@
     <!-- SCRIPT -->
     
 <script>
-  $(document).ready(function () {});
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Whānau';
+      })
+      .addClass('active');
+    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
+  });
 </script>
 
   </body>
