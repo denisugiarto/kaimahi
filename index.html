@@ -11,10 +11,13 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
+
   <body>
     
 
@@ -25,7 +28,7 @@
   <div class="main">
     <h4 class="h4 fw-bolder">Content</h4>
     <h5 class="h5 mt-4 mb-1">All Roles</h5>
-    <div class="nav flex-column ms-3">
+    <div class="nav flex-column ms-3 gap-1">
       <a class="text-primary" href="signin.html">Sign In</a>
       <a class="text-primary" href="signup.html">Sign Up</a>
       <a class="text-primary" href="signin.html">Forgot Password</a>
@@ -35,7 +38,7 @@
       <a class="text-primary" href="admin/notifications.html">Notification</a>
     </div>
     <h5 class="h5 mt-4 mb-1">Admin</h5>
-    <div class="nav flex-column ms-3">
+    <div class="nav flex-column ms-3 gap-1">
       <a class="text-primary" href="admin/">Home Page</a>
       <a class="text-primary" href="admin/whanau.html">Whānau</a>
       <a class="text-primary" href="admin/kaimahi.html">Kaimahi</a>
@@ -44,11 +47,63 @@
     </div>
 
     <h5 class="h5 mt-4 mb-1">Kaimahi</h5>
-    <div class="nav flex-column ms-3">
+    <div class="nav flex-column ms-3 gap-1">
       <a class="text-primary" href="kaimahi/">Home Page</a>
-      <!-- <a>Whānau</a>
-      <a>Deliveries</a> -->
+      <a class="text-primary" href="kaimahi/whanau.html">Whānau</a>
+      <a class="text-primary" href="kaimahi/deliveries.html">Deliveries</a>
     </div>
+
+    <button
+      type="button"
+      class="btn btn-lg btn-danger"
+      data-bs-toggle="popover"
+      data-bs-trigger="focus hover"
+      title="Popover title"
+      data-bs-content="And here's some amazing content. It's very engaging. Right?"
+    >
+      Click to toggle popover
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-container="body"
+      data-bs-toggle="popover"
+      data-bs-placement="top"
+      data-bs-content="Top popover"
+    >
+      Popover on top
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-container="body"
+      data-bs-toggle="popover"
+      data-bs-placement="right"
+      data-bs-content="Right popover"
+    >
+      Popover on right
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-container="body"
+      data-bs-toggle="popover"
+      data-bs-placement="bottom"
+      data-bs-content="Bottom popover"
+    >
+      Popover on bottom
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-container="body"
+      data-bs-toggle="popover"
+      data-bs-placement="left"
+      data-bs-content="Left popover"
+    >
+      Popover on left
+    </button>
   </div>
 </div>
  <script
