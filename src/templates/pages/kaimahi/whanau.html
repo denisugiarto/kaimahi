@@ -131,6 +131,13 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
 
 <!-- MODAL ADD NOTE FOR WHANAU -->
 {{ modal.input('addNote', 'Add Note For Whanau', 'Please write a message here') }} {% endblock %} {% block script %}
+<!-- POPOVER -->
+<script>
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+  });
+</script>
 <script>
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR

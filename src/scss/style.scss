@@ -66,6 +66,11 @@ a {
   @extend .text-white;
   @extend .rounded-1;
 
+  &-xs {
+    width: 14px;
+    height: 14px;
+  }
+
   &-sm {
     width: 20px;
     height: 20px;
