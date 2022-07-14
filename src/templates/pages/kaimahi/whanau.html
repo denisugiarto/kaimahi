@@ -1,7 +1,7 @@
 {% extends "layout-kaimahi.html" %} {% set pageTitle = 'Whānau' %} {% set cssFiles = '../assets/css/style.css' %} {%
 import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
 '../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
-'../components/whanau-item.html' as whanauItem %} {% block content %}
+'../components/cards.html' as card %} {% import '../components/modal.html' as modal %} {% block content %}
 <main class="bd-main">
   <div class="d-flex justify-content-between align-items-center">
     <!-- PAGE TITLE -->
@@ -18,21 +18,36 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
       Whānau', icon: 'fa-brands fa-buffer', id: 'bulk-whanau'} ]) }}
       <div class="tab-content mt-4">
         <div class="tab-pane fade show active" id="all-whanau" role="tabpanel" aria-labelledby="all-whanau-tab">
-          <!-- WHANAU CARDS -->
-          {{ whanauItem.cards([ { courier_avatar: '../assets/images/profile-1.webp', courier_name: 'Ahmed Al Aklouk',
-          delivery: '17-01-2022', href: 'whanau-view-all.html'}, { courier_avatar: '../assets/images/profile-1.webp',
-          courier_name: 'Ahmed Al Aklouk', delivery: '17-01-2022', href: 'whanau-view-all.html'} ]) }}
+          <div class="row g-3 mb-5">
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/profile-1.webp', 'Wade Warren', 'Ntowers, Block B1, Zemin 21, Daire
+              34513 Esenyurt/İstanbul, Turkey', 'addNote', '', 'whanau-view-all.html') }}
+            </div>
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/avatar-1.webp', 'Kristin Watson', '2972 Westheimer Rd. Santa Ana,
+              Illinois 85486', 'addNote', '', 'whanau-view-all.html') }}
+            </div>
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              Dakota 83475', 'addNote', '', 'whanau-view-all.html') }}
+            </div>
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              Dakota 83475', 'addNote', '', 'whanau-view-all.html') }}
+            </div>
+          </div>
+          {{ pagination.ViewAllBtn() }}
         </div>
         <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
           <div class="card align-items-center">
-            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+            <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-6">
               {{ input.withIcon('fa-solid fa-user', 'Name', 'text', 'Ahmed Aklouk', 'text') }} {{
               input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', 'ahmedaklouk@gmail.com', 'email') }} {{
               input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger', 'fbmessage', '@ahmedaklouk',
-              'text') }} {{ input.withIcon('fa-solid fa-comment-dots', 'Phone Number', 'phone', '233665665616',
-              'number') }}
+              'text') }} {{ input.withIcon('fa-solid fa-phone', 'Phone Number', 'phone', '233665665616', 'number') }}
               <!-- ADDRESS -->
-              {{ input.withIconTextArea('fa-solid fa-comment-dots', 'Address', 'address', '') }}
+              {{ input.withIconTextArea('fa-solid fa-location-dot', 'Address', 'address', '') }} {{
+              input.withIconTextArea('fa-solid fa-pencil', 'Note For Whanau', 'note', '') }}
               <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
             </div>
           </div>
@@ -113,7 +128,9 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     </div>
   </div>
 </main>
-{% endblock %} {% block script %}
+
+<!-- MODAL ADD NOTE FOR WHANAU -->
+{{ modal.input('addNote', 'Add Note For Whanau', 'Please write a message here') }} {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR

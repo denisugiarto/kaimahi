@@ -111,13 +111,20 @@
 {% endmacro %}
 
 <!-- CUSTOMER -->
-{% macro customer(avatar, name, address ) %}
-<div class="card shadow mt-5">
+{% macro customer(avatar, name, address, link, linkDelete, href) %}
+<div class="card shadow h-100">
   <div class="card-body">
     <div class="d-flex">
       <img src="{{ avatar }}" alt="avatar" class="icon-lg rounded-circle" />
       <div class="ms-2">
-        <h6 class="fs-6 mb-1">{{ name }}<i class="fa-solid fa-circle-exclamation ms-1"></i></h6>
+        <h6
+          class="fs-6 mb-1"
+          data-bs-toggle="popover"
+          data-bs-trigger="hover focus"
+          data-bs-content="whānau is allergic to shrimp type food"
+        >
+          {{ name }}<i class="fa-solid fa-circle-exclamation ms-1 pointer"></i>
+        </h6>
         <div class="d-flex pe-2">
           <i class="fa-solid fa-location-dot me-1"></i>
           <p class="fs-6 fw-light">{{ address }}</p>
@@ -128,19 +135,49 @@
           <a class="" role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-ellipsis-vertical fs-2"></i>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
             <li>
-              <a class="dropdown-item" href="#"><i class="fa-solid fa-pencil me-1"></i>Add Note</a>
+              <a class="dropdown-item" href="#{{ link }}" data-bs-toggle="modal">
+                <i class="fa-solid fa-pencil me-2"></i>Add Note
+              </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can me-1"></i>Delete</a>
+              <a class="dropdown-item text-danger" href="#{{ linkDelete}}" data-bs-toggle="modal">
+                <i class="fa-solid fa-trash-can me-2"></i>Delete
+              </a>
             </li>
           </ul>
         </div>
-        {{ button.icon('angle-right', 'bg-light') }}
+        <a href="{{ href }}" role="button" class="btn btn-light flex-center p-0 rounded-1 icon-lg">
+          <i class="fa-solid fa-angle-right fs-5"></i>
+        </a>
       </div>
     </div>
     <div class="d-flex justify-content-end mt-2">{{ button.iconWithText('phone', 'btn-primary ', 'Call') }}</div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- CARD DELIVERIES -->
+{% macro deliveries() %}
+<div class="card bg-light">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div class="d-block">
+        <h6 class="h6">Family_1</h6>
+        <p class="fs-7">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey</p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <a class="btn btn-primary rounded-circle p-1 icon-md flex-center">
+          <i class="fa-solid fa-share-square fs-7"></i>
+        </a>
+        <h6 class="fs-7 fw-light mt-2">Open G-maps</h6>
+      </div>
+    </div>
+    <div class="form-check d-flex align-items-center mt-3">
+      <input class="form-check-input" type="checkbox" id="sent" />
+      <label for="sent" class="form-check-label text-secondary fs-6 ms-2">mark as completed sent</label>
+    </div>
   </div>
 </div>
 {% endmacro %}

@@ -12,10 +12,13 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
+
   <body>
     <div class="grid-container">
       <!-- HEADER -->
@@ -269,13 +272,13 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     </label>
     <input
-      class="form-control rounded-0 rounded-start w-100 border border-light"
+      class="form-control rounded-0 rounded-start w-100 border border-white bg-white"
       type="search"
       placeholder="Look For Whānau"
     />
   </div>
   <div class="col-auto">
-<a id="" href="#" role="button" class="btn btn-light rounded-0 p-2"> Filter </a>
+<a id="" href="#" role="button" class="btn bg-white rounded-0 p-2"> Filter </a>
 </div>
   <div class="col-auto">
 <a id="" href="#" role="button" class="btn btn-primary rounded-0 rounded-end fw-light py-2 px-3"> Search </a>
@@ -370,62 +373,24 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
-        <a href="" class="text-primary fs-5 fw-light" role="button">View List</a>
-      </div>
-      <!-- TAB MENU -->
-      
-<div class="nav nav-tabs" role="tablist">
-  
-  <a
-    class="col-auto nav-link active"
-    id="familiy1-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#familiy1"
-    type="button"
-    role="tab"
-    aria-controls="familiy1"
-    aria-selected="true"
-  >
-    Family_1
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="familiy2-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#familiy2"
-    type="button"
-    role="tab"
-    aria-controls="familiy2"
-    aria-selected="true"
-  >
-    Family_2
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="familiy3-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#familiy3"
-    type="button"
-    role="tab"
-    aria-controls="familiy3"
-    aria-selected="true"
-  >
-    Family_3
-  </a>
-  
-</div>
 
+      <!-- MAP VIEW OF DELIVERIES -->
+      <div class="fade collapse collapse-map show">
+        <div class="d-flex justify-content-between mb-3">
+          <h5 class="h5 mb-1">Whānau Deliveries By Map</h5>
+          <a
+            href=""
+            class="text-primary fs-5 fw-light"
+            role="button"
+            data-bs-toggle="collapse"
+            data-bs-target=".collapse-map"
+            >View List</a
+          >
+        </div>
+        <img src="../assets/images/map-deliveries.webp" alt="maps" class="img-fluid rounded shadow" />
 
-      <div class="tab-content mt-4">
-        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
-          <!-- MAP CARDS -->
-          <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" />
-          <!-- PAGINATION -->
-          
+        <!-- PAGINATION -->
+        
 <div class="d-flex mt-5">
   <div class="col">
     <a role="button" href="#" class="text-primary fw-light">View all</a>
@@ -441,7 +406,84 @@
   </div>
 </div>
 
+      </div>
+      <!-- LIST VIEW OF DELIVERIES -->
+      <div class="fade collapse collapse-map">
+        <div class="d-flex justify-content-between mb-3">
+          <h5 class="h5 mb-1">Whānau Deliveries List</h5>
+          <a
+            href=""
+            class="text-primary fs-5 fw-light"
+            role="button"
+            data-bs-toggle="collapse"
+            data-bs-target=".collapse-map"
+            >View Map</a
+          >
         </div>
+        <div class="table-responsive">
+          <table class="table fs-5 fw-base mb-4">
+            <thead>
+              <tr class="text-center">
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Locations</th>
+                <th scope="col">Description</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center">
+                <td><input type="checkbox" class="form-check-input" /></td>
+                <td>Family_1</td>
+                <td class="text-start">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>-</td>
+                <td>
+                  <a href="" class="btn btn-primary rounded-circle p-1 icon-md flex-center">
+                    <i class="fa-solid fa-share-square fs-7"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr class="text-center">
+                <td><input type="checkbox" class="form-check-input" /></td>
+                <td>Family_2</td>
+                <td class="text-start">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>Delivery Complete</td>
+                <td>
+                  <a href="" class="btn btn-primary rounded-circle p-1 icon-md flex-center">
+                    <i class="fa-solid fa-share-square fs-7"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr class="text-center text-secondary">
+                <td><input type="checkbox" class="form-check-input" disabled /></td>
+                <td>Family_3</td>
+                <td class="text-start">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>whānau is already in another Kaimahi delivery list</td>
+                <td>
+                  <button type="button" class="btn btn-secondary rounded-circle p-1 icon-md flex-center" disabled>
+                    <i class="fa-solid fa-share-square fs-7"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+<div class="d-flex mt-5">
+  <div class="col">
+    <p class="text-secondary fw-light">Showing 1 to 1 of 1 entries</p>
+  </div>
+  <div class="col-auto">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
       </div>
     </div>
   </div>

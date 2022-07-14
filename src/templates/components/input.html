@@ -14,6 +14,7 @@
           class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
           value="{{ value }}"
           type="{{ type }}"
+          placeholder="Type Your {{ label }} Here"
         />
       </div>
     </div>
@@ -22,7 +23,7 @@
 {% endmacro %}
 
 <!-- WITH ICON TYPE TEXTAREA -->
-{% macro withIconTextArea(icon, label, name, value, type='text') %}
+{% macro withIconTextArea(icon, label, name, value) %}
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
@@ -35,6 +36,7 @@
           name="{{ name }}"
           class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
           rows="3"
+          placeholder="Type Your {{ label }} Here"
         >
 {{ value }}</textarea
         >
@@ -96,6 +98,24 @@
     />
   </div>
   <div class="col-auto">{{ button.text('Filter', 'btn-light rounded-0 p-2') }}</div>
+  <div class="col-auto">{{ button.text('Search', 'btn-primary rounded-0 rounded-end fw-light py-2 px-3') }}</div>
+</div>
+{% endmacro %}
+
+<!-- SEARCH AND FILTER WHITE BACKGROUND-->
+{% macro searchWithFilterWhite(placeholder) %}
+<div class="d-flex flex-row align-items-center mb-5" role="group" aria-label="Search and filter">
+  <div class="position-relative flex-fill">
+    <label for="search" class="icon-search show">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </label>
+    <input
+      class="form-control rounded-0 rounded-start w-100 border border-white bg-white"
+      type="search"
+      placeholder="{{ placeholder }}"
+    />
+  </div>
+  <div class="col-auto">{{ button.text('Filter', 'bg-white rounded-0 p-2') }}</div>
   <div class="col-auto">{{ button.text('Search', 'btn-primary rounded-0 rounded-end fw-light py-2 px-3') }}</div>
 </div>
 {% endmacro %}

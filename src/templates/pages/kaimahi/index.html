@@ -17,10 +17,18 @@ import '../components/input-search.html' as inputSearch %} {% import '../compone
           <div class="card-body">
             <h4 class="h4">Deliveries To Do</h4>
             <hr class="mt-3 mb-5" />
-            {{ card.customer('../assets/images/profile-1.webp', 'Wade Warren', 'Ntowers, Block B1, Zemin 21, Daire 34513
-            Esenyurt/İstanbul, Turkey') }} {{ card.customer('../assets/images/avatar-1.webp', 'Kristin Watson', '2972
-            Westheimer Rd. Santa Ana, Illinois 85486') }} {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn
-            Simmons', '2715 Ash Dr. San Jose, South Dakota 83475') }}
+            <div class="mt-5">
+              {{ card.customer('../assets/images/profile-1.webp', 'Wade Warren', 'Ntowers, Block B1, Zemin 21, Daire
+              34513 Esenyurt/İstanbul, Turkey') }}
+            </div>
+            <div class="mt-5">
+              {{ card.customer('../assets/images/avatar-1.webp', 'Kris n Watson', '2972 Westheimer Rd. Santa Ana,
+              Illinois 85486') }}
+            </div>
+            <div class="mt-5">
+              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              Dakota 83475') }}
+            </div>
             <!-- PAGINATION -->
             {{ pagination.ViewAllBtn() }}
           </div>

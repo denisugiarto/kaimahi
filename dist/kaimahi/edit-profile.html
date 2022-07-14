@@ -7,18 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>KaiMahi</title>
+  <title>Edit Profile</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
-
   <body>
     <div class="grid-container">
       <!-- HEADER -->
@@ -257,159 +254,241 @@
 
 
       <!-- CONTENT -->
-      
+          
+
 <main class="bd-main">
-  <div class="d-flex justify-content-between align-items-center">
-    <!-- PAGE TITLE -->
-    <h1 class="page-title d-flex align-items-center mb-0">
-      <span class="me-2">
-<a href="kaimahi.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-angle-left fs-5"></i>
-</a>
-</span> KaiMahi Profile
-    </h1>
-  </div>
-  <hr class="my-2 text-gray-200" />
-  <div class="card bg-white mb-5">
-    <div class="card-body px-3 py-2">
-      <div class="row gx-2 align-items-center">
-        <div class="col-auto">
-          <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
-        </div>
-        <div class="col">
-          <h6 class="mb-1">Ahmed Al Aklouk</h6>
-          <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
-        </div>
-        <div class="col-auto">
-<a href="#" role="button" class="btn bg-danger text-white flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-trash-can fs-5"></i>
-</a>
-</div>
-        <div class="col-auto">
-<a href="#" role="button" class="btn bg-info text-white flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-pen-to-square fs-5"></i>
-</a>
-</div>
-        <div class="col-auto">
-          <a href="kaimahi-profile.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
-            <i class="fa-solid fa-angle-right fs-5"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">Edit Profile</h1>
+  <div class="card outside-button">
     <div class="card-body">
-      <h4 class="h4"><i class="fa-solid fa-truck me-2"></i>Current Deliveries</h4>
-      <hr class="bg-secondary" />
-      <div class="row gx-2 mb-2">
-        <div class="col">
-          <h5 class="h5 mb-1">My Deliveries</h5>
-          <h6 class="fw-light fs-6">Total Whānau <span class="text-primary fw-bold">5</span></h6>
-        </div>
-        <div class="col-auto">
-          <div class="bg-brand-100 py-1 px-3 fw-light rounded">Completed</div>
-        </div>
-        <div class="col-auto">
-<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-trash-can fs-5"></i>
-</a>
-</div>
-        <div class="col-auto">
-<a href="#" role="button" class="btn btn-gray-200 flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-angle-right fs-5"></i>
-</a>
-</div>
+      <!-- TABS -->
+      <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
+        <a
+          class="nav-link active"
+          id="nav-profile-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-profile"
+          type="button"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="true"
+        >
+          <i class="fa-solid fa-user-cog"></i>Profile</a
+        >
+        <a
+          class="nav-link"
+          id="nav-password-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-password"
+          type="button"
+          role="tab"
+          aria-controls="nav-password"
+          aria-selected="true"
+        >
+          <i class="fa-solid fa-unlock-alt"></i>Password</a
+        >
       </div>
-      <div class="card bg-light mb-5">
-        <div class="card-body px-3 py-2">
-          <div class="row gx-2 align-items-center">
-            <div class="col-auto">
-              <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
-            </div>
-            <div class="col">
-              <h6 class="mb-1">Ahmed Al Aklouk</h6>
-              <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
+
+      <div class="tab-content" id="nav-tabContent">
+        <!-- TAB PROFILE -->
+        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <!-- ALERT -->
+          
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  Your email has been updated
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ 
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  Image size more than 800kb
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ 
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  Your email has been updated
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ 
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  Email confirmation success
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ 
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  The confirmation message will be resent to clibjackson@gmail.com
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+          <div class="p-3 border mb-4 mb-md-5 rounded rounded-1">
+            <h6 class="fw-bold">Email change</h6>
+            <p class="text-secondary fw-light fw-14">
+              Check your email clibjackson@gmail.com to confirm your email address, the change won’t take effect until
+              confirmed <br />
+              Don’t see a confirmation email?
+              <a role="button" data-bs-toggle="modal" data-bs-target="#resendModal" class="fw-bold"
+                >Resend email confirmation</a
+              >
+            </p>
+          </div>
+
+          <!-- UPDATE PICTURE -->
+          <div id="updatePicture" class="d-flex align-items-center mb-3 mb-md-4">
+            <img class="avatar rounded-circle me-2 me-md-4" src="../assets/images/profile-1.webp" alt="avatar" />
+            <div>
+              <div class="mb-1 mb-md-3">
+                <label for="formFile" class="btn btn-outline-primary btn-sm">Upload New Picture</label>
+                <input class="d-none" type="file" id="formFile" />
+              </div>
+              <p class="text-secondary fw-light fs-6 fs-md-5">JPG or PNG Max size of 800kb</p>
             </div>
           </div>
+          <!-- INPUTS -->
+          <form action="" class="row g-lg-5 g-3">
+            <div class="col-lg-6">
+<div class="form-floating">
+  <input
+    name="firstName"
+    type="text"
+    class="form-control"
+    id="firstName"
+    placeholder="First Name"
+    value="Clib"
+  />
+  <label for="firstName">First Name</label>
+</div>
+</div>
+            <div class="col-lg-6">
+<div class="form-floating">
+  <input
+    name="lastName"
+    type="text"
+    class="form-control"
+    id="lastName"
+    placeholder="Last Name"
+    value="Jackson"
+  />
+  <label for="lastName">Last Name</label>
+</div>
+</div>
+            <div class="col-lg-6">
+<div class="form-floating">
+  <input
+    name="email"
+    type="email"
+    class="form-control"
+    id="email"
+    placeholder="Email"
+    value="clibjackson@gmail.com"
+  />
+  <label for="email">Email</label>
+</div>
+</div>
+            <div class="col-lg-6">
+<div class="form-floating">
+  <input
+    name="phone"
+    type="tel"
+    class="form-control"
+    id="phone"
+    placeholder="Phone Number"
+    value="+64 1234 5678"
+  />
+  <label for="phone">Phone Number</label>
+</div>
+</div>
+            <div class="position-relative p-0 m-0">
+              <div class="position-absolute mt-5 ms-1 ms-md-n1">
+<button class=" btn btn-primary mt-4" type="submit">Save Change</button>
+</div>
+            </div>
+          </form>
         </div>
-      </div>
-      <div class="d-flex justify-content-between">
-        <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
-        <a href="" class="text-primary fs-5 fw-light" role="button">View List</a>
-      </div>
-      <!-- TAB MENU -->
-      
-<div class="nav nav-tabs" role="tablist">
-  
-  <a
-    class="col-auto nav-link active"
-    id="familiy1-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#familiy1"
-    type="button"
-    role="tab"
-    aria-controls="familiy1"
-    aria-selected="true"
-  >
-    Family_1
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="familiy2-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#familiy2"
-    type="button"
-    role="tab"
-    aria-controls="familiy2"
-    aria-selected="true"
-  >
-    Family_2
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="familiy3-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#familiy3"
-    type="button"
-    role="tab"
-    aria-controls="familiy3"
-    aria-selected="true"
-  >
-    Family_3
-  </a>
-  
+        <!-- TAB PASSWORD -->
+        <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+          <!-- INPUTS -->
+          <form action="" class="row g-lg-5 g-3">
+            <div class="col-12">
+              
+<div class="form-floating">
+  <input
+    name="currentPass"
+    type="password"
+    class="form-control"
+    id="currentPass"
+    placeholder="Current password"
+    value="password"
+  />
+  <label for="currentPass">Current password</label>
 </div>
 
-
-      <div class="tab-content mt-4">
-        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
-          <!-- MAP CARDS -->
-          <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" />
-          <!-- PAGINATION -->
-          
-<div class="d-flex mt-5">
-  <div class="col">
-    <a role="button" href="#" class="text-primary fw-light">View all</a>
-  </div>
-  <div class="col-auto">
-    <nav aria-label="Page navigation">
-      <ul class="pagination">
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
-  </div>
+              <p class="text-secondary fs-5 fw-light mt-1">Leave blank if you don’t want dont to change it</p>
+            </div>
+            <div class="col-12">
+              
+<div class="form-floating">
+  <input
+    name="newPass"
+    type="password"
+    class="form-control"
+    id="newPass"
+    placeholder="New password"
+    value="password"
+  />
+  <label for="newPass">New password</label>
 </div>
 
+              <p class="text-secondary fs-5 fw-light mt-1">Minimum 6 characters</p>
+            </div>
+            <div class="col-12">
+<div class="form-floating">
+  <input
+    name="confirmPass"
+    type="password"
+    class="form-control"
+    id="confirmPass"
+    placeholder="Confirm password"
+    value="password"
+  />
+  <label for="confirmPass">Confirm password</label>
+</div>
+</div>
+            <div class="position-relative p-0 m-0">
+              <div class="position-absolute mt-5 ms-1 ms-md-n1">
+<button class=" btn btn-primary mt-4" type="submit">Save Change</button>
+</div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </main>
+
+<!-- MODAL RESEND -->
+
+<div class="modal" id="Clib Jackson" tabindex="-1" aria-labelledby="Clib JacksonLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resend Email Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary fw-light mb-4 mb-md-5">
+          Hi, clibjackson@gmail.com, this will resend email confirmation
+          <span class="text-black fw-bold"></span>
+        </p>
+        <button type="button" class="btn btn-primary me-3" data-bs-dismiss="modal">Resend</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- END BLOCK -->
 
     </div>
     <!-- FOOTER -->
@@ -445,39 +524,33 @@
       },
       {
         id: 1,
-        link: 'kaimahi.html',
-        icon: 'fa-user',
-        title: 'Kaimahi',
-      },
-      {
-        id: 2,
-        link: 'whanau.html',
-        icon: 'fa-user-group',
-        title: 'Whānau',
-      },
-      {
-        id: 3,
         link: 'deliveries.html',
         icon: 'fa-truck',
         title: 'Deliveries',
       },
       {
-        id: 4,
-        link: 'event-page.html',
-        icon: 'fa-calendar-days',
-        title: 'Events',
-      },
-      {
-        id: 5,
+        id: 2,
         link: 'whanau-comms.html',
         icon: 'fa-comment-dots',
         title: 'Whānau Comms',
       },
       {
-        id: 6,
+        id: 3,
         link: 'group-chat.html',
         icon: 'fa-comments',
         title: 'Group Chat',
+      },
+      {
+        id: 4,
+        link: 'whanau.html',
+        icon: 'fa-user-group',
+        title: 'Whānau',
+      },
+      {
+        id: 5,
+        link: 'my-account.html',
+        icon: 'fa-user',
+        title: 'My Account',
       },
     ];
     $('#sidebar-item').prepend(
@@ -498,17 +571,6 @@
 
 
     <!-- SCRIPT -->
-    
-<script>
-  $(document).ready(function () {
-    // ADD CLASS ACTIVE TO Whānau SIDEBAR
-    $('#sidebar-item > .nav-link')
-      .filter(function () {
-        return $(this).text() === 'Kaimahi';
-      })
-      .addClass('active');
-  });
-</script>
-
+     
   </body>
 </html>
