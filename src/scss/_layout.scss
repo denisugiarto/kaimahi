@@ -1,7 +1,6 @@
 //GRID AREA
 .bd-header {
   grid-area: bdheader;
-  z-index: 1;
 }
 
 .bd-sidebar {
@@ -9,11 +8,31 @@
   overflow-y: auto;
   z-index: 1;
 
-  @include media-breakpoint-up(lg) {
-    $header-height: 76px;
+  .sidebar {
+    @extend .d-flex;
+    @extend .flex-column;
+
+    $header-height: 60px;
     height: calc(100vh - $header-height);
-    position: sticky;
-    top: $header-height;
+    overflow-y: auto;
+    @include media-breakpoint-up(md) {
+      $header-height: 76px;
+      height: calc(100vh - $header-height);
+    }
+  }
+
+  > .offcanvas {
+    @extend .vs-lg-visible;
+    //TO SHOW OFFCANVAS
+    top: 60px;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      top: 76px;
+      width: 262px;
+    }
+    @include media-breakpoint-up(lg) {
+      transform: none;
+    }
   }
 }
 

@@ -132,7 +132,7 @@ $font-sizes: (
   //14px
   6: 0.75rem,
   //12px
-  7: 0.625rem //10px,,,,,,,,,,,,,,,,,,,,,
+  7: 0.625rem //10px,,,,,,,,,,,,,,,,,,,,,,,
 );
 
 //FONT WEIGHT
@@ -174,6 +174,10 @@ $nav-link-font-weight: 300;
 $nav-tabs-border-width: 0;
 $nav-tabs-link-active-bg: $white;
 $nav-tabs-link-active-border-color: $primary;
+
+// OFFCANVAS
+$offcanvas-border-width: 0;
+$offcanvas-horizontal-width: 262px;
 
 //PAGINATION
 $pagination-padding-y: 0.125rem;

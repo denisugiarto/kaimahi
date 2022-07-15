@@ -13,4 +13,13 @@ $utilities: (
       300: 300px,
     ),
   ),
+  'visibility': (
+    responsive: true,
+    property: visibility,
+    class: vs,
+    values: (
+      visible: visible,
+      invisible: hidden,
+    ),
+  ),
 );
