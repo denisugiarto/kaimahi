@@ -30,8 +30,8 @@
         <a
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -244,15 +244,17 @@
 
       <!-- SIBEDAR -->
       <aside class="bd-sidebar bg-white shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-dark p-0">
-    <div class="collapse navbar-collapse flex-column align-items-start w-100" id="navbarSupportedContent">
-      <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
-      <!-- Logout -->
-      <a class="nav-link logout" role="button"
-        >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
-      ></a>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-body p-0">
+      <nav class="sidebar">
+        <div class="py-3 py-lg-5 mx-4 me-lg-3" id="sidebar-item"></div>
+        <!-- Logout -->
+        <a class="nav-link logout" role="button"
+          >Logout<i class="ms-auto fa-solid fa-arrow-right-from-bracket ms-auto"></i
+        ></a>
+      </nav>
     </div>
-  </nav>
+  </div>
 </aside>
 
 
