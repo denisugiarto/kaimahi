@@ -503,7 +503,7 @@
           <div class="col">
             <div class="rounded bg-gray-200 mt-2">
               <div class="container-fluid">
-                <div class="thumbnails-media row gx-3 gy-2"></div>
+                <div id="preview-files" class="thumbnails-media row gx-3 gy-2"></div>
               </div>
               <input
                 type="text"
@@ -714,190 +714,164 @@
     return arr;
   }
 
-  let imageList = [];
-
-  const loadFile = (event) => {
-    let files = event.target.files;
-    console.log(files[0]);
-    Object.keys(files).map(function (key, index) {
-      let element = URL.createObjectURL(files[index]);
-      console.log(element);
-      imageList = addElementToArray(imageList, element);
-    });
-  };
+  let selectedFiles = [];
 
   function deleteImage(id) {
-    imageList = removeItemOfArray(imageList, id);
+    selectedFiles = removeItemOfArray(selectedFiles, id);
     showImages();
-    console.log(imageList.length);
-    if (imageList.length === 0) {
+    console.log(selectedFiles.length);
+    if (selectedFiles.length === 0) {
       $('#btnAddImages').remove();
     }
   }
 
-  let buttonAddImages = ` <div id='btnAddImages' class="col-auto">
-                            <label for="images" class="bg-white icon-xxl rounded flex-center">
-                              <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
-                            </label>
-                            <input
-                              id="images"
-                              type="file"
-                              name="selectedImages"
-                              class="visually-hidden"
-                              accept="image/*, video/*"
-                              onchange="loadFile(event)"
-                              multiple
-                            />
-                          </div>`;
-  let buttonAddDocs = ` <div id='btnAddDocs' class="col-auto">
-                          <label for="docs" class="bg-white icon-xxl rounded flex-center">
-                            <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
-                          </label>
-                          <input
-                            id="docs"
-                            type="file"
-                            name="selectedDocs"
-                            class="visually-hidden"
-                            accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf"
-                            onchange="loadFile(event)"
-                            multiple
-                          />
-                        </div>`;
+  let buttonAddImages = document.createElement('div');
+  buttonAddImages.className += 'col-auto';
+  buttonAddImages.id += 'btnAddImages';
+  buttonAddImages.innerHTML = ` <label for="images" class="bg-white icon-xxl rounded flex-center">
+                                  <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
+                                </label>
+                                <input
+                                  id="images"
+                                  type="file"
+                                  name="selectedImages"
+                                  class="visually-hidden"
+                                  accept="image/*, video/*"
+                                  onchange="thumbnail(event)"
+                                  multiple
+                                />`;
+
+  let buttonAddDocs = document.createElement('div');
+  buttonAddDocs.className += 'col-auto';
+  buttonAddDocs.id += 'btnAddDocs';
+  buttonAddDocs.innerHTML = ` <label for="docs" class="bg-white icon-xxl rounded flex-center">
+                                <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
+                              </label>
+                              <input
+                                id="docs"
+                                type="file"
+                                name="selectedDocs"
+                                class="visually-hidden"
+                                accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf"
+                                onchange="thumbnail(event)"
+                                multiple
+                              />`;
 
   function showImages() {
-    $('.image-files, #btnAddImages').remove();
-    $('#previewImage').prepend(
-      jQuery.map(imageList, function (key, index) {
-        return `<div class='image-files col-auto'> 
-                  <div class='position-relative'>
-                    <img src='${key}' alt='uploaded-images' class='preview-uploaded-images m-0' />
-                    <a onclick='deleteImage(${index})' id='delete-images-${index}' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
-                      <i class='fa-solid fa-xmark'></i>
-                    </a>
-                  </div>
-                </div>`;
+    $('.uploaded-files, #btnAddImages, #btnAddDocs').remove();
+    $('#preview-files').prepend(
+      jQuery.map(selectedFiles, function (key, index) {
+        let fileType = selectedFiles[index].type;
+        
+        // Image wrapper
+        let imgWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />`;
+                          
+        // Video wrapper
+        let videoWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+                            <a onclick='playVideo()' id='delete-images-' role='button' class='delete-files rounded-circle border bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
+                              <i class='fa-solid fa-play lh-sm'></i>
+                            </a>`;
+
+        // Document wrapper
+        let docsWrapper = ` <div class="thumbnail-media-wrapper docs fs-6 fw-bold text-truncate" title="${key.fileName}">
+                              <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
+                              ${key.fileName}
+                            </div>`;
+        // Create element
+        let element = document.createElement('div');
+        element.className = 'uploaded-files col-auto';
+        let wrapper = fileType.match('video') ? videoWrapper : fileType.match('image') ? imgWrapper : docsWrapper;
+          
+        element.innerHTML = `<div class='position-relative'>
+                              ${wrapper}
+                              <a onclick='deleteImage(${index})' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+                                <i class='fa-solid fa-xmark'></i>
+                              </a>
+                             </div>`;
+        console.log('element: ', element);
+        let myType = fileType.match('image') ? 'gambar' : fileType.match('video') ? 'video' : 'docs';
+        console.log('filesku adalah ', myType);
+        return element;
       })
-    );
-    if (imageList.length != 0) {
-      $('#previewImage').append(buttonAddImages);
+      );
+    let lastFile = selectedFiles[selectedFiles.length - 1];
+    if (selectedFiles.length != 0 && lastFile.type.match('image') || lastFile.type.match('video')) {
+      $('#preview-files').append(buttonAddImages);
+    } else {
+      $('#preview-files').append(buttonAddDocs);
     }
   }
 
+  // Create Thumbnail for all uploaded files
   function thumbnail(event) {
-    let file = event.target.files[0];
-    let fileName = event.target.files[0].name;
-    let fileReader = new FileReader();
-    let buttonAddImages = ` <div id='btnAddImages' class="col-auto">
-                            <label for="images" class="bg-white icon-xxl rounded flex-center">
-                              <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
-                            </label>
-                            <input
-                              id="images"
-                              type="file"
-                              name="selectedImages"
-                              class="visually-hidden"
-                              accept="image/*, video/*"
-                              onchange="loadFile(event)"
-                              multiple
-                            />
-                          </div>`;
-    let buttonAddDocs = ` <div id='btnAddDocs' class="col-auto">
-                          <label for="docs" class="bg-white icon-xxl rounded flex-center">
-                            <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
-                          </label>
-                          <input
-                            id="docs"
-                            type="file"
-                            name="selectedDocs"
-                            class="visually-hidden"
-                            accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf"
-                            onchange="loadFile(event)"
-                            multiple
-                          />
-                        </div>`;
+    let files = event.target.files;
+    Object.keys(files).map(function (key, index) {
+      let file = files[index];
+      let fileName = files[index].name;
+      let type = file.type;
+      let id = selectedFiles.length;
+      let data = {
+        id,
+        fileName,
+        type,
+      };
 
-    if (file.type.match('image')) {
-      fileReader.onload = function () {
-        let img = document.createElement('div');
-        img.className += ' image-files col-auto';
-        let imgSrc = fileReader.result;
-        img.innerHTML = `<div class='position-relative'>
-                            <img src='${imgSrc}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
-                            <a onclick='deleteImage()' id='delete-images-' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
-                              <i class='fa-solid fa-xmark'></i>
-                            </a>
-                        </div>`;
-        document.getElementsByClassName('thumbnails-media')[0].appendChild(img, buttonAddImages);
-      };
-      fileReader.readAsDataURL(file);
-    } else if (file.type.match('video')) {
-      fileReader.onload = function () {
-        let blob = new Blob([fileReader.result], { type: file.type });
-        let url = URL.createObjectURL(blob);
-        let video = document.createElement('video');
-        let timeupdate = function () {
-          if (snapImage()) {
-            video.removeEventListener('timeupdate', timeupdate);
-            video.pause();
-          }
+      // Thumbnail for images files
+      if (file.type.match('image')) {
+        let imgUrl = URL.createObjectURL(file);
+        console.log('file: ', file);
+        data = { ...data, imgUrl };
+      }
+
+      //Thumbnail for video files
+      if (file.type.match('video')) {
+        let fileReader = new FileReader();
+        fileReader.onload = function () {
+          let blob = new Blob([fileReader.result], { type: file.type });
+          let url = URL.createObjectURL(blob);
+          let video = document.createElement('video');
+          let snapImage = function () {
+            let canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            let image = canvas.toDataURL();
+            let success = image.length > 100000;
+            if (success) {
+              let imgUrl = image;
+              data = { ...data, imgUrl };
+              URL.revokeObjectURL(url);
+              console.log(selectedFiles);
+              selectedFiles = addElementToArray(selectedFiles, data);
+            }
+            return success;
+          };
+          
+          let timeupdate = function () {
+            if (snapImage()) {
+              video.removeEventListener('timeupdate', timeupdate);
+              video.pause();
+            }
+          };
+          video.addEventListener('loadeddata', function () {
+            if (snapImage()) {
+              video.removeEventListener('timeupdate', timeupdate);
+            }
+          });
+          video.addEventListener('timeupdate', timeupdate);
+          video.preload = 'metadata';
+          video.src = url;
+          // Load video in Safari / IE11
+          video.muted = true;
+          video.playsInline = true;
+          video.play();
         };
-        video.addEventListener('loadeddata', function () {
-          if (snapImage()) {
-            video.removeEventListener('timeupdate', timeupdate);
-          }
-        });
-        let snapImage = function () {
-          let canvas = document.createElement('canvas');
-          canvas.width = video.videoWidth;
-          canvas.height = video.videoHeight;
-          canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-          let image = canvas.toDataURL();
-          let success = image.length > 100000;
-          if (success) {
-            let img = document.createElement('div');
-            img.className = 'image-files col-auto';
-            let imgSrc = image;
-            img.innerHTML = `<div class='position-relative'>
-                            <img src='${imgSrc}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
-                            <a onclick='deleteImage()' id='delete-images-' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
-                              <i class='fa-solid fa-xmark'></i>
-                            </a>
-                            <a onclick='playVideo()' id='delete-images-' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
-                              <i class='fa-solid fa-play'></i>
-                            </a>
-                        </div>`;
-            document.getElementsByClassName('thumbnails-media')[0].appendChild(img, buttonAddImages);
-            URL.revokeObjectURL(url);
-          }
-          return success;
-        };
-        video.addEventListener('timeupdate', timeupdate);
-        video.preload = 'metadata';
-        video.src = url;
-        // Load video in Safari / IE11
-        video.muted = true;
-        video.playsInline = true;
-        video.play();
-      };
-      fileReader.readAsArrayBuffer(file);
-    } else {
-      console.log('bukan file images atau videos');
-      fileReader.onload = function () {
-        let img = document.createElement('div');
-        img.className += ' image-files col-auto';
-        img.innerHTML = `<div class='position-relative'>
-                            <div class="thumbnail-media-wrapper docs fs-6">
-                              <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
-                              ${fileName}
-                            </div>
-                            <a onclick='deleteImage()' id='delete-images-' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
-                              <i class='fa-solid fa-xmark'></i>
-                            </a>
-                        </div>`;
-        document.getElementsByClassName('thumbnails-media')[0].appendChild(img, buttonAddDocs);
-      };
-      fileReader.readAsDataURL(file);
-    }
+        fileReader.readAsArrayBuffer(file);
+        
+      } else {
+        return (selectedFiles = addElementToArray(selectedFiles, data));
+      }
+    });
   }
 
   $(document).ready(function () {
