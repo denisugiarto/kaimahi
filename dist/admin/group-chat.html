@@ -259,7 +259,7 @@
 
 
       <!-- CONTENT -->
-       
+      
 
 <main class="bd-main">
   <div class="card group-chat">
@@ -278,58 +278,243 @@
     </div>
     <div class="card-body">
       <div class="bg-light text-center py-3 px-auto text-primary fs-6 mb-5">Unread Messages</div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        1 message deleted
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+      
+<div class="not-my-chat">
+  <div class="chat-container">
+    <div class="d-flex align-items-end flex-row-reverse mb-2">
+      <div class="dropup col-auto ms-1">
+        <a
+          role="button"
+          class="border text-secondary rounded-circle icon-md fs-5 flex-center p-0"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-ellipsis-v"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#deleteMessageModal"
+              class="dropdown-item text-danger"
+              role="button"
+              ><i class="fa-solid fa-trash-can me-2"></i>Delete</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" role="button"><i class="fa-solid fa-reply me-2"></i>Reply</a>
+          </li>
+        </ul>
       </div>
-      <div class="my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
-      </div>
-      <div class="not-my-chat">
-        <div class="chat-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s,
-        </div>
-        <div class="chat-profile">
-          <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
-          <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
-        </div>
+      <div class="chat-content">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s,
       </div>
     </div>
-    <div class="card-footer sticky-bottom bg-white border-top">
+    <div class="chat-profile">
+      <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+    </div>
+  </div>
+</div>
+ 
+<div class="my-chat">
+  <div class="chat-container">
+    <div class="d-flex align-items-end mb-2">
+      <div class="dropup col-auto me-1">
+        <a
+          role="button"
+          class="border text-secondary rounded-circle icon-md fs-5 flex-center p-0"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-ellipsis-v"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#deleteMessageModal"
+              class="dropdown-item text-danger"
+              role="button"
+              ><i class="fa-solid fa-trash-can me-2"></i>Delete</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" role="button"><i class="fa-solid fa-reply me-2"></i>Reply</a>
+          </li>
+        </ul>
+      </div>
+      <div class="chat-content col">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industrys standard dummy text ever since the
+      1500s</div>
+    </div>
+    <div class="chat-profile">
+      <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+    </div>
+  </div>
+</div>
+ 
+<div class="my-chat">
+  <div class="chat-container">
+    <div class="chat-content mb-2">Hello
+      everyone, this is the latest photo</div>
+    <div class="d-flex align-items-end justify-content-end mb-2">
+      <div class="dropup col-auto me-1">
+        <a
+          role="button"
+          class="border text-secondary rounded-circle icon-md fs-5 flex-center p-0"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-ellipsis-v"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#deleteMessageModal"
+              class="dropdown-item text-danger"
+              role="button"
+              ><i class="fa-solid fa-trash-can me-2"></i>Delete</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" role="button"><i class="fa-solid fa-reply me-2"></i>Reply</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto">
+<div class="row g-2">
+  
+  <div class="col-auto">
+    <a role="button" data-bs-toggle="modal" data-bs-target="#mediaPreviewModal">
+      <img src="../assets/images/picture-1.webp" alt="" class="rounded icon-xxl img-wrapper" />
+    </a>
+  </div>
+  
+  <div class="col-auto">
+    <a role="button" data-bs-toggle="modal" data-bs-target="#mediaPreviewModal">
+      <img src="../assets/images/picture-1.webp" alt="" class="rounded icon-xxl img-wrapper" />
+    </a>
+  </div>
+  
+  <div class="col-auto">
+    <a role="button" data-bs-toggle="modal" data-bs-target="#mediaPreviewModal">
+      <img src="../assets/images/picture-1.webp" alt="" class="rounded icon-xxl img-wrapper" />
+    </a>
+  </div>
+  
+</div>
+</div>
+    </div>
+    <div class="chat-profile">
+      <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+    </div>
+  </div>
+</div>
+
+      
+<div class="my-chat">
+  <div class="chat-container">
+    <div class="d-flex align-items-end justify-content-end mb-2">
+      <div class="dropup col-auto me-1">
+        <a
+          role="button"
+          class="border text-secondary rounded-circle icon-md fs-5 flex-center p-0"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-ellipsis-v"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#deleteMessageModal"
+              class="dropdown-item text-danger"
+              role="button"
+              ><i class="fa-solid fa-trash-can me-2"></i>Delete</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" role="button"><i class="fa-solid fa-reply me-2"></i>Reply</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto">
+        <div class="chat-content"><i class="fas fa-file-alt me-2"></i>SK-DD-DB-0207696.pdf</div>
+      </div>
+    </div>
+    <div class="chat-profile">
+      <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <p class="desc mx-1">Calib Jackson 14/06/2022, 12:40</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="card-footer sticky-bottom bg-white border-top p-2">
       <div class="px-2">
         <div class="row gx-3 align-items-center">
           <div class="col-auto">
-            <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+            <div class="btn-group dropup">
+              <a role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,10">
+                <i class="fa-solid fa-paperclip text-secondary fs-2"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <label for="images" class="dropdown-item">
+                    <a role="button"><i class="fa-solid fa-image me-2"></i>Photo or Video</a>
+                  </label>
+                  <input
+                    id="images"
+                    name="selectedImages"
+                    type="file"
+                    class="visually-hidden"
+                    accept="image/*, video/*"
+                    onchange="thumbnail(event)"
+                    multiple
+                  />
+                </li>
+                <li>
+                  <label for="document" class="dropdown-item">
+                    <a role="button"><i class="fa-solid fa-file me-2"></i>Document</a>
+                  </label>
+                  <input
+                    id="document"
+                    name="selectedFiles"
+                    type="file"
+                    class="visually-hidden"
+                    accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+                  text/plain, application/pdf"
+                    onchange="thumbnail(event)"
+                  />
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col">
-            <input type="text" name="messages" class="form-control w-100" />
+            <div class="rounded bg-gray-200 mt-2">
+              <div class="container-fluid">
+                <div id="preview-files" class="thumbnails-media row gx-3 gy-2"></div>
+              </div>
+              <input
+                type="text"
+                name="messages"
+                class="form-control border-0 bg-gray-200 w-100 fs-5 fw-light"
+                placeholder="write a message"
+              />
+            </div>
           </div>
           <div class="col-auto">
-            <button class="btn btn-primary text-white fs-2 py-0 px-2">
+            <button id="sendMessages" class="btn btn-primary text-white fs-2 py-0 px-2">
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </div>
@@ -339,7 +524,98 @@
   </div>
 </main>
 
-
+<div class="modal fade" id="mediaPreviewModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header justify-content-between">
+        <div class="col">
+          <div class="d-flex align-items-center">
+            <a
+              role="button"
+              class="btn-outline-dark border border-dark rounded-circle icon-md flex-center d-block d-sm-none me-3 me-sm-0"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              ><i class="fas fa-xmark"></i
+            ></a>
+            <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+            <p class="desc mx-1">Calib Jackson 12:40</p>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="d-block d-sm-none">
+            <div class="btn-group">
+              <a
+                href=""
+                class="btn-outline-dark border border-dark rounded-circle icon-md flex-center"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="fas fa-ellipsis-v"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="" class="dropdown-item"><i class="fas fa-arrow-down me-2"></i>Download</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item text-danger"><i class="fas fa-trash-can me-2"></i>Delete</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-none d-sm-flex gap-2">
+            <a
+              role="button"
+              class="btn-outline-danger border border-danger rounded-circle icon-lg flex-center"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              ><i class="fas fa-trash-can"></i
+            ></a>
+            <a
+              role="button"
+              class="btn-outline-dark border border-dark rounded-circle icon-lg flex-center"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              ><i class="fas fa-arrow-down"></i
+            ></a>
+            <a
+              role="button"
+              class="btn-outline-dark border border-dark rounded-circle icon-lg flex-center"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              ><i class="fas fa-xmark"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body p-0 flex-center">
+        <img src="../assets/images/picture-1.webp" alt="images" class="img-fluid rounded-bottom" />
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="deleteMessageModal" tabindex="-1" aria-labelledby="MessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-start">
+        <h4 class="modal-title mb-3" id="MessageModalLabel">Delete Message</h4>
+        <p class="mb-3">Are you sure you want to delete this message?</p>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="delEveryone" />
+          <label class="form-check-label" for="delEveryone">also delete for everyone</label>
+        </div>
+        <div class="row gx-3 justify-content-end">
+          <div class="col-6 col-md-auto">
+            <a type="button" class="text-primary" data-bs-dismiss="modal">Cancel</a>
+          </div>
+          <div class="col-6 col-md-auto">
+            <a id="deleteMessageButton" type="button" class="text-danger" data-bs-dismiss="modal"> Delete </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
     </div>
     <!-- FOOTER -->
     <script
@@ -429,9 +705,182 @@
     <!-- SCRIPT -->
     
 <script>
+  function addElementToArray(arr, element) {
+    return [...arr, element];
+  }
+
+  function removeItemOfArray(arr, id) {
+    arr.splice(id, 1);
+    return arr;
+  }
+
+  let selectedFiles = [];
+
+  function deleteImage(id) {
+    selectedFiles = removeItemOfArray(selectedFiles, id);
+    showImages();
+    console.log(selectedFiles.length);
+    if (selectedFiles.length === 0) {
+      $('#btnAddImages').remove();
+    }
+  }
+
+  let buttonAddImages = document.createElement('div');
+  buttonAddImages.className += 'col-auto';
+  buttonAddImages.id += 'btnAddImages';
+  buttonAddImages.innerHTML = ` <label for="images" class="bg-white icon-xxl rounded flex-center">
+                                  <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
+                                </label>
+                                <input
+                                  id="images"
+                                  type="file"
+                                  name="selectedImages"
+                                  class="visually-hidden"
+                                  accept="image/*, video/*"
+                                  onchange="thumbnail(event)"
+                                  multiple
+                                />`;
+
+  let buttonAddDocs = document.createElement('div');
+  buttonAddDocs.className += 'col-auto';
+  buttonAddDocs.id += 'btnAddDocs';
+  buttonAddDocs.innerHTML = ` <label for="docs" class="bg-white icon-xxl rounded flex-center">
+                                <a role="button"><i class="fa-solid fa-plus fs-2"></i></a>
+                              </label>
+                              <input
+                                id="docs"
+                                type="file"
+                                name="selectedDocs"
+                                class="visually-hidden"
+                                accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf"
+                                onchange="thumbnail(event)"
+                                multiple
+                              />`;
+
+  function showImages() {
+    $('.uploaded-files, #btnAddImages, #btnAddDocs').remove();
+    $('#preview-files').prepend(
+      jQuery.map(selectedFiles, function (key, index) {
+        let fileType = selectedFiles[index].type;
+        
+        // Image wrapper
+        let imgWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />`;
+                          
+        // Video wrapper
+        let videoWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+                            <a onclick='playVideo()' id='delete-images-' role='button' class='delete-files rounded-circle border bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
+                              <i class='fa-solid fa-play lh-sm'></i>
+                            </a>`;
+
+        // Document wrapper
+        let docsWrapper = ` <div class="thumbnail-media-wrapper docs fs-6 fw-bold text-truncate" title="${key.fileName}">
+                              <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
+                              ${key.fileName}
+                            </div>`;
+        // Create element
+        let element = document.createElement('div');
+        element.className = 'uploaded-files col-auto';
+        let wrapper = fileType.match('video') ? videoWrapper : fileType.match('image') ? imgWrapper : docsWrapper;
+          
+        element.innerHTML = `<div class='position-relative'>
+                              ${wrapper}
+                              <a onclick='deleteImage(${index})' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+                                <i class='fa-solid fa-xmark'></i>
+                              </a>
+                             </div>`;
+        console.log('element: ', element);
+        let myType = fileType.match('image') ? 'gambar' : fileType.match('video') ? 'video' : 'docs';
+        console.log('filesku adalah ', myType);
+        return element;
+      })
+      );
+    let lastFile = selectedFiles[selectedFiles.length - 1];
+    if (selectedFiles.length != 0 && lastFile.type.match('image') || lastFile.type.match('video')) {
+      $('#preview-files').append(buttonAddImages);
+    } else {
+      $('#preview-files').append(buttonAddDocs);
+    }
+  }
+
+  // Create Thumbnail for all uploaded files
+  function thumbnail(event) {
+    let files = event.target.files;
+    Object.keys(files).map(function (key, index) {
+      let file = files[index];
+      let fileName = files[index].name;
+      let type = file.type;
+      let id = selectedFiles.length;
+      let data = {
+        id,
+        fileName,
+        type,
+      };
+
+      // Thumbnail for images files
+      if (file.type.match('image')) {
+        let imgUrl = URL.createObjectURL(file);
+        console.log('file: ', file);
+        data = { ...data, imgUrl };
+      }
+
+      //Thumbnail for video files
+      if (file.type.match('video')) {
+        let fileReader = new FileReader();
+        fileReader.onload = function () {
+          let blob = new Blob([fileReader.result], { type: file.type });
+          let url = URL.createObjectURL(blob);
+          let video = document.createElement('video');
+          let snapImage = function () {
+            let canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            let image = canvas.toDataURL();
+            let success = image.length > 100000;
+            if (success) {
+              let imgUrl = image;
+              data = { ...data, imgUrl };
+              URL.revokeObjectURL(url);
+              console.log(selectedFiles);
+              selectedFiles = addElementToArray(selectedFiles, data);
+            }
+            return success;
+          };
+          
+          let timeupdate = function () {
+            if (snapImage()) {
+              video.removeEventListener('timeupdate', timeupdate);
+              video.pause();
+            }
+          };
+          video.addEventListener('loadeddata', function () {
+            if (snapImage()) {
+              video.removeEventListener('timeupdate', timeupdate);
+            }
+          });
+          video.addEventListener('timeupdate', timeupdate);
+          video.preload = 'metadata';
+          video.src = url;
+          // Load video in Safari / IE11
+          video.muted = true;
+          video.playsInline = true;
+          video.play();
+        };
+        fileReader.readAsArrayBuffer(file);
+        
+      } else {
+        return (selectedFiles = addElementToArray(selectedFiles, data));
+      }
+    });
+  }
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO GROUP CHAT SIDEBAR
     $('.nav-link:contains(Group Chat)').addClass('active');
+  });
+
+  $(document).change(function () {
+    showImages();
   });
 </script>
 

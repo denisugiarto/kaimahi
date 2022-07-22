@@ -1,0 +1,11 @@
+{% macro list(images) %}
+<div class="row g-2">
+  {% for image in images %}
+  <div class="col-auto">
+    <a role="button" data-bs-toggle="modal" data-bs-target="#mediaPreviewModal">
+      <img src="{{ image }}" alt="" class="rounded icon-xxl img-wrapper" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}

@@ -27,17 +27,18 @@
 .not-my-chat {
   @extend .d-flex;
   @extend .flex-column;
-  .chat-content {
+
+  .chat-container {
     @extend .col-10;
     @extend .col-sm-7;
     @extend .col-md-6;
-    @extend .col-lg-7;
-    @extend .col-xl-6;
+    @extend .col-lg-5;
+    @extend .col-xl-4;
+  }
+  .chat-content {
     @extend .px-2;
     @extend .py-3;
     @extend .rounded-top;
-    @extend .ms-5;
-    @extend .mb-2;
     @extend .fs-6;
     @extend .fw-light;
   }
@@ -52,8 +53,13 @@
 
 .my-chat {
   @extend .align-items-end;
+
+  .chat-container {
+    @extend .ms-5;
+  }
+
   .chat-content {
-    background-color: $brand-900;
+    background-color: $success;
     @extend .rounded-start;
     @extend .text-white;
   }
@@ -65,6 +71,11 @@
 
 .not-my-chat {
   @extend .align-items-start;
+
+  .chat-container {
+    @extend .me-5;
+  }
+
   .chat-content {
     @extend .bg-light;
     @extend .rounded-end;

@@ -10,21 +10,12 @@
   }
 }
 
-.dropdown-toggle.no-icon {
-  @extend .icon-md;
-}
-
-.dropdown-toggle.no-icon::after {
-  content: '';
-  text-align: center;
-  @include media-breakpoint-up(md) {
-    display: none;
-  }
-}
-
 .dropdown-menu {
-  .dropdown-menu {
-    top: auto;
-    right: 10px;
+  @extend .shadow;
+  @extend .border-0;
+
+  .dropdown-item {
+    @extend .fs-5;
+    @extend .fw-light;
   }
 }
