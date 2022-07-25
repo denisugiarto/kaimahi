@@ -5,69 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <style>
+      #map { height: 680px; }
+    </style>
   </head>
   <body>
-    <input type="file" accept="images/*" onchange="thumbnail(event)" />
-    <div id="previewImage"></div>
+    <div id="map"></div>
   </body>
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+  integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+  crossorigin=""></script>
   <script>
-    function thumbnail(event) {
-      let file = event.target.files[0];
-      let fileName = event.target.files[0].name;
-      let fileReader = new FileReader();
-      // console.log('type: ', file.type.match('image'));
-      console.log('type: ', file.type);
-      if (file.type.match('image')) {
-        fileReader.onload = function () {
-          let img = document.createElement('img');
-          img.className += '';
-          img.src = fileReader.result;
-          document.getElementById('previewImage').appendChild(img);
-        };
-        fileReader.readAsDataURL(file);
-      } else if (file.type.match('video')) {
-        fileReader.onload = function () {
-          let blob = new Blob([fileReader.result], { type: file.type });
-          let url = URL.createObjectURL(blob);
-          let video = document.createElement('video');
-          let timeupdate = function () {
-            if (snapImage()) {
-              video.removeEventListener('timeupdate', timeupdate);
-              video.pause();
-            }
-          };
-          video.addEventListener('loadeddata', function () {
-            if (snapImage()) {
-              video.removeEventListener('timeupdate', timeupdate);
-            }
-          });
-          let snapImage = function () {
-            let canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-            let image = canvas.toDataURL();
-            let success = image.length > 100000;
-            if (success) {
-              let img = document.createElement('img');
-              img.src = image;
-              document.getElementsByTagName('div')[0].appendChild(img);
-              URL.revokeObjectURL(url);
-            }
-            return success;
-          };
-          video.addEventListener('timeupdate', timeupdate);
-          video.preload = 'metadata';
-          video.src = url;
-          // Load video in Safari / IE11
-          video.muted = true;
-          video.playsInline = true;
-          video.play();
-        };
-        fileReader.readAsArrayBuffer(file);
-      } else {
-        console.log('bukan file images atau videos');
+    // marking location data
+    let data = [
+      {
+        id: 1,
+        latitude : -36.88232,
+        longitude: 174.75179
+      },
+      {
+        id: 2,
+        latitude : -36.8793665,
+        longitude: 174.7459210
+      },
+      {
+        id: 3,
+        latitude : -36.8815810,
+        longitude: 174.7428878
+      },
+      {
+        id: 4,
+        latitude : -36.8814165,
+        longitude: 174.7470527
       }
+    ];
+    let latAvg = 0, longAvg = 0;
+    setMap(data);
+    var map = L.map('map').setView([latAvg, longAvg], 17);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+    }).addTo(map);
+    
+    
+    function setMap(data) {
+      data.map(function (value, index){   
+        latAvg += value.latitude;
+        longAvg += value.longitude;
+      })
+      latAvg /= data.length;
+      longAvg /= data.length;
+    }    
+    
+    marking(data);
+    function marking(data) {
+      data.map(function (value, index){
+        let marker = L.marker([value.latitude, value.longitude]).addTo(map);
+        marker.bindTooltip(`Family_${value.id}`).openTooltip();        
+      })
     }
+    // var marker = L.marker([-36.88232, 174.75179]).addTo(map);
+
+    // marker.bindPopup("Family_1").openPopup();
+    // circle.bindPopup("I am a circle.");
+    // polygon.bindPopup("I am a polygon.");
   </script>
 </html>

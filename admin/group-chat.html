@@ -503,7 +503,7 @@
           <div class="col">
             <div class="rounded bg-gray-200 mt-2">
               <div class="container-fluid">
-                <div id="preview-files" class="thumbnails-media row gx-3 gy-2"></div>
+                <div id="preview-files" class="row gx-3 gy-2"></div>
               </div>
               <input
                 type="text"
@@ -598,16 +598,16 @@
     <div class="modal-content">
       <div class="modal-body text-start">
         <h4 class="modal-title mb-3" id="MessageModalLabel">Delete Message</h4>
-        <p class="mb-3">Are you sure you want to delete this message?</p>
-        <div class="form-check">
+        <p class="mb-3 text-secondary">Are you sure you want to delete this message?</p>
+        <div class="form-check mb-3">
           <input type="checkbox" class="form-check-input" id="delEveryone" />
-          <label class="form-check-label" for="delEveryone">also delete for everyone</label>
+          <label class="form-check-label text-secondary for="delEveryone">also delete for everyone</label>
         </div>
-        <div class="row gx-3 justify-content-end">
-          <div class="col-6 col-md-auto">
+        <div class="row g-3 justify-content-end">
+          <div class="col-auto">
             <a type="button" class="text-primary" data-bs-dismiss="modal">Cancel</a>
           </div>
-          <div class="col-6 col-md-auto">
+          <div class="col-auto">
             <a id="deleteMessageButton" type="button" class="text-danger" data-bs-dismiss="modal"> Delete </a>
           </div>
         </div>
@@ -718,11 +718,12 @@
 
   function deleteImage(id) {
     selectedFiles = removeItemOfArray(selectedFiles, id);
-    showImages();
-    console.log(selectedFiles.length);
+    console.log('selected Files length: ',selectedFiles.length);
     if (selectedFiles.length === 0) {
       $('#btnAddImages').remove();
-    }
+      $('#preview-files').removeClass('mb-2');
+    } 
+      showImages();    
   }
 
   let buttonAddImages = document.createElement('div');
@@ -758,48 +759,58 @@
                               />`;
 
   function showImages() {
+    // clean selected Files and Button
     $('.uploaded-files, #btnAddImages, #btnAddDocs').remove();
-    $('#preview-files').prepend(
-      jQuery.map(selectedFiles, function (key, index) {
-        let fileType = selectedFiles[index].type;
-        
-        // Image wrapper
-        let imgWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />`;
-                          
-        // Video wrapper
-        let videoWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
-                            <a onclick='playVideo()' id='delete-images-' role='button' class='delete-files rounded-circle border bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
-                              <i class='fa-solid fa-play lh-sm'></i>
-                            </a>`;
-
-        // Document wrapper
-        let docsWrapper = ` <div class="thumbnail-media-wrapper docs fs-6 fw-bold text-truncate" title="${key.fileName}">
-                              <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
-                              ${key.fileName}
-                            </div>`;
-        // Create element
-        let element = document.createElement('div');
-        element.className = 'uploaded-files col-auto';
-        let wrapper = fileType.match('video') ? videoWrapper : fileType.match('image') ? imgWrapper : docsWrapper;
+    if (selectedFiles.length != 0) {
+    // Create margin
+      $('#preview-files').addClass('mb-2');
+      // Show thumbnail
+      $('#preview-files').prepend(
+        jQuery.map(selectedFiles, function (key, index) {
+          let fileType = selectedFiles[index].type;
           
-        element.innerHTML = `<div class='position-relative'>
-                              ${wrapper}
-                              <a onclick='deleteImage(${index})' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
-                                <i class='fa-solid fa-xmark'></i>
-                              </a>
-                             </div>`;
-        console.log('element: ', element);
-        let myType = fileType.match('image') ? 'gambar' : fileType.match('video') ? 'video' : 'docs';
-        console.log('filesku adalah ', myType);
-        return element;
-      })
-      );
-    let lastFile = selectedFiles[selectedFiles.length - 1];
-    if (selectedFiles.length != 0 && lastFile.type.match('image') || lastFile.type.match('video')) {
-      $('#preview-files').append(buttonAddImages);
-    } else {
-      $('#preview-files').append(buttonAddDocs);
-    }
+          // Image wrapper
+          let imgWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />`;
+                            
+          // Video wrapper
+          let videoWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+                              <a onclick='playVideo()' id='delete-images-' role='button' class='delete-files rounded-circle border bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
+                                <i class='fa-solid fa-play lh-sm'></i>
+                              </a>`;
+
+          // Document wrapper
+          let docsWrapper = ` <div class="thumbnail-media-wrapper docs fs-6 fw-bold text-truncate" title="${key.fileName}">
+                                <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
+                                ${key.fileName}
+                              </div>`;
+          // Create element
+          let element = document.createElement('div');
+          element.className = 'uploaded-files col-auto';
+          let wrapper = fileType.match('video') ? videoWrapper : fileType.match('image') ? imgWrapper : docsWrapper;
+            
+          element.innerHTML = `<div class='position-relative'>
+                                ${wrapper}
+                                <a onclick='deleteImage(${index})' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+                                  <i class='fa-solid fa-xmark'></i>
+                                </a>
+                              </div>`;
+          console.log('element: ', element);
+          let myType = fileType.match('image') ? 'gambar' : fileType.match('video') ? 'video' : 'docs';
+          console.log('filesku adalah ', myType);
+          return element;
+        })
+        );
+      } else {
+        return 0;
+      }
+
+      let lastFile = selectedFiles[selectedFiles.length - 1];
+      if (selectedFiles.length != 0 && lastFile.type.match('image') || lastFile.type.match('video')) {
+        $('#preview-files').append(buttonAddImages);
+      } else {
+        $('#preview-files').append(buttonAddDocs);
+      }
+  
   }
 
   // Create Thumbnail for all uploaded files
