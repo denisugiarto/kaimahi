@@ -444,7 +444,9 @@
         <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-              
+              <form action="">
+
+                
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
@@ -458,6 +460,7 @@
           value="Ahmed Aklouk"
           type="text"
           placeholder="Type Your Name Here"
+          required
         />
       </div>
     </div>
@@ -477,6 +480,7 @@
           value="ahmedaklouk@gmail.com"
           type="email"
           placeholder="Type Your Email Here"
+          required
         />
       </div>
     </div>
@@ -496,6 +500,7 @@
           value="@ahmedaklouk"
           type="text"
           placeholder="Type Your Facebook Messengger Here"
+          required
         />
       </div>
     </div>
@@ -515,6 +520,7 @@
           value="233665665616"
           type="number"
           placeholder="Type Your Phone Number Here"
+          required
         />
       </div>
     </div>
@@ -530,21 +536,14 @@
 
       <div class="col ms-2">
         <label for="address" class="h5 pointer">Address</label>
-        <textarea
-          id="address"
-          name="address"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
-          rows="3"
-          placeholder="Type Your Address Here"
-        >
-</textarea
-        >
+        <a role="button" class="text-primary d-block" data-bs-toggle="modal" data-bs-target="#addAddressModal" >Add Address</a>
       </div>
     </div>
   </div>
 </div>
 
               <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+            </form>
             </div>
           </div>
         </div>
@@ -646,6 +645,31 @@
     </div>
   </div>
 </main>
+
+<!-- Add Address -->
+<div class="modal fade" id="addAddressModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h2 class="h2">Add Address</h2>
+      </div>
+      <div class="modal-body pt-5">
+        <h6 class="h6 mb-3">Where is your delivery destination?</h6>
+        <textarea class="form-control mb-5" name="" id="" rows="3" placeholder="Write the name of the street / building / housing"></textarea>
+        <h6 class="h6 mb-3">Pin Address</h6>
+        <div class="position-relative mb-5">
+          <div class="position-absolute bd-yellow-700 p-2">
+            <h6 class="h6 mb-1">Set the right pin</h6>
+            <p class="fw-light fs-5">This address will be the shipping address, please check if it is correct, if not click the map to adjust</p>
+          </div>
+          <img src="../assets/images/maps.webp" alt="map" class="img-wrapper w-100 mh-200 rounded">
+        </div>
+        <button class="btn btn-secondary w-100" disabled>Save Address</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     </div>
     <!-- FOOTER -->
