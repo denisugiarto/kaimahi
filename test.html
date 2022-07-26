@@ -5,68 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-    crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
     <style>
-      #map { height: 680px; }
+      #map {
+        height: 680px;
+      }
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <div class="container">
+      <div id="map"></div>
+      <input
+        class="js-choice"
+        type="text"
+        value=""
+        placeholder="Write the name of the street / building / housing"
+      />
+    </div>
   </body>
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-  integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-  crossorigin=""></script>
+  <script
+    src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script>
+    const element = document.querySelector('.js-choice');
+    const example = new Choices(element, {
+      allowHTML: true,
+      callbackOnCreateTemplates: function (template) {
+        return {
+          item: ({ classNames }, data) => {
+            return template(`
+          <div class="${classNames.item} ${
+              data.highlighted ? classNames.highlightedState : classNames.itemSelectable
+            } ${data.placeholder ? classNames.placeholder : ''}" data-item data-id="${data.id}" data-value="${
+              data.value
+            }" ${data.active ? 'aria-selected="true"' : ''} ${data.disabled ? 'aria-disabled="true"' : ''}>
+            <span>&bigstar;</span> ${data.label}
+          </div>
+        `);
+          },
+          choice: ({ classNames }, data) => {
+            return template(`
+          <div class="${classNames.item} ${classNames.itemChoice} ${
+              data.disabled ? classNames.itemDisabled : classNames.itemSelectable
+            }" data-select-text="${this.config.itemSelectText}" data-choice ${
+              data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable'
+            } data-id="${data.id}" data-value="${data.value}" ${data.groupId > 0 ? 'role="treeitem"' : 'role="option"'}>
+            <span>&bigstar;</span> ${data.label}
+          </div>
+        `);
+          },
+        };
+      },
+    });
     // marking location data
     let data = [
       {
         id: 1,
-        latitude : -36.88232,
-        longitude: 174.75179
+        latitude: -36.88232,
+        longitude: 174.75179,
       },
       {
         id: 2,
-        latitude : -36.8793665,
-        longitude: 174.7459210
+        latitude: -36.8793665,
+        longitude: 174.745921,
       },
       {
         id: 3,
-        latitude : -36.8815810,
-        longitude: 174.7428878
+        latitude: -36.881581,
+        longitude: 174.7428878,
       },
       {
         id: 4,
-        latitude : -36.8814165,
-        longitude: 174.7470527
-      }
+        latitude: -36.8814165,
+        longitude: 174.7470527,
+      },
     ];
-    let latAvg = 0, longAvg = 0;
+    let latAvg = 0,
+      longAvg = 0;
     setMap(data);
     var map = L.map('map').setView([latAvg, longAvg], 17);
-    
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
+      maxZoom: 19,
+      attribution: '© OpenStreetMap',
     }).addTo(map);
-    
-    
+
     function setMap(data) {
-      data.map(function (value, index){   
+      data.map(function (value, index) {
         latAvg += value.latitude;
         longAvg += value.longitude;
-      })
+      });
       latAvg /= data.length;
       longAvg /= data.length;
-    }    
-    
+    }
+
     marking(data);
     function marking(data) {
-      data.map(function (value, index){
+      data.map(function (value, index) {
         let marker = L.marker([value.latitude, value.longitude]).addTo(map);
-        marker.bindTooltip(`Family_${value.id}`).openTooltip();        
-      })
+        marker.bindTooltip(`Family_${value.id}`).openTooltip();
+      });
     }
     // var marker = L.marker([-36.88232, 174.75179]).addTo(map);
 

@@ -10,6 +10,7 @@
   <title>Whānau</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -445,18 +446,17 @@
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
               <form action="">
-
                 
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
-      <a class="col-auto icon icon-xl bg-primary" href="#text"><i class="fa-solid fa-user"></i></a>
+      <a class="col-auto icon icon-xl bg-primary" href="#name"><i class="fa-solid fa-user"></i></a>
       <div class="col ms-2">
-        <label for="text" class="h5 mb-1">Name</label>
+        <label for="name" class="h5 mb-1">Name</label>
         <input
-          id="text"
-          name="text"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          id="name"
+          name="name"
+          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
           value="Ahmed Aklouk"
           type="text"
           placeholder="Type Your Name Here"
@@ -476,7 +476,7 @@
         <input
           id="email"
           name="email"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
           value="ahmedaklouk@gmail.com"
           type="email"
           placeholder="Type Your Email Here"
@@ -490,13 +490,13 @@
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
-      <a class="col-auto icon icon-xl bg-primary" href="#fbmessage"><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a class="col-auto icon icon-xl bg-primary" href="#fbmessengger"><i class="fa-brands fa-facebook-messenger"></i></a>
       <div class="col ms-2">
-        <label for="fbmessage" class="h5 mb-1">Facebook Messengger</label>
+        <label for="fbmessengger" class="h5 mb-1">Facebook Messengger</label>
         <input
-          id="fbmessage"
-          name="fbmessage"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          id="fbmessengger"
+          name="fbmessengger"
+          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
           value="@ahmedaklouk"
           type="text"
           placeholder="Type Your Facebook Messengger Here"
@@ -516,7 +516,7 @@
         <input
           id="phone"
           name="phone"
-          class="form-control fs-6 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
           value="233665665616"
           type="number"
           placeholder="Type Your Phone Number Here"
@@ -527,23 +527,30 @@
   </div>
 </div>
 
-              <!-- ADDRESS -->
-              
+                <!-- ADDRESS -->
+                
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#address"><i class="fa-solid fa-solid fa-location-dot"></i></a>
 
       <div class="col ms-2">
-        <label for="address" class="h5 pointer">Address</label>
-        <a role="button" class="text-primary d-block" data-bs-toggle="modal" data-bs-target="#addAddressModal" >Add Address</a>
+        <label for="address" class="h5">Address</label>
+        <div
+          id="address"
+          name="address"
+          class="fs-4 fw-light text-dark"
+        ></div>
+        <a id="btnAddress" role="button" class="text-primary d-block" data-bs-toggle="modal" data-bs-target="#addAddressModal">
+          Add Address
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-              <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
-            </form>
+                <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+              </form>
             </div>
           </div>
         </div>
@@ -646,31 +653,42 @@
   </div>
 </main>
 
-<!-- Add Address -->
 <div class="modal fade" id="addAddressModal">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header justify-content-center">
-        <h2 class="h2">Add Address</h2>
+      <div class="modal-header">
+        <h2 class="h2 ms-auto">Add Address</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
       </div>
       <div class="modal-body pt-5">
-        <h6 class="h6 mb-3">Where is your delivery destination?</h6>
-        <textarea class="form-control mb-5" name="" id="" rows="3" placeholder="Write the name of the street / building / housing"></textarea>
-        <h6 class="h6 mb-3">Pin Address</h6>
-        <div class="position-relative mb-5">
-          <div class="position-absolute bd-yellow-700 p-2">
+        <h6 class="h6 mb-3 fw-bolder">Where is your delivery destination?</h6>
+        <textarea
+          class="form-control fw-light"
+          name="newAddress"
+          id="addAddress"
+          rows="3"
+          placeholder="Write the name of the street / building / housing"
+        ></textarea>
+        <select class="form-control" name="choices-custom-templates" id="choices-custom-templates">
+          <option value="ntowers">Ntowers, Block B20, Zemin 11, Daire 34513 Istanbul, Turkey.</option>
+          <option value="turkeys">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.</option>
+        </select>
+        <h6 class="h6 mt-5 mb-3 fw-bolder">Pin Address</h6>
+        <div class="position-relative mb-5 ">
+          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100">
             <h6 class="h6 mb-1">Set the right pin</h6>
-            <p class="fw-light fs-5">This address will be the shipping address, please check if it is correct, if not click the map to adjust</p>
+            <p class="fw-light fs-5">
+              This address will be the shipping address, please check if it is correct, if not click the map to adjust
+            </p>
           </div>
-          <img src="../assets/images/maps.webp" alt="map" class="img-wrapper w-100 mh-200 rounded">
+          <img src="../assets/images/maps-small.webp" alt="map" class="img-wrapper w-100 mh-200 rounded" />
         </div>
-        <button class="btn btn-secondary w-100" disabled>Save Address</button>
+        <button class="btn btn-secondary w-100 saveAddress" data-bs-dismiss="modal" disabled>Save Address</button>
       </div>
     </div>
   </div>
 </div>
-
-
+ 
     </div>
     <!-- FOOTER -->
     <script
@@ -689,6 +707,7 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
 
     <!-- SIDEBAR ITEM -->
@@ -760,6 +779,9 @@
     <!-- SCRIPT -->
     
 <script>
+  let address = '',
+    newAddress = '';
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
@@ -767,7 +789,147 @@
         return $(this).text() === 'Whānau';
       })
       .addClass('active');
-    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
+
+    function loadAddressToTextArea() {
+      $('#addAddress').val(address);
+    }
+
+    function saveAddress() {
+      address = newAddress;
+      // Load data address to div with id address
+      $('#address').text(address);
+      // change text button
+      if (address != '') {
+        $('#address').addClass('mb-2');
+        $('#btnAddress').text('Edit Address');
+      } else {
+        $('#address').removeClass('mb-2');
+        $('#btnAddress').text('Add Address');
+      }
+    }
+
+    $('#btnAddress').click(function () {
+      loadAddressToTextArea();
+    });
+
+    // Save address
+    $('.saveAddress').click(function () {
+      saveAddress();
+    });
+  });
+
+
+  $('select').change(function() {
+    updateAddressFromOption();
+    changeSaveBtn();
+    $('#mapNotes').addClass('show');
+    console.log('option berubah');
+  })
+
+  $('#addAddress').keyup(function (event) {
+    console.log('test: ', event.target.value);
+    $('input[name="search_terms"]').focus().val(event.target.value);
+    $('.choices__list').trigger('click');
+    $('#addAddress').trigger('click');
+    $('#addAddress').focus();
+    console.log('isi: ', $('select.choices__input > option').text())
+    changeSaveBtn();
+  });
+
+  function changeSaveBtn() {
+    if($('#addAddress').val() != '') {
+      $('.saveAddress').removeAttr('disabled').removeClass('btn-secondary').addClass('btn-primary');
+    } else {
+      $('.saveAddress').addClass('btn-secondary').removeClass('btn-primary').attr('disabled', 'true');
+    }
+  }
+  function updateAddressFromOption() {
+    //Set newAddress from selected value;
+    newAddress = $.trim($('.choices__list--single > .choices__item--selectable').text());
+    $('#addAddress').val(newAddress);
+  }
+
+  // $(document).change(function () {
+
+  // })
+
+  var customTemplates = new Choices(document.getElementById('choices-custom-templates'), {
+    allowHTML: true,
+    classNames: {
+      containerInner: 'choices__inner d-none',
+      inputCloned: 'choices__input--cloned d-none',
+    },
+    callbackOnCreateTemplates: function (strToEl) {
+      var classNames = this.config.classNames;
+      var itemSelectText = this.config.itemSelectText;
+      return {
+        item: function ({ classNames }, data) {
+          return strToEl(
+            '\
+                <div\
+                  class="' +
+              String(classNames.item) +
+              ' ' +
+              String(data.highlighted ? classNames.highlightedState : classNames.itemSelectable) +
+              '"\
+                  data-item\
+                  data-id="' +
+              String(data.id) +
+              '"\
+                  data-value="' +
+              String(data.value) +
+              '"\
+                  ' +
+              String(data.active ? 'aria-selected="true"' : '') +
+              '\
+                  ' +
+              String(data.disabled ? 'aria-disabled="true"' : '') +
+              '\
+                  >\
+                  ' +
+              String(data.label) +
+              '\
+                </div>\
+              '
+          );
+        },
+        choice: function ({ classNames }, data) {
+          return strToEl(
+            '\
+                <div\
+                  class="' +
+              String(classNames.item) +
+              ' ' +
+              String(classNames.itemChoice) +
+              ' ' +
+              String(data.disabled ? classNames.itemDisabled : classNames.itemSelectable) +
+              '"\
+                  data-select-text="' +
+              String(itemSelectText) +
+              '"\
+                  data-choice \
+                  ' +
+              String(data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable') +
+              '\
+                  data-id="' +
+              String(data.id) +
+              '"\
+                  data-value="' +
+              String(data.value) +
+              '"\
+                  ' +
+              String(data.groupId > 0 ? 'role="treeitem"' : 'role="option"') +
+              '\
+                  >\
+                  <i class="fas fa-location-dot me-2"></i> ' +
+              String(data.label) +
+              '\
+                </div>\
+              '
+          );
+        },
+      };
+    },
   });
 </script>
 
