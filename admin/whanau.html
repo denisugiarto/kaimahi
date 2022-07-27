@@ -444,24 +444,36 @@
         </div>
         <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
           <div class="card align-items-center">
+            <div class="alert-box">
+              <div class="alert alert-success alert-dismissible fade show" role="alert">Whanau data has been successfully changed
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">Email address is invalid!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-              <form action="">
+              <form class="needs-validation" action="" novalidate>
                 
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#name"><i class="fa-solid fa-user"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="name" class="h5 mb-1">Name</label>
         <input
           id="name"
           name="name"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="Ahmed Aklouk"
           type="text"
           placeholder="Type Your Name Here"
           required
         />
+        <div class="invalid-tooltip">
+          This field is required, please
+                enter a name
+        </div>
       </div>
     </div>
   </div>
@@ -471,17 +483,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#email"><i class="fa-solid fa-envelopes-bulk"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="email" class="h5 mb-1">Email</label>
         <input
           id="email"
           name="email"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="ahmedaklouk@gmail.com"
           type="email"
           placeholder="Type Your Email Here"
           required
         />
+        <div class="invalid-tooltip">
+          Please enter a valid email address
+        </div>
       </div>
     </div>
   </div>
@@ -490,18 +505,23 @@
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
-      <a class="col-auto icon icon-xl bg-primary" href="#fbmessengger"><i class="fa-brands fa-facebook-messenger"></i></a>
-      <div class="col ms-2">
+      <a class="col-auto icon icon-xl bg-primary" href="#fbmessengger"><i class="fa-brands
+                fa-facebook-messenger"></i></a>
+      <div class="col ms-2 position-relative">
         <label for="fbmessengger" class="h5 mb-1">Facebook Messengger</label>
         <input
           id="fbmessengger"
           name="fbmessengger"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="@ahmedaklouk"
           type="text"
           placeholder="Type Your Facebook Messengger Here"
           required
         />
+        <div class="invalid-tooltip">
+          Please enter a valid
+                facebook address
+        </div>
       </div>
     </div>
   </div>
@@ -511,17 +531,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#phone"><i class="fa-solid fa-phone"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="phone" class="h5 mb-1">Phone Number</label>
         <input
           id="phone"
           name="phone"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="233665665616"
           type="number"
           placeholder="Type Your Phone Number Here"
           required
         />
+        <div class="invalid-tooltip">
+          Phone number is not valid
+        </div>
       </div>
     </div>
   </div>
@@ -535,15 +558,38 @@
       <a class="col-auto icon icon-xl bg-primary" href="#address"><i class="fa-solid fa-solid fa-location-dot"></i></a>
 
       <div class="col ms-2">
-        <label for="address" class="h5">Address</label>
-        <div
+        <label for="address" class="h5 mb-1">Address</label>
+        <textarea 
           id="address"
           name="address"
-          class="fs-4 fw-light text-dark"
-        ></div>
+          class="form-control fs-4 fw-light bg-white d-none"
+          rows="3"
+          readonly                 
+        ></textarea>
         <a id="btnAddress" role="button" class="text-primary d-block" data-bs-toggle="modal" data-bs-target="#addAddressModal">
           Add Address
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#note"><i class="fa-solid fa-solid fa-pencil"></i></a>
+
+      <div class="col ms-2">
+        <label for="note" class="h5 pointer mb-1">Note For Whanau</label>
+        <textarea
+          id="note"
+          name="note"
+          class="form-control fs-6 fw-light"
+          rows="3"
+          placeholder="Type Your Note For Whanau Here"
+          style="resize: none;"
+        ></textarea
+        >
       </div>
     </div>
   </div>
@@ -675,13 +721,13 @@
         </select>
         <h6 class="h6 mt-5 mb-3 fw-bolder">Pin Address</h6>
         <div class="position-relative mb-5 ">
-          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100">
+          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100 d-none d-md-block">
             <h6 class="h6 mb-1">Set the right pin</h6>
             <p class="fw-light fs-5">
               This address will be the shipping address, please check if it is correct, if not click the map to adjust
             </p>
           </div>
-          <img src="../assets/images/maps-small.webp" alt="map" class="img-wrapper w-100 mh-200 rounded" />
+          <img src="../assets/images/maps-small.webp" alt="map" class="map-set-pin-wrapper" />
         </div>
         <button class="btn btn-secondary w-100 saveAddress" data-bs-dismiss="modal" disabled>Save Address</button>
       </div>
@@ -779,6 +825,30 @@
     <!-- SCRIPT -->
     
 <script>
+  // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
   let address = '',
     newAddress = '';
 
@@ -800,10 +870,10 @@
       $('#address').text(address);
       // change text button
       if (address != '') {
-        $('#address').addClass('mb-2');
+        $('#address').addClass('mb-2').removeClass('d-none');
         $('#btnAddress').text('Edit Address');
       } else {
-        $('#address').removeClass('mb-2');
+        $('#address').removeClass('mb-2').addClass('d-none');
         $('#btnAddress').text('Add Address');
       }
     }
@@ -818,26 +888,25 @@
     });
   });
 
-
-  $('select').change(function() {
+  $('select').change(function () {
     updateAddressFromOption();
     changeSaveBtn();
     $('#mapNotes').addClass('show');
     console.log('option berubah');
-  })
+  });
 
   $('#addAddress').keyup(function (event) {
     console.log('test: ', event.target.value);
     $('input[name="search_terms"]').focus().val(event.target.value);
     $('.choices__list').trigger('click');
-    $('#addAddress').trigger('click');
-    $('#addAddress').focus();
-    console.log('isi: ', $('select.choices__input > option').text())
+    // $('#addAddress').trigger('click');
+    // $('#addAddress').focus();
+    console.log('isi: ', $('select.choices__input > option').text());
     changeSaveBtn();
   });
 
   function changeSaveBtn() {
-    if($('#addAddress').val() != '') {
+    if ($('#addAddress').val() != '') {
       $('.saveAddress').removeAttr('disabled').removeClass('btn-secondary').addClass('btn-primary');
     } else {
       $('.saveAddress').addClass('btn-secondary').removeClass('btn-primary').attr('disabled', 'true');
@@ -922,14 +991,14 @@
               '\
                   >\
                   <div class="d-flex">' +
-                    '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
-                    '<div><h6 class="h6 text-capitalize mb-1">' +
-                      String(data.value) +
-                    '</h6>' +
-                    '<p class="fw-light">' +
-                       String(data.label) +
-                    '</p>' +
-                  '\
+              '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
+              '<div><h6 class="h6 text-capitalize mb-1">' +
+              String(data.value) +
+              '</h6>' +
+              '<p class="fw-light">' +
+              String(data.label) +
+              '</p>' +
+              '\
                     </div>\
                   </div>\
                   '

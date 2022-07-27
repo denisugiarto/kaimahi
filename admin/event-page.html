@@ -325,17 +325,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#name"><i class="fa-solid fa-newspaper"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="name" class="h5 mb-1">Event Name</label>
         <input
           id="name"
           name="name"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="Lorem Ipsum"
-          type="text"
+          type="time"
           placeholder="Type Your Event Name Here"
           required
         />
+        <div class="invalid-tooltip">
+          text
+        </div>
       </div>
     </div>
   </div>
@@ -345,17 +348,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#time"><i class="fa-solid fa-clock"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="time" class="h5 mb-1">Time</label>
         <input
           id="time"
           name="time"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="16:00"
           type="time"
           placeholder="Type Your Time Here"
           required
         />
+        <div class="invalid-tooltip">
+          time
+        </div>
       </div>
     </div>
   </div>
@@ -366,17 +372,20 @@
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid
                 fa-calendar-days"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="date" class="h5 mb-1">Date</label>
         <input
           id="date"
           name="date"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="2022-08-17"
-          type="date"
+          type="time"
           placeholder="Type Your Date Here"
           required
         />
+        <div class="invalid-tooltip">
+          date
+        </div>
       </div>
     </div>
   </div>
@@ -388,13 +397,14 @@
       <a class="col-auto icon icon-xl bg-primary" href="#location"><i class="fa-solid fa-location-dot"></i></a>
 
       <div class="col ms-2">
-        <label for="location" class="h5 pointer">Location</label>
+        <label for="location" class="h5 pointer mb-1">Location</label>
         <textarea
           id="location"
           name="location"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          class="form-control fs-6 fw-light"
           rows="3"
           placeholder="Type Your Location Here"
+          style="resize: none;"
         ></textarea
         >
       </div>

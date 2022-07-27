@@ -546,17 +546,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#text"><i class="fa-solid fa-user"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="text" class="h5 mb-1">Name</label>
         <input
           id="text"
           name="text"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="Ahmed Aklouk"
-          type="text"
+          type="time"
           placeholder="Type Your Name Here"
           required
         />
+        <div class="invalid-tooltip">
+          text
+        </div>
       </div>
     </div>
   </div>
@@ -566,17 +569,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#email"><i class="fa-solid fa-envelopes-bulk"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="email" class="h5 mb-1">Email</label>
         <input
           id="email"
           name="email"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="ahmedaklouk@gmail.com"
-          type="email"
+          type="time"
           placeholder="Type Your Email Here"
           required
         />
+        <div class="invalid-tooltip">
+          email
+        </div>
       </div>
     </div>
   </div>
@@ -586,17 +592,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#fbmessage"><i class="fa-brands fa-facebook-messenger"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="fbmessage" class="h5 mb-1">Facebook Messengger</label>
         <input
           id="fbmessage"
           name="fbmessage"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="@ahmedaklouk"
-          type="text"
+          type="time"
           placeholder="Type Your Facebook Messengger Here"
           required
         />
+        <div class="invalid-tooltip">
+          text
+        </div>
       </div>
     </div>
   </div>
@@ -606,17 +615,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#phone"><i class="fa-solid fa-comment-dots"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="phone" class="h5 mb-1">Phone Number</label>
         <input
           id="phone"
           name="phone"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value="233665665616"
-          type="number"
+          type="time"
           placeholder="Type Your Phone Number Here"
           required
         />
+        <div class="invalid-tooltip">
+          number
+        </div>
       </div>
     </div>
   </div>
@@ -630,13 +642,14 @@
       <a class="col-auto icon icon-xl bg-primary" href="#address"><i class="fa-solid fa-solid fa-comment-dots"></i></a>
 
       <div class="col ms-2">
-        <label for="address" class="h5 pointer">Address</label>
+        <label for="address" class="h5 pointer mb-1">Address</label>
         <textarea
           id="address"
           name="address"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          class="form-control fs-6 fw-light"
           rows="3"
           placeholder="Type Your Address Here"
+          style="resize: none;"
         ></textarea
         >
       </div>

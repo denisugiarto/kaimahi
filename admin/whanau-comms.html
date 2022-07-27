@@ -325,17 +325,20 @@
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#time"><i class="fa-solid fa-clock"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="time" class="h5 mb-1">Time</label>
         <input
           id="time"
           name="time"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value=""
           type="time"
           placeholder="Type Your Time Here"
           required
         />
+        <div class="invalid-tooltip">
+          time
+        </div>
       </div>
     </div>
   </div>
@@ -346,17 +349,20 @@
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid
                 fa-calendar-days"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="date" class="h5 mb-1">Date</label>
         <input
           id="date"
           name="date"
-          class="form-control fs-4 fw-light text-dark border-0 p-0 bg-light rounded-0"
+          class="form-control fs-4 fw-light"
           value=""
-          type="date"
+          type="time"
           placeholder="Type Your Date Here"
           required
         />
+        <div class="invalid-tooltip">
+          date
+        </div>
       </div>
     </div>
   </div>
@@ -368,13 +374,14 @@
       <a class="col-auto icon icon-xl bg-primary" href="#message"><i class="fa-solid fa-comment-dots"></i></a>
 
       <div class="col ms-2">
-        <label for="message" class="h5 pointer">Message</label>
+        <label for="message" class="h5 pointer mb-1">Message</label>
         <textarea
           id="message"
           name="message"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          class="form-control fs-6 fw-light"
           rows="3"
           placeholder="Type Your Message Here"
+          style="resize: none;"
         ></textarea
         >
       </div>
