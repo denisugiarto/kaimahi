@@ -3,7 +3,12 @@
 // 1. Configuration and helpers
 @import 'variables', 'utilities';
 
-// 2. Vendors
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+//Bootstrap 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 // 3. Components
@@ -26,6 +31,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+$all-colors: map-merge-multiple($yellows, $reds);
+
+@each $key, $value in $all-colors {
+  .bd-#{$key}{
+    background-color: $value !important;
+  }
+  
+  .text-#{$key}{
+    color: $value !important;
+  }
+  
 }
 
 .alert-success {
@@ -217,6 +235,11 @@ input[type='search']:focus-visible {
     left: 5px;
     top: 2px;
   }
+}
+
+// Max height
+.mh-200 {
+  max-height: 200px;
 }
 
 .page-title {

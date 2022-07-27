@@ -10,6 +10,19 @@
   }
 }
 
+// remove icon dropdown-item 
+.dropdown-toggle.no-icon {
+  @extend .icon-md;
+}
+
+.dropdown-toggle.no-icon::after {
+  content: '';
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
 .dropdown-menu {
   @extend .shadow;
   @extend .border-0;

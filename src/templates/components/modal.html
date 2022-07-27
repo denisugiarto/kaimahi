@@ -87,20 +87,20 @@
 <!-- DELETE MESSAGE -->
 {% macro deleteMessage(id, message) %}
 <div class="modal fade" id="delete{{ id }}Modal" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body text-start">
         <h4 class="modal-title mb-3" id="{{ id }}ModalLabel">Delete Message</h4>
-        <p class="mb-3">Are you sure you want to delete this message?</p>
-        <div class="form-check">
+        <p class="mb-3 text-secondary">Are you sure you want to delete this message?</p>
+        <div class="form-check mb-3">
           <input type="checkbox" class="form-check-input" id="delEveryone" />
-          <label class="form-check-label" for="delEveryone">also delete for everyone</label>
+          <label class="form-check-label text-secondary" for="delEveryone">also delete for everyone</label>
         </div>
-        <div class="row gx-3 justify-content-end">
-          <div class="col-6 col-md-auto">
+        <div class="row g-3 justify-content-end">
+          <div class="col-auto">
             <a type="button" class="text-primary" data-bs-dismiss="modal">Cancel</a>
           </div>
-          <div class="col-6 col-md-auto">
+          <div class="col-auto">
             <a id="delete{{ id }}Button" type="button" class="text-danger" data-bs-dismiss="modal"> Delete </a>
           </div>
         </div>
@@ -176,6 +176,45 @@
       </div>
       <div class="modal-body p-0 flex-center">
         <img src="../assets/images/picture-1.webp" alt="images" class="img-fluid rounded-bottom" />
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- Add Address -->
+{% macro addAddress() %}
+<div class="modal fade" id="addAddressModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="h2 ms-auto">Add Address</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+      </div>
+      <div class="modal-body pt-5">
+        <h6 class="h6 mb-3 fw-bolder">Where is your delivery destination?</h6>
+        <textarea
+          class="form-control fw-light"
+          name="newAddress"
+          id="addAddress"
+          rows="3"
+          placeholder="Write the name of the street / building / housing"
+        ></textarea>
+        <select class="form-control" name="choices-custom-templates" id="choices-custom-templates">
+          <option value="ntowers">Ntowers, Block B20, Zemin 11, Daire 34513 Istanbul, Turkey.</option>
+          <option value="turkeys">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.</option>
+        </select>
+        <h6 class="h6 mt-5 mb-3 fw-bolder">Pin Address</h6>
+        <div class="position-relative mb-5 ">
+          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100">
+            <h6 class="h6 mb-1">Set the right pin</h6>
+            <p class="fw-light fs-5">
+              This address will be the shipping address, please check if it is correct, if not click the map to adjust
+            </p>
+          </div>
+          <img src="../assets/images/maps-small.webp" alt="map" class="img-wrapper w-100 mh-200 rounded" />
+        </div>
+        <button class="btn btn-secondary w-100 saveAddress" data-bs-dismiss="modal" disabled>Save Address</button>
       </div>
     </div>
   </div>
