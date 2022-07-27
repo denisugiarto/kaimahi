@@ -921,11 +921,18 @@
               String(data.groupId > 0 ? 'role="treeitem"' : 'role="option"') +
               '\
                   >\
-                  <i class="fas fa-location-dot me-2"></i> ' +
-              String(data.label) +
-              '\
-                </div>\
-              '
+                  <div class="d-flex">' +
+                    '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
+                    '<div><h6 class="h6 text-capitalize mb-1">' +
+                      String(data.value) +
+                    '</h6>' +
+                    '<p class="fw-light">' +
+                       String(data.label) +
+                    '</p>' +
+                  '\
+                    </div>\
+                  </div>\
+                  '
           );
         },
       };
