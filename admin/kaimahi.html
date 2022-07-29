@@ -541,7 +541,8 @@
         <div class="tab-pane fade" id="single-kaimahi" role="tabpanel" aria-labelledby="single-kaimahi-tab">
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-              
+              <form class="needs-validation" novalidate>
+                
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
@@ -553,12 +554,12 @@
           name="text"
           class="form-control fs-4 fw-light"
           value="Ahmed Aklouk"
-          type="time"
+          type="text"
           placeholder="Type Your Name Here"
           required
         />
         <div class="invalid-feedback mt-1">          
-          text
+          This field is required, please enter a name
         </div>
       </div>
     </div>
@@ -576,12 +577,12 @@
           name="email"
           class="form-control fs-4 fw-light"
           value="ahmedaklouk@gmail.com"
-          type="time"
+          type="email"
           placeholder="Type Your Email Here"
           required
         />
         <div class="invalid-feedback mt-1">          
-          email
+          Please enter a valid email address
         </div>
       </div>
     </div>
@@ -599,12 +600,12 @@
           name="fbmessage"
           class="form-control fs-4 fw-light"
           value="@ahmedaklouk"
-          type="time"
+          type="text"
           placeholder="Type Your Facebook Messengger Here"
           required
         />
         <div class="invalid-feedback mt-1">          
-          text
+          Please enter a valid facebook address
         </div>
       </div>
     </div>
@@ -622,20 +623,20 @@
           name="phone"
           class="form-control fs-4 fw-light"
           value="233665665616"
-          type="time"
+          type="number"
           placeholder="Type Your Phone Number Here"
           required
         />
         <div class="invalid-feedback mt-1">          
-          number
+          Phone number is not valid
         </div>
       </div>
     </div>
   </div>
 </div>
 
-              <!-- ADDRESS -->
-              
+                <!-- ADDRESS -->
+                
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
@@ -657,7 +658,8 @@
   </div>
 </div>
 
-              <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+              </form>
             </div>
           </div>
         </div>
@@ -850,6 +852,30 @@
     <!-- SCRIPT -->
     
 <script>
+  // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
