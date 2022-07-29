@@ -758,9 +758,11 @@
       <div class="col ms-2 position-relative">
         <label for="imgProfile" class="h5 mb-1">Add Image Profile</label>
         <div class="d-flex align-items-center">
-          <label for="imgProfile" class="imgProfilePreview icon border-1 border-dashed border-dark icon-xxl rounded">
-            <i class="fas fa-plus fs-3 text-dark"></i>
-          </label>
+          <div class="imgProfilePreview">
+            <label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded">
+              <i class="fas fa-plus fs-3 text-dark"></i>
+            </label>
+          </div>
           <input
             id="imgProfile"
             name="imgProfile"
@@ -1248,17 +1250,29 @@
     },
   });
 
+  function deleteImage() {
+      $('.imgProfilePreview').html(`<label for="" class="icon border-1 border-dashed border-dark icon-xxl rounded">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+    }
+
   // Show image preview from Input Image Profile
   $('input[name="imgProfile"]').change(function (event) {
     let file = event.target.files[0];
     if (file) {
       let imgUrl = URL.createObjectURL(file);
       $('.imgProfilePreview').html(
-        `<img src='${imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />`
+        ` <div class='position-relative'>
+            <img src='${imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
       );
     } else {
-      $('.imgProfilePreview')
-        .html(`<i class="fas fa-plus fs-3 text-dark"></i>`);
+      $('.imgProfilePreview').html(`<label for="" class="icon border-1 border-dashed border-dark icon-xxl rounded">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
     }
   });
 </script>
