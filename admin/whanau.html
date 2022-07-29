@@ -1257,7 +1257,7 @@
                                       <i class="fas fa-plus fs-3 text-dark"></i>
                                     </label>`);
     $('input[name="imgProfile"]').val('');
-    $('.fileName').text('No file chosen');
+    $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
   }
 
   // Show image preview from Input Image Profile
@@ -1265,7 +1265,7 @@
     let file = event.target.files[0];
     if (file) {
       console.log('fileName: ', file);
-      $('.fileName').text(file.name);
+      $('.fileName').text(file.name).removeClass('text-secondary').addClass('text-dark');
       let imgUrl = URL.createObjectURL(file);
       $('.imgProfilePreview').html(
         ` <div class='position-relative'>
@@ -1280,7 +1280,7 @@
         .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
                                       <i class="fas fa-plus fs-3 text-dark"></i>
                                     </label>`);
-      $('.fileName').text('No file chosen');
+      $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
     }
   });
 </script>
