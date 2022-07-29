@@ -1,12 +1,12 @@
 {% import './buttons.html' as button %}
 
 <!-- WITH ICON -->
-{% macro withIcon(icon, label, name, value, type='time') %}
+{% macro withIcon(icon, label, name, value, errorMessage, type) %}
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="{{ icon }}"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="{{ name }}" class="h5 mb-1">{{ label }}</label>
         <input
           id="{{ name }}"
@@ -17,6 +17,41 @@
           placeholder="Type Your {{ label }} Here"
           required
         />
+        <div class="invalid-feedback mt-1">          
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro imageWithIcon(icon, label, name, value, errorMessage, type) %}
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="{{ icon }}"></i></a>
+      <div class="col ms-2 position-relative">
+        <label for="{{ name }}" class="h5 mb-1">{{ label }}</label>
+        <div class="d-flex align-items-center">
+          <label for="{{ name }}" class="imgProfilePreview icon border-1 border-dashed border-dark icon-xxl rounded">
+            <i class="fas fa-plus fs-3 text-dark"></i>
+          </label>
+          <input
+            id="{{ name }}"
+            name="{{ name }}"
+            class="form-control fs-4 fw-light ms-2"
+            value="{{ value }}"
+            type="file"
+            placeholder="Type Your {{ label }} Here"
+            accept="image/*"
+            required
+          />
+        </div>
+        <div class="form-text d-flex align-items-center mt-1"><i class="fas fa-exclamation text-warning icon-xs border border-warning rounded-circle d-inline-flex justify-content-center fs-7 me-1"></i>Max photo size 2MB</div>
+        <div class="invalid-feedback mt-1">          
+          {{ errorMessage }}
+        </div>
       </div>
     </div>
   </div>
@@ -31,13 +66,14 @@
       <a class="col-auto icon icon-xl bg-primary" href="#{{ name }}"><i class="fa-solid {{ icon }}"></i></a>
 
       <div class="col ms-2">
-        <label for="{{ name }}" class="h5 pointer">{{ label }}</label>
+        <label for="{{ name }}" class="h5 pointer mb-1">{{ label }}</label>
         <textarea
           id="{{ name }}"
           name="{{ name }}"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          class="form-control fs-6 fw-light"
           rows="3"
           placeholder="Type Your {{ label }} Here"
+          style="resize: none;"
         >{{ value }}</textarea
         >
       </div>
@@ -58,10 +94,11 @@
         <textarea 
           id="{{ name }}"
           name="{{ name }}"
-          class="form-control fs-4 fw-light text-dark bg-white"
-          readonly          
+          class="form-control fs-4 fw-light bg-white d-none"
+          rows="3"
+          readonly                 
         ></textarea>
-        <a id="btnAddress" role="button" class="text-primary d-block mt-2" data-bs-toggle="modal" data-bs-target="#addAddressModal">
+        <a id="btnAddress" role="button" class="text-primary d-block" data-bs-toggle="modal" data-bs-target="#addAddressModal">
           Add Address
         </a>
       </div>

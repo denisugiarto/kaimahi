@@ -261,71 +261,72 @@
 
       <!-- CONTENT -->
            
-<main class="bd-main">
-  <!-- PAGE TITLE -->
-  <h1 class="page-title">Whānau Comms</h1>
-  <div class="card">
-    <div class="card-body">
-      <!-- TABS -->
-      <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
-        <a
-          class="col-auto nav-link active"
-          id="nav-create-message-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-create-message"
-          type="button"
-          role="tab"
-          aria-controls="nav-create-message"
-          aria-selected="true"
-        >
-          <i class="fa-solid fa-pen me-1"></i>Create Message
-        </a>
-        <a
-          class="col-auto nav-link"
-          id="nav-history-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-history"
-          type="button"
-          role="tab"
-          aria-controls="nav-history"
-          aria-selected="true"
-        >
-          <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History
-        </a>
-      </div>
-
-      <div class="tab-content" id="nav-tabContent">
-        <!-- TAB create-message -->
-        <div
-          class="tab-pane fade show active"
-          id="nav-create-message"
-          role="tabpanel"
-          aria-labelledby="nav-create-message-tab"
-        >
-          <!-- STEPS MENU -->
-          <div class="steps-menu mb-5">
-            <div id="step1" class="step-item active">
-              <div class="step-number">1</div>
-              <div class="step-title">Message Detail</div>
+  <main class="bd-main">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Whānau Comms</h1>
+    <div class="card">
+      <div class="card-body">
+        <!-- TABS -->
+        <div class="nav nav-tabs mb-4 mb-md-5" id="nav-tab" role="tablist">
+          <a
+            class="col-auto nav-link active"
+            id="nav-create-message-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-create-message"
+            type="button"
+            role="tab"
+            aria-controls="nav-create-message"
+            aria-selected="true"
+          >
+            <i class="fa-solid fa-pen me-1"></i>Create Message
+          </a>
+          <a
+            class="col-auto nav-link"
+            id="nav-history-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-history"
+            type="button"
+            role="tab"
+            aria-controls="nav-history"
+            aria-selected="true"
+          >
+            <i class="fa-solid fa-clock-rotate-left me-1"></i>Message History
+          </a>
+        </div>
+  
+        <div class="tab-content" id="nav-tabContent">
+          <!-- TAB create-message -->
+          <div
+            class="tab-pane fade show active"
+            id="nav-create-message"
+            role="tabpanel"
+            aria-labelledby="nav-create-message-tab"
+          >
+            <!-- STEPS MENU -->
+            <div class="steps-menu mb-5">
+              <div id="step1" class="step-item active">
+                <div class="step-number">1</div>
+                <div class="step-title">Message Detail</div>
+              </div>
+              <div id="step2" class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-title">Select Whānau</div>
+              </div>
             </div>
-            <div id="step2" class="step-item">
-              <div class="step-number">2</div>
-              <div class="step-title">Select Whānau</div>
-            </div>
-          </div>
-
-          <div id="messageDetail" class="collapse collapse-create show">
-            <h6 class="h6 fw-bolder ms-2">Message Detail</h6>
-            <hr class="my-2" />
-
-            <div class="card align-items-center">
-              <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-                
+  
+            <div id="messageDetail" class="collapse collapse-create show">
+              <h6 class="h6 fw-bolder ms-2">Message Detail</h6>
+              <hr class="my-2" />
+  
+              <div class="card align-items-center">
+                <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
+                  <form class="needs-validation" novalidate>
+                    
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#time"><i class="fa-solid fa-clock"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="time" class="h5 mb-1">Time</label>
         <input
           id="time"
@@ -336,6 +337,9 @@
           placeholder="Type Your Time Here"
           required
         />
+        <div class="invalid-feedback mt-1">          
+          Please enter your time
+        </div>
       </div>
     </div>
   </div>
@@ -344,9 +348,8 @@
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
-      <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid
-                fa-calendar-days"></i></a>
-      <div class="col ms-2">
+      <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid fa-calendar-days"></i></a>
+      <div class="col ms-2 position-relative">
         <label for="date" class="h5 mb-1">Date</label>
         <input
           id="date"
@@ -357,24 +360,29 @@
           placeholder="Type Your Date Here"
           required
         />
+        <div class="invalid-feedback mt-1">          
+          Please enter your date
+        </div>
       </div>
     </div>
   </div>
 </div>
- 
+
+                    
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#message"><i class="fa-solid fa-comment-dots"></i></a>
 
       <div class="col ms-2">
-        <label for="message" class="h5 pointer">Message</label>
+        <label for="message" class="h5 pointer mb-1">Message</label>
         <textarea
           id="message"
           name="message"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          class="form-control fs-6 fw-light"
           rows="3"
           placeholder="Type Your Message Here"
+          style="resize: none;"
         ></textarea
         >
       </div>
@@ -382,48 +390,42 @@
   </div>
 </div>
 
+                    <button type="submit" class="btnCheckValidate btn btn-primary btn-lg w-100 py-3">Add Message</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+            <div id="selectWhanau" class="collapse collapse-create">
+              <div class="d-flex align-items-center">
                 <button
-                  type="submit"
-                  class="btn btn-primary btn-lg w-100 py-3"
+                  type="button"
+                  class="btn btn-light flex-center p-0 rounded-1 icon-lg"
                   data-bs-toggle="collapse"
                   data-bs-target=".collapse-create"
                 >
-                  Add Message
+                  <i class="fa-solid fa-angle-left fs-5"></i>
                 </button>
+                <h6 class="h6 fw-bolder ms-2">Select Whānau</h6>
+                <button class="btn btn-sm btn-outline-primary ms-auto">Bulk Upload</button>
               </div>
-            </div>
-          </div>
-
-          <div id="selectWhanau" class="collapse collapse-create">
-            <div class="d-flex align-items-center">
-              <button
-                type="button"
-                class="btn btn-light flex-center p-0 rounded-1 icon-lg"
-                data-bs-toggle="collapse"
-                data-bs-target=".collapse-create"
-              >
-                <i class="fa-solid fa-angle-left fs-5"></i>
-              </button>
-              <h6 class="h6 fw-bolder ms-2">Select Whānau</h6>
-              <button class="btn btn-sm btn-outline-primary ms-auto">Bulk Upload</button>
-            </div>
-            <hr class="my-2" />
-
-            <div class="card align-items-center">
-              <div class="card-body col-12 col-xl-8">
-                <!-- LIST ADD WHANAU -->
-                <div class="card border mb-4">
-                  <div class="card-header border-bottom bg-white">
-                    <h6 class="h6">Add Whānau</h6>
+              <hr class="my-2" />
+  
+              <div class="card align-items-center">
+                <div class="card-body col-12 col-xl-8">
+                  <!-- LIST ADD WHANAU -->
+                  <div class="card border mb-4">
+                    <div class="card-header border-bottom bg-white">
+                      <h6 class="h6">Add Whānau</h6>
+                    </div>
+                    <div class="card-body">
+                      <div id="addWhanau" class="row g-2"></div>
+                    </div>
                   </div>
-                  <div class="card-body">
-                    <div id="addWhanau" class="row g-2"></div>
-                  </div>
-                </div>
-                <!-- SELECT WHANAU -->
-                <div class="card border">
-                  <div class="card-body">
-                    
+                  <!-- SELECT WHANAU -->
+                  <div class="card border">
+                    <div class="card-body">
+                      
 <div class="position-relative">
   <label for="search" class="icon-search show">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -431,29 +433,29 @@
   <input class="form-control w-100" type="search" placeholder="Look For Whānau" />
 </div>
 
-                    <div id="whanau" class="mb-4"></div>
-                    <button
-                      id="sendMessage"
-                      class="btn btn-secondary w-100"
-                      data-bs-toggle="modal"
-                      data-bs-target="#successModal"
-                      disabled
-                    >
-                      Send Message
-                    </button>
+                      <div id="whanau" class="mb-4"></div>
+                      <button
+                        id="sendMessage"
+                        class="btn btn-secondary w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#successModal"
+                        disabled
+                      >
+                        Send Message
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- TAB HISTORY MESSAGE -->
-        <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
-          <div id="messageHistory" class="collapse show">
-            <h6 class="h6 fw-bolder">Message History</h6>
-            <hr class="my-2" />
-            <div class="d-flex justify-content-end">
-              <div class="col-11 col-sm-auto">
+          <!-- TAB HISTORY MESSAGE -->
+          <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+            <div id="messageHistory" class="collapse show">
+              <h6 class="h6 fw-bolder">Message History</h6>
+              <hr class="my-2" />
+              <div class="d-flex justify-content-end">
+                <div class="col-11 col-sm-auto">
 <div class="position-relative">
   <label for="search" class="icon-search show">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -461,40 +463,40 @@
   <input class="form-control " type="search" placeholder="Look message history" />
 </div>
 </div>
-            </div>
-            <div class="table-responsive mt-4">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th class="col-5 col-lg-6" scope="col">Message</th>
-                    <th class="col-1" scope="col">Recepients</th>
-                    <th class="col-3 col-lg-2" scope="col">Message Time</th>
-                    <th class="col-3 col-lg-2" scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="tableRow">
-                    <td>
-                      Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A
-                    </td>
-                    <td>2</td>
-                    <td>17-08-2022, 04:00pm</td>
-                    <td class="fw-bold">
-                      <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
-                      <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button" class="text-danger"
-                        >Delete</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- LABEL ENTRIES AND PAGINATION -->
-            <div class="row align-items-center">
-              <div class="col">
-                <p class="text-secondary fs-6 fw-light">Showing 1 to 1 of 1 entries</p>
               </div>
-              <div class="col-auto">
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="col-5 col-lg-6" scope="col">Message</th>
+                      <th class="col-1" scope="col">Recepients</th>
+                      <th class="col-3 col-lg-2" scope="col">Message Time</th>
+                      <th class="col-3 col-lg-2" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="tableRow">
+                      <td>
+                        Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A
+                      </td>
+                      <td>2</td>
+                      <td>17-08-2022, 04:00pm</td>
+                      <td class="fw-bold">
+                        <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
+                        <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button" class="text-danger"
+                          >Delete</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- LABEL ENTRIES AND PAGINATION -->
+              <div class="row align-items-center">
+                <div class="col">
+                  <p class="text-secondary fs-6 fw-light">Showing 1 to 1 of 1 entries</p>
+                </div>
+                <div class="col-auto">
 <nav aria-label="Page navigation">
   <ul class="pagination">
     <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -503,37 +505,37 @@
   </ul>
 </nav>
 </div>
+              </div>
             </div>
-          </div>
-          <div id="messageHistoryDetail" class="collapse">
-            <div class="d-flex align-items-center">
-              
+            <div id="messageHistoryDetail" class="collapse">
+              <div class="d-flex align-items-center">
+                
 <a href="" role="button" class="btn bg-light flex-center p-0 rounded-1 icon-lg">
   <i class="fa-solid fa-angle-left fs-5"></i>
 </a>
 
-              <h6 class="h6 fw-bolder ms-2">Message History Details</h6>
-            </div>
-            <hr class="mb-5 mt-3" />
-            <h6 class="h6 mb-5">Message Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
-            <h6 class="h6 mb-2">Message</h6>
-            <div class="d-flex mb-4">
-              <div class="col-8">
-                <textarea class="form-control bg-light text-dark fw-light fs-6 border-0" rows="5">
-  Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
-                >
+                <h6 class="h6 fw-bolder ms-2">Message History Details</h6>
               </div>
-            </div>
-            <!-- RECIPIENTS -->
-            <h6 class="h6 mb-2">Recipients</h6>
-            <div id="listRecipients" class="row g-3 g-md-2 g-xl-4"></div>
-            <div class="row mt-4">
-              <div class="col">
-                <a id="showAllRecipients" role="button" class="text-primary fw-light"
-                  >Show <span id="qtyRecipients">1</span> more</a
-                >
+              <hr class="mb-5 mt-3" />
+              <h6 class="h6 mb-5">Message Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
+              <h6 class="h6 mb-2">Message</h6>
+              <div class="d-flex mb-4">
+                <div class="col-8">
+                  <textarea class="form-control bg-light text-dark fw-light fs-6 border-0" rows="5">
+    Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The  Visual Form Of A Document Or A</textarea
+                  >
+                </div>
               </div>
-              <div class="col-auto">
+              <!-- RECIPIENTS -->
+              <h6 class="h6 mb-2">Recipients</h6>
+              <div id="listRecipients" class="row g-3 g-md-2 g-xl-4"></div>
+              <div class="row mt-4">
+                <div class="col">
+                  <a id="showAllRecipients" role="button" class="text-primary fw-light"
+                    >Show <span id="qtyRecipients">1</span> more</a
+                  >
+                </div>
+                <div class="col-auto">
 <nav aria-label="Page navigation">
   <ul class="pagination">
     <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -542,15 +544,15 @@
   </ul>
 </nav>
 </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
-
-
+  </main>
+  
+  
 <div class="modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -672,227 +674,259 @@
 
     <!-- SCRIPT -->
     
-<script>
-  $(document).ready(function () {
-    // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
-    $('#sidebar-item > .nav-link')
-      .filter(function () {
-        return $(this).text() === 'Whānau Comms';
-      })
-      .addClass('active');
-
-    // TOGGLE STEP ITEM
-    $('button[data-bs-target=".collapse-create"]').click(function () {
-      $('.step-item').toggleClass('active');
-    });
-
-    // TIME AND DATE
-    var now = new Date();
-    function addZero(value) {
-      if (value < 10) {
-        return '0' + value;
+  <script>
+    // Custom Form Validation
+    (function () {
+      'use strict';
+  
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation');
+  
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          'submit',
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+  
+            form.classList.add('was-validated');
+          },
+          false
+        );
+      });
+    })();
+  
+    $(document).ready(function () {
+      // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
+      $('#sidebar-item > .nav-link')
+        .filter(function () {
+          return $(this).text() === 'Whānau Comms';
+        })
+        .addClass('active');
+  
+      $('.btnCheckValidate').click(function () {
+        if ($('.needs-validation')[0].checkValidity()){
+          event.preventDefault();
+          $('#messageDetail').removeClass('show');
+          $('#selectWhanau').addClass('show');
+        }
+      });
+      
+      // TOGGLE STEP ITEM
+      $('button[data-bs-target=".collapse-create"]').click(function () {
+        $('.step-item').toggleClass('active');
+      });
+  
+      // TIME AND DATE
+      var now = new Date();
+      function addZero(value) {
+        if (value < 10) {
+          return '0' + value;
+        }
+  
+        return value;
       }
-
-      return value;
-    }
-    let day = addZero(now.getDate());
-    let month = addZero(now.getMonth());
-    let year = now.getFullYear();
-    let date = year + '-' + month + '-' + day;
-    $('#time').val(now.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
-    $('#date').val(date);
-
-    let message = 'Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A';
-    $('#message').val(message);
-
-    // WHANAU
-    let whanau = [
-      { id: 0, avatar: 'profile-1.webp', name: 'Deni', lastDelivery: '17-01-2022' },
-      { id: 1, avatar: 'profile-2.webp', name: 'Deni Sugiarto', lastDelivery: '17-01-2022' },
-      { id: 2, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 3, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 4, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 5, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 6, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 7, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 8, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-      { id: 9, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
-    ];
-
-    // WHANAU MAP
-    function listAllWhanau() {
-      $('#whanau').prepend(
-        jQuery.map(whanau, function (item) {
-          return (
-            "<div class='d-flex border-bottom p-3 align-items-center'>" +
-            "<input id='whanau-" +
-            item.id +
-            "' type='checkbox' class='form-check-input me-2' />" +
-            "<img src='../assets/images/" +
-            item.avatar +
-            "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
-            '<div>' +
-            "<h6 class='fs-5 mb-1'>" +
-            item.name +
-            '</h6>' +
-            "<h6 class='fs-6'><span class='fw-light text-dark'>Last Delivery </span>" +
-            item.lastDelivery +
-            '</h6>' +
-            '</div>' +
-            '</div>'
-          );
-        })
-      );
-    }
-
-    // SELECTED WHANAU
-    let selectedWhanau = [];
-
-    function listSelectedWhanau() {
-      $('#addWhanau').children().remove();
-      $('#addWhanau').prepend(
-        jQuery.map(selectedWhanau, function (index) {
-          return (
-            "<div class='col-12 col-md-6'>" +
-            "<div class='card small bg-light'>" +
-            "<div class='card-body'>" +
-            "<div class='d-flex align-items-center'>" +
-            "<img src='../assets/images/" +
-            index.avatar +
-            "' alt='avatar' class='icon-lg rounded-circle'/>" +
-            "<div class='d-block ms-2'>" +
-            "<h6 class='fs-5 mb-1'>" +
-            index.name +
-            '</h6>' +
-            "<h6 class='fs-6'> <span class='fw-light text-dark'>Last Delivery </span>" +
-            index.lastDelivery +
-            '</h6> </div>' +
-            "<div class='ms-auto'>" +
-            "<button id='" +
-            index.id +
-            "' class='btn btn-delete btn-danger p-0 flex-center icon-lg'>" +
-            "<i class='fa-solid fa-trash text-white fs-5'></i>" +
-            '</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>'
-          );
-        })
-      );
-      $('.btn-delete').click(function () {
-        let id = $(this).prop('id');
-        removeWhanau(id);
-        listSelectedWhanau();
-        removeCheck(id);
+      let day = addZero(now.getDate());
+      let month = addZero(now.getMonth());
+      let year = now.getFullYear();
+      let date = year + '-' + month + '-' + day;
+      $('#time').val(now.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
+      $('#date').val(date);
+  
+      let message = 'Lorem Ipsum Is A Placeholder Text Commonly Used To Demonstrate The Visual Form Of A Document Or A';
+      $('#message').val(message);
+  
+      // WHANAU
+      let whanau = [
+        { id: 0, avatar: 'profile-1.webp', name: 'Deni', lastDelivery: '17-01-2022' },
+        { id: 1, avatar: 'profile-2.webp', name: 'Deni Sugiarto', lastDelivery: '17-01-2022' },
+        { id: 2, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 3, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 4, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 5, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 6, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 7, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 8, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+        { id: 9, avatar: 'profile-1.webp', name: 'Ahmed Al Aklouk', lastDelivery: '17-01-2022' },
+      ];
+  
+      // WHANAU MAP
+      function listAllWhanau() {
+        $('#whanau').prepend(
+          jQuery.map(whanau, function (item) {
+            return (
+              "<div class='d-flex border-bottom p-3 align-items-center'>" +
+              "<input id='whanau-" +
+              item.id +
+              "' type='checkbox' class='form-check-input me-2' />" +
+              "<img src='../assets/images/" +
+              item.avatar +
+              "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
+              '<div>' +
+              "<h6 class='fs-5 mb-1'>" +
+              item.name +
+              '</h6>' +
+              "<h6 class='fs-6'><span class='fw-light text-dark'>Last Delivery </span>" +
+              item.lastDelivery +
+              '</h6>' +
+              '</div>' +
+              '</div>'
+            );
+          })
+        );
+      }
+  
+      // SELECTED WHANAU
+      let selectedWhanau = [];
+  
+      function listSelectedWhanau() {
+        $('#addWhanau').children().remove();
+        $('#addWhanau').prepend(
+          jQuery.map(selectedWhanau, function (index) {
+            return (
+              "<div class='col-12 col-md-6'>" +
+              "<div class='card small bg-light'>" +
+              "<div class='card-body'>" +
+              "<div class='d-flex align-items-center'>" +
+              "<img src='../assets/images/" +
+              index.avatar +
+              "' alt='avatar' class='icon-lg rounded-circle'/>" +
+              "<div class='d-block ms-2'>" +
+              "<h6 class='fs-5 mb-1'>" +
+              index.name +
+              '</h6>' +
+              "<h6 class='fs-6'> <span class='fw-light text-dark'>Last Delivery </span>" +
+              index.lastDelivery +
+              '</h6> </div>' +
+              "<div class='ms-auto'>" +
+              "<button id='" +
+              index.id +
+              "' class='btn btn-delete btn-danger p-0 flex-center icon-lg'>" +
+              "<i class='fa-solid fa-trash text-white fs-5'></i>" +
+              '</button>' +
+              '</div>' +
+              '</div>' +
+              '</div>' +
+              '</div>' +
+              '</div>'
+            );
+          })
+        );
+        $('.btn-delete').click(function () {
+          let id = $(this).prop('id');
+          removeWhanau(id);
+          listSelectedWhanau();
+          removeCheck(id);
+          buttonSendUpdate();
+        });
+      }
+  
+      // LOAD ALL ARRAY
+      listAllWhanau();
+      listSelectedWhanau();
+  
+      //FUNCTION ADD SELECTED WHANAU
+      function addWhanau(id) {
+        selectedWhanau.push(whanau[id]);
+      }
+  
+      //FUNCTION REMOVE SELECTED WHANAU
+      function removeWhanau(id) {
+        selectedWhanau = selectedWhanau.filter((item) => {
+          return item.id != id;
+        });
+      }
+  
+      //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
+      function removeCheck(id) {
+        let item = 'whanau-' + id;
+        return $('#' + item).prop('checked', false);
+      }
+  
+      //BUTTON SEND UPDATE TRIGGER
+      function buttonSendUpdate() {
+        if (selectedWhanau.length > 0) {
+          $('#sendMessage').removeClass('btn-secondary').addClass('btn-primary').attr('disabled', false);
+        } else {
+          $('#sendMessage').removeClass('btn-primary').addClass('btn-secondary').attr('disabled', true);
+        }
+      }
+  
+      //INPUT CHECKBOX WILL ADD SELECTED WHANAU WHEN CHECK AND REMOVE WHEN UNCHECK
+      $('.form-check-input').click(function () {
+        let id = $(this).prop('id').split('-')[1];
+        if ($(this).prop('checked') == true) {
+          addWhanau(id);
+          listSelectedWhanau();
+        } else if ($(this).prop('checked') == false) {
+          removeWhanau(id);
+          listSelectedWhanau();
+        }
         buttonSendUpdate();
       });
-    }
-
-    // LOAD ALL ARRAY
-    listAllWhanau();
-    listSelectedWhanau();
-
-    //FUNCTION ADD SELECTED WHANAU
-    function addWhanau(id) {
-      selectedWhanau.push(whanau[id]);
-    }
-
-    //FUNCTION REMOVE SELECTED WHANAU
-    function removeWhanau(id) {
-      selectedWhanau = selectedWhanau.filter((item) => {
-        return item.id != id;
+  
+      //LIST RECIPIENTS MAP
+      function listRecipients(index) {
+        $('#listRecipients').children().remove();
+        $('#listRecipients').prepend(
+          jQuery.map(whanau.slice(0, index), function (item) {
+            return (
+              "<div class='col-12 col-md-4 col-lg-3'>" +
+              "<div class='d-flex p-2 border rounded'>" +
+              "<img src='../assets/images/" +
+              item.avatar +
+              "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
+              '<div>' +
+              "<h6 class='fs-5 mb-1'>" +
+              item.name +
+              '</h6>' +
+              "<h6 class='fs-6'><span class='fw-light text-secondary me-1'>Last Delivery</span>" +
+              item.lastDelivery +
+              '</h6>' +
+              '</div>' +
+              '</div>' +
+              '</div>'
+            );
+          })
+        );
+      }
+  
+      //GENERATE RECIPIENTS LIST
+      listRecipients(4);
+      $('#qtyRecipients').text(whanau.length - 4);
+  
+      //FUNCTION BUTTON SHOW MORE
+      $('#showAllRecipients').click(function () {
+        if ($(this).text() == 'Less') {
+          listRecipients(4);
+          $('#showAllRecipients').text('Show ' + (whanau.length - 4) + ' More');
+        } else {
+          listRecipients(whanau.length);
+          $(this).text('Less');
+        }
       });
-    }
-
-    //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
-    function removeCheck(id) {
-      let item = 'whanau-' + id;
-      return $('#' + item).prop('checked', false);
-    }
-
-    //BUTTON SEND UPDATE TRIGGER
-    function buttonSendUpdate() {
-      if (selectedWhanau.length > 0) {
-        $('#sendMessage').removeClass('btn-secondary').addClass('btn-primary').attr('disabled', false);
-      } else {
-        $('#sendMessage').removeClass('btn-primary').addClass('btn-secondary').attr('disabled', true);
-      }
-    }
-
-    //INPUT CHECKBOX WILL ADD SELECTED WHANAU WHEN CHECK AND REMOVE WHEN UNCHECK
-    $('.form-check-input').click(function () {
-      let id = $(this).prop('id').split('-')[1];
-      if ($(this).prop('checked') == true) {
-        addWhanau(id);
-        listSelectedWhanau();
-      } else if ($(this).prop('checked') == false) {
-        removeWhanau(id);
-        listSelectedWhanau();
-      }
-      buttonSendUpdate();
+  
+      //BUTTON BACK MESSAGE HISTORY DETAIL
+      $('#backMessageHistoryDetail').click(function () {
+        $('#messageHistoryDetail').removeClass('show');
+        $('#messageHistory').addClass('show');
+      });
+  
+      //BUTTON SEE DETAIL IN MESSAGE HISTORY
+      $('#seeDetailButton').click(function () {
+        $('#messageHistory').removeClass('show');
+        $('#messageHistoryDetail').addClass('show');
+      });
+  
+      //BUTTON DELETE IN MESSAGE HISTORY
+      $('#deleteMessageButton').click(function () {
+        $('#tableRow').children($('td')).text('No data').addClass('text-secondary');
+      });
     });
-
-    //LIST RECIPIENTS MAP
-    function listRecipients(index) {
-      $('#listRecipients').children().remove();
-      $('#listRecipients').prepend(
-        jQuery.map(whanau.slice(0, index), function (item) {
-          return (
-            "<div class='col-12 col-md-4 col-lg-3'>" +
-            "<div class='d-flex p-2 border rounded'>" +
-            "<img src='../assets/images/" +
-            item.avatar +
-            "' alt='avatar' class='icon-lg rounded-circle me-2' />" +
-            '<div>' +
-            "<h6 class='fs-5 mb-1'>" +
-            item.name +
-            '</h6>' +
-            "<h6 class='fs-6'><span class='fw-light text-secondary me-1'>Last Delivery</span>" +
-            item.lastDelivery +
-            '</h6>' +
-            '</div>' +
-            '</div>' +
-            '</div>'
-          );
-        })
-      );
-    }
-
-    //GENERATE RECIPIENTS LIST
-    listRecipients(4);
-    $('#qtyRecipients').text(whanau.length - 4);
-
-    //FUNCTION BUTTON SHOW MORE
-    $('#showAllRecipients').click(function () {
-      if ($(this).text() == 'Less') {
-        listRecipients(4);
-        $('#showAllRecipients').text('Show ' + (whanau.length - 4) + ' More');
-      } else {
-        listRecipients(whanau.length);
-        $(this).text('Less');
-      }
-    });
-
-    //BUTTON BACK MESSAGE HISTORY DETAIL
-    $('#backMessageHistoryDetail').click(function () {
-      $('#messageHistoryDetail').removeClass('show');
-      $('#messageHistory').addClass('show');
-    });
-
-    //BUTTON SEE DETAIL IN MESSAGE HISTORY
-    $('#seeDetailButton').click(function () {
-      $('#messageHistory').removeClass('show');
-      $('#messageHistoryDetail').addClass('show');
-    });
-
-    //BUTTON DELETE IN MESSAGE HISTORY
-    $('#deleteMessageButton').click(function () {
-      $('#tableRow').children($('td')).text('No data').addClass('text-secondary');
-    });
-  });
-</script>
-
+  </script>
+  
   </body>
 </html>

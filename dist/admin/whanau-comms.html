@@ -320,12 +320,13 @@
 
             <div class="card align-items-center">
               <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-                
+                <form class="needs-validation" novalidate>
+                  
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#time"><i class="fa-solid fa-clock"></i></a>
-      <div class="col ms-2">
+      <div class="col ms-2 position-relative">
         <label for="time" class="h5 mb-1">Time</label>
         <input
           id="time"
@@ -336,6 +337,9 @@
           placeholder="Type Your Time Here"
           required
         />
+        <div class="invalid-feedback mt-1">          
+          Please enter your time
+        </div>
       </div>
     </div>
   </div>
@@ -344,9 +348,8 @@
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
-      <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid
-                fa-calendar-days"></i></a>
-      <div class="col ms-2">
+      <a class="col-auto icon icon-xl bg-primary" href="#date"><i class="fa-solid fa-calendar-days"></i></a>
+      <div class="col ms-2 position-relative">
         <label for="date" class="h5 mb-1">Date</label>
         <input
           id="date"
@@ -357,24 +360,29 @@
           placeholder="Type Your Date Here"
           required
         />
+        <div class="invalid-feedback mt-1">          
+          Please enter your date
+        </div>
       </div>
     </div>
   </div>
 </div>
- 
+
+                  
 <div class="card bg-light mb-4 mb-md-3">
   <div class="card-body">
     <div class="d-flex">
       <a class="col-auto icon icon-xl bg-primary" href="#message"><i class="fa-solid fa-comment-dots"></i></a>
 
       <div class="col ms-2">
-        <label for="message" class="h5 pointer">Message</label>
+        <label for="message" class="h5 pointer mb-1">Message</label>
         <textarea
           id="message"
           name="message"
-          class="form-control fs-6 fw-light border-0 text-dark p-0 bg-light rounded-0 mt-1 pointer"
+          class="form-control fs-6 fw-light"
           rows="3"
           placeholder="Type Your Message Here"
+          style="resize: none;"
         ></textarea
         >
       </div>
@@ -382,14 +390,8 @@
   </div>
 </div>
 
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-lg w-100 py-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".collapse-create"
-                >
-                  Add Message
-                </button>
+                  <button type="submit" class="btnCheckValidate btn btn-primary btn-lg w-100 py-3">Add Message</button>
+                </form>
               </div>
             </div>
           </div>
@@ -679,6 +681,30 @@
     <!-- SCRIPT -->
     
 <script>
+  // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
     $('#sidebar-item > .nav-link')
@@ -687,6 +713,14 @@
       })
       .addClass('active');
 
+    $('.btnCheckValidate').click(function () {
+      if ($('.needs-validation')[0].checkValidity()){
+        event.preventDefault();
+        $('#messageDetail').removeClass('show');
+        $('#selectWhanau').addClass('show');
+      }
+    });
+    
     // TOGGLE STEP ITEM
     $('button[data-bs-target=".collapse-create"]').click(function () {
       $('.step-item').toggleClass('active');

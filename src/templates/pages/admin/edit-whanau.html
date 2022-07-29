@@ -1,0 +1,219 @@
+{% extends "layout-admin.html" %} {% set pageTitle = 'Edit Whānau' %} {% set cssFiles = '../assets/css/style.css' %} {%
+import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
+'../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
+'../components/cards.html' as card %} {% import '../components/modal.html' as modal %} {% block content %}
+<main class="bd-main">
+    <div class="d-flex mb-5">
+        {{ button.icon('angle-left', 'btn-gray-200', 'whanau.html') }}
+        <h3 class="h3 ms-3">Edit Whānau</h3>
+    </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card align-items-center">
+        <div class="alert-box">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Whanau data has been successfully changed
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Email address is invalid!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="card-body pt-0 col-12 col-sm-6 col-lg-7 col-xl-5">
+          <form class="needs-validation" novalidate>
+            {{ input.withIcon('fa-solid fa-user', 'Name', 'name', 'Ahmed Aklouk', 'This field is required, please enter
+            a name', 'text') }} {{ input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email',
+            'ahmedaklouk@gmail.com', 'Please enter a valid email address', 'email') }} {{ input.withIcon('fa-brands
+            fa-facebook-messenger', 'Facebook Messengger', 'fbmessengger', '@ahmedaklouk', 'Please enter a valid
+            facebook address', 'text') }} {{ input.withIcon('fa-solid fa-phone', 'Phone Number', 'phone',
+            '233665665616', 'Phone number is not valid', 'number') }}
+            <!-- ADDRESS -->
+            {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }} {{
+            input.withIconTextArea('fa-solid fa-pencil', 'Note For Whanau', 'note') }}
+            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{{ modal.addAddress() }} 
+{% endblock %} {% block script %}
+<script>
+   // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
+  let address = '',
+    newAddress = '';
+
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Whānau';
+      })
+      .addClass('active');
+
+    function loadAddressToTextArea() {
+      $('#addAddress').val(address);
+    }
+
+    function saveAddress() {
+      address = newAddress;
+      // Load data address to div with id address
+      $('#address').text(address);
+      // change text button
+      if (address != '') {
+        $('#address').addClass('mb-2').removeClass('d-none');
+        $('#btnAddress').text('Edit Address');
+      } else {
+        $('#address').removeClass('mb-2').addClass('d-none');
+        $('#btnAddress').text('Add Address');
+      }
+    }
+
+    $('#btnAddress').click(function () {
+      loadAddressToTextArea();
+    });
+
+    // Save address
+    $('.saveAddress').click(function () {
+      saveAddress();
+    });
+  });
+
+  $('select').change(function () {
+    updateAddressFromOption();
+    changeSaveBtn();
+    $('#mapNotes').addClass('show');
+  });
+
+  $('#addAddress').keyup(function (event) {
+    console.log('test: ', event.target.value);
+    $('input[name="search_terms"]').focus().val(event.target.value);
+    $('.choices__list').trigger('click');
+    changeSaveBtn();
+  });
+
+  function changeSaveBtn() {
+    if ($('#addAddress').val() != '') {
+      $('.saveAddress').removeAttr('disabled').removeClass('btn-secondary').addClass('btn-primary');
+    } else {
+      $('.saveAddress').addClass('btn-secondary').removeClass('btn-primary').attr('disabled', 'true');
+    }
+  }
+  function updateAddressFromOption() {
+    //Set newAddress from selected value;
+    newAddress = $.trim($('.choices__list--single > .choices__item--selectable').text());
+    $('#addAddress').val(newAddress);
+  }
+
+  var customTemplates = new Choices(document.getElementById('choices-custom-templates'), {
+    allowHTML: true,
+    classNames: {
+      containerInner: 'choices__inner d-none',
+      inputCloned: 'choices__input--cloned d-none',
+    },
+    callbackOnCreateTemplates: function (strToEl) {
+      var classNames = this.config.classNames;
+      var itemSelectText = this.config.itemSelectText;
+      return {
+        item: function ({ classNames }, data) {
+          return strToEl(
+            '\
+                <div\
+                  class="' +
+              String(classNames.item) +
+              ' ' +
+              String(data.highlighted ? classNames.highlightedState : classNames.itemSelectable) +
+              '"\
+                  data-item\
+                  data-id="' +
+              String(data.id) +
+              '"\
+                  data-value="' +
+              String(data.value) +
+              '"\
+                  ' +
+              String(data.active ? 'aria-selected="true"' : '') +
+              '\
+                  ' +
+              String(data.disabled ? 'aria-disabled="true"' : '') +
+              '\
+                  >\
+                  ' +
+              String(data.label) +
+              '\
+                </div>\
+              '
+          );
+        },
+        choice: function ({ classNames }, data) {
+          return strToEl(
+            '\
+                <div\
+                  class="' +
+              String(classNames.item) +
+              ' ' +
+              String(classNames.itemChoice) +
+              ' ' +
+              String(data.disabled ? classNames.itemDisabled : classNames.itemSelectable) +
+              '"\
+                  data-select-text="' +
+              String(itemSelectText) +
+              '"\
+                  data-choice \
+                  ' +
+              String(data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable') +
+              '\
+                  data-id="' +
+              String(data.id) +
+              '"\
+                  data-value="' +
+              String(data.value) +
+              '"\
+                  ' +
+              String(data.groupId > 0 ? 'role="treeitem"' : 'role="option"') +
+              '\
+                  >\
+                  <div class="d-flex">' +
+              '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
+              '<div><h6 class="h6 text-capitalize mb-1">' +
+              String(data.value) +
+              '</h6>' +
+              '<p class="fw-light">' +
+              String(data.label) +
+              '</p>' +
+              '\
+                    </div>\
+                  </div>\
+                  '
+          );
+        },
+      };
+    },
+  });
+</script>
+{% endblock %}

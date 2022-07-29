@@ -2,16 +2,18 @@
 
 <!-- INPUT MODAL -->
 {% macro input(id, header, placeholder) %}
-<div class="modal" id="{{ id }}" tabindex="-1" aria-labelledby="{{ id }}Label" aria-hidden="true">
+<div class="modal" id="{{ id }}Modal" tabindex="-1" aria-labelledby="{{ id }}Label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">{{ header }}</h5>
+        <h4 class="modal-title">{{ header }}</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control mt-3 mb-5" placeholder="{{ placeholder }}" />
-        {{ button.text('Send Message', 'btn-primary w-100', 'btnSendMessage') }}
+        <form>
+          <input type="text" class="form-control mt-3 mb-4" placeholder="{{ placeholder }}" />
+          {{ button.submit('w-100', 'Send Message') }}
+        </form>
       </div>
     </div>
   </div>
@@ -57,7 +59,7 @@
 
 {% endmacro %}
 
-<!-- DELETE COMMENT MODAL -->
+<!-- DELETE  -->
 {% macro delete(id, message) %}
 <div class="modal fade" id="delete{{ id }}Modal" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -76,6 +78,29 @@
           </div>
           <div class="col-6 col-md-auto">
             <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- DELETE ITEM -->
+{% macro deleteItem(id, message) %}
+<div class="modal fade" id="delete{{ id }}Modal" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-start">
+        <p class="mb-5">Are you sure you want to delete this {{ message }}?</p>
+        <div class="row gx-3 text-end pt-5">
+          <div class="col">
+            <a role="button" class="text-primary" data-bs-dismiss="modal">
+              Cancel
+            </a>
+          </div>
+          <div class="col-auto">
+            <a id="delete{{ id }}Button" role="button" class="text-danger" data-bs-dismiss="modal">Delete</a>
           </div>
         </div>
       </div>
@@ -206,13 +231,13 @@
         </select>
         <h6 class="h6 mt-5 mb-3 fw-bolder">Pin Address</h6>
         <div class="position-relative mb-5 ">
-          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100">
+          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100 d-none d-md-block">
             <h6 class="h6 mb-1">Set the right pin</h6>
             <p class="fw-light fs-5">
               This address will be the shipping address, please check if it is correct, if not click the map to adjust
             </p>
           </div>
-          <img src="../assets/images/maps-small.webp" alt="map" class="img-wrapper w-100 mh-200 rounded" />
+          <img src="../assets/images/maps-small.webp" alt="map" class="map-set-pin-wrapper" />
         </div>
         <button class="btn btn-secondary w-100 saveAddress" data-bs-dismiss="modal" disabled>Save Address</button>
       </div>

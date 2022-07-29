@@ -32,14 +32,17 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
         <div class="tab-pane fade" id="single-kaimahi" role="tabpanel" aria-labelledby="single-kaimahi-tab">
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-              {{ input.withIcon('fa-solid fa-user', 'Name', 'text', 'Ahmed Aklouk', 'text') }} {{
-              input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', 'ahmedaklouk@gmail.com', 'email') }} {{
-              input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger', 'fbmessage', '@ahmedaklouk',
-              'text') }} {{ input.withIcon('fa-solid fa-comment-dots', 'Phone Number', 'phone', '233665665616',
-              'number') }}
-              <!-- ADDRESS -->
-              {{ input.withIconTextArea('fa-solid fa-comment-dots', 'Address', 'address', '') }}
-              <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+              <form class="needs-validation" novalidate>
+                {{ input.withIcon('fa-solid fa-user', 'Name', 'text', 'Ahmed Aklouk', 'This field is required, please enter a name', 'text') }} {{
+                input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', 'ahmedaklouk@gmail.com', 'Please enter a valid email address', 'email') }} {{
+                input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger', 'fbmessage', '@ahmedaklouk',
+                'Please enter a valid facebook address',
+                'text') }} {{ input.withIcon('fa-solid fa-comment-dots', 'Phone Number', 'phone', '233665665616', 'Phone number is not valid',
+                'number') }}
+                <!-- ADDRESS -->
+                {{ input.withIconTextArea('fa-solid fa-comment-dots', 'Address', 'address', '') }}
+                <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+              </form>
             </div>
           </div>
         </div>
@@ -121,6 +124,30 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
 </main>
 {% endblock %} {% block script %}
 <script>
+  // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')

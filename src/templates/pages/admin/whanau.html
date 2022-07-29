@@ -1,7 +1,7 @@
 {% extends "layout-admin.html" %} {% set pageTitle = 'Whānau' %} {% set cssFiles = '../assets/css/style.css' %} {%
 import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
 '../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
-'../components/whanau-item.html' as whanauItem %} {% import '../components/modal.html' as modal %} {% block content %}
+'../components/cards.html' as card %} {% import '../components/modal.html' as modal %} {% block content %}
 <main class="bd-main">
   <div class="d-flex justify-content-between align-items-center">
     <!-- PAGE TITLE -->
@@ -18,21 +18,58 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
       Whānau', icon: 'fa-brands fa-buffer', id: 'bulk-whanau'} ]) }}
       <div class="tab-content mt-4">
         <div class="tab-pane fade show active" id="all-whanau" role="tabpanel" aria-labelledby="all-whanau-tab">
+          <div class="alert-box">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              Note added successfully
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
           <!-- WHANAU CARDS -->
-          {{ whanauItem.cards([ { courier_avatar: '../assets/images/profile-1.webp', courier_name: 'Ahmed Al Aklouk',
-          delivery: '17-01-2022', href: 'whanau-view-all.html'}, { courier_avatar: '../assets/images/profile-1.webp',
-          courier_name: 'Ahmed Al Aklouk', delivery: '17-01-2022', href: 'whanau-view-all.html'} ]) }}
+          <div class="row g-3 mb-5">
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/profile-1.webp', 'Wade Warren', 'Ntowers, Block B1, Zemin 21, Daire
+              34513 Esenyurt/İstanbul, Turkey', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal',
+              'whanau-view-all.html') }}
+            </div>
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/avatar-1.webp', 'Kristin Watson', '2972 Westheimer Rd. Santa Ana,
+              Illinois 85486', '#addNote', '', '', 'whanau-view-all.html') }}
+            </div>
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              Dakota 83475', '#addNote', '', '', 'whanau-view-all.html') }}
+            </div>
+            <div class="col-md-6">
+              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              Dakota 83475', '#addNote', '', '', 'whanau-view-all.html') }}
+            </div>
+          </div>
+          {{ pagination.ViewAllBtn() }}
         </div>
         <div class="tab-pane fade" id="single-whanau" role="tabpanel" aria-labelledby="single-whanau-tab">
           <div class="card align-items-center">
+            <div class="alert-box">
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Whanau data has been successfully changed
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Email address is invalid!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-              <form action="" novalidate>
-                {{ input.withIcon('fa-solid fa-user', 'Name', 'name', 'Ahmed Aklouk', 'text') }} {{
-                input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', 'ahmedaklouk@gmail.com', 'email') }} {{
-                input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger', 'fbmessengger', '@ahmedaklouk',
-                'text') }} {{ input.withIcon('fa-solid fa-phone', 'Phone Number', 'phone', '233665665616', 'number') }}
+              <form class="needs-validation" novalidate>
+                {{ input.withIcon('fa-solid fa-user', 'Name', 'name', 'Ahmed Aklouk', 'This field is required, please
+                enter a name', 'text') }} {{ input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email',
+                'ahmedaklouk@gmail.com', 'Please enter a valid email address', 'email') }} {{ input.withIcon('fa-brands
+                fa-facebook-messenger', 'Facebook Messengger', 'fbmessengger', '@ahmedaklouk', 'Please enter a valid
+                facebook address', 'text') }} {{ input.withIcon('fa-solid fa-phone', 'Phone Number', 'phone',
+                '233665665616', 'Phone number is not valid', 'number') }}
                 <!-- ADDRESS -->
-                {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address', '') }}
+                {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }} {{
+                input.imageWithIcon('fa-solid fa-image', 'Add Image Profile', 'imgProfile', '', 'Photo size is more than
+                2MB', 'text') }} {{ input.withIconTextArea('fa-solid fa-pencil', 'Note For Whanau', 'note') }}
                 <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
               </form>
             </div>
@@ -114,8 +151,33 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     </div>
   </div>
 </main>
-{{ modal.addAddress() }} {% endblock %} {% block script %}
+{{ modal.input('addNote', 'Add Note For Whanau', 'Please write a message here') }} {{ modal.deleteItem('Whanau',
+'Whanau') }} {{ modal.addAddress() }} {% endblock %} {% block script %}
 <script>
+  // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
   let address = '',
     newAddress = '';
 
@@ -137,10 +199,10 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
       $('#address').text(address);
       // change text button
       if (address != '') {
-        $('#address').addClass('mb-2');
+        $('#address').addClass('mb-2').removeClass('d-none');
         $('#btnAddress').text('Edit Address');
       } else {
-        $('#address').removeClass('mb-2');
+        $('#address').removeClass('mb-2').addClass('d-none');
         $('#btnAddress').text('Add Address');
       }
     }
@@ -155,26 +217,21 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     });
   });
 
-
-  $('select').change(function() {
+  //Detect selected item, change input address from selected item, and update save button
+  $('select').change(function () {
     updateAddressFromOption();
     changeSaveBtn();
     $('#mapNotes').addClass('show');
-    console.log('option berubah');
-  })
+  });
 
   $('#addAddress').keyup(function (event) {
-    console.log('test: ', event.target.value);
     $('input[name="search_terms"]').focus().val(event.target.value);
     $('.choices__list').trigger('click');
-    // $('#addAddress').trigger('click');
-    // $('#addAddress').focus();
-    console.log('isi: ', $('select.choices__input > option').text())
     changeSaveBtn();
   });
 
   function changeSaveBtn() {
-    if($('#addAddress').val() != '') {
+    if ($('#addAddress').val() != '') {
       $('.saveAddress').removeAttr('disabled').removeClass('btn-secondary').addClass('btn-primary');
     } else {
       $('.saveAddress').addClass('btn-secondary').removeClass('btn-primary').attr('disabled', 'true');
@@ -186,10 +243,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     $('#addAddress').val(newAddress);
   }
 
-  // $(document).change(function () {
-
-  // })
-
+  //Show suggestion box in add address modal
   var customTemplates = new Choices(document.getElementById('choices-custom-templates'), {
     allowHTML: true,
     classNames: {
@@ -259,14 +313,14 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
               '\
                   >\
                   <div class="d-flex">' +
-                    '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
-                    '<div><h6 class="h6 text-capitalize mb-1">' +
-                      String(data.value) +
-                    '</h6>' +
-                    '<p class="fw-light">' +
-                       String(data.label) +
-                    '</p>' +
-                  '\
+              '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
+              '<div><h6 class="h6 text-capitalize mb-1">' +
+              String(data.value) +
+              '</h6>' +
+              '<p class="fw-light">' +
+              String(data.label) +
+              '</p>' +
+              '\
                     </div>\
                   </div>\
                   '
@@ -274,6 +328,20 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
         },
       };
     },
+  });
+
+  // Show image preview from Input Image Profile
+  $('input[name="imgProfile"]').change(function (event) {
+    let file = event.target.files[0];
+    if (file) {
+      let imgUrl = URL.createObjectURL(file);
+      $('.imgProfilePreview').html(
+        `<img src='${imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />`
+      );
+    } else {
+      $('.imgProfilePreview')
+        .html(`<i class="fas fa-plus fs-3 text-dark"></i>`);
+    }
   });
 </script>
 {% endblock %}

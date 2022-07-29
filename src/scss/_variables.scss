@@ -67,7 +67,7 @@ $info: $blue;
 $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
-$dark: $gray-800;
+$dark: $gray-900;
 
 $theme-colors: (
   'primary': $primary,
@@ -148,6 +148,9 @@ $input-padding-x: 1rem;
 
 //FORM FLOATING
 $form-floating-label-transform: scale(0.75) translateY(-0.4rem) translateX(0.55rem);
+
+//FORM VALIDATION
+$form-feedback-icon-valid: '';
 
 //INPUT
 $input-btn-padding-y: 1rem;

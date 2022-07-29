@@ -1,6 +1,6 @@
-{% extends "layout-admin.html" %} {% set pageTitle = 'Whānau Comms' %} {% set cssFiles = '../assets/css/style.css' %} {%
-block content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as
-input %} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
+{% extends "layout-admin.html" %} {% set pageTitle = 'Whānau Comms' %} {% set cssFiles = '../assets/css/style.css' %} {% block
+content %} {% import '../components/input-search.html' as inputSearch %} {% import '../components/input.html' as input
+%} {% import '../components/buttons.html' as button %} {% import '../components/modal.html' as modal %} {% import
 '../components/pagination.html' as pagination %}
 <main class="bd-main">
   <!-- PAGE TITLE -->
@@ -61,17 +61,12 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
 
             <div class="card align-items-center">
               <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
-                {{ input.withIcon('fa-solid fa-clock', 'Time', 'time', '', 'time') }} {{ input.withIcon('fa-solid
-                fa-calendar-days', 'Date', 'date', '', 'date') }} {{ input.withIconTextArea('fa-comment-dots',
-                'Message', 'message', '', 'text') }}
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-lg w-100 py-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".collapse-create"
-                >
-                  Add Message
-                </button>
+                <form class="needs-validation" novalidate>
+                  {{ input.withIcon('fa-solid fa-clock', 'Time', 'time', '', 'Please enter your time', 'time') }} {{
+                  input.withIcon('fa-solid fa-calendar-days', 'Date', 'date', '', 'Please enter your date', 'date') }}
+                  {{ input.withIconTextArea('fa-comment-dots', 'Message', 'message', '', 'text') }}
+                  <button type="submit" class="btnCheckValidate btn btn-primary btn-lg w-100 py-3">Add Message</button>
+                </form>
               </div>
             </div>
           </div>
@@ -201,6 +196,30 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
 {{ modal.success('successModal' ,'The message has been sent to admin for review', 'index.html',
 '../assets/icons/icon-check.svg') }} {{ modal.delete('Message', 'Message') }} {% endblock %} {% block script %}
 <script>
+  // Custom Form Validation
+  (function () {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
+    });
+  })();
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau Comms SIDEBAR
     $('#sidebar-item > .nav-link')
@@ -209,6 +228,14 @@ input %} {% import '../components/buttons.html' as button %} {% import '../compo
       })
       .addClass('active');
 
+    $('.btnCheckValidate').click(function () {
+      if ($('.needs-validation')[0].checkValidity()){
+        event.preventDefault();
+        $('#messageDetail').removeClass('show');
+        $('#selectWhanau').addClass('show');
+      }
+    });
+    
     // TOGGLE STEP ITEM
     $('button[data-bs-target=".collapse-create"]').click(function () {
       $('.step-item').toggleClass('active');
