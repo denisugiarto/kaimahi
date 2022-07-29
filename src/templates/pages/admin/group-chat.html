@@ -163,7 +163,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
                             
           // Video wrapper
           let videoWrapper = `<img src='${key.imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
-                              <a onclick='playVideo()' id='delete-images-' role='button' class='delete-files rounded-circle border bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
+                              <a onclick='playVideo()' role='button' class='rounded-circle border bg-white position-absolute icon-md fs-4 flex-center top-50 start-50 translate-middle'>
                                 <i class='fa-solid fa-play lh-sm'></i>
                               </a>`;
 
@@ -179,7 +179,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
             
           element.innerHTML = `<div class='position-relative'>
                                 ${wrapper}
-                                <a onclick='deleteImage(${index})' role='button' class='delete-files rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+                                <a onclick='deleteImage(${index})' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
                                   <i class='fa-solid fa-xmark'></i>
                                 </a>
                               </div>`;

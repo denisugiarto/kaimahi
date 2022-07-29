@@ -34,19 +34,22 @@
       <div class="col ms-2 position-relative">
         <label for="{{ name }}" class="h5 mb-1">{{ label }}</label>
         <div class="d-flex align-items-center">
-          <label for="{{ name }}" class="imgProfilePreview icon border-1 border-dashed border-dark icon-xxl rounded">
-            <i class="fas fa-plus fs-3 text-dark"></i>
-          </label>
+          <div class="imgProfilePreview">
+            <label for="{{ name }}" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+              <i class="fas fa-plus fs-3 text-dark"></i>
+            </label>
+          </div>
           <input
             id="{{ name }}"
             name="{{ name }}"
-            class="form-control fs-4 fw-light ms-2"
+            class="d-none"
             value="{{ value }}"
             type="file"
             placeholder="Type Your {{ label }} Here"
             accept="image/*"
             required
           />
+          <div class="fileName form-control text-secondary fw-light ms-2">No file chosen</div>
         </div>
         <div class="form-text d-flex align-items-center mt-1"><i class="fas fa-exclamation text-warning icon-xs border border-warning rounded-circle d-inline-flex justify-content-center fs-7 me-1"></i>Max photo size 2MB</div>
         <div class="invalid-feedback mt-1">          
