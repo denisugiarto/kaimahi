@@ -484,8 +484,8 @@
 </div>
             </div>
             <div class="table-responsive mt-4">
-              <table class="table table-bordered">
-                <thead>
+              <table class="table">
+                <thead class="text-center">
                   <tr>
                     <th scope="col">Event Name</th>
                     <th scope="col">Recepients</th>
@@ -494,12 +494,17 @@
                     <th scope="col"></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                   <tr id="tableRow">
                     <td>Lorem Ipsum</td>
                     <td>20</td>
                     <td>17-08-2022, 04:00pm</td>
-                    <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey</td>
+                    <td>
+                      Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.
+                      <a role="button" class="d-inline-flex icon icon-md btn-primary rounded-circle"
+                        ><i class="fas fa-share-square fs-6"></i
+                      ></a>
+                    </td>
                     <td class="fw-bold">
                       <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
                       <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button" class="text-danger"
@@ -539,11 +544,14 @@
             <h6 class="h6 mb-5">Events Nama : <span class="fs-5 text-secondary">Lorem Ipsum</span></h6>
             <h6 class="h6 mb-5">Events Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
             <h6 class="h6 mb-2">Location</h6>
-            <div class="d-flex mb-4">
-              <div class="col-12 col-sm-7 col-xl-4">
-                <div name class="bg-light text-dark fw-light fs-6 rounded p-2">
+            <div class="col-12 col-sm-7 col-xl-4 mb-4 bg-light rounded p-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="text-dark fw-light fs-6">
                   Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey
                 </div>
+                <a role="button" class="icon icon-md btn-primary rounded-circle"
+                  ><i class="fas fa-share-square fs-6"></i
+                ></a>
               </div>
             </div>
             <!-- RECIPIENTS -->
