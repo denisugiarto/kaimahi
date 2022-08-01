@@ -262,205 +262,44 @@
       <!-- CONTENT -->
       
 <main class="bd-main">
-  <div class="row align-items-center">
-    <div class="col-12 col-xl">
-      <!-- PAGE TITLE -->
-      <h1 class="page-title">All Deliveries<sup class="h6 text-primary">12265</sup></h1>
-    </div>
-    <!-- SEARCH AND FILTER -->
-    <div class="col-12 col-md-6 col-xl-auto">
-<div class="d-flex flex-row align-items-center mb-5" role="group" aria-label="Search and filter">
-  <div class="position-relative flex-fill">
-    <label for="search" class="icon-search show">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </label>
-    <input
-      class="form-control rounded-0 rounded-start w-100 border border-white bg-white"
-      type="search"
-      placeholder="Look For Whānau"
-    />
+  <div class="d-flex align-items-center">
+    <button
+      type="button"
+      class="btn btn-gray-200 flex-center p-0 rounded-1 icon-lg"
+      data-bs-toggle="collapse"
+      data-bs-target=".collapse-create"
+    >
+      <i class="fa-solid fa-angle-left fs-5"></i>
+    </button>
+    <h6 class="h6 fw-bolder ms-2">Create Delivery List</h6>
   </div>
-  <div class="col-auto">
-<a id="" href="#" role="button" class="btn bg-white rounded-0 p-2"> Filter </a>
-</div>
-  <div class="col-auto">
-<a id="" href="#" role="button" class="btn btn-primary rounded-0 rounded-end fw-light py-2 px-3"> Search </a>
-</div>
-</div>
-</div>
-    <div class="col-12 col-md-6 col-xl-auto">
-      
-<a id="btn-delivery" href="create-delivery.html" role="button" class="btn btn-outline-primary mb-5 w-100 py-2"> Create Delivery List </a>
+  <hr class="my-2" />
 
-    </div>
-  </div>
-  <div class="row gx-2 gy-3 mb-5">
-    <div class="col-xl-4">
-<div class="card">
-  <div class="card-body">
-    <div class="d-flex">
-      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
-        <i class="fa-solid fa-newspaper"></i>
-      </div>
-      <div class="card-text">
-        <h4 class="fs-2">26359</h4>
-        <p class="fs-6 fw-light">All Deliveries</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-    <div class="col-xl-4">
-<div class="card">
-  <div class="card-body">
-    <div class="d-flex">
-      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
-        <i class="fa-solid fa-truck-fast"></i>
-      </div>
-      <div class="card-text">
-        <h4 class="fs-2">26359</h4>
-        <p class="fs-6 fw-light">Current Deliveries</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-    <div class="col-xl-4">
-<div class="card">
-  <div class="card-body">
-    <div class="d-flex">
-      <div class="fs-2 flex-center icon-xl bg-primary text-white rounded-circle me-2">
-        <i class="fa-solid fa-truck"></i>
-      </div>
-      <div class="card-text">
-        <h4 class="fs-2">26359</h4>
-        <p class="fs-6 fw-light">Completed Deliveries</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <!-- MY DELIVERIES -->
-      <div class="row g-3 mb-2">
-        <div class="col-12 col-sm">
-          <h5 class="h5 mb-1">My Deliveries</h5>
-          <h6 class="fw-light fs-6">Total Whānau <span class="text-primary fw-bold">5</span></h6>
+  <div class="card align-items-center">
+    <div class="card-body col-12 col-xl-8">
+      <!-- LIST ADD WHANAU -->
+      <div class="card border mb-4">
+        <div class="card-header border-bottom bg-white">
+          <h6 class="h6">Add Whānau</h6>
         </div>
-        <div class="col-auto">
-          <div class="bg-brand-100 py-1 px-3 fw-light rounded">Completed</div>
-        </div>
-        <div class="col-auto">
-<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-trash-can fs-5"></i>
-</a>
-</div>
-      </div>
-      <div class="card bg-light mb-5">
-        <div class="card-body px-3 py-2">
-          <div class="row gx-2 align-items-center">
-            <div class="col-auto">
-              <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
-            </div>
-            <div class="col">
-              <h6 class="mb-1">Ahmed Al Aklouk</h6>
-              <h6 class="fs-6"><span class="fw-light text-secondary me-1">Last Delivery</span>17-01-2022</h6>
-            </div>
-          </div>
+        <div class="card-body">
+          <div class="selectedWhanau row g-2"></div>
         </div>
       </div>
-      <div class="fade collapse show viewType">
-        <div class="d-flex justify-content-between mb-3">
-          <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
-          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">View List</a>
+      <!-- SELECT WHANAU -->
+      <div class="card border">
+        <div class="card-body">
+          <div class="whanauList mb-4"></div>
+          <button
+            id="sendMessage"
+            class="btn btn-secondary w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#successModal"
+            disabled
+          >
+            Create Delivery List
+          </button>
         </div>
-        <!-- MAP CARDS -->
-        <img src="../assets/images/map-deliveries.webp" alt="maps" class="img-fluid rounded shadow" />
-        <!-- PAGINATION -->
-        
-<div class="d-flex mt-5">
-  <div class="col">
-    <a role="button" href="#" class="text-primary fw-light">View all</a>
-  </div>
-  <div class="col-auto">
-    <nav aria-label="Page navigation">
-      <ul class="pagination">
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-
-      </div>
-      <div class="fade collapse viewType">
-        <div class="d-flex justify-content-between mb-3">
-          <h5 class="h5 mb-1">Whānau Deliveries List</h5>
-          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">View Map</a>
-        </div>
-        <!-- TABLE -->
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th class="text-center" scope="col">Name</th>
-                <th class="text-center" scope="col">Locations</th>
-                <th class="text-center" scope="col">Descriptions</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="text-center">
-              <tr>
-                <td scope="row"><input type="checkbox" class="form-check-input" /></td>
-                <td>Family_1</td>
-                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
-                <td>-</td>
-                <td>
-                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row"><input type="checkbox" class="form-check-input" checked /></td>
-                <td>Family_2</td>
-                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
-                <td>Delivery Complete</td>
-                <td>
-                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
-                </td>
-              </tr>
-              <tr class="text-secondary">
-                <td scope="row"><input type="checkbox" class="form-check-input" disabled /></td>
-                <td>Family_3</td>
-                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
-                <td>whānau is already in another Kaimahi delivery list</td>
-                <td>
-                  <a class="rounded-circle btn-secondary icon icon-md"><i class="fas fa-share-square"></i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- PAGINATION -->
-        
-<div class="d-flex mt-5">
-  <div class="col">
-    <p class="text-secondary fw-light">Showing 1 to 1 of 1 entries</p>
-  </div>
-  <div class="col-auto">
-    <nav aria-label="Page navigation">
-      <ul class="pagination">
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-
       </div>
     </div>
   </div>
@@ -556,6 +395,163 @@
     <!-- SCRIPT -->
     
 <script>
+  // Data whanau
+  let dataWhanau = [
+    {
+      id: 0,
+      avatar: 'profile-1.webp',
+      name: 'Deni',
+      address: 'Ntowers, Block B1, Zemin 21, \n Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 1,
+      avatar: 'profile-2.webp',
+      name: 'Deni Sugiarto',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 2,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 3,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 4,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 5,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 6,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 7,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 8,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 9,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+  ];
+
+  let dataSelectedWhanau = [];
+
+  // WHANAU MAP
+  function listAllWhanau() {
+    $('.whanauList').prepend(
+      jQuery.map(dataWhanau, function (item) {
+        return `<div class='d-flex border-bottom p-3 align-items-center'>
+                    <input id='whanau-${item.id}' type='checkbox' class='form-check-input me-2' />
+                    <img src='../assets/images/${item.avatar}' alt='avatar' class='icon-lg rounded-circle me-2' />
+                    <div class='col-6'>
+                        <h6 class='fs-5 mb-1'>
+                            ${item.name}
+                        </h6>
+                        <div class="d-flex align-items-start">
+                            <div class="fs-6 me-1"><i class='fas fa-location-dot text-gray-dark'></i></div>
+                            <h6 class='fs-6 fw-light text-gray-dark'>
+                                ${item.address}
+                            </h6>
+                        </div>
+                    </div>
+                </div>`;
+      })
+    );
+  }
+
+  function listSelectedWhanau() {
+    $('.selectedWhanau').children().remove();
+    $('.selectedWhanau').prepend(
+      jQuery.map(dataSelectedWhanau, function (index) {
+        return `<div class='col-12 col-md-6'>
+                    <div class='card small bg-light'>
+                        <div class='card-body'>
+                            <div class='d-flex align-items-center'>
+                                <img src='../assets/images/${index.avatar}' alt='avatar' class='icon-lg rounded-circle'/>
+                                <div class='d-block ms-2'>
+                                    <h6 class='fs-5 mb-1'>
+                                        ${index.name}
+                                    </h6>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fs-6 me-1"><i class='fas fa-location-dot text-gray-dark'></i></div>
+                                        <h6 class='fs-6 fw-light text-gray-dark'>
+                                            ${index.address}
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class='ms-auto'>
+                                    <button id='${index.id}' class='btn btn-delete btn-danger p-0 flex-center icon-lg'>
+                                        <i class='fa-solid fa-trash-alt text-white fs-5'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          `;
+      })
+    );
+    $('.btn-delete').click(function () {
+      let id = $(this).prop('id');
+      removeWhanau(id);
+      listSelectedWhanau();
+      removeCheck(id);
+      buttonSendUpdate();
+    });
+  }
+
+  //FUNCTION ADD SELECTED WHANAU
+  function addWhanau(id) {
+    dataSelectedWhanau.push(dataWhanau[id]);
+  }
+
+  //FUNCTION REMOVE SELECTED WHANAU
+  function removeWhanau(id) {
+    dataSelectedWhanau = dataSelectedWhanau.filter((item) => {
+      return item.id != id;
+    });
+  }
+
+  //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
+  function removeCheck(id) {
+    let item = 'whanau-' + id;
+    return $('#' + item).prop('checked', false);
+  }
+
+  //BUTTON SEND UPDATE TRIGGER
+  function buttonSendUpdate() {
+    if (dataSelectedWhanau.length > 0) {
+      $('#sendMessage').removeClass('btn-secondary').addClass('btn-primary').attr('disabled', false);
+    } else {
+      $('#sendMessage').removeClass('btn-primary').addClass('btn-secondary').attr('disabled', true);
+    }
+  }
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
@@ -563,7 +559,24 @@
         return $(this).text() === 'Deliveries';
       })
       .addClass('active');
-    $('textarea[name="address"]').text('Ntowers, Block B1, Zemin 21,Daire 34513 Esenyurt/İstanbul, Turkey');
+    // Load Whanau list and selected whanau
+    listAllWhanau();
+    listSelectedWhanau();
+
+    //INPUT CHECKBOX WILL ADD SELECTED WHANAU WHEN CHECK AND REMOVE WHEN UNCHECK
+    $('.form-check-input').click(function () {
+      let id = $(this).prop('id').split('-')[1];
+      if ($(this).prop('checked') == true) {
+        console.log('checked');
+        addWhanau(id);
+        listSelectedWhanau();
+      } else if ($(this).prop('checked') == false) {
+        console.log('unchecked');
+        removeWhanau(id);
+        listSelectedWhanau();
+      }
+      buttonSendUpdate();
+    });
   });
 </script>
 
