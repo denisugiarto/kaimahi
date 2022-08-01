@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Notifications</title>
+  <title>Deliveries</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
@@ -260,275 +260,49 @@
 
 
       <!-- CONTENT -->
-             
-
+      
 <main class="bd-main">
-  <!-- PAGE TITLE -->
-  <h1 class="page-title">Notifications</h1>
-  <div class="card card--notification">
-    <div class="card-header border-bottom">
-      <div class="row gy-3 align-items-center">
-        <div class="col-12 col-sm">
-          
-<a href="index.html" role="button" class="d-flex align-items-center">
-  <i class="fa-solid fa-angle-left fs-5 me-2 bg-light btn flex-center p-0 rounded-1 icon-lg px-2 px-md-3 py-1"></i>
-  <h6 class="h6">Back</h6>
-</a>
+  <div class="d-flex align-items-center mb-5">
+    <button
+      type="button"
+      class="btn btn-gray-200 flex-center p-0 rounded-1 icon-lg"
+      data-bs-toggle="collapse"
+      data-bs-target=".collapse-create"
+    >
+      <i class="fa-solid fa-angle-left fs-5"></i>
+    </button>
+    <h6 class="fs-1 ms-2">Create Delivery List</h6>
+  </div>
 
+  <div class="card align-items-center">
+    <div class="card-body col-12 col-xl-8">
+      <!-- LIST ADD WHANAU -->
+      <div class="card border mb-4">
+        <div class="card-header border-bottom bg-white">
+          <h6 class="h6">Add Whānau</h6>
         </div>
-        <div class="col-12 col-sm-auto">
-          <p class="fs-4 fw-light">Notifications only show for the last 15 days</p>
+        <div class="card-body">
+          <div class="selectedWhanau row g-2"></div>
         </div>
       </div>
-    </div>
-    <div class="card-body">
-      
-<div class="nav nav-tabs" role="tablist">
-  
-  <a
-    class="col-auto nav-link active"
-    id="all-notification-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#all-notification"
-    type="button"
-    role="tab"
-    aria-controls="all-notification"
-    aria-selected="true"
-  >
-    All
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="unread-notification-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#unread-notification"
-    type="button"
-    role="tab"
-    aria-controls="unread-notification"
-    aria-selected="true"
-  >
-    Unread
-  </a>
-  
-</div>
-
-
-      <div class="tab-content mt-3">
-        <div
-          class="tab-pane fade show active"
-          id="all-notification"
-          role="tabpanel"
-          aria-labelledby="all-notification-tab"
-        >
-          
-<div class="notification-message unread">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto">
-      <div class="status">Unread</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Mark Read</span>
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
-</div>
- 
-<div class="notification-message">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
-</div>
- 
-<div class="notification-message">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is simply dummy text of
-          the printing and typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
-</div>
- 
-<div class="notification-message">
-  <div class="d-flex align-items-center">
-    <div class="col-auto">
-      <div class="title">Lorem</div>
-    </div>
-    <div class="col-auto ms-auto">
-      <a
-        role="button"
-        class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-ellipsis-h"></i>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i
-              class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-            ></i>
-            <span class="fw-light fs-6">Remove This Notification </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <a role="button" class="col-auto ms-2 text-primary fs-6 fw-bold d-flex align-items-center">
-      Check<i class="fa-solid fa-angle-right ms-2 fs-4"></i>
-    </a>
-  </div>
-  <div class="message">Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry.</div>
-  <div class="time">16-06-2022 11.51</div>
-</div>
-
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="col-auto">
-              <a role="button" class="text-primary fw-light">Mark as read</a>
-            </div>
-            <div class="col-auto">
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-  </ul>
-</nav>
-</div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="unread-notification" role="tabpanel" aria-labelledby="unread-notification-tab">
-          <div class="notification-message unread">
-            <div class="d-flex align-items-center">
-              <div class="col-auto">
-                <div class="title">Lorem</div>
-              </div>
-              <div class="col-auto">
-                <div class="status">Unread</div>
-              </div>
-              <div class="col-auto ms-auto">
-                <a
-                  role="button"
-                  class="dropdown-toggle no-icon flex-center rounded-circle bg-white border"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fa-solid fa-ellipsis-h"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i
-                        class="fa-solid fa-check bg-primary icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                      ></i>
-                      <span class="fw-light fs-6">Mark Read</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i
-                        class="fa-solid fa-trash-alt bg-danger icon-sm rounded-circle d-inline-flex flex-center text-white fs-7"
-                      ></i>
-                      <span class="fw-light fs-6">Remove This Notification </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-          </div>
+      <!-- SELECT WHANAU -->
+      <div class="card border">
+        <div class="card-body">
+          <div class="whanauList mb-4"></div>
+          <button
+            id="sendMessage"
+            class="btn btn-secondary w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#successModal"
+            disabled
+          >
+            Create Delivery List
+          </button>
         </div>
       </div>
     </div>
   </div>
 </main>
-
 
     </div>
     <!-- FOOTER -->
@@ -620,7 +394,189 @@
     <!-- SCRIPT -->
     
 <script>
-  $(document).ready(function () {});
+  // Data whanau
+  let dataWhanau = [
+    {
+      id: 0,
+      avatar: 'profile-1.webp',
+      name: 'Deni',
+      address: 'Ntowers, Block B1, Zemin 21, \n Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 1,
+      avatar: 'profile-2.webp',
+      name: 'Deni Sugiarto',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 2,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 3,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 4,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 5,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 6,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 7,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 8,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+    {
+      id: 9,
+      avatar: 'profile-1.webp',
+      name: 'Ahmed Al Aklouk',
+      address: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey',
+    },
+  ];
+
+  let dataSelectedWhanau = [];
+
+  // WHANAU MAP
+  function listAllWhanau() {
+    $('.whanauList').prepend(
+      jQuery.map(dataWhanau, function (item) {
+        return `<div class='d-flex border-bottom p-3 align-items-center'>
+                    <input id='whanau-${item.id}' type='checkbox' class='form-check-input me-2' />
+                    <img src='../assets/images/${item.avatar}' alt='avatar' class='icon-lg rounded-circle me-2' />
+                    <div class='col-6'>
+                        <h6 class='fs-5 mb-1'>
+                            ${item.name}
+                        </h6>
+                        <div class="d-flex align-items-start">
+                            <div class="fs-6 me-1"><i class='fas fa-location-dot text-gray-dark'></i></div>
+                            <h6 class='fs-6 fw-light text-gray-dark'>
+                                ${item.address}
+                            </h6>
+                        </div>
+                    </div>
+                </div>`;
+      })
+    );
+  }
+
+  function listSelectedWhanau() {
+    $('.selectedWhanau').children().remove();
+    $('.selectedWhanau').prepend(
+      jQuery.map(dataSelectedWhanau, function (index) {
+        return `<div class='col-12 col-md-6'>
+                    <div class='card small bg-light'>
+                        <div class='card-body'>
+                            <div class='d-flex align-items-center'>
+                                <img src='../assets/images/${index.avatar}' alt='avatar' class='icon-lg rounded-circle'/>
+                                <div class='d-block ms-2'>
+                                    <h6 class='fs-5 mb-1'>
+                                        ${index.name}
+                                    </h6>
+                                    <div class="d-flex align-items-center">
+                                        <div class="fs-6 me-1"><i class='fas fa-location-dot text-gray-dark'></i></div>
+                                        <h6 class='fs-6 fw-light text-gray-dark'>
+                                            ${index.address}
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class='ms-auto'>
+                                    <button id='${index.id}' class='btn btn-delete btn-danger p-0 flex-center icon-lg'>
+                                        <i class='fa-solid fa-trash-alt text-white fs-5'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          `;
+      })
+    );
+    $('.btn-delete').click(function () {
+      let id = $(this).prop('id');
+      removeWhanau(id);
+      listSelectedWhanau();
+      removeCheck(id);
+      buttonSendUpdate();
+    });
+  }
+
+  //FUNCTION ADD SELECTED WHANAU
+  function addWhanau(id) {
+    dataSelectedWhanau.push(dataWhanau[id]);
+  }
+
+  //FUNCTION REMOVE SELECTED WHANAU
+  function removeWhanau(id) {
+    dataSelectedWhanau = dataSelectedWhanau.filter((item) => {
+      return item.id != id;
+    });
+  }
+
+  //MAKE INPUT CHECKBOX TO UNCHECK / FALSE
+  function removeCheck(id) {
+    let item = 'whanau-' + id;
+    return $('#' + item).prop('checked', false);
+  }
+
+  //BUTTON SEND UPDATE TRIGGER
+  function buttonSendUpdate() {
+    if (dataSelectedWhanau.length > 0) {
+      $('#sendMessage').removeClass('btn-secondary').addClass('btn-primary').attr('disabled', false);
+    } else {
+      $('#sendMessage').removeClass('btn-primary').addClass('btn-secondary').attr('disabled', true);
+    }
+  }
+
+  $(document).ready(function () {
+    // ADD CLASS ACTIVE TO Whānau SIDEBAR
+    $('#sidebar-item > .nav-link')
+      .filter(function () {
+        return $(this).text() === 'Deliveries';
+      })
+      .addClass('active');
+    // Load Whanau list and selected whanau
+    listAllWhanau();
+    listSelectedWhanau();
+
+    //INPUT CHECKBOX WILL ADD SELECTED WHANAU WHEN CHECK AND REMOVE WHEN UNCHECK
+    $('.form-check-input').click(function () {
+      let id = $(this).prop('id').split('-')[1];
+      if ($(this).prop('checked') == true) {
+        console.log('checked');
+        addWhanau(id);
+        listSelectedWhanau();
+      } else if ($(this).prop('checked') == false) {
+        console.log('unchecked');
+        removeWhanau(id);
+        listSelectedWhanau();
+      }
+      buttonSendUpdate();
+    });
+  });
 </script>
 
   </body>

@@ -290,7 +290,7 @@
 </div>
     <div class="col-12 col-md-6 col-xl-auto">
       
-<a id="" href="#" role="button" class="btn btn-outline-primary mb-5 w-100 py-2"> Create Delivery List </a>
+<a id="btn-delivery" href="create-delivery.html" role="button" class="btn btn-outline-primary mb-5 w-100 py-2"> Create Delivery List </a>
 
     </div>
   </div>
@@ -371,14 +371,15 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-between mb-3">
-        <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
-        <a href="" class="text-primary fs-5 fw-light" role="button">View List</a>
-      </div>
-      <!-- MAP CARDS -->
-      <img src="../assets/images/map-deliveries.webp" alt="maps" class="img-fluid rounded shadow" />
-      <!-- PAGINATION -->
-      
+      <div class="fade collapse show viewType">
+        <div class="d-flex justify-content-between mb-3">
+          <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
+          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">View List</a>
+        </div>
+        <!-- MAP CARDS -->
+        <img src="../assets/images/map-deliveries.webp" alt="maps" class="img-fluid rounded shadow" />
+        <!-- PAGINATION -->
+        
 <div class="d-flex mt-5">
   <div class="col">
     <a role="button" href="#" class="text-primary fw-light">View all</a>
@@ -394,6 +395,73 @@
   </div>
 </div>
 
+      </div>
+      <div class="fade collapse viewType">
+        <div class="d-flex justify-content-between mb-3">
+          <h5 class="h5 mb-1">Whānau Deliveries List</h5>
+          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">View Map</a>
+        </div>
+        <!-- TABLE -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th class="text-center" scope="col">Name</th>
+                <th class="text-center" scope="col">Locations</th>
+                <th class="text-center" scope="col">Descriptions</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td scope="row"><input type="checkbox" class="form-check-input" /></td>
+                <td>Family_1</td>
+                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>-</td>
+                <td>
+                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row"><input type="checkbox" class="form-check-input" checked /></td>
+                <td>Family_2</td>
+                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>Delivery Complete</td>
+                <td>
+                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
+                </td>
+              </tr>
+              <tr class="text-secondary">
+                <td scope="row"><input type="checkbox" class="form-check-input" disabled /></td>
+                <td>Family_3</td>
+                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>whānau is already in another Kaimahi delivery list</td>
+                <td>
+                  <a class="rounded-circle btn-secondary icon icon-md"><i class="fas fa-share-square"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- PAGINATION -->
+        
+<div class="d-flex mt-5">
+  <div class="col">
+    <p class="text-secondary fw-light">Showing 1 to 1 of 1 entries</p>
+  </div>
+  <div class="col-auto">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+      </div>
     </div>
   </div>
 </main>
