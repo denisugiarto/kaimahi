@@ -274,30 +274,41 @@
     <h6 class="fs-1 ms-2">Create Delivery List</h6>
   </div>
 
-  <div class="card align-items-center">
-    <div class="card-body col-12 col-xl-8">
-      <!-- LIST ADD WHANAU -->
-      <div class="card border mb-4">
-        <div class="card-header border-bottom bg-white">
-          <h6 class="h6">Add Whānau</h6>
-        </div>
-        <div class="card-body">
-          <div class="selectedWhanau row g-2"></div>
+  <div class="card">
+    <div class="card-body">
+      <!-- Alert -->
+      <div class="alert-box">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          2 whanau successfully added to shipping list
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </div>
-      <!-- SELECT WHANAU -->
-      <div class="card border">
-        <div class="card-body">
-          <div class="whanauList mb-4"></div>
-          <button
-            id="sendMessage"
-            class="btn btn-secondary w-100"
-            data-bs-toggle="modal"
-            data-bs-target="#successModal"
-            disabled
-          >
-            Create Delivery List
-          </button>
+      <div class="d-flex flex-column align-items-center">
+        <div class="col-12 col-xl-8">
+            <!-- LIST ADD WHANAU -->
+            <div class="card border mb-4">
+              <div class="card-header border-bottom bg-white">
+                <h6 class="h6">Add Whānau</h6>
+              </div>
+              <div class="card-body">
+                <div class="selectedWhanau row g-2"></div>
+              </div>
+            </div>
+            <!-- SELECT WHANAU -->
+            <div class="card border">
+              <div class="card-body">
+                <div class="whanauList mb-4"></div>
+                <button
+                  id="sendMessage"
+                  class="btn btn-secondary w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#successModal"
+                  disabled
+                >
+                  Create Delivery List
+                </button>
+              </div>
+            </div>
         </div>
       </div>
     </div>
