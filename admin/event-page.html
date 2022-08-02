@@ -446,7 +446,7 @@
                     <h6 class="h6">Add Kaimahi</h6>
                   </div>
                   <div class="card-body">
-                    <div id="addWhanau" class="row g-2"></div>
+                    <div class="selectedWhanau row g-2 mh-150 overflow-auto"></div>
                   </div>
                 </div>
                 <!-- SELECT WHANAU -->
@@ -764,8 +764,8 @@
     let selectedWhanau = [];
 
     function listSelectedWhanau() {
-      $('#addWhanau').children().remove();
-      $('#addWhanau').prepend(
+      $('.selectedWhanau').children().remove();
+      $('.selectedWhanau').prepend(
         jQuery.map(selectedWhanau, function (index) {
           return (
             "<div class='col-12 col-md-6'>" +
