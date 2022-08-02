@@ -17,6 +17,12 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
+  <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
 
@@ -351,12 +357,11 @@
   
   <a
     class="col-auto nav-link active"
-    id="familiy1-tab"
+    id="family1-tab"
     data-bs-toggle="tab"
-    data-bs-target="#familiy1"
-    type="button"
-    role="tab"
-    aria-controls="familiy1"
+    data-bs-target="#family1"
+    role="button"
+    aria-controls="family1"
     aria-selected="true"
   >
     Family_1
@@ -364,12 +369,11 @@
   
   <a
     class="col-auto nav-link "
-    id="familiy2-tab"
+    id="family2-tab"
     data-bs-toggle="tab"
-    data-bs-target="#familiy2"
-    type="button"
-    role="tab"
-    aria-controls="familiy2"
+    data-bs-target="#family2"
+    role="button"
+    aria-controls="family2"
     aria-selected="true"
   >
     Family_2
@@ -377,15 +381,26 @@
   
   <a
     class="col-auto nav-link "
-    id="familiy3-tab"
+    id="family3-tab"
     data-bs-toggle="tab"
-    data-bs-target="#familiy3"
-    type="button"
-    role="tab"
-    aria-controls="familiy3"
+    data-bs-target="#family3"
+    role="button"
+    aria-controls="family3"
     aria-selected="true"
   >
     Family_3
+  </a>
+  
+  <a
+    class="col-auto nav-link "
+    id="family4-tab"
+    data-bs-toggle="tab"
+    data-bs-target="#family4"
+    role="button"
+    aria-controls="family4"
+    aria-selected="true"
+  >
+    Family_4
   </a>
   
 </div>
@@ -394,7 +409,8 @@
         <div class="tab-content mt-4">
           <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
             <!-- MAP CARDS -->
-            <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" />
+            <!-- <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" /> -->
+            <div id="map" class="rounded shadow" style="height: 400px"></div>
             <!-- PAGINATION -->
             
 <div class="d-flex mt-5">
@@ -506,7 +522,11 @@
   referrerpolicy="no-referrer"
 ></script>
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-
+<script
+src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+crossorigin=""
+></script>
 
     <!-- SIDEBAR ITEM -->
     
@@ -577,6 +597,70 @@
     <!-- SCRIPT -->
     
 <script>
+  let data = [
+    {
+      id: 1,
+      latitude: -36.88232,
+      longitude: 174.75179,
+    },
+    {
+      id: 2,
+      latitude: -36.8793665,
+      longitude: 174.745921,
+    },
+    {
+      id: 3,
+      latitude: -36.881581,
+      longitude: 174.7428878,
+    },
+    {
+      id: 4,
+      latitude: -36.8814165,
+      longitude: 174.7470527,
+    },
+  ];
+  let latAvg = 0,
+    longAvg = 0;
+
+  let markingIcon = L.icon({
+    iconUrl: '../assets/icons/icon-pin.svg',
+    iconSize: [54, 68],
+    iconAnchor: [27, 6],
+  });
+
+  function setCenterMap(data) {
+    data.map(function (value, index) {
+      latAvg += value.latitude;
+      longAvg += value.longitude;
+    });
+    latAvg /= data.length;
+    longAvg /= data.length;
+  }
+
+  function marking(data) {
+    data.map(function (value, index) {
+      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
+      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
+        .setContent(`Family_${value.id}`)
+        .setLatLng([value.latitude, value.longitude])
+        .openOn(map);
+      marker.bindPopup(notes);
+    });
+  }
+
+  setCenterMap(data);
+  let map = L.map('map', {
+    zoomControl: false,
+    doubleClickZoom: false,
+  }).setView([latAvg, longAvg], 16.3);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map);
+
+  marking(data);
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
@@ -584,6 +668,8 @@
         return $(this).text() === 'Kaimahi';
       })
       .addClass('active');
+    let markerActive = 1;
+    $('.leaflet-popup-content:contains("Family_1")').parent().addClass('active');
   });
 </script>
 
