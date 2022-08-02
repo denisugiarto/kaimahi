@@ -1,18 +1,18 @@
-{% extends "layout-admin.html" %} {% set pageTitle = 'Edit Whānau' %} {% set cssFiles = '../assets/css/style.css' %} {%
+{% extends "layout-admin.html" %} {% set pageTitle = 'Edit KaiMahi' %} {% set cssFiles = '../assets/css/style.css' %} {%
 import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
 '../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
 '../components/cards.html' as card %} {% import '../components/modal.html' as modal %} {% block content %}
 <main class="bd-main">
     <div class="d-flex mb-5">
         {{ button.icon('angle-left', 'btn-gray-200', 'whanau.html') }}
-        <h3 class="h3 ms-3">Edit Whānau</h3>
+        <h3 class="h3 ms-3">Edit KaiMahi</h3>
     </div>
   <div class="card">
     <div class="card-body">
       <div class="card align-items-center">
         <div class="alert-box">
           <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Whanau data has been successfully changed
+            KaiMahi data has been successfully changed
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -29,9 +29,8 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             facebook address', 'text') }} {{ input.withIcon('fa-solid fa-phone', 'Phone Number', 'phone',
             '233665665616', 'Phone number is not valid', 'number') }}
             <!-- ADDRESS -->
-            {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }} {{
-            input.withIconTextArea('fa-solid fa-pencil', 'Note For Whanau', 'note') }}
-            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
+            {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }}
+            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Save</button>
           </form>
         </div>
       </div>
@@ -65,16 +64,20 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     });
   })();
 
-  let address = '',
+  let address = 'Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.',
     newAddress = '';
 
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
       .filter(function () {
-        return $(this).text() === 'Whānau';
+        return $(this).text() === 'Kaimahi';
       })
       .addClass('active');
+    
+    if (address != '') {
+      $('#address').text(address).removeClass('d-none').addClass('mb-2');
+    }
 
     function loadAddressToTextArea() {
       $('#addAddress').val(address);
@@ -89,7 +92,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
         $('#address').addClass('mb-2').removeClass('d-none');
         $('#btnAddress').text('Edit Address');
       } else {
-        $('#address').removeClass('mb-2').addClass('d-none');
+        $('#address').removeClass('mb-2').addClass('d-none');  
         $('#btnAddress').text('Add Address');
       }
     }
@@ -111,7 +114,6 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
   });
 
   $('#addAddress').keyup(function (event) {
-    console.log('test: ', event.target.value);
     $('input[name="search_terms"]').focus().val(event.target.value);
     $('.choices__list').trigger('click');
     changeSaveBtn();

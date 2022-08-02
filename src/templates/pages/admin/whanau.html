@@ -33,15 +33,15 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             </div>
             <div class="col-md-6">
               {{ card.customer('../assets/images/avatar-1.webp', 'Kristin Watson', '2972 Westheimer Rd. Santa Ana,
-              Illinois 85486', '#addNote', '', '', 'whanau-view-all.html') }}
+              Illinois 85486', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal', 'whanau-view-all.html') }}
             </div>
             <div class="col-md-6">
               {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
-              Dakota 83475', '#addNote', '', '', 'whanau-view-all.html') }}
+              Dakota 83475', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal', 'whanau-view-all.html') }}
             </div>
             <div class="col-md-6">
               {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
-              Dakota 83475', '#addNote', '', '', 'whanau-view-all.html') }}
+              Dakota 83475', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal', 'whanau-view-all.html') }}
             </div>
           </div>
           {{ pagination.ViewAllBtn() }}
@@ -154,6 +154,11 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
 {{ modal.input('addNote', 'Add Note For Whanau', 'Please write a message here') }} {{ modal.deleteItem('Whanau',
 'Whanau') }} {{ modal.addAddress() }} {% endblock %} {% block script %}
 <script>
+  //Popover
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+});
   // Custom Form Validation
   (function () {
     'use strict';

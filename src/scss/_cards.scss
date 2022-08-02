@@ -4,16 +4,27 @@
   }
 
   &.small {
-    .card-body {
-      @extend .p-1;
+    .card-body, .card-header {
+      @extend .p-2;
+    }
+  }
+
+  .card-body,
+  .card-header,
+  .card-footer {
+    @include media-breakpoint-up(md) {
+      padding: 20px;
+    }
+  }
+
+  &.card--notification {
+    .card-body,
+    .card-header,
+    .card-footer {
+      @include media-breakpoint-up(md) {
+        padding: 24px;
+      }
     }
   }
 }
 
-.card-body,
-.card-header,
-.card-footer {
-  @include media-breakpoint-up(md) {
-    padding: 24px;
-  }
-}

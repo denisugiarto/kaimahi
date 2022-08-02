@@ -21,4 +21,4 @@ pagination %}
 <!-- CARDS -->
 {% macro cards(items) %}
 <!-- CONTENT -->
-{% for item in items %} {{ card.kaimahi(item.avatar, item.name, item.delivery, item.link) }} {% endfor %} {% endmacro %}
+{% for item in items %} {{ card.kaimahi(item.avatar, item.name, item.delivery, item.linkEdit, item.linkDelete, item.link) }} {% endfor %} {% endmacro %}

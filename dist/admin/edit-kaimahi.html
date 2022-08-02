@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>KaiMahi Profile</title>
+  <title>Edit KaiMahi</title>
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
@@ -268,240 +268,193 @@
       <!-- CONTENT -->
       
 <main class="bd-main">
-  <div class="d-flex justify-content-between align-items-center">
-    <!-- PAGE TITLE -->
-    <h1 class="page-title d-flex align-items-center mb-0">
-      <span class="me-2">
-<a href="kaimahi.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+    <div class="d-flex mb-5">
+        
+<a href="whanau.html" role="button" class="btn btn-gray-200 flex-center p-0 rounded-1 icon-lg">
   <i class="fa-solid fa-angle-left fs-5"></i>
 </a>
-</span> KaiMahi Profile
-    </h1>
-  </div>
-  <hr class="my-2 text-gray-200" />
-  <div class="card bg-white mb-5">
-    <div class="card-body px-3 py-2">
-      <div class="row gx-2 align-items-center">
-        <div class="col-auto">
-          <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
-        </div>
-        <div class="col">
-          <h6 class="mb-1">Ahmed Al Aklouk</h6>
-          <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
-        </div>
-        <div class="col-auto">
-          <div class="d-flex align-items-center">
-            <div class="dropdown me-3">
-              <a role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-ellipsis-vertical fs-2 lh-1"></i>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <a class="dropdown-item" href="edit-kaimahi.html">
-                    <i class="fa-solid fa-pen-to-square me-2"></i>Edit Kaimahi
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal">
-                    <i class="fa-solid fa-trash-can me-2"></i>Delete
-                  </a>
-                </li>
-              </ul>
-            </div>
+
+        <h3 class="h3 ms-3">Edit KaiMahi</h3>
+    </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card align-items-center">
+        <div class="alert-box">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            KaiMahi data has been successfully changed
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Email address is invalid!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="card-body py-0 col-12 col-sm-6 col-lg-7 col-xl-5">
+          <form class="needs-validation" novalidate>
+            
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#name"><i class="fa-solid fa-user"></i></a>
+      <div class="col ms-2 position-relative">
+        <label for="name" class="h5 mb-1">Name</label>
+        <input
+          id="name"
+          name="name"
+          class="form-control fs-4 fw-light"
+          value="Ahmed Aklouk"
+          type="text"
+          placeholder="Type Your Name Here"
+          required
+        />
+        <div class="invalid-feedback mt-1">          
+          This field is required, please enter
+            a name
         </div>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-body">
-      <h4 class="h4"><i class="fa-solid fa-truck me-2"></i>Current Deliveries</h4>
-      <hr class="bg-secondary" />
-      <div class="row gx-2 mb-2">
-        <div class="col">
-          <h5 class="h5 mb-1">My Deliveries</h5>
-          <h6 class="fw-light fs-6">Total Whānau <span class="text-primary fw-bold">5</span></h6>
-        </div>
-        <div class="col-auto">
-          <div class="bg-brand-100 py-1 px-3 fw-light rounded">Completed</div>
-        </div>
-        <div class="col-auto">
-<a href="#" role="button" class="btn btn-danger flex-center p-0 rounded-1 icon-lg">
-  <i class="fa-solid fa-trash-can fs-5"></i>
-</a>
 </div>
-      </div>
-      <div class="card bg-light mb-5">
-        <div class="card-body px-3 py-2">
-          <div class="row gx-2 align-items-center">
-            <div class="col-auto">
-              <img src="../assets/images/profile-1.webp" alt="img kaimahi" class="rounded-circle icon-lg" />
-            </div>
-            <div class="col">
-              <h6 class="mb-1">Ahmed Al Aklouk</h6>
-              <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
-            </div>
-          </div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#email"><i class="fa-solid fa-envelopes-bulk"></i></a>
+      <div class="col ms-2 position-relative">
+        <label for="email" class="h5 mb-1">Email</label>
+        <input
+          id="email"
+          name="email"
+          class="form-control fs-4 fw-light"
+          value="ahmedaklouk@gmail.com"
+          type="email"
+          placeholder="Type Your Email Here"
+          required
+        />
+        <div class="invalid-feedback mt-1">          
+          Please enter a valid email address
         </div>
       </div>
-      <div class="fade collapse show viewType">
-        <div class="d-flex justify-content-between mb-3">
-          <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
-          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">
-            View List
-          </a>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#fbmessengger"><i class="fa-brands
+            fa-facebook-messenger"></i></a>
+      <div class="col ms-2 position-relative">
+        <label for="fbmessengger" class="h5 mb-1">Facebook Messengger</label>
+        <input
+          id="fbmessengger"
+          name="fbmessengger"
+          class="form-control fs-4 fw-light"
+          value="@ahmedaklouk"
+          type="text"
+          placeholder="Type Your Facebook Messengger Here"
+          required
+        />
+        <div class="invalid-feedback mt-1">          
+          Please enter a valid
+            facebook address
         </div>
-        <!-- TAB MENU -->
-        
-<div class="nav nav-tabs" role="tablist">
-  
-  <a
-    class="col-auto nav-link active"
-    id="family1-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#family1"
-    role="button"
-    aria-controls="family1"
-    aria-selected="true"
-  >
-    Family_1
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="family2-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#family2"
-    role="button"
-    aria-controls="family2"
-    aria-selected="true"
-  >
-    Family_2
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="family3-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#family3"
-    role="button"
-    aria-controls="family3"
-    aria-selected="true"
-  >
-    Family_3
-  </a>
-  
-  <a
-    class="col-auto nav-link "
-    id="family4-tab"
-    data-bs-toggle="tab"
-    data-bs-target="#family4"
-    role="button"
-    aria-controls="family4"
-    aria-selected="true"
-  >
-    Family_4
-  </a>
-  
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#phone"><i class="fa-solid fa-phone"></i></a>
+      <div class="col ms-2 position-relative">
+        <label for="phone" class="h5 mb-1">Phone Number</label>
+        <input
+          id="phone"
+          name="phone"
+          class="form-control fs-4 fw-light"
+          value="233665665616"
+          type="number"
+          placeholder="Type Your Phone Number Here"
+          required
+        />
+        <div class="invalid-feedback mt-1">          
+          Phone number is not valid
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-        <div class="tab-content mt-4">
-          <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
-            <!-- MAP CARDS -->
-            <!-- <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" /> -->
-            <div id="map" class="rounded shadow" style="height: 400px"></div>
-            <!-- PAGINATION -->
+            <!-- ADDRESS -->
             
-<div class="d-flex mt-5">
-  <div class="col">
-    <a role="button" href="#" class="text-primary fw-light">View all</a>
-  </div>
-  <div class="col-auto">
-    <nav aria-label="Page navigation">
-      <ul class="pagination">
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#address"><i class="fa-solid fa-solid fa-location-dot"></i></a>
 
-          </div>
-        </div>
+      <div class="col ms-2">
+        <label for="address" class="h5 mb-1">Address</label>
+        <textarea 
+          id="address"
+          name="address"
+          class="form-control fs-4 fw-light bg-white d-none"
+          rows="3"
+          readonly                 
+        ></textarea>
+        <a id="btnAddress" role="button" class="text-primary d-block" data-bs-toggle="modal" data-bs-target="#addAddressModal">
+          Add Address
+        </a>
       </div>
-      <div class="fade collapse viewType">
-        <div class="d-flex justify-content-between mb-3">
-          <h5 class="h5 mb-1">Whānau Deliveries List</h5>
-          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button"
-            >View Map</a
-          >
-        </div>
-        <!-- TABLE -->
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th class="text-center" scope="col">Name</th>
-                <th class="text-center" scope="col">Locations</th>
-                <th class="text-center" scope="col">Descriptions</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="text-center">
-              <tr>
-                <td><input type="checkbox" class="form-check-input" /></td>
-                <td>Family_1</td>
-                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
-                <td>-</td>
-                <td>
-                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" class="form-check-input" checked /></td>
-                <td>Family_2</td>
-                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
-                <td>Delivery Complete</td>
-                <td>
-                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
-                </td>
-              </tr>
-              <tr class="text-secondary">
-                <td><input type="checkbox" class="form-check-input" disabled /></td>
-                <td>Family_3</td>
-                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
-                <td>whānau is already in another Kaimahi delivery list</td>
-                <td>
-                  <a class="rounded-circle btn-secondary icon icon-md"><i class="fas fa-share-square"></i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- PAGINATION -->
-        
-<div class="d-flex mt-5">
-  <div class="col">
-    <p class="text-secondary fw-light">Showing 1 to 1 of 1 entries</p>
-  </div>
-  <div class="col-auto">
-    <nav aria-label="Page navigation">
-      <ul class="pagination">
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
+    </div>
   </div>
 </div>
 
+            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Save</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </main>
+
+<div class="modal fade" id="addAddressModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="h2 ms-auto">Add Address</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+      </div>
+      <div class="modal-body pt-5">
+        <h6 class="h6 mb-3 fw-bolder">Where is your delivery destination?</h6>
+        <textarea
+          class="form-control fw-light"
+          name="newAddress"
+          id="addAddress"
+          rows="3"
+          placeholder="Write the name of the street / building / housing"
+        ></textarea>
+        <select class="form-control" name="choices-custom-templates" id="choices-custom-templates">
+          <option value="ntowers">Ntowers, Block B20, Zemin 11, Daire 34513 Istanbul, Turkey.</option>
+          <option value="turkeys">Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.</option>
+        </select>
+        <h6 class="h6 mt-5 mb-3 fw-bolder">Pin Address</h6>
+        <div class="position-relative mb-5 ">
+          <div id="mapNotes" class="position-absolute fade rounded-top bd-yellow-700 text-white p-2 w-100 d-none d-md-block">
+            <h6 class="h6 mb-1">Set the right pin</h6>
+            <p class="fw-light fs-5">
+              This address will be the shipping address, please check if it is correct, if not click the map to adjust
+            </p>
+          </div>
+          <img src="../assets/images/maps-small.webp" alt="map" class="map-set-pin-wrapper" />
+        </div>
+        <button class="btn btn-secondary w-100 saveAddress" data-bs-dismiss="modal" disabled>Save Address</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
     </div>
     <!-- FOOTER -->
@@ -597,69 +550,32 @@ crossorigin=""
     <!-- SCRIPT -->
     
 <script>
-  let data = [
-    {
-      id: 1,
-      latitude: -36.88232,
-      longitude: 174.75179,
-    },
-    {
-      id: 2,
-      latitude: -36.8793665,
-      longitude: 174.745921,
-    },
-    {
-      id: 3,
-      latitude: -36.881581,
-      longitude: 174.7428878,
-    },
-    {
-      id: 4,
-      latitude: -36.8814165,
-      longitude: 174.7470527,
-    },
-  ];
-  let latAvg = 0,
-    longAvg = 0;
+   // Custom Form Validation
+  (function () {
+    'use strict';
 
-  let markingIcon = L.icon({
-    iconUrl: '../assets/icons/icon-pin.svg',
-    iconSize: [54, 68],
-    iconAnchor: [27, 6],
-  });
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
 
-  function setCenterMap(data) {
-    data.map(function (value, index) {
-      latAvg += value.latitude;
-      longAvg += value.longitude;
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        'submit',
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        },
+        false
+      );
     });
-    latAvg /= data.length;
-    longAvg /= data.length;
-  }
+  })();
 
-  function marking(data) {
-    data.map(function (value, index) {
-      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
-      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
-        .setContent(`Family_${value.id}`)
-        .setLatLng([value.latitude, value.longitude])
-        .openOn(map);
-      marker.bindPopup(notes);
-    });
-  }
-
-  setCenterMap(data);
-  let map = L.map('map', {
-    zoomControl: false,
-    doubleClickZoom: false,
-  }).setView([latAvg, longAvg], 16.3);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 17,
-    attribution: '© OpenStreetMap',
-  }).addTo(map);
-
-  marking(data);
+  let address = 'Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.',
+    newAddress = '';
 
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
@@ -668,8 +584,148 @@ crossorigin=""
         return $(this).text() === 'Kaimahi';
       })
       .addClass('active');
-    let markerActive = 1;
-    $('.leaflet-popup-content:contains("Family_1")').parent().addClass('active');
+    
+    if (address != '') {
+      $('#address').text(address).removeClass('d-none').addClass('mb-2');
+    }
+
+    function loadAddressToTextArea() {
+      $('#addAddress').val(address);
+    }
+
+    function saveAddress() {
+      address = newAddress;
+      // Load data address to div with id address
+      $('#address').text(address);
+      // change text button
+      if (address != '') {
+        $('#address').addClass('mb-2').removeClass('d-none');
+        $('#btnAddress').text('Edit Address');
+      } else {
+        $('#address').removeClass('mb-2').addClass('d-none');  
+        $('#btnAddress').text('Add Address');
+      }
+    }
+
+    $('#btnAddress').click(function () {
+      loadAddressToTextArea();
+    });
+
+    // Save address
+    $('.saveAddress').click(function () {
+      saveAddress();
+    });
+  });
+
+  $('select').change(function () {
+    updateAddressFromOption();
+    changeSaveBtn();
+    $('#mapNotes').addClass('show');
+  });
+
+  $('#addAddress').keyup(function (event) {
+    $('input[name="search_terms"]').focus().val(event.target.value);
+    $('.choices__list').trigger('click');
+    changeSaveBtn();
+  });
+
+  function changeSaveBtn() {
+    if ($('#addAddress').val() != '') {
+      $('.saveAddress').removeAttr('disabled').removeClass('btn-secondary').addClass('btn-primary');
+    } else {
+      $('.saveAddress').addClass('btn-secondary').removeClass('btn-primary').attr('disabled', 'true');
+    }
+  }
+  function updateAddressFromOption() {
+    //Set newAddress from selected value;
+    newAddress = $.trim($('.choices__list--single > .choices__item--selectable').text());
+    $('#addAddress').val(newAddress);
+  }
+
+  var customTemplates = new Choices(document.getElementById('choices-custom-templates'), {
+    allowHTML: true,
+    classNames: {
+      containerInner: 'choices__inner d-none',
+      inputCloned: 'choices__input--cloned d-none',
+    },
+    callbackOnCreateTemplates: function (strToEl) {
+      var classNames = this.config.classNames;
+      var itemSelectText = this.config.itemSelectText;
+      return {
+        item: function ({ classNames }, data) {
+          return strToEl(
+            '\
+                <div\
+                  class="' +
+              String(classNames.item) +
+              ' ' +
+              String(data.highlighted ? classNames.highlightedState : classNames.itemSelectable) +
+              '"\
+                  data-item\
+                  data-id="' +
+              String(data.id) +
+              '"\
+                  data-value="' +
+              String(data.value) +
+              '"\
+                  ' +
+              String(data.active ? 'aria-selected="true"' : '') +
+              '\
+                  ' +
+              String(data.disabled ? 'aria-disabled="true"' : '') +
+              '\
+                  >\
+                  ' +
+              String(data.label) +
+              '\
+                </div>\
+              '
+          );
+        },
+        choice: function ({ classNames }, data) {
+          return strToEl(
+            '\
+                <div\
+                  class="' +
+              String(classNames.item) +
+              ' ' +
+              String(classNames.itemChoice) +
+              ' ' +
+              String(data.disabled ? classNames.itemDisabled : classNames.itemSelectable) +
+              '"\
+                  data-select-text="' +
+              String(itemSelectText) +
+              '"\
+                  data-choice \
+                  ' +
+              String(data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable') +
+              '\
+                  data-id="' +
+              String(data.id) +
+              '"\
+                  data-value="' +
+              String(data.value) +
+              '"\
+                  ' +
+              String(data.groupId > 0 ? 'role="treeitem"' : 'role="option"') +
+              '\
+                  >\
+                  <div class="d-flex">' +
+              '<div class="me-2"> <i class="fas fa-location-dot fs-3"></i></div>' +
+              '<div><h6 class="h6 text-capitalize mb-1">' +
+              String(data.value) +
+              '</h6>' +
+              '<p class="fw-light">' +
+              String(data.label) +
+              '</p>' +
+              '\
+                    </div>\
+                  </div>\
+                  '
+          );
+        },
+      };
+    },
   });
 </script>
 

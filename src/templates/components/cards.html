@@ -17,8 +17,8 @@
 {% endmacro %}
 
 <!-- KAIMAHI CARD -->
-{% macro kaimahi(avatar, name, delivery, link='#') %}
-<div class="card bg-light mt-3">
+{% macro kaimahi(avatar, name, delivery, linkEdit, linkDelete, link='#') %}
+<div class="card shadow mt-3">
   <div class="card-body px-3 py-2">
     <div class="row gx-2 align-items-center">
       <div class="col-auto">
@@ -26,13 +26,31 @@
       </div>
       <div class="col">
         <h6 class="h6 mb-1">{{ name }}</h6>
-        <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>{{ delivery }}</h6>
+        <h6 class="fs-6"><span class="fw-light text-dark-gray">Last Delivery </span>{{ delivery }}</h6>
       </div>
-      <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
       <div class="col-auto">
-        <a href="kaimahi-profile.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
-          <i class="fa-solid fa-angle-right fs-5"></i>
-        </a>
+        <div class="d-flex align-items-center gap-2">
+          <div class="dropdown me-3">
+            <a role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis-vertical fs-2 lh-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a class="dropdown-item" href="{{ linkEdit }}">
+                  <i class="fa-solid fa-pen-to-square me-2"></i>Edit Kaimahi
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item text-danger" href="{{ linkDelete }}" data-bs-toggle="modal">
+                  <i class="fa-solid fa-trash-can me-2"></i>Delete
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a href="{{ link }}" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+            <i class="fa-solid fa-angle-right fs-5"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -122,7 +140,7 @@
             class="fa-solid fa-exclamation ms-1 pointer fs-7 border border-dark icon-xs rounded-circle d-inline-flex justify-content-center align-items-center"
             data-bs-toggle="popover"
             data-bs-container="body"
-            data-bs-placement="bottom"
+            data-bs-placement="right"
             data-bs-trigger="hover focus"
             data-bs-content="whānau is allergic to shrimp type food"
           ></i>

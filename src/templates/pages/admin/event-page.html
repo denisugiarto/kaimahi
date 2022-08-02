@@ -94,18 +94,18 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             <div class="card align-items-center">
               <div class="card-body col-12 col-xl-8">
                 <!-- LIST ADD WHANAU -->
-                <div class="card border mb-4">
+                <div class="card small border mb-4">
                   <div class="card-header border-bottom bg-white">
                     <h6 class="h6">Add Kaimahi</h6>
                   </div>
                   <div class="card-body">
-                    <div id="addWhanau" class="row g-2"></div>
+                    <div class="selectedWhanau row g-2 mh-150 overflow-auto"></div>
                   </div>
                 </div>
                 <!-- SELECT WHANAU -->
                 <div class="card border">
                   <div class="card-body">
-                    <div id="whanau" class="mb-4"></div>
+                    <div id="whanau" class="mb-4 mh-300 overflow-auto"></div>
                     <button
                       id="sendMessage"
                       class="btn btn-secondary w-100"
@@ -130,8 +130,8 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
               <div class="col-11 col-sm-auto">{{ input.search('Look event history') }}</div>
             </div>
             <div class="table-responsive mt-4">
-              <table class="table table-bordered">
-                <thead>
+              <table class="table">
+                <thead class="text-center">
                   <tr>
                     <th scope="col">Event Name</th>
                     <th scope="col">Recepients</th>
@@ -140,12 +140,17 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
                     <th scope="col"></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                   <tr id="tableRow">
                     <td>Lorem Ipsum</td>
                     <td>20</td>
                     <td>17-08-2022, 04:00pm</td>
-                    <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey</td>
+                    <td>
+                      Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.
+                      <a role="button" class="d-inline-flex icon icon-md btn-primary rounded-circle"
+                        ><i class="fas fa-share-square fs-6"></i
+                      ></a>
+                    </td>
                     <td class="fw-bold">
                       <a id="seeDetailButton" role="button" class="text-primary me-2">See Details</a>
                       <a data-bs-toggle="modal" data-bs-target="#deleteMessageModal" role="button" class="text-danger"
@@ -173,11 +178,14 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             <h6 class="h6 mb-5">Events Nama : <span class="fs-5 text-secondary">Lorem Ipsum</span></h6>
             <h6 class="h6 mb-5">Events Time : <span class="fs-5 text-secondary">17-08-2022, 04:00pm</span></h6>
             <h6 class="h6 mb-2">Location</h6>
-            <div class="d-flex mb-4">
-              <div class="col-12 col-sm-7 col-xl-4">
-                <div name class="bg-light text-dark fw-light fs-6 rounded p-2">
+            <div class="col-12 col-sm-7 col-xl-4 mb-4 bg-light rounded p-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="text-dark fw-light fs-6">
                   Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey
                 </div>
+                <a role="button" class="icon icon-md btn-primary rounded-circle"
+                  ><i class="fas fa-share-square fs-6"></i
+                ></a>
               </div>
             </div>
             <!-- RECIPIENTS -->
@@ -280,12 +288,12 @@ endblock %} {% block script %}
     let selectedWhanau = [];
 
     function listSelectedWhanau() {
-      $('#addWhanau').children().remove();
-      $('#addWhanau').prepend(
+      $('.selectedWhanau').children().remove();
+      $('.selectedWhanau').prepend(
         jQuery.map(selectedWhanau, function (index) {
           return (
             "<div class='col-12 col-md-6'>" +
-            "<div class='card small bg-light'>" +
+            "<div class='card xSmall bg-light'>" +
             "<div class='card-body'>" +
             "<div class='d-flex align-items-center'>" +
             "<img src='../assets/images/" +

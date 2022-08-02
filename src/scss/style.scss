@@ -8,7 +8,7 @@
 @import '../../node_modules/bootstrap/scss/utilities';
 @import '../../node_modules/bootstrap/scss/mixins';
 
-//Bootstrap 
+//Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 // 3. Components
@@ -36,14 +36,13 @@ a {
 $all-colors: map-merge-multiple($yellows, $reds);
 
 @each $key, $value in $all-colors {
-  .bd-#{$key}{
+  .bd-#{$key} {
     background-color: $value !important;
   }
-  
-  .text-#{$key}{
+
+  .text-#{$key} {
     color: $value !important;
   }
-  
 }
 
 .alert-box {
@@ -145,6 +144,11 @@ $all-colors: map-merge-multiple($yellows, $reds);
     height: 32px;
   }
 
+  &-xlg {
+    width: 44px;
+    height: 44px;
+  }
+
   &-xl {
     @extend .fs-2;
     width: 50px;
@@ -210,6 +214,18 @@ input[type='search']:focus-visible {
   object-fit: cover;
   object-position: top;
 }
+.leaflet-popup-content-wrapper {
+  &.active {
+    @extend .bg-primary;
+    @extend .text-white;
+
+    + .leaflet-popup-tip-container {
+      .leaflet-popup-tip {
+        @extend .bg-primary;
+      }
+    }
+  }
+}
 
 .logo-header {
   width: 100%;
@@ -223,6 +239,25 @@ input[type='search']:focus-visible {
   @include media-breakpoint-up(lg) {
     max-width: 187px;
   }
+}
+
+.map-set-pin-wrapper {
+  @extend .img-wrapper;
+  @extend .rounded;
+  width: 100%;
+  height: 200px;
+
+  @include media-breakpoint-up(md) {
+    height: 250px;
+  }
+}
+
+//Max Height
+.mh-150 {
+  max-height: 150px;
+}
+.mh-300 {
+  max-height: 300px;
 }
 
 //NOTIFICATION
@@ -241,18 +276,6 @@ input[type='search']:focus-visible {
     top: 2px;
   }
 }
-
-.map-set-pin-wrapper
- {
-  @extend .img-wrapper;
-  @extend .rounded;
-  width: 100%;
-  height: 200px;
-
-  @include media-breakpoint-up(md) {
-    height: 250px;
-  }
- }
 
 .page-title {
   @extend .fs-md-1;

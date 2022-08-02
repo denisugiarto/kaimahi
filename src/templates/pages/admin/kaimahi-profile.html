@@ -1,5 +1,5 @@
-{% extends "layout-admin.html" %} {% set pageTitle = 'KaiMahi' %} {% set cssFiles = '../assets/css/style.css' %} {%
-import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
+{% extends "layout-admin.html" %} {% set pageTitle = 'KaiMahi Profile' %} {% set cssFiles = '../assets/css/style.css' %}
+{% import '../components/input.html' as input %} {% import '../components/buttons.html' as button %} {% import
 '../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
 '../components/kaimahi-item.html' as kaimahiItem %} {% block content %}
 <main class="bd-main">
@@ -20,12 +20,26 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
           <h6 class="mb-1">Ahmed Al Aklouk</h6>
           <h6 class="fs-6"><span class="fw-light text-secondary">Last Delivery </span>17-01-2022</h6>
         </div>
-        <div class="col-auto">{{ button.icon('trash-can', 'bg-danger text-white') }}</div>
-        <div class="col-auto">{{ button.icon('pen-to-square', 'bg-info text-white') }}</div>
         <div class="col-auto">
-          <a href="kaimahi-profile.html" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
-            <i class="fa-solid fa-angle-right fs-5"></i>
-          </a>
+          <div class="d-flex align-items-center">
+            <div class="dropdown me-3">
+              <a role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical fs-2 lh-1"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a class="dropdown-item" href="edit-kaimahi.html">
+                    <i class="fa-solid fa-pen-to-square me-2"></i>Edit Kaimahi
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal">
+                    <i class="fa-solid fa-trash-can me-2"></i>Delete
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -43,7 +57,6 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
           <div class="bg-brand-100 py-1 px-3 fw-light rounded">Completed</div>
         </div>
         <div class="col-auto">{{ button.icon('trash-can', 'btn-danger') }}</div>
-        <div class="col-auto">{{ button.icon('angle-right', 'btn-gray-200') }}</div>
       </div>
       <div class="card bg-light mb-5">
         <div class="card-body px-3 py-2">
@@ -58,26 +71,148 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
-        <a href="" class="text-primary fs-5 fw-light" role="button">View List</a>
-      </div>
-      <!-- TAB MENU -->
-      {{ navTabs.menu([{ title: 'Family_1', id: 'familiy1', status: 'active'}, { title: 'Family_2', id: 'familiy2'},
-      {title: 'Family_3', id: 'familiy3'} ]) }}
-      <div class="tab-content mt-4">
-        <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
-          <!-- MAP CARDS -->
-          <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" />
-          <!-- PAGINATION -->
-          {{ pagination.ViewAllBtn() }}
+      <div class="fade collapse show viewType">
+        <div class="d-flex justify-content-between mb-3">
+          <h5 class="h5 mb-1">Whānau deliveries by Map</h5>
+          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">
+            View List
+          </a>
         </div>
+        <!-- TAB MENU -->
+        {{ navTabs.menu([{ title: 'Family_1', id: 'family1', status: 'active'}, { title: 'Family_2', id: 'family2'},
+        {title: 'Family_3', id: 'family3'}, {title: 'Family_4', id: 'family4'} ]) }}
+        <div class="tab-content mt-4">
+          <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
+            <!-- MAP CARDS -->
+            <!-- <img src="../assets/images/maps-all.webp" alt="maps" class="img-fluid rounded shadow" /> -->
+            <div id="map" class="rounded shadow" style="height: 400px"></div>
+            <!-- PAGINATION -->
+            {{ pagination.ViewAllBtn() }}
+          </div>
+        </div>
+      </div>
+      <div class="fade collapse viewType">
+        <div class="d-flex justify-content-between mb-3">
+          <h5 class="h5 mb-1">Whānau Deliveries List</h5>
+          <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button"
+            >View Map</a
+          >
+        </div>
+        <!-- TABLE -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th class="text-center" scope="col">Name</th>
+                <th class="text-center" scope="col">Locations</th>
+                <th class="text-center" scope="col">Descriptions</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td><input type="checkbox" class="form-check-input" /></td>
+                <td>Family_1</td>
+                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>-</td>
+                <td>
+                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="form-check-input" checked /></td>
+                <td>Family_2</td>
+                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>Delivery Complete</td>
+                <td>
+                  <a class="rounded-circle btn-primary icon icon-md" href=""><i class="fas fa-share-square"></i></a>
+                </td>
+              </tr>
+              <tr class="text-secondary">
+                <td><input type="checkbox" class="form-check-input" disabled /></td>
+                <td>Family_3</td>
+                <td>Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/İstanbul, Turkey.</td>
+                <td>whānau is already in another Kaimahi delivery list</td>
+                <td>
+                  <a class="rounded-circle btn-secondary icon icon-md"><i class="fas fa-share-square"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- PAGINATION -->
+        {{ pagination.withEntries() }}
       </div>
     </div>
   </div>
 </main>
 {% endblock %} {% block script %}
 <script>
+  let data = [
+    {
+      id: 1,
+      latitude: -36.88232,
+      longitude: 174.75179,
+    },
+    {
+      id: 2,
+      latitude: -36.8793665,
+      longitude: 174.745921,
+    },
+    {
+      id: 3,
+      latitude: -36.881581,
+      longitude: 174.7428878,
+    },
+    {
+      id: 4,
+      latitude: -36.8814165,
+      longitude: 174.7470527,
+    },
+  ];
+  let latAvg = 0,
+    longAvg = 0;
+
+  let markingIcon = L.icon({
+    iconUrl: '../assets/icons/icon-pin.svg',
+    iconSize: [54, 68],
+    iconAnchor: [27, 6],
+  });
+
+  function setCenterMap(data) {
+    data.map(function (value, index) {
+      latAvg += value.latitude;
+      longAvg += value.longitude;
+    });
+    latAvg /= data.length;
+    longAvg /= data.length;
+  }
+
+  function marking(data) {
+    data.map(function (value, index) {
+      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
+      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
+        .setContent(`Family_${value.id}`)
+        .setLatLng([value.latitude, value.longitude])
+        .openOn(map);
+      marker.bindPopup(notes);
+    });
+  }
+
+  setCenterMap(data);
+  let map = L.map('map', {
+    zoomControl: false,
+    doubleClickZoom: false,
+  }).setView([latAvg, longAvg], 16.3);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map);
+
+  marking(data);
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
@@ -85,6 +220,8 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
         return $(this).text() === 'Kaimahi';
       })
       .addClass('active');
+    let markerActive = 1;
+    $('.leaflet-popup-content:contains("Family_1")').parent().addClass('active');
   });
 </script>
 {% endblock %}

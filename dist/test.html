@@ -21,13 +21,8 @@
   </head>
   <body>
     <div class="container">
-      <div id="map"></div>
-      <input
-        class="js-choice"
-        type="text"
-        value=""
-        placeholder="Write the name of the street / building / housing"
-      />
+      <div id="map" style="margin-bottom: 20px"></div>
+      <input class="js-choice" type="text" value="" placeholder="Write the name of the street / building / housing" />
     </div>
   </body>
   <script
@@ -90,15 +85,13 @@
         longitude: 174.7470527,
       },
     ];
-    let latAvg = 0,
-      longAvg = 0;
-    setMap(data);
-    var map = L.map('map').setView([latAvg, longAvg], 17);
+    let latAvg = 0, longAvg = 0;
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap',
-    }).addTo(map);
+    let markingIcon = L.icon({
+      iconUrl: 'assets/icons/icon-pin.svg',
+      iconSize: [54, 68],
+      iconAnchor: [27, 6],
+    });
 
     function setMap(data) {
       data.map(function (value, index) {
@@ -109,17 +102,31 @@
       longAvg /= data.length;
     }
 
-    marking(data);
     function marking(data) {
       data.map(function (value, index) {
-        let marker = L.marker([value.latitude, value.longitude]).addTo(map);
-        marker.bindTooltip(`Family_${value.id}`).openTooltip();
+        let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
+        notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false, keepInView: true })
+                .setContent(`Family_${value.id}`)
+                .setLatLng([value.latitude, value.longitude])
+                .openOn(map);
+        // marker.bindTooltip().openTooltip();
+        marker.bindPopup(notes);
       });
     }
-    // var marker = L.marker([-36.88232, 174.75179]).addTo(map);
 
-    // marker.bindPopup("Family_1").openPopup();
-    // circle.bindPopup("I am a circle.");
-    // polygon.bindPopup("I am a polygon.");
+    setMap(data);
+    var map = L.map('map', {
+      dragging: false,
+      zoomControl: false,
+      doubleClickZoom: false,
+    }).setView([latAvg, longAvg], 17);
+    // var map = L.map('map').setView([latAvg, longAvg], 17);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap',
+    }).addTo(map);
+
+    marking(data);
   </script>
 </html>

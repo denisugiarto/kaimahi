@@ -18,6 +18,7 @@ $blue: #2345ed;
 $white: #fff;
 $text: $gray-900;
 $brand: #25c967;
+$black: #000;
 
 $brand-100: #d3fcd3;
 $brand-200: #a8f9b0;
@@ -87,10 +88,13 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 $body-color: $text;
 $body-bg: $gray-100;
 
-// BORDER RADIUS
+//BORDER RADIUS
 $border-radius-sm: 0.3125rem; //5px
 $border-radius: 0.625rem; //10px
 $border-radius-lg: 1.25rem; //20px
+
+//Box Shadow
+$box-shadow: 0 .25rem .625rem rgba($black, .1);
 
 //BUTTON SM
 $btn-padding-y-sm: 0.5rem;
