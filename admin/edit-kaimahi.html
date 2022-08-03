@@ -268,14 +268,14 @@
       <!-- CONTENT -->
       
 <main class="bd-main">
-    <div class="d-flex mb-5">
-        
+  <div class="d-flex mb-5">
+    
 <a href="whanau.html" role="button" class="btn btn-gray-200 flex-center p-0 rounded-1 icon-lg">
   <i class="fa-solid fa-angle-left fs-5"></i>
 </a>
 
-        <h3 class="h3 ms-3">Edit KaiMahi</h3>
-    </div>
+    <h3 class="h3 ms-3">Edit KaiMahi</h3>
+  </div>
   <div class="card">
     <div class="card-body">
       <div class="card align-items-center">
@@ -410,6 +410,40 @@
     </div>
   </div>
 </div>
+ 
+<div class="card bg-light mb-4 mb-md-3">
+  <div class="card-body">
+    <div class="d-flex">
+      <a class="col-auto icon icon-xl bg-primary" href="#imgProfile"><i class="fa-solid fa-image"></i></a>
+      <div class="col ms-2 position-relative">
+        <label for="imgProfile" class="h5 mb-1">Add Image Profile</label>
+        <div class="d-flex align-items-center">
+          <div class="imgProfilePreview">
+            <label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+              <i class="fas fa-plus fs-3 text-dark"></i>
+            </label>
+          </div>
+          <input
+            id="imgProfile"
+            name="imgProfile"
+            class="d-none"
+            value=""
+            type="file"
+            placeholder="Type Your Add Image Profile Here"
+            accept="image/*"
+            required
+          />
+          <div class="fileName form-control text-secondary fw-light ms-2">No file chosen</div>
+        </div>
+        <div class="form-text d-flex align-items-center mt-1"><i class="fas fa-exclamation text-warning icon-xs border border-warning rounded-circle d-inline-flex justify-content-center fs-7 me-1"></i>Max photo size 2MB</div>
+        <div class="invalid-feedback mt-1">          
+          Photo size is more than
+            2MB
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
             <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Save</button>
           </form>
@@ -455,7 +489,6 @@
   </div>
 </div>
  
-
     </div>
     <!-- FOOTER -->
     <script
@@ -550,7 +583,7 @@ crossorigin=""
     <!-- SCRIPT -->
     
 <script>
-   // Custom Form Validation
+  // Custom Form Validation
   (function () {
     'use strict';
 
@@ -584,7 +617,19 @@ crossorigin=""
         return $(this).text() === 'Kaimahi';
       })
       .addClass('active');
-    
+
+    //Image profile value
+    $('.fileName').text('Ahmed Aklouk.PNG');
+    $('.imgProfilePreview').html(
+        ` <div class='position-relative'>
+            <img src='../assets/images/picture-1.webp' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
+      );
+
+    //Address handler
     if (address != '') {
       $('#address').text(address).removeClass('d-none').addClass('mb-2');
     }
@@ -602,7 +647,7 @@ crossorigin=""
         $('#address').addClass('mb-2').removeClass('d-none');
         $('#btnAddress').text('Edit Address');
       } else {
-        $('#address').removeClass('mb-2').addClass('d-none');  
+        $('#address').removeClass('mb-2').addClass('d-none');
         $('#btnAddress').text('Add Address');
       }
     }
@@ -726,6 +771,40 @@ crossorigin=""
         },
       };
     },
+  });
+
+  //Image Profile Handler
+  function deleteImage() {
+    $('.imgProfilePreview')
+      .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+    $('input[name="imgProfile"]').val('');
+    $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
+  }
+
+  // Show image preview from Input Image Profile
+  $('input[name="imgProfile"]').change(function (event) {
+    let file = event.target.files[0];
+    if (file) {
+      console.log('fileName: ', file);
+      $('.fileName').text(file.name).removeClass('text-secondary').addClass('text-dark');
+      let imgUrl = URL.createObjectURL(file);
+      $('.imgProfilePreview').html(
+        ` <div class='position-relative'>
+            <img src='${imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
+      );
+    } else {
+      $('.imgProfilePreview')
+        .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+      $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
+    }
   });
 </script>
 
