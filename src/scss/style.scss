@@ -156,8 +156,8 @@ $all-colors: map-merge-multiple($yellows, $reds);
   }
 
   &-xxl {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
   }
 }
 
@@ -287,6 +287,14 @@ input[type='search']:focus-visible {
   }
 }
 
+.titlePage {
+  font-size: 24px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 36px;
+  }
+}
+
 .thumbnail-media-wrapper {
   @extend .rounded;
   width: 70px;
@@ -296,7 +304,7 @@ input[type='search']:focus-visible {
     @extend .px-2;
     @extend .py-3;
     background-color: $white;
-    width: 90px;
+    width: 120px;
   }
 }
 

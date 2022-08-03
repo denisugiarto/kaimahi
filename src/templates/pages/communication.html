@@ -1,0 +1,71 @@
+{% extends "layout-no-sidebar.html" %} {% set pageTitle = 'Public Communication Page' %} {% set cssFiles =
+'./assets/css/style.css' %} {% import '../components/header.html' as header %} {% block content %} {{ header.public() }}
+<main class="bd-main">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex">
+          <!-- profile -->
+          <div class="profile col">
+            <div class="d-flex align-items-center">
+              <img src="./assets/images/profile-1.webp" alt="" class="icon icon-xxl rounded-circle" />
+              <div class="ms-2">
+                <h6 class="h6 fw-bolder">Roger</h6>
+                <p class="fs-5 fw-light text-gray-dark">04:00pm, 17-08-2022</p>
+              </div>
+            </div>
+          </div>
+          <!-- share buttons -->
+          <div class="col-auto">
+            <div class="d-flex gap-3 share-buttons">
+              <a role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Share on Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Share on Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Share on Whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h1 class="titlePage my-5">Advice for the public: Coronavirus disease (COVID-19)</h1>
+          <p class="fw-light pb-3 mb-5">
+            This page includes advice from WHO on ways to protect yourself and prevent the spread of COVID-19. <br />
+            The downloadable infographics below provide guidance on general and specific topics related to the pandemic.
+          </p>
+          <h4 class="h4 mb-3">Make your environment safer</h4>
+          <p class="fw-light pb-3 mb-5">
+            The risks of getting COVID-19 are higher in crowded and inadequately ventilated spaces where infected people
+            spend long periods of time together in close proximity. <br />
+            <br />
+            Outbreaks have been reported in places where people have gather, often in crowded indoor settings and where
+            they talk loudly, shout, breathe heavily or sing such as restaurants, choir practices, fitness classes,
+            nightclubs, offices and places of worship.
+          </p>
+          <h4 class="h4 mb-3">Related</h4>
+          <div class="mb-3">
+            <a role="button" class="h6">
+              <u> Coping with stress during Covid-19 outbreak</u>
+            </a>
+          </div>
+          <div>
+            <a role="button" class="h6">
+              <u> Coping with stress during Covid-19 outbreak</u>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %} {% block script %}
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+{% endblock %}

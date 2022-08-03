@@ -11,7 +11,7 @@
       </div>
       <hr />
       <!-- CONTENT -->
-      {% for item in items %} {{ card.whanau(item.map_url, item.dest_name, item.courier_avatar, item.courier_name,
+      {% for item in items %} {{ card.whanau(item.map_url, item.dest_name, item.courier_name,
       item.delivery) }} {% endfor %} {{ pagination.ViewAllBtn() }}
     </div>
   </div>
@@ -24,7 +24,7 @@
   <!-- CONTENT -->
   {% for value in values %}
   <div class="col-12 col-lg-6">
-    {{ card.cardWhanau( value.courier_avatar, value.courier_name, value.delivery, value.href ) }}
+    {{ card.cardWhanau( value.courier_name, value.delivery, value.href ) }}
   </div>
   {% endfor %}
   <!-- VIEW ALL AND PAGINATION -->
@@ -36,7 +36,7 @@
 {% macro select(items) %} {{ input.search('Look For Whānau', 'w-100') }}
 <div class="mb-4">
   <!-- CONTENT -->
-  {% for item in items %} {{ card.selectWhanau( item.avatar, item.name, item.delivery ) }} {% endfor %}
+  {% for item in items %} {{ card.selectWhanau( item.name, item.delivery ) }} {% endfor %}
 </div>
 
 {% endmacro %}

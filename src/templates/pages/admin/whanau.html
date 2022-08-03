@@ -27,20 +27,20 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
           <!-- WHANAU CARDS -->
           <div class="row g-3 mb-5">
             <div class="col-md-6">
-              {{ card.customer('../assets/images/profile-1.webp', 'Wade Warren', 'Ntowers, Block B1, Zemin 21, Daire
+              {{ card.customer('Wade Warren', 'Ntowers, Block B1, Zemin 21, Daire
               34513 Esenyurt/İstanbul, Turkey', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal',
               'whanau-view-all.html') }}
             </div>
             <div class="col-md-6">
-              {{ card.customer('../assets/images/avatar-1.webp', 'Kristin Watson', '2972 Westheimer Rd. Santa Ana,
+              {{ card.customer('Kristin Watson', '2972 Westheimer Rd. Santa Ana,
               Illinois 85486', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal', 'whanau-view-all.html') }}
             </div>
             <div class="col-md-6">
-              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              {{ card.customer('Brooklyn Simmons', '2715 Ash Dr. San Jose, South
               Dakota 83475', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal', 'whanau-view-all.html') }}
             </div>
             <div class="col-md-6">
-              {{ card.customer('../assets/images/avatar-2.webp', 'Brooklyn Simmons', '2715 Ash Dr. San Jose, South
+              {{ card.customer('Brooklyn Simmons', '2715 Ash Dr. San Jose, South
               Dakota 83475', '#addNoteModal', 'edit-whanau.html', '#deleteWhanauModal', 'whanau-view-all.html') }}
             </div>
           </div>
@@ -60,12 +60,12 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             </div>
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
               <form class="needs-validation" novalidate>
-                {{ input.withIcon('fa-solid fa-user', 'Name', 'name', 'Ahmed Aklouk', 'This field is required, please
+                {{ input.withIcon('fa-solid fa-user', 'Name', 'name', '', 'This field is required, please
                 enter a name', 'text') }} {{ input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email',
-                'ahmedaklouk@gmail.com', 'Please enter a valid email address', 'email') }} {{ input.withIcon('fa-brands
-                fa-facebook-messenger', 'Facebook Messengger', 'fbmessengger', '@ahmedaklouk', 'Please enter a valid
+                '', 'Please enter a valid email address', 'email') }} {{ input.withIcon('fa-brands
+                fa-facebook-messenger', 'Facebook Messengger', 'fbmessengger', '', 'Please enter a valid
                 facebook address', 'text') }} {{ input.withIcon('fa-solid fa-phone', 'Phone Number', 'phone',
-                '233665665616', 'Phone number is not valid', 'number') }}
+                '', 'Phone number is not valid', 'number') }}
                 <!-- ADDRESS -->
                 {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }} {{
                 input.imageWithIcon('fa-solid fa-image', 'Add Image Profile', 'imgProfile', '', 'Photo size is more than
@@ -335,6 +335,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     },
   });
 
+  //Image Profile Handler
   function deleteImage() {
     $('.imgProfilePreview')
       .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">

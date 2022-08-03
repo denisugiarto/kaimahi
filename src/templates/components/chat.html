@@ -1,6 +1,6 @@
 {% import '../components/images.html' as image %}
 <!-- CHAT IS MINE -->
-{% macro isMe(message, avaUrl, name, date, time) %}
+{% macro isMe(message, name, date, time) %}
 <div class="my-chat">
   <div class="chat-container">
     <div class="d-flex align-items-end mb-2">
@@ -31,7 +31,8 @@
       <div class="chat-content col">{{ message }}</div>
     </div>
     <div class="chat-profile">
-      <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">{{ name | first }}</div>
+      <!-- <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" /> -->
       <p class="desc mx-1">{{ name }} {{ date }}, {{ time }}</p>
     </div>
   </div>
@@ -39,7 +40,7 @@
 {% endmacro %}
 
 <!-- CHAT IS ME WITH IMAGES -->
-{% macro isMeWithImages(message, images, avaUrl, name, date, time) %}
+{% macro isMeWithImages(message, images, name, date, time) %}
 <div class="my-chat">
   <div class="chat-container">
     <div class="chat-content mb-2">{{ message }}</div>
@@ -71,7 +72,8 @@
       <div class="col-auto">{{ image.list(images)}}</div>
     </div>
     <div class="chat-profile">
-      <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">{{ name | first }}</div>
+      <!-- <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" /> -->
       <p class="desc mx-1">{{ name }} {{ date }}, {{ time }}</p>
     </div>
   </div>
@@ -79,7 +81,7 @@
 {% endmacro %}
 
 <!-- CHAT IS ME WITH DOCUMENTS -->
-{% macro isMeWithDoc(docName, avaUrl, name, date, time) %}
+{% macro isMeWithDoc(docName, name, date, time) %}
 <div class="my-chat">
   <div class="chat-container">
     <div class="d-flex align-items-end justify-content-end mb-2">
@@ -112,7 +114,8 @@
       </div>
     </div>
     <div class="chat-profile">
-      <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">{{ name | first }}</div>
+      <!-- <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" /> -->
       <p class="desc mx-1">{{ name }} {{ date }}, {{ time }}</p>
     </div>
   </div>
@@ -120,7 +123,7 @@
 {% endmacro %}
 
 <!-- CHAT IS NOT ME -->
-{% macro isNotMe(message, avaUrl, name, date, time) %}
+{% macro isNotMe(message, name, date, time) %}
 <div class="not-my-chat">
   <div class="chat-container">
     <div class="d-flex align-items-end flex-row-reverse mb-2">
@@ -154,8 +157,9 @@
       </div>
     </div>
     <div class="chat-profile">
-      <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" />
-      <p class="desc d-inline-block ms-1">Calib Jackson 14/06/2022, 12:40</p>
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">{{ name | first }}</div>
+      <!-- <img src="{{ avaUrl }}" alt="avatar" class="icon-lg rounded-circle" /> -->
+      <p class="desc d-inline-block ms-1">{{ name }} {{ date }}, {{ time }}</p>
     </div>
   </div>
 </div>

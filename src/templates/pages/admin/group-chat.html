@@ -20,13 +20,13 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       {{ chat.isNotMe('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-      the industrys standard dummy text ever since the 1500s','../assets/images/profile-1.webp','Calib Jackson',
+      the industrys standard dummy text ever since the 1500s', 'Calib Jackson',
       '14/06/2022','12:40')}} {{ chat.isMe('Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industrys standard dummy text ever since the
-      1500s','../assets/images/profile-1.webp','Calib Jackson', '14/06/2022','12:40')}} {{ chat.isMeWithImages('Hello
+      1500s', 'Calib Jackson', '14/06/2022','12:40')}} {{ chat.isMeWithImages('Hello
       everyone, this is the latest photo', ['../assets/images/picture-1.webp', '../assets/images/picture-1.webp',
-      '../assets/images/picture-1.webp' ], '../assets/images/profile-1.webp', 'Calib Jackson', '14/06/2022','12:40')}}
-      {{ chat.isMeWithDoc('SK-DD-DB-0207696.pdf','../assets/images/profile-1.webp','Calib Jackson',
+      '../assets/images/picture-1.webp' ], 'Calib Jackson', '14/06/2022','12:40')}}
+      {{ chat.isMeWithDoc('SK-DD-DB-0207696.pdf', 'Calib Jackson',
       '14/06/2022','12:40')}}
     </div>
     <div class="card-footer sticky-bottom bg-white border-top p-2">
@@ -71,9 +71,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
           </div>
           <div class="col">
             <div class="rounded bg-gray-200 mt-2">
-              <div class="container-fluid">
-                <div id="preview-files" class="row gx-3 gy-2"></div>
-              </div>
+              <div id="preview-files" class="row gx-3"></div>
               <input
                 type="text"
                 name="messages"
@@ -110,7 +108,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
     console.log('selected Files length: ',selectedFiles.length);
     if (selectedFiles.length === 0) {
       $('#btnAddImages').remove();
-      $('#preview-files').removeClass('mb-2');
+      $('#preview-files').removeClass('p-2');
     } 
       showImages();    
   }
@@ -152,7 +150,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
     $('.uploaded-files, #btnAddImages, #btnAddDocs').remove();
     if (selectedFiles.length != 0) {
     // Create margin
-      $('#preview-files').addClass('mb-2');
+      $('#preview-files').addClass('p-2');
       // Show thumbnail
       $('#preview-files').prepend(
         jQuery.map(selectedFiles, function (key, index) {
@@ -168,9 +166,9 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
                               </a>`;
 
           // Document wrapper
-          let docsWrapper = ` <div class="thumbnail-media-wrapper docs fs-6 fw-bold text-truncate" title="${key.fileName}">
-                                <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
-                                ${key.fileName}
+          let docsWrapper = ` <div class="thumbnail-media-wrapper docs d-flex align-items-center" title="${key.fileName}">
+                                <img src='../assets/icons/icon-files.svg' class='icon icon-lg me-1' />                                
+                                <h6 class="fs-6 fw-bold text-truncate">${key.fileName}</h6>
                               </div>`;
           // Create element
           let element = document.createElement('div');

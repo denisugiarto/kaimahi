@@ -3,10 +3,10 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
 '../components/pagination.html' as pagination %} {% import '../components/nav-tabs.html' as navTabs %} {% import
 '../components/cards.html' as card %} {% import '../components/modal.html' as modal %} {% block content %}
 <main class="bd-main">
-    <div class="d-flex mb-5">
-        {{ button.icon('angle-left', 'btn-gray-200', 'whanau.html') }}
-        <h3 class="h3 ms-3">Edit Whānau</h3>
-    </div>
+  <div class="d-flex mb-5">
+    {{ button.icon('angle-left', 'btn-gray-200', 'whanau.html') }}
+    <h3 class="h3 ms-3">Edit Whānau</h3>
+  </div>
   <div class="card">
     <div class="card-body">
       <div class="card align-items-center">
@@ -30,7 +30,8 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
             '233665665616', 'Phone number is not valid', 'number') }}
             <!-- ADDRESS -->
             {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }} {{
-            input.withIconTextArea('fa-solid fa-pencil', 'Note For Whanau', 'note') }}
+            input.imageWithIcon('fa-solid fa-image', 'Add Image Profile', 'imgProfile', '', 'Photo size is more than
+            2MB', 'text') }} {{ input.withIconTextArea('fa-solid fa-pencil', 'Note For Whanau', 'note', 'whānau is allergic to shrimp type food') }}
             <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
           </form>
         </div>
@@ -38,10 +39,9 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     </div>
   </div>
 </main>
-{{ modal.addAddress() }} 
-{% endblock %} {% block script %}
+{{ modal.addAddress() }} {% endblock %} {% block script %}
 <script>
-   // Custom Form Validation
+  // Custom Form Validation
   (function () {
     'use strict';
 
@@ -65,7 +65,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     });
   })();
 
-  let address = '',
+  let address = 'Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.',
     newAddress = '';
 
   $(document).ready(function () {
@@ -75,6 +75,23 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
         return $(this).text() === 'Whānau';
       })
       .addClass('active');
+
+    //Image profile value
+    $('.fileName').text('Ahmed Aklouk.PNG');
+    $('.imgProfilePreview').html(
+      ` <div class='position-relative'>
+            <img src='../assets/images/picture-1.webp' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
+    );
+
+    //Address handler
+    if (address != '') {
+      $('#address').text(address).removeClass('d-none').addClass('mb-2');
+      $('#btnAddress').text('Edit Address');
+    }
 
     function loadAddressToTextArea() {
       $('#addAddress').val(address);
@@ -214,6 +231,40 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
         },
       };
     },
+  });
+
+  //Image Profile Handler
+  function deleteImage() {
+    $('.imgProfilePreview')
+      .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+    $('input[name="imgProfile"]').val('');
+    $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
+  }
+
+  // Show image preview from Input Image Profile
+  $('input[name="imgProfile"]').change(function (event) {
+    let file = event.target.files[0];
+    if (file) {
+      console.log('fileName: ', file);
+      $('.fileName').text(file.name).removeClass('text-secondary').addClass('text-dark');
+      let imgUrl = URL.createObjectURL(file);
+      $('.imgProfilePreview').html(
+        ` <div class='position-relative'>
+            <img src='${imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
+      );
+    } else {
+      $('.imgProfilePreview')
+        .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+      $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
+    }
   });
 </script>
 {% endblock %}

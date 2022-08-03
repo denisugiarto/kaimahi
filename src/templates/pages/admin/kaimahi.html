@@ -19,13 +19,11 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
       <div class="tab-content mt-4">
         <div class="tab-pane fade show active" id="all-kaimahi" role="tabpanel" aria-labelledby="all-kaimahi-tab">
           <!-- KAIMAHI CARDS -->
-          {{ kaimahiItem.cards([ { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
-          '17-01-2022', linkEdit: 'edit-kaimahi.html', linkDelete: '', link: 'kaimahi-profile.html' }, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al
-          Aklouk', delivery: '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk',
-          delivery: '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery:
-          '17-01-2022'}, { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'},
-          { avatar: '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar:
-          '../assets/images/profile-1.webp', name: 'Ahmed Al Aklouk', delivery: '17-01-2022'} ]) }}
+          {{ kaimahiItem.cards([ { name: 'Ahmed Al Aklouk', delivery: '17-01-2022', linkEdit: 'edit-kaimahi.html',
+          linkDelete: '', link: 'kaimahi-profile.html' }, { name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { name:
+          'Ahmed Al Aklouk', delivery: '17-01-2022'}, { name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { name: 'Ahmed
+          Al Aklouk', delivery: '17-01-2022'}, { name: 'Ahmed Al Aklouk', delivery: '17-01-2022'}, { avatar: 'A', name:
+          'Ahmed Al Aklouk', delivery: '17-01-2022'} ]) }}
           <!-- PAGINATION -->
           {{ pagination.ViewAllBtn() }}
         </div>
@@ -33,16 +31,15 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
           <div class="card align-items-center">
             <div class="card-body col-12 col-sm-6 col-lg-7 col-xl-5">
               <form class="needs-validation" novalidate>
-                {{ input.withIcon('fa-solid fa-user', 'Name', 'text', 'Ahmed Aklouk', 'This field is required, please enter a name', 'text') }} {{
-                input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', 'ahmedaklouk@gmail.com', 'Please enter a valid email address', 'email') }} {{
-                input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger', 'fbmessage', '@ahmedaklouk',
-                'Please enter a valid facebook address',
-                'text') }} {{ input.withIcon('fa-solid fa-comment-dots', 'Phone Number', 'phone', '233665665616', 'Phone number is not valid',
-                'number') }}
+                {{ input.withIcon('fa-solid fa-user', 'Name', 'text', '', 'This field is required, please enter a name',
+                'text') }} {{ input.withIcon('fa-solid fa-envelopes-bulk', 'Email', 'email', '', 'Please enter a valid
+                email address', 'email') }} {{ input.withIcon('fa-brands fa-facebook-messenger', 'Facebook Messengger',
+                'fbmessage', '', 'Please enter a valid facebook address', 'text') }} {{ input.withIcon('fa-solid
+                fa-comment-dots', 'Phone Number', 'phone', '', 'Phone number is not valid', 'number') }}
                 <!-- ADDRESS -->
                 {{ input.withIconForAddress('fa-solid fa-location-dot', 'Address', 'address') }} {{
-                  input.imageWithIcon('fa-solid fa-image', 'Add Image Profile', 'imgProfile', '', 'Photo size is more than
-                  2MB', 'text') }}
+                input.imageWithIcon('fa-solid fa-image', 'Add Image Profile', 'imgProfile', '', 'Photo size is more than
+                2MB', 'text') }}
                 <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Add</button>
               </form>
             </div>
@@ -124,8 +121,7 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
     </div>
   </div>
 </main>
-{{ modal.addAddress() }}
-{% endblock %} {% block script %}
+{{ modal.addAddress() }} {% endblock %} {% block script %}
 <script>
   // Custom Form Validation
   (function () {

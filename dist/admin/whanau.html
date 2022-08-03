@@ -236,7 +236,8 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img src="../assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" />
+            <div class="header-profile-image flex-center bg-info text-white">C</div>
+              <!-- <img src="../assets/images/profile-1.webp" alt="profile" class="header-profile-image me-0 me-md-2" /> -->
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
               <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
@@ -363,7 +364,7 @@
 <div class="card shadow h-100">
   <div class="card-body">
     <div class="d-flex">
-      <img src="../assets/images/profile-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">W</div>
       <div class="ms-2">
         <h6 class="fs-6 mb-1">
           Wade Warren<i
@@ -424,7 +425,7 @@
 <div class="card shadow h-100">
   <div class="card-body">
     <div class="d-flex">
-      <img src="../assets/images/avatar-1.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">K</div>
       <div class="ms-2">
         <h6 class="fs-6 mb-1">
           Kristin Watson<i
@@ -485,7 +486,7 @@
 <div class="card shadow h-100">
   <div class="card-body">
     <div class="d-flex">
-      <img src="../assets/images/avatar-2.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">B</div>
       <div class="ms-2">
         <h6 class="fs-6 mb-1">
           Brooklyn Simmons<i
@@ -546,7 +547,7 @@
 <div class="card shadow h-100">
   <div class="card-body">
     <div class="d-flex">
-      <img src="../assets/images/avatar-2.webp" alt="avatar" class="icon-lg rounded-circle" />
+      <div class="flex-center bg-info text-white rounded-circle icon-lg">B</div>
       <div class="ms-2">
         <h6 class="fs-6 mb-1">
           Brooklyn Simmons<i
@@ -645,7 +646,7 @@
           id="name"
           name="name"
           class="form-control fs-4 fw-light"
-          value="Ahmed Aklouk"
+          value=""
           type="text"
           placeholder="Type Your Name Here"
           required
@@ -669,7 +670,7 @@
           id="email"
           name="email"
           class="form-control fs-4 fw-light"
-          value="ahmedaklouk@gmail.com"
+          value=""
           type="email"
           placeholder="Type Your Email Here"
           required
@@ -693,7 +694,7 @@
           id="fbmessengger"
           name="fbmessengger"
           class="form-control fs-4 fw-light"
-          value="@ahmedaklouk"
+          value=""
           type="text"
           placeholder="Type Your Facebook Messengger Here"
           required
@@ -717,7 +718,7 @@
           id="phone"
           name="phone"
           class="form-control fs-4 fw-light"
-          value="233665665616"
+          value=""
           type="number"
           placeholder="Type Your Phone Number Here"
           required
@@ -798,7 +799,7 @@
         <textarea
           id="note"
           name="note"
-          class="form-control fs-6 fw-light"
+          class="form-control fw-light"
           rows="3"
           placeholder="Type Your Note For Whanau Here"
           style="resize: none;"
@@ -1263,6 +1264,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     },
   });
 
+  //Image Profile Handler
   function deleteImage() {
     $('.imgProfilePreview')
       .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">

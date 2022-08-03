@@ -11,7 +11,7 @@ pagination %}
       </div>
       <hr />
       <!-- CONTENT -->
-      {% for item in items %} {{ card.kaimahi(item.avatar, item.name, item.delivery, item.link) }} {% endfor %} {{
+      {% for item in items %} {{ card.kaimahi(item.name, item.delivery, item.link) }} {% endfor %} {{
       pagination.ViewAllBtn() }}
     </div>
   </div>
@@ -21,4 +21,4 @@ pagination %}
 <!-- CARDS -->
 {% macro cards(items) %}
 <!-- CONTENT -->
-{% for item in items %} {{ card.kaimahi(item.avatar, item.name, item.delivery, item.linkEdit, item.linkDelete, item.link) }} {% endfor %} {% endmacro %}
+{% for item in items %} {{ card.kaimahi(item.name, item.delivery, item.linkEdit, item.linkDelete, item.link) }} {% endfor %} {% endmacro %}
