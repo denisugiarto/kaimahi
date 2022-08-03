@@ -791,9 +791,9 @@ crossorigin=""
                               </a>`;
 
           // Document wrapper
-          let docsWrapper = ` <div class="thumbnail-media-wrapper docs fs-6 fw-bold text-truncate" title="${key.fileName}">
-                                <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
-                                ${key.fileName}
+          let docsWrapper = ` <div class="thumbnail-media-wrapper docs d-flex align-items-center" title="${key.fileName}">
+                                <i class="fas fa-file-alt fs-1 me-1" aria-hidden="true"></i>
+                                <h6 class="fs-6 fw-bold text-truncate">${key.fileName}</h6>
                               </div>`;
           // Create element
           let element = document.createElement('div');
