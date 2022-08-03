@@ -456,11 +456,11 @@
         <textarea
           id="note"
           name="note"
-          class="form-control fs-6 fw-light"
+          class="form-control fw-light"
           rows="3"
           placeholder="Type Your Note For Whanau Here"
           style="resize: none;"
-        ></textarea
+        >whānau is allergic to shrimp type food</textarea
         >
       </div>
     </div>
@@ -629,7 +629,7 @@ crossorigin=""
     });
   })();
 
-  let address = '',
+  let address = 'Ntowers, Block B1, Zemin 21, Daire 34513 Esenyurt/Istanbul, Turkey.',
     newAddress = '';
 
   $(document).ready(function () {
@@ -639,6 +639,23 @@ crossorigin=""
         return $(this).text() === 'Whānau';
       })
       .addClass('active');
+
+    //Image profile value
+    $('.fileName').text('Ahmed Aklouk.PNG');
+    $('.imgProfilePreview').html(
+      ` <div class='position-relative'>
+            <img src='../assets/images/picture-1.webp' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
+    );
+
+    //Address handler
+    if (address != '') {
+      $('#address').text(address).removeClass('d-none').addClass('mb-2');
+      $('#btnAddress').text('Edit Address');
+    }
 
     function loadAddressToTextArea() {
       $('#addAddress').val(address);
@@ -778,6 +795,40 @@ crossorigin=""
         },
       };
     },
+  });
+
+  //Image Profile Handler
+  function deleteImage() {
+    $('.imgProfilePreview')
+      .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+    $('input[name="imgProfile"]').val('');
+    $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
+  }
+
+  // Show image preview from Input Image Profile
+  $('input[name="imgProfile"]').change(function (event) {
+    let file = event.target.files[0];
+    if (file) {
+      console.log('fileName: ', file);
+      $('.fileName').text(file.name).removeClass('text-secondary').addClass('text-dark');
+      let imgUrl = URL.createObjectURL(file);
+      $('.imgProfilePreview').html(
+        ` <div class='position-relative'>
+            <img src='${imgUrl}' alt='uploaded-files' class='thumbnail-media-wrapper img-wrapper m-0' />
+            <a onclick='deleteImage()' role='button' class='rounded-circle border border-dark bg-white position-absolute icon-xs fs-6 flex-center top-0 start-100 translate-middle'>
+              <i class='fa-solid fa-xmark'></i>
+            </a>
+          </div>`
+      );
+    } else {
+      $('.imgProfilePreview')
+        .html(`<label for="imgProfile" class="icon border-1 border-dashed border-dark icon-xxl rounded pointer">
+                                      <i class="fas fa-plus fs-3 text-dark"></i>
+                                    </label>`);
+      $('.fileName').text('No file chosen').removeClass('text-dark').addClass('text-secondary');
+    }
   });
 </script>
 
