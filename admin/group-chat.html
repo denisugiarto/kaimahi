@@ -514,7 +514,7 @@
           </div>
           <div class="col">
             <div class="rounded bg-gray-200">
-              <div id="preview-files" class="row gx-2 gx-md-3 flex-nowrap overflow-auto align-items-center vw-50"></div>
+              <div id="preview-files" class="preview-files"></div>
               <input
                 type="text"
                 name="messages"
@@ -736,7 +736,7 @@ crossorigin=""
     console.log('selected Files length: ',selectedFiles.length);
     if (selectedFiles.length === 0) {
       $('#btnAddImages').remove();
-      $('#preview-files').removeClass('p-2');
+      $('#preview-files').removeClass('p-2 pe-0');
     } 
       showImages();    
   }
@@ -778,7 +778,7 @@ crossorigin=""
     $('.uploaded-files, #btnAddImages, #btnAddDocs').remove();
     if (selectedFiles.length != 0) {
     // Create margin
-      $('#preview-files').addClass('p-2');
+      $('#preview-files').addClass('p-2 pe-0');
       // Show thumbnail
       $('#preview-files').prepend(
         jQuery.map(selectedFiles, function (key, index) {
