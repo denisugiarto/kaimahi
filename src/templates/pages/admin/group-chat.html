@@ -70,8 +70,8 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
             </div>
           </div>
           <div class="col">
-            <div class="rounded bg-gray-200 mt-2">
-              <div id="preview-files" class="row gx-3"></div>
+            <div class="rounded bg-gray-200">
+              <div id="preview-files" class="preview-files"></div>
               <input
                 type="text"
                 name="messages"
@@ -108,7 +108,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
     console.log('selected Files length: ',selectedFiles.length);
     if (selectedFiles.length === 0) {
       $('#btnAddImages').remove();
-      $('#preview-files').removeClass('p-2');
+      $('#preview-files').removeClass('p-2 pe-0');
     } 
       showImages();    
   }
@@ -150,7 +150,7 @@ import '../components/buttons.html' as button %} {% import '../components/chat.h
     $('.uploaded-files, #btnAddImages, #btnAddDocs').remove();
     if (selectedFiles.length != 0) {
     // Create margin
-      $('#preview-files').addClass('p-2');
+      $('#preview-files').addClass('p-2 pe-0');
       // Show thumbnail
       $('#preview-files').prepend(
         jQuery.map(selectedFiles, function (key, index) {

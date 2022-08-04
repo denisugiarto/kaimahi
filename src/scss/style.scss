@@ -287,6 +287,28 @@ input[type='search']:focus-visible {
   }
 }
 
+.preview-files {
+  @extend .row;
+  @extend .gx-2;
+  @extend .gx-md-3;
+  @extend .flex-nowrap;
+  @extend .overflow-auto; 
+  @extend .align-items-center;
+  width: calc(100vw - 160px); 
+
+  @include media-breakpoint-up(md) {
+    width: calc(100vw - 185px); 
+  }
+  
+  @include media-breakpoint-up(lg) {
+    width: calc(100vw - 460px); 
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: calc(100vw - 480px); 
+  }
+}
+
 .titlePage {
   font-size: 24px;
 
@@ -336,16 +358,6 @@ input[type='search']:focus-visible {
   @include media-breakpoint-up(lg) {
     font-size: 44px;
   }
-}
-
-#addWhanau {
-  @extend .overflow-auto;
-  max-height: 120px;
-}
-
-#whanau {
-  @extend .overflow-auto;
-  max-height: 300px;
 }
 
 // // SCROLLBAR
