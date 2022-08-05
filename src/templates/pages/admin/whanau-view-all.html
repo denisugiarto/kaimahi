@@ -17,14 +17,63 @@ import '../components/input.html' as input %} {% import '../components/buttons.h
       { title: 'Add Single Whānau', icon: 'fa-solid fa-user', id: '', status: ''}, {title: 'Add Bulk Whānau', icon:
       'fa-brands fa-buffer'} ]) }}
       <div class="my-4">
-        <img src="../assets/images/maps-all.webp" alt="" class="rounded shadow img-fluid" />
+        <div id="map" class="map-wrapper"></div>
       </div>
-      {{ card.cardWhanau('../assets/images/profile-1.webp', 'Ahmed Al Aklouk', '17-01-2022') }}
+      {{ card.cardWhanau('Ahmed Al Aklouk', '17-01-2022') }}
     </div>
   </div>
 </main>
 {% endblock %} {% block script %}
 <script>
+  let data = [
+    {
+      id: 1,
+      latitude: -36.88232,
+      longitude: 174.75179,
+    }
+  ];
+  let latAvg = 0,
+    longAvg = 0;
+
+  let markingIcon = L.icon({
+    iconUrl: '../assets/icons/icon-pin.svg',
+    iconSize: [54, 68],
+    iconAnchor: [27, 6],
+  });
+
+  function setCenterMap(data) {
+    data.map(function (value, index) {
+      latAvg += value.latitude;
+      longAvg += value.longitude;
+    });
+    latAvg /= data.length;
+    longAvg /= data.length;
+  }
+
+  function marking(data) {
+    data.map(function (value, index) {
+      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
+      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
+        .setContent(`Family_${value.id}`)
+        .setLatLng([value.latitude, value.longitude])
+        .openOn(map);
+      marker.bindPopup(notes);
+    });
+  }
+
+  setCenterMap(data);
+  let map = L.map('map', {
+    zoomControl: false,
+    doubleClickZoom: false,
+  }).setView([latAvg, longAvg], 16.3);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map);
+
+  marking(data);
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
