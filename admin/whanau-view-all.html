@@ -343,25 +343,25 @@
 
 
       <div class="my-4">
-        <img src="../assets/images/maps-all.webp" alt="" class="rounded shadow img-fluid" />
+        <div id="map" class="map-wrapper"></div>
       </div>
       
 <div class="card bg-white shadow">
   <div class="card-body">
     <div class="d-flex align-items-center justify-content-between mb-4">
       <div class="fs-6 fw-light mb-1">By</div>
-      <a href="17-01-2022" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
+      <a href="" role="button" class="btn bg-gray-200 flex-center p-0 rounded-1 icon-lg">
         <i class="fa-solid fa-angle-right fs-5"></i>
       </a>
     </div>
     <div class="d-flex align-items-center">
       <div class="col-auto me-1 me-sm-2">
-        <div class="flex-center bg-info text-white rounded-circle icon-lg">.</div>
+        <div class="flex-center bg-info text-white rounded-circle icon-lg">A</div>
         <!-- <img src="" alt="img kaimahi" class="rounded-circle icon-lg" /> -->
       </div>
       <div class="col">
-        <h6 class="fs-6">../assets/images/profile-1.webp</h6>
-        <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>Ahmed Al Aklouk</p>
+        <h6 class="fs-6">Ahmed Al Aklouk</h6>
+        <p class="fs-6"><span class="text-secondary me-1">Last Delivery</span>17-01-2022</p>
       </div>
       <div class="col-auto me-1 me-sm-3">
 <a id="" href="#" role="button" class="btn px-2 px-md-3 py-1 bg-primary text-white flex-center h-100">
@@ -476,6 +476,55 @@ crossorigin=""
     <!-- SCRIPT -->
     
 <script>
+  let data = [
+    {
+      id: 1,
+      latitude: -36.88232,
+      longitude: 174.75179,
+    }
+  ];
+  let latAvg = 0,
+    longAvg = 0;
+
+  let markingIcon = L.icon({
+    iconUrl: '../assets/icons/icon-pin.svg',
+    iconSize: [54, 68],
+    iconAnchor: [27, 6],
+  });
+
+  function setCenterMap(data) {
+    data.map(function (value, index) {
+      latAvg += value.latitude;
+      longAvg += value.longitude;
+    });
+    latAvg /= data.length;
+    longAvg /= data.length;
+  }
+
+  function marking(data) {
+    data.map(function (value, index) {
+      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
+      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
+        .setContent(`Family_${value.id}`)
+        .setLatLng([value.latitude, value.longitude])
+        .openOn(map);
+      marker.bindPopup(notes);
+    });
+  }
+
+  setCenterMap(data);
+  let map = L.map('map', {
+    zoomControl: false,
+    doubleClickZoom: false,
+  }).setView([latAvg, longAvg], 16.3);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map);
+
+  marking(data);
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
