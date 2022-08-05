@@ -608,24 +608,24 @@ crossorigin=""
       let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
       notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
         .setContent(`
-          <div class="d-flex gap-2 justify-content-between">
-            <div class="col">
-              <h6 class="h6 fw-bolder">Family_${value.id}</h6>
-              <p class="fs-7 text-secondary mt-1">${value.notes}</p>
-            </div>
-            <div class="col-auto d-flex flex-column align-items-center">
-              <div class="bg-primary icon icon-md rounded-circle"><i class="fas fa-share-square"></i></div>
-              <p class="fs-7 my-0">Open G-maps</p>
-            </div>
-          </div>
+          <h6 class="h6 fw-bolder">Family_${value.id}</h6>
+          <p class="fs-7 text-secondary mt-1">${value.notes}</p>
+        
           ${(() => {
             if(!value.disabled) {
               return `
-              <input id="send${value.id}" class="form-check-input" type="checkbox" />
-              <label for="send${value.id}" class="form-label fs-6">mark as completed sent</label>
+              
+              <div class="d-flex align-items-center">
+                <input id="send${value.id}" class="form-check-input" type="checkbox" />
+                <label for="send${value.id}" class="form-label fs-6 mb-0 ms-1">completed</label>
+                <div class="ms-auto">
+                  <div class="bg-primary icon icon-md rounded-circle"><i class="fas fa-share-square"></i></div>
+                </div>
+              </div>
               `
             } else {
-              return ``;
+              return `
+              `;
             }
           })()}
         `)
