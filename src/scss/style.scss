@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 // 1. Configuration and helpers
 @import 'variables', 'utilities';
@@ -227,6 +228,10 @@ input[type='search']:focus-visible {
   }
 }
 
+.leaflet-popup-content {
+  max-width: 200px;
+}
+
 .logo-header {
   width: 100%;
   max-width: 180px;
@@ -238,6 +243,16 @@ input[type='search']:focus-visible {
 
   @include media-breakpoint-up(lg) {
     max-width: 187px;
+  }
+}
+
+//wrapper Map
+.map-wrapper {
+  @extend .rounded;
+  @extend .shadow;
+  height: 250px;
+  @include media-breakpoint-up('md') {
+    height: 450px;
   }
 }
 

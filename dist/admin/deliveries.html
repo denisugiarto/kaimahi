@@ -11,12 +11,6 @@
 
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
   <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
@@ -385,7 +379,8 @@
           <a data-bs-toggle="collapse" data-bs-target=".viewType" class="text-primary fs-5 fw-light" role="button">View List</a>
         </div>
         <!-- MAP CARDS -->
-        <img src="../assets/images/map-deliveries.webp" alt="maps" class="img-fluid rounded shadow" />
+        <div id="map" class="map-wrapper"></div>
+        <!-- <img src="../assets/images/map-deliveries.webp" alt="maps" class="img-fluid rounded shadow" /> -->
         <!-- PAGINATION -->
         
 <div class="d-flex mt-5">
@@ -568,6 +563,91 @@ crossorigin=""
     <!-- SCRIPT -->
     
 <script>
+  let data = [
+    {
+      id: 1,
+      latitude: -36.88232,
+      longitude: 174.75179,
+      notes: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey'
+    },
+    {
+      id: 2,
+      latitude: -36.8793665,
+      longitude: 174.745921,
+      notes: 'whānau is already in another Kaimahi delivery list',
+      disabled: true
+    },
+    {
+      id: 3,
+      latitude: -36.881581,
+      longitude: 174.7428878,
+      notes: 'Ntowers, Block B1, Zemin 21, Daire  34513 Esenyurt/İstanbul, Turkey'
+    },
+  ];
+  
+  let latAvg = 0,
+    longAvg = 0;
+
+  let markingIcon = L.icon({
+    iconUrl: '../assets/icons/icon-pin.svg',
+    iconSize: [54, 68],
+    iconAnchor: [27, 6],
+  });
+
+  function setCenterMap(data) {
+    data.map(function (value, index) {
+      latAvg += value.latitude;
+      longAvg += value.longitude;
+    });
+    latAvg /= data.length;
+    longAvg /= data.length;
+  }
+
+  function marking(data) {
+    data.map(function (value, index) {
+      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
+      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
+        .setContent(`
+          <div class="d-flex gap-2 justify-content-between">
+            <div class="col">
+              <h6 class="h6 fw-bolder">Family_${value.id}</h6>
+              <p class="fs-7 text-secondary mt-1">${value.notes}</p>
+            </div>
+            <div class="col-auto d-flex flex-column align-items-center">
+              <div class="bg-primary icon icon-md rounded-circle"><i class="fas fa-share-square"></i></div>
+              <p class="fs-7 my-0">Open G-maps</p>
+            </div>
+          </div>
+          ${(() => {
+            if(!value.disabled) {
+              return `
+              <input id="send${value.id}" class="form-check-input" type="checkbox" />
+              <label for="send${value.id}" class="form-label fs-6">mark as completed sent</label>
+              `
+            } else {
+              return ``;
+            }
+          })()}
+        `)
+        .setLatLng([value.latitude, value.longitude])
+        .openOn(map);
+      marker.bindPopup(notes);
+    });
+  }
+
+  setCenterMap(data);
+  let map = L.map('map', {
+    zoomControl: false,
+    doubleClickZoom: false,
+  }).setView([latAvg, longAvg], 16.6);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map);
+
+  marking(data);
+
   $(document).ready(function () {
     // ADD CLASS ACTIVE TO Whānau SIDEBAR
     $('#sidebar-item > .nav-link')
