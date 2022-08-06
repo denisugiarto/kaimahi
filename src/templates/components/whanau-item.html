@@ -11,7 +11,7 @@
       </div>
       <hr />
       <!-- CONTENT -->
-      {% for item in items %} {{ card.whanau(item.map_url, item.dest_name, item.courier_name,
+      {% for item in items %} {{ card.whanau(item.id, item.dest_name, item.courier_name,
       item.delivery) }} {% endfor %} {{ pagination.ViewAllBtn() }}
     </div>
   </div>

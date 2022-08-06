@@ -678,8 +678,7 @@
       <hr />
       <!-- CONTENT -->
        
-<div class="position-relative mt-3">
-  <img src="../assets/images/maps.webp" alt="maps" class="img-wrapper rounded w-100 mh-300" />
+<div id="map1" class="position-relative mt-3 map-wrapper small">
   <div
     class="position-absolute bottom-0 start-50 translate-middle-x w-100 px-1 px-md-4 px-lg-1 px-xl-4 mb-1 mb-md-4 mb-lg-1 mb-lg-4"
   >
@@ -720,8 +719,7 @@
   </div>
 </div>
   
-<div class="position-relative mt-3">
-  <img src="../assets/images/maps.webp" alt="maps" class="img-wrapper rounded w-100 mh-300" />
+<div id="map2" class="position-relative mt-3 map-wrapper small">
   <div
     class="position-absolute bottom-0 start-50 translate-middle-x w-100 px-1 px-md-4 px-lg-1 px-xl-4 mb-1 mb-md-4 mb-lg-1 mb-lg-4"
   >
@@ -901,6 +899,62 @@ crossorigin=""
     <!-- SCRIPT -->
     
 <script>
+    let data = [
+    {
+      id: 1,
+      latitude: -36.88232,
+      longitude: 174.75179,
+    }
+  ];
+  let latAvg = -0.0015,
+    longAvg = 0;
+
+  let markingIcon = L.icon({
+    iconUrl: '../assets/icons/icon-pin.svg',
+    iconSize: [54, 68],
+    iconAnchor: [27, 6],
+  });
+
+  function setCenterMap(data) {
+    data.map(function (value, index) {
+      latAvg += value.latitude;
+      longAvg += value.longitude;
+    });
+    latAvg /= data.length;
+    longAvg /= data.length;
+  }
+
+  function marking(data, id) {
+    data.map(function (value, index) {
+      let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(id);
+    });
+  }
+
+  setCenterMap(data);
+  let map1 = L.map('map1', {
+    zoomControl: false,
+    doubleClickZoom: false,
+    dragging: false
+  }).setView([latAvg, longAvg], 16.3);
+  
+  let map2 = L.map('map2', {
+    zoomControl: false,
+    doubleClickZoom: false,
+    dragging: false
+  }).setView([latAvg, longAvg], 16.3);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map1);
+  
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '© OpenStreetMap',
+  }).addTo(map2);
+
+  marking(data, map1);
+  marking(data, map2);
   $(document).ready(function () {
     $(".nav-link:contains('Home')").addClass('active');
 

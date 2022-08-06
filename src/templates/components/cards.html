@@ -59,9 +59,8 @@
 {% endmacro %}
 
 <!-- WHANAU CARD WITH MAPS -->
-{% macro whanau(map_url, dest_name, courier_name, delivery) %}
-<div class="position-relative mt-3">
-  <img src="{{ map_url }}" alt="maps" class="img-wrapper rounded w-100 mh-300" />
+{% macro whanau(id, dest_name, courier_name, delivery) %}
+<div id="map{{ id }}" class="position-relative mt-3 map-wrapper small">
   <div
     class="position-absolute bottom-0 start-50 translate-middle-x w-100 px-1 px-md-4 px-lg-1 px-xl-4 mb-1 mb-md-4 mb-lg-1 mb-lg-4"
   >

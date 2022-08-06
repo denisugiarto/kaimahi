@@ -504,7 +504,7 @@ crossorigin=""
   function marking(data) {
     data.map(function (value, index) {
       let marker = L.marker([value.latitude, value.longitude], { icon: markingIcon }).addTo(map);
-      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false })
+      notes = new L.Popup({ autoClose: false, closeOnClick: false, closeButton: false,  })
         .setContent(`Family_${value.id}`)
         .setLatLng([value.latitude, value.longitude])
         .openOn(map);

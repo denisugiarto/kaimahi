@@ -255,6 +255,20 @@ input[type='search']:focus-visible {
   @include media-breakpoint-up('md') {
     height: 450px;
   }
+
+  &.small {
+    height: 275px;
+    z-index: 0;
+    
+    @include media-breakpoint-up('md') {
+      height: 300px;
+    }
+
+    .position-absolute {
+      z-index: 1000;
+    }
+
+  }
 }
 
 .map-set-pin-wrapper {
